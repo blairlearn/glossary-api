@@ -122,7 +122,7 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <param name="size">Defines the size of the search</param>
         /// <param name="from">Defines the Offset for search</param>
         /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
-        /// <returns>A list of GlossaryTerm</returns>        
+        /// <returns>A list of GlossaryTerm</returns>
         /// </summary>
         public async Task<List<GlossaryTerm>> Search(string dictionary, AudienceType audience, string language, string query,string matchType, int size, int from, string[] requestedFields)
         {
@@ -132,30 +132,8 @@ namespace NCI.OCPL.Api.Glossary.Services
             glossaryTermList.Add(GenerateSampleTerm(requestedFields));
 
             return glossaryTermList;
-        }    
+        }
 
-
-        /// <summary>
-        /// Search for Terms based on the search criteria.
-        /// <param name="dictionary">The value for dictionary.</param>
-        /// <param name="audience">Patient or Healthcare provider</param>
-        /// <param name="language">The language in which the details needs to be fetched</param>
-        /// <param name="query">The search query</param>
-        /// <param name="matchType">Defines if the search should begin with or contain the key word</param>
-        /// <param name="size">Defines the size of the search</param>
-        /// <param name="from">Defines the Offset for search</param>
-        /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
-        /// <returns>A list of GlossaryTerm</returns>        
-        /// </summary>
-        // public async Task<List<GlossaryTerm>> Expand(string dictionary, AudienceType audience, string language, string query,string matchType, int size, int from, string[] requestedFields)
-        // {
-        //     // Temporary Solution till we have Elastic Search
-        //     List<GlossaryTerm> glossaryTermList = new List<GlossaryTerm>();
-        //     glossaryTermList.Add(GenerateSampleTerm(requestedFields));
-        //     glossaryTermList.Add(GenerateSampleTerm(requestedFields));
-
-        //     return glossaryTermList;
-        // }    
 
         /// <summary>
         /// Search for Terms based on the search criteria.
@@ -171,6 +149,13 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// </summary>
         public async Task<List<GlossaryTerm>> Expand(string dictionary, AudienceType audience, string language, string query, string matchType, int size, int from, string[] requestedFields)
         {
+        //     // Temporary Solution till we have Elastic Search
+        //     List<GlossaryTerm> glossaryTermList = new List<GlossaryTerm>();
+        //     glossaryTermList.Add(GenerateSampleTerm(requestedFields));
+        //     glossaryTermList.Add(GenerateSampleTerm(requestedFields));
+
+        //     return glossaryTermList;
+
             // Set up the SearchRequest to send to elasticsearch.
             Indices index = Indices.Index(new string[] { this._apiOptions.AliasName});
             Types types = Types.Type(new string[] { "terms" });
@@ -178,7 +163,7 @@ namespace NCI.OCPL.Api.Glossary.Services
             {
                 Query = new BoolQuery
                 {
-                    Must = new QueryContainer[] 
+                    Must = new QueryContainer[]
                     {
                         new TermQuery {Field = "language", Value = language.ToString()} &&
                         new TermQuery {Field = "audience", Value = audience.ToString()} &&
@@ -195,7 +180,7 @@ namespace NCI.OCPL.Api.Glossary.Services
                 // Source = new SourceFilter
                 // {
                 //     Includes = requestedFields
-                // },             
+                // },
             };
 
             // The below 3 lines of code help to debug the query that is used for ES.
@@ -242,7 +227,7 @@ namespace NCI.OCPL.Api.Glossary.Services
             // glossaryTermList.Add(GenerateSampleTerm(requestedFields));
 
             return glossaryTermList;
-        }                
+        }
 
         /// <summary>
         /// This temporary method will create a GlossaryTerm
@@ -282,8 +267,36 @@ namespace NCI.OCPL.Api.Glossary.Services
                 }
             }
 
-            _GlossaryTerm.RelatedResources = new RelatedResourceType [] {RelatedResourceType.Summary , RelatedResourceType.DrugSummary};
+            _GlossaryTerm.RelatedResources = new IRelatedResource[] {
+                new LinkResource()
+                {
+                    Type = RelatedResourceType.External,
+                    Text = "Link to Google",
+                    Url = new System.Uri("https://www.google.com")
+                },
+                new LinkResource()
+                {
+                    Type = RelatedResourceType.DrugSummary,
+                    Text = "Bevacizumab",
+                    Url = new System.Uri("https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab")
+                },
+                new LinkResource()
+                {
+                    Type = RelatedResourceType.Summary,
+                    Text = "Lung cancer treatment",
+                    Url = new System.Uri("https://www.cancer.gov/types/lung/patient/small-cell-lung-treatment-pdq")
+                },
+                new GlossaryResource()
+                {
+                    Type = RelatedResourceType.GlossaryTerm,
+                    Text = "stage II cutaneous T-cell lymphoma",
+                    Id = 43966,
+                    Dictionary = "Cancer.gov",
+                    Audience = "Patient",
+                    PrettyUrlName = "stage-ii-cutaneous-t-cell-lymphoma"
+                }
+            };
             return _GlossaryTerm;
-        }           
+        }
     }
 }

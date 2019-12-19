@@ -1,47 +1,36 @@
+using System;
+
 using Nest;
 
 namespace NCI.OCPL.Api.Glossary
 {
     /// <summary>
-    /// Subclass of IMedia catering to Images
+    /// Describes an Image content item.
     /// </summary>
     public class Image : IMedia
     {
         /// <summary>
         /// Type of media this class will represent.
-        /// It will be Image in this case
         /// </summary>
+        /// <value>Always MediaType.Image</value>
         public MediaType Type { get; set; }
 
         /// <summary>
-        /// no arg constructor
+        /// Url where the image may be retrieved.
         /// </summary>
-        public Image(){
-
-        }
+        [Keyword(Name = "ref")]
+        public Uri Ref { get; set; }
 
         /// <summary>
-        /// Gets or sets the reference
-        /// </summary>
-         [Keyword(Name = "ref")]
-        public string Ref { get; set; }
-
-        /// <summary>
-        /// Gets or sets the alternate name
+        /// The image's alternate text version, suitable for displaying in an HTML alt= attribute.
         /// </summary>
         [Keyword(Name = "alt")]
         public string Alt { get; set; }
 
         /// <summary>
-        /// Gets or sets the caption
+        /// String containing the image's caption.
         /// </summary>
         [Keyword(Name = "caption")]
-        public string[] Caption { get; set; }
-        
-        /// <summary>
-        /// Gets or sets the template
-        /// </summary>
-        [Keyword(Name = "template")]
-        public string Template { get; set; }
+        public string Caption { get; set; }
     }
 }

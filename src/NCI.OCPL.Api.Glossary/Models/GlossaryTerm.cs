@@ -61,7 +61,7 @@ namespace NCI.OCPL.Api.Glossary
         /// Gets or sets the Definition for the Glosary Term
         /// </summary>
         [Nested(Name = "related_resources")]
-        public RelatedResourceType[] RelatedResources  { get; set; }
+        public IRelatedResource[] RelatedResources  { get; set; }
 
         /// <summary>
         /// Gets or sets the Definition for the Glosary Term

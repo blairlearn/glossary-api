@@ -2,16 +2,16 @@ namespace NCI.OCPL.Api.Glossary
 {
     /// <summary>
     /// MediaType enum
-    /// </summary>    
+    /// </summary>
     public enum MediaType
     {
         /// <summary>
-        /// MediaType value Patient
+        /// Marks a media item as being an image.
         /// </summary>
         Image,
 
         /// <summary>
-        /// MediaType value HealthProfessional
+        /// Marks a media item as being a video.
         /// </summary>
         Video
     }

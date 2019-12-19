@@ -1,7 +1,7 @@
 namespace NCI.OCPL.Api.Glossary
 {
     /// <summary>
-    /// Media Interface
+    /// Notes a media item, type determined by the Type property.
     /// </summary>
     public interface IMedia
     {

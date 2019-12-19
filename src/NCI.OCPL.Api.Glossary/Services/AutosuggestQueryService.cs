@@ -19,7 +19,7 @@ namespace NCI.OCPL.Api.Glossary.Services
         public AutosuggestQueryService(IElasticClient client)
         {
             _elasticClient = client;
-        }  
+        }
 
         /// <summary>
         /// Search for Terms based on the search criteria.
@@ -27,7 +27,7 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <param name="audience">Patient or Healthcare provider</param>
         /// <param name="language">The language in which the details needs to be fetched</param>
         /// <param name="query">The search query</param>
-        /// <returns>A list of GlossaryTerm</returns>        
+        /// <returns>A list of GlossaryTerm</returns>
         /// </summary>
         public async Task<List<GlossaryTerm>> getSuggestions(string dictionary, AudienceType audience, string language, string query)
         {
@@ -37,7 +37,7 @@ namespace NCI.OCPL.Api.Glossary.Services
             glossaryTermList.Add(GenerateSampleTerm());
 
             return glossaryTermList;
-        }   
+        }
 
         /// <summary>
         /// This temporary method will create a GlossaryTerm
@@ -56,9 +56,37 @@ namespace NCI.OCPL.Api.Glossary.Services
             _GlossaryTerm.PrettyUrlName = "www.glossary-api.com";
             _GlossaryTerm.Pronounciation = pronounciation;
             _GlossaryTerm.Definition = definition;
-            _GlossaryTerm.RelatedResources = new RelatedResourceType [] {RelatedResourceType.Summary , RelatedResourceType.DrugSummary};
+            _GlossaryTerm.RelatedResources = new IRelatedResource[] {
+                new LinkResource()
+                {
+                    Type = RelatedResourceType.External,
+                    Text = "Link to Google",
+                    Url = new System.Uri("https://www.google.com")
+                },
+                new LinkResource()
+                {
+                    Type = RelatedResourceType.DrugSummary,
+                    Text = "Bevacizumab",
+                    Url = new System.Uri("https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab")
+                },
+                new LinkResource()
+                {
+                    Type = RelatedResourceType.Summary,
+                    Text = "Lung cancer treatment",
+                    Url = new System.Uri("https://www.cancer.gov/types/lung/patient/small-cell-lung-treatment-pdq")
+                },
+                new GlossaryResource()
+                {
+                    Type = RelatedResourceType.GlossaryTerm,
+                    Text = "stage II cutaneous T-cell lymphoma",
+                    Id = 43966,
+                    Dictionary = "Cancer.gov",
+                    Audience = "Patient",
+                    PrettyUrlName = "stage-ii-cutaneous-t-cell-lymphoma"
+                }
+            };
             return _GlossaryTerm;
-        }                     
+        }
 
     }
 }

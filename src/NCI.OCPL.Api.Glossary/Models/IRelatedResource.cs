@@ -1,19 +1,18 @@
 namespace NCI.OCPL.Api.Glossary
 {
-    
     /// <summary>
-    /// RelatedResources Interface
+    /// Describes a GlossaryTerm's related resource.
     /// </summary>
     public interface IRelatedResource
-    {    
+    {
         /// <summary>
-        /// Gets the Type of the related resource
-        /// </summary>    
-        RelatedResourceType Type {get ;}
+        /// Notes the related resource type.
+        /// </summary>
+        RelatedResourceType Type { get; set; }
 
         /// <summary>
-        /// Gets/Sets the text for the resource
-        /// </summary>    
-        string Text {get; set; }
+        /// Short text description or name of the resource.
+        /// </summary>
+        string Text { get; set; }
     }
 }

@@ -73,7 +73,35 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 PrettyUrlName = "www.glossary-api.com",
                 Pronounciation = pronounciation,
                 Definition = definition,
-                RelatedResources = new RelatedResourceType [] {RelatedResourceType.Summary , RelatedResourceType.DrugSummary},
+                RelatedResources =  new IRelatedResource[] {
+                    new LinkResource()
+                    {
+                        Type = RelatedResourceType.External,
+                        Text = "Link to Google",
+                        Url = new System.Uri("https://www.google.com")
+                    },
+                    new LinkResource()
+                    {
+                        Type = RelatedResourceType.DrugSummary,
+                        Text = "Bevacizumab",
+                        Url = new System.Uri("https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab")
+                    },
+                    new LinkResource()
+                    {
+                        Type = RelatedResourceType.Summary,
+                        Text = "Lung cancer treatment",
+                        Url = new System.Uri("https://www.cancer.gov/types/lung/patient/small-cell-lung-treatment-pdq")
+                    },
+                    new GlossaryResource()
+                    {
+                        Type = RelatedResourceType.GlossaryTerm,
+                        Text = "stage II cutaneous T-cell lymphoma",
+                        Id = 43966,
+                        Dictionary = "Cancer.gov",
+                        Audience = "Patient",
+                        PrettyUrlName = "stage-ii-cutaneous-t-cell-lymphoma"
+                    }
+                }
             };
             termQueryService.Setup(
                 termQSvc => termQSvc.GetById(
@@ -119,7 +147,35 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 PrettyUrlName = "www.glossary-api.com",
                 Pronounciation = pronounciation,
                 Definition = definition,
-                RelatedResources = new RelatedResourceType [] {RelatedResourceType.Summary , RelatedResourceType.DrugSummary},
+                RelatedResources = new IRelatedResource[] {
+                    new LinkResource()
+                    {
+                        Type = RelatedResourceType.External,
+                        Text = "Link to Google",
+                        Url = new System.Uri("https://www.google.com")
+                    },
+                    new LinkResource()
+                    {
+                        Type = RelatedResourceType.DrugSummary,
+                        Text = "Bevacizumab",
+                        Url = new System.Uri("https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab")
+                    },
+                    new LinkResource()
+                    {
+                        Type = RelatedResourceType.Summary,
+                        Text = "Lung cancer treatment",
+                        Url = new System.Uri("https://www.cancer.gov/types/lung/patient/small-cell-lung-treatment-pdq")
+                    },
+                    new GlossaryResource()
+                    {
+                        Type = RelatedResourceType.GlossaryTerm,
+                        Text = "stage II cutaneous T-cell lymphoma",
+                        Id = 43966,
+                        Dictionary = "Cancer.gov",
+                        Audience = "Patient",
+                        PrettyUrlName = "stage-ii-cutaneous-t-cell-lymphoma"
+                    }
+                }
             };
 
             termQueryService.Setup(
@@ -147,6 +203,6 @@ namespace NCI.OCPL.Api.Glossary.Tests
             );
 
             Assert.Equal(expectedJsonValue, actualJsonValue);
-        }                                                   
+        }
     }
 }

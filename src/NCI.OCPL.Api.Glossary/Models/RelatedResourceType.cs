@@ -2,27 +2,27 @@ namespace NCI.OCPL.Api.Glossary
 {
     /// <summary>
     /// RelatedResourceType enum
-    /// </summary>    
+    /// </summary>
     public enum RelatedResourceType
     {
         /// <summary>
-        /// DrugSummary
+        /// The resource is a PDQ Drug Information Summary.
         /// </summary>
         DrugSummary,
 
         /// <summary>
-        /// Summary
+        /// The resource is a PDQ Cancer Information Summary.
         /// </summary>
         Summary,
 
         /// <summary>
-        /// External
+        /// The resource is an external link.
         /// </summary>
         External,
 
         /// <summary>
-        /// GlossaryTerm
+        /// The resource is a PDQ GlossaryTerm.
         /// </summary>
-        GlossaryTerm                
+        GlossaryTerm
     }
 }
