@@ -1,0 +1,48 @@
+name: Main workflow
+on:
+  ## This tries to avoid unessesary pushes to forked repo
+  ## development branches. No sense in a dev building every
+  ## time they push for a PR and no one should be working on
+  ## common branches in their fork.
+  push:
+    branches:
+      - master
+      - develop
+      - 'hotfix/**'
+      - 'release/**'
+      - 'feature/**'
+  ## Any pull request. Yes the syntax looks weird
+  pull_request:
+jobs:
+  run:
+    name: Dotnet ${{ matrix.dotnet }} on OS ${{ matrix.operating-system }}
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest, windows-latest, macOS-latest]
+        ## using latest LTS releases - also it MUST be the SDK version,
+        ## which have stupidly high numbers for the patch version.
+        ## '3.1.100' breaks our app, so let's just use 2.x
+        dotnet: [ '2.1.607' ]
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+      - name: Build with dotnet
+        run: dotnet build --configuration Release
+      - name: Unit Tests (with Coverage)
+        run: |
+              if [ "$RUNNER_OS" == "Windows" ]; then
+                dotnet test
+              else
+                dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../../lcov test/**
+              fi
+        shell: bash
+      - name: Save Code Coverage Output
+        uses: actions/upload-artifact@v1
+        with:
+          name: coverage-${{ matrix.operating-system }}
+          path: lcov.info
+        if: matrix.operating-system != 'windows-latest'
