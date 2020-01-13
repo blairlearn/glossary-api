@@ -70,13 +70,13 @@ namespace NCI.OCPL.Api.Glossary.Services
                 {
                     new GlossaryTerm()
                     {
-                        Id =43966,
+                        TermId =43966,
                         Language = "en",
                         Dictionary = "Cancer.gov",
                         Audience = AudienceType.HealthProfessional,
                         TermName = "stage II cutaneous T-cell lymphoma",
                         PrettyUrlName = "stage-ii-cutaneous-t-cell-lymphoma",
-                        Pronounciation = new Pronounciation()
+                        Pronunciation = new Pronunciation()
                         {
                             Key = "kyoo-TAY-nee-us T-sel lim-FOH-muh",
                             Audio = "https://www.cancer.gov/PublishedContent/Media/CDR/media/703959.mp3"
@@ -89,13 +89,13 @@ namespace NCI.OCPL.Api.Glossary.Services
                     },
                     new GlossaryTerm()
                     {
-                        Id =43971,
+                        TermId =43971,
                         Language = "en",
                         Dictionary = "Cancer.gov",
                         Audience = AudienceType.Patient,
                         TermName = "bcl-2 antisense oligodeoxynucleotide G3139",
                         PrettyUrlName = "bcl-2-antisense-oligodeoxynucleotide-g3139",
-                        Pronounciation = new Pronounciation()
+                        Pronunciation = new Pronunciation()
                         {
                             Key = "AN-tee-sents AH-lih-goh-dee-OK-see-NOO-klee-oh-tide",
                             Audio = "https://www.cancer.gov/PublishedContent/Media/CDR/media/703968mp3"
@@ -236,20 +236,20 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <returns>The GlossaryTerm</returns>
         private GlossaryTerm GenerateSampleTerm(string[] requestedFields){
             GlossaryTerm _GlossaryTerm = new GlossaryTerm();
-            Pronounciation pronounciation = new Pronounciation("Pronounciation Key", "pronunciation");
+            Pronunciation pronunciation = new Pronunciation("Pronunciation Key", "pronunciation");
             Definition definition = new Definition("<html><h1>Definition</h1></html>", "Sample definition");
-            _GlossaryTerm.Id = 7890L;
+            _GlossaryTerm.TermId = 7890L;
             _GlossaryTerm.Language = "EN";
             _GlossaryTerm.Dictionary = "Dictionary";
             _GlossaryTerm.Audience = AudienceType.Patient;
             _GlossaryTerm.TermName = "TermName";
             _GlossaryTerm.PrettyUrlName = "www.glossary-api.com";
-            _GlossaryTerm.Pronounciation = pronounciation;
+            _GlossaryTerm.Pronunciation = pronunciation;
             _GlossaryTerm.Definition = definition;
             foreach (string field in requestedFields)
             {
                 if(field.Equals("Id")){
-                    _GlossaryTerm.Id = 1234L;
+                    _GlossaryTerm.TermId = 1234L;
                 }else  if(field.Equals("Language",StringComparison.InvariantCultureIgnoreCase)){
                     _GlossaryTerm.Language = "EN";
                 }else  if(field.Equals("Dictionary",StringComparison.InvariantCultureIgnoreCase)){
@@ -260,8 +260,8 @@ namespace NCI.OCPL.Api.Glossary.Services
                     _GlossaryTerm.TermName = "TermName";
                 }else  if(field.Equals("PrettyUrlName",StringComparison.InvariantCultureIgnoreCase)){
                     _GlossaryTerm.PrettyUrlName = "www.glossary-api.com";
-                }else  if(field.Equals("Pronounciation",StringComparison.InvariantCultureIgnoreCase)){
-                    _GlossaryTerm.Pronounciation = pronounciation;
+                }else  if(field.Equals("Pronunciation",StringComparison.InvariantCultureIgnoreCase)){
+                    _GlossaryTerm.Pronunciation = pronunciation;
                 }else  if(field.Equals("Definition",StringComparison.InvariantCultureIgnoreCase)){
                     _GlossaryTerm.Definition = definition;
                 }
@@ -290,9 +290,8 @@ namespace NCI.OCPL.Api.Glossary.Services
                 {
                     Type = RelatedResourceType.GlossaryTerm,
                     Text = "stage II cutaneous T-cell lymphoma",
-                    Id = 43966,
-                    Dictionary = "Cancer.gov",
-                    Audience = "Patient",
+                    TermId = 43966,
+                    Audience = AudienceType.Patient,
                     PrettyUrlName = "stage-ii-cutaneous-t-cell-lymphoma"
                 }
             };

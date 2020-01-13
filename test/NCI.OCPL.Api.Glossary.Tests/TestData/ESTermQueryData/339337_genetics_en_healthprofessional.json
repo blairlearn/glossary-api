@@ -1,0 +1,31 @@
+{
+  "_index" : "glossaryv1-20200115153219",
+  "_type" : "terms",
+  "_id" : "339337_genetics_en_healthprofessional",
+  "_version" : 1,
+  "found" : true,
+  "_source" : {
+    "term_id" : 339337,
+    "term_name" : "allele",
+    "first_letter" : "a",
+    "pretty_url_name" : "allele",
+    "language" : "en",
+    "dictionary" : "Genetics",
+    "audience" : "HealthProfessional",
+    "definition" : {
+      "text" : "One of two or more DNA sequences occurring at a particular gene locus. Typically one allele (“normal” DNA sequence) is common, and other alleles (mutations) are rare.",
+      "html" : "One of two or more DNA sequences occurring at a particular gene locus. Typically one allele (“normal” DNA sequence) is common, and other alleles (mutations) are rare."
+    },
+    "pronunciation" : {
+      "audio" : "https://nci-media-dev.cancer.gov/audio/pdq/736960.mp3",
+      "key" : "(uh-LEEL)"
+    },
+    "related_resources" : [
+      {
+        "text" : "Allele",
+        "url" : "https://www.genome.gov/glossary/index.cfm?id=4",
+        "type" : "External"
+      }
+    ]
+  }
+}

@@ -17,7 +17,13 @@ namespace NCI.OCPL.Api.Glossary.Tests{
     public class ESTermQueryServiceTest{
 
         public static IEnumerable<object[]> JsonData => new[] {
-            new object[] { new ESTermQueryServiceTestData() }
+            new object[] { new TermScenario_43966_NoMediaNoResources() },
+            new object[] { new TermScenario_445043_ImageAndExternalLink() },
+            new object[] { new TermScenario_44058_VideoExernalLink() },
+            new object[] { new TermScenario_44759_NoMediaGlossaryResource() },
+            new object[] { new TermScenario_44178_NoMediaSummaryLink() },
+            new object[] { new TermScenario_44386_NoMediaDrugSummary() },
+            new object[] { new TermScenario_339337_HealthProfessional() },
         };
 
         /// <summary>
@@ -31,7 +37,7 @@ namespace NCI.OCPL.Api.Glossary.Tests{
             conn.RegisterRequestHandlerForType<Nest.GetResponse<GlossaryTerm>>((req, res) =>
             {
                 //Get the file name for this round
-                res.Stream = TestingTools.GetTestFileAsStream("ESTermQueryData/" + data.TestFilePath);
+                res.Stream = TestingTools.GetTestFileAsStream("ESTermQueryData/" + data.ESTermID + ".json");
 
                 res.StatusCode = 200;
 
@@ -52,9 +58,20 @@ namespace NCI.OCPL.Api.Glossary.Tests{
 
             // We don't actually care that this returns anything - only that the intercepting connection
             // sets up the request URI correctly.
-            GlossaryTerm actDisplay = await termClient.GetById("cancer.gov",AudienceType.Patient,"en",43966L,new string[]{});
+            GlossaryTerm actDisplay = await termClient.GetById(
+                data.DictionaryName,
+                data.Audience,
+                data.Language,
+                data.TermID,
+                new string[]{}
+            );
 
-            Assert.Equal(esURI.Segments, new string[] { "/", "glossaryv1/", "terms/", "43966_cancer.gov_en_patient" }, new ArrayComparer());
+
+            Assert.Equal(
+                esURI.Segments,
+                new string[] { "/", "glossaryv1/", "terms/", data.ESTermID },
+                new ArrayComparer()
+            );
         }
 
         /// <summary>
@@ -95,7 +112,7 @@ namespace NCI.OCPL.Api.Glossary.Tests{
             ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
             conn.RegisterRequestHandlerForType<Nest.GetResponse<GlossaryTerm>>((req, res) =>
             {
-                
+
             });
 
             //While this has a URI, it does not matter, an InMemoryConnection never requests
@@ -110,8 +127,8 @@ namespace NCI.OCPL.Api.Glossary.Tests{
 
             ESTermQueryService termClient = new ESTermQueryService(client, gTermClientOptions, new NullLogger<ESTermQueryService>());
             APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termClient.GetById("cancer.gov",AudienceType.Patient,"en",43966L,new string[]{}));
-            Assert.Equal(500, ex.HttpStatusCode);            
-        }        
+            Assert.Equal(500, ex.HttpStatusCode);
+        }
 
         /// <summary>
         /// Tests the correct loading of various data files.
@@ -141,7 +158,7 @@ namespace NCI.OCPL.Api.Glossary.Tests{
             conn.RegisterRequestHandlerForType<Nest.GetResponse<GlossaryTerm>>((req, res) =>
             {
                 //Get the file name for this round
-                res.Stream = TestingTools.GetTestFileAsStream("ESTermQueryData/" + data.TestFilePath);
+                res.Stream = TestingTools.GetTestFileAsStream("ESTermQueryData/" + data.ESTermID + ".json");
 
                 res.StatusCode = 200;
             });
@@ -154,7 +171,7 @@ namespace NCI.OCPL.Api.Glossary.Tests{
             IElasticClient client = new ElasticClient(connectionSettings);
 
             return client;
-        }	        
+        }
 
         ///<summary>
         ///A private method to enrich IOptions

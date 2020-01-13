@@ -1,0 +1,54 @@
+{
+  "_index": "glossaryv1-20200115093657",
+  "_type": "terms",
+  "_id": "44058_cancer.gov_en_patient",
+  "_version": 1,
+  "found": true,
+  "_source": {
+    "term_id": 44058,
+    "term_name": "metastatic",
+    "first_letter": "m",
+    "pretty_url_name": "metastatic",
+    "language": "en",
+    "dictionary": "Cancer.gov",
+    "audience": "Patient",
+    "definition": {
+      "text": "Having to do\n          with metastasis, which is the spread of cancer from the\n          primary site (place where it started) to other places in\n          the body.",
+      "html": "Having to do\n          with metastasis, which is the spread of cancer from the\n          primary site (place where it started) to other places in\n          the body."
+    },
+    "pronunciation": {
+      "audio": "https://nci-media-dev.cancer.gov/audio/pdq/704104.mp3",
+      "key": "(meh-tuh-STA-tik)"
+    },
+    "media": [{
+      "type": "image",
+      "ref": "CDR0000764135",
+      "image_sources": [{
+        "size": "original",
+        "src": "https://nci-media-dev.cancer.gov/images/pdq/CDR764135.jpg"
+      }, {
+        "size": "571",
+        "src": "https://nci-media-dev.cancer.gov/images/pdq/CDR764135-571.jpg"
+      }, {
+        "size": "750",
+        "src": "https://nci-media-dev.cancer.gov/images/pdq/CDR764135-750.jpg"
+      }],
+      "alt": "Metastasis; drawing shows primary cancer that has spread from the colon to other parts of the body (the liver and the lung). An inset shows cancer cells spreading from the primary cancer, through the blood and lymph system, to another part of the body where a metastatic tumor has formed.",
+      "caption": "Metastasis. In metastasis, cancer cells break away from where they first formed (primary cancer), travel through the blood or lymph system, and form new tumors (metastatic tumors) in other parts of the body. The metastatic tumor is the same type of cancer as the primary tumor. ",
+      "template": "image-center"
+    }, {
+      "type": "video",
+      "ref": "CDR0000787719",
+      "hosting": "youtube",
+      "unique_id": "fQwar_-QdiQ",
+      "title": "Metastasis: How Cancer Spreads",
+      "caption": "Many cancer deaths are caused when cancer moves from the original tumor and spreads to other tissues and organs. This is called metastatic cancer. This animation shows how cancer cells travel from the place in the body where they first formed to other parts of the body.",
+      "template": "Video75NoTitle"
+    }],
+    "related_resources": [{
+      "text": "Metastatic Cancer",
+      "url": "https://www.cancer.gov/types/metastatic-cancer",
+      "type": "External"
+    }]
+  }
+}

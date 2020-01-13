@@ -61,17 +61,18 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<ITermQueryService> termQueryService = new Mock<ITermQueryService>();
             string[] requestedFields = {"TermName","Pronunciation","Definition"};
-            Pronounciation pronounciation = new Pronounciation("Pronounciation Key", "pronunciation");
+            Pronunciation pronunciation = new Pronunciation("Pronunciation Key", "pronunciation");
             Definition definition = new Definition("<html><h1>Definition</h1></html>", "Sample definition");
             GlossaryTerm glossaryTerm = new GlossaryTerm
             {
-                Id = 1234L,
+                TermId = 1234L,
                 Language = "EN",
                 Dictionary = "Dictionary",
                 Audience = AudienceType.Patient,
                 TermName = "TermName",
+                FirstLetter = "t",
                 PrettyUrlName = "www.glossary-api.com",
-                Pronounciation = pronounciation,
+                Pronunciation = pronunciation,
                 Definition = definition,
                 RelatedResources =  new IRelatedResource[] {
                     new LinkResource()
@@ -96,9 +97,8 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     {
                         Type = RelatedResourceType.GlossaryTerm,
                         Text = "stage II cutaneous T-cell lymphoma",
-                        Id = 43966,
-                        Dictionary = "Cancer.gov",
-                        Audience = "Patient",
+                        TermId = 43966,
+                        Audience = AudienceType.Patient,
                         PrettyUrlName = "stage-ii-cutaneous-t-cell-lymphoma"
                     }
                 }
@@ -135,17 +135,18 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<ITermQueryService> termQueryService = new Mock<ITermQueryService>();
             string[] requestedFields = new string[]{};
-            Pronounciation pronounciation = new Pronounciation("Pronounciation Key", "pronunciation");
+            Pronunciation pronunciation = new Pronunciation("Pronunciation Key", "pronunciation");
             Definition definition = new Definition("<html><h1>Definition</h1></html>", "Sample definition");
             GlossaryTerm glossaryTerm = new GlossaryTerm
             {
-                Id = 1234L,
+                TermId = 1234L,
                 Language = "EN",
                 Dictionary = "Dictionary",
                 Audience = AudienceType.Patient,
                 TermName = "TermName",
+                FirstLetter = "t",
                 PrettyUrlName = "www.glossary-api.com",
-                Pronounciation = pronounciation,
+                Pronunciation = pronunciation,
                 Definition = definition,
                 RelatedResources = new IRelatedResource[] {
                     new LinkResource()
@@ -170,9 +171,8 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     {
                         Type = RelatedResourceType.GlossaryTerm,
                         Text = "stage II cutaneous T-cell lymphoma",
-                        Id = 43966,
-                        Dictionary = "Cancer.gov",
-                        Audience = "Patient",
+                        TermId = 43966,
+                        Audience = AudienceType.Patient,
                         PrettyUrlName = "stage-ii-cutaneous-t-cell-lymphoma"
                     }
                 }

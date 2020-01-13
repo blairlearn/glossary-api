@@ -1,0 +1,46 @@
+{
+  "_index": "glossaryv1-20200115093657",
+  "_type": "terms",
+  "_id": "445043_cancer.gov_en_patient",
+  "_version": 1,
+  "found": true,
+  "_source": {
+    "term_id": 445043,
+    "term_name": "lung cancer",
+    "first_letter": "l",
+    "pretty_url_name": "lung-cancer",
+    "language": "en",
+    "dictionary": "Cancer.gov",
+    "audience": "Patient",
+    "definition": {
+      "text": "Cancer that forms in tissues of the lung, usually in the cells lining air passages. The two main types are small cell lung cancer and non-small cell lung cancer. These types are diagnosed based on how the cells look under a microscope.",
+      "html": "Cancer that forms in tissues of the lung, usually in the cells lining air passages. The two main types are small cell lung cancer and non-small cell lung cancer. These types are diagnosed based on how the cells look under a microscope."
+    },
+    "pronunciation": {
+      "audio": "https://nci-media-dev.cancer.gov/audio/pdq/714622.mp3",
+      "key": "(lung KAN-ser)"
+    },
+    "media": [{
+      "type": "image",
+      "ref": "CDR0000466533",
+      "image_sources": [{
+        "size": "original",
+        "src": "https://nci-media-dev.cancer.gov/images/pdq/CDR466533.jpg"
+      }, {
+        "size": "571",
+        "src": "https://nci-media-dev.cancer.gov/images/pdq/CDR466533-571.jpg"
+      }, {
+        "size": "750",
+        "src": "https://nci-media-dev.cancer.gov/images/pdq/CDR466533-750.jpg"
+      }],
+      "alt": "Respiratory anatomy; drawing shows right lung with upper, middle, and lower lobes; left lung with upper and lower lobes; and the trachea, bronchi, lymph nodes, and diaphragm. Inset shows bronchioles, alveoli, artery, and vein.  \n\n",
+      "caption": "Anatomy of the respiratory system, showing the trachea and both lungs and their lobes and airways. Lymph nodes and the diaphragm are also shown. Oxygen is inhaled into the lungs and passes through the thin membranes of the alveoli and into the bloodstream (see inset).",
+      "template": "image-center"
+    }],
+    "related_resources": [{
+      "text": "Lung Cancer",
+      "url": "https://www.cancer.gov/types/lung",
+      "type": "External"
+    }]
+  }
+}

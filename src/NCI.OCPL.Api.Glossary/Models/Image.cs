@@ -1,6 +1,8 @@
 using System;
 
 using Nest;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace NCI.OCPL.Api.Glossary
 {
@@ -13,13 +15,14 @@ namespace NCI.OCPL.Api.Glossary
         /// Type of media this class will represent.
         /// </summary>
         /// <value>Always MediaType.Image</value>
+        [JsonConverter(typeof(StringEnumConverter))]
         public MediaType Type { get; set; }
 
         /// <summary>
-        /// Url where the image may be retrieved.
+        /// The CDR ID of the referenced image.
         /// </summary>
         [Keyword(Name = "ref")]
-        public Uri Ref { get; set; }
+        public string Ref { get; set; }
 
         /// <summary>
         /// The image's alternate text version, suitable for displaying in an HTML alt= attribute.

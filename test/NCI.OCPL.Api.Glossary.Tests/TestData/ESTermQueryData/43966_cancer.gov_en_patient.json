@@ -1,5 +1,5 @@
 {
-    "_index": "glossaryv1-20191127123128",
+    "_index": "glossaryv1-20200115093657",
     "_type": "terms",
     "_id": "43966_cancer.gov_en_patient",
     "_version": 1,
@@ -8,19 +8,17 @@
         "term_id": 43966,
         "term_name": "stage II cutaneous T-cell lymphoma",
         "first_letter": "s",
-        "pretty_url_name": null,
+        "pretty_url_name": "stage-ii-cutaneous-t-cell-lymphoma",
         "language": "en",
+        "dictionary": "Cancer.gov",
+        "audience": "Patient",
         "definition": {
             "text": "Stage II cutaneous T-cell lymphoma may be either of the following: (1) stage IIA, in which the skin has red, dry, scaly patches but no tumors, and lymph nodes are enlarged but do not contain cancer cells; (2) stage IIB, in which tumors are found on the skin, and lymph nodes are enlarged but do not contain cancer cells.",
             "html": "Stage II cutaneous T-cell lymphoma may be either of the following: (1) stage IIA, in which the skin has red, dry, scaly patches but no tumors, and lymph nodes are enlarged but do not contain cancer cells; (2) stage IIB, in which tumors are found on the skin, and lymph nodes are enlarged but do not contain cancer cells."
         },
         "pronunciation": {
-            "audio": "703959.mp3",
+            "audio": "https://nci-media-dev.cancer.gov/audio/pdq/703959.mp3",
             "key": "(... kyoo-TAY-nee-us T-sel lim-FOH-muh)"
-        },
-        "media": [],
-        "related_resources": [],
-        "audience": "Patient",
-        "dictionary": "cancer.gov"
+        }
     }
 }

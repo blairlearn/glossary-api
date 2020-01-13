@@ -1,0 +1,33 @@
+{
+  "_index": "glossaryv1-20200115093657",
+  "_type": "terms",
+  "_id": "44178_cancer.gov_en_patient",
+  "_version": 1,
+  "found": true,
+  "_source": {
+    "term_id": 44178,
+    "term_name": "terminal cancer",
+    "first_letter": "t",
+    "pretty_url_name": "terminal-cancer",
+    "language": "en",
+    "dictionary": "Cancer.gov",
+    "audience": "Patient",
+    "definition": {
+      "text": "Cancer that cannot be cured and leads to death.  Also called end-stage cancer.",
+      "html": "Cancer that cannot be cured and leads to death.  Also called end-stage cancer."
+    },
+    "pronunciation": {
+      "audio": "https://nci-media-dev.cancer.gov/audio/pdq/703944.mp3",
+      "key": "(TER-mih-nul KAN-ser)"
+    },
+    "related_resources": [{
+      "text": "End-of-Life Care for People Who Have Cancer",
+      "url": "https://www.cancer.gov/about-cancer/advanced-cancer/care-choices/care-fact-sheet",
+      "type": "External"
+    }, {
+      "text": "Planning the Transition to End-of-Life Care in Advanced Cancer",
+      "url": "https://www.cancer.gov/about-cancer/advanced-cancer/planning/end-of-life-pdq",
+      "type": "Summary"
+    }]
+  }
+}

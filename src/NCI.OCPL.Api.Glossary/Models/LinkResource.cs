@@ -2,6 +2,8 @@ using System;
 using System.Security.Policy;
 
 using Nest;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace NCI.OCPL.Api.Glossary
 {
@@ -19,6 +21,7 @@ namespace NCI.OCPL.Api.Glossary
         /// RelatedResourceType.CancerSummary or
         /// RelatedResourceType.External
         /// </value>
+        [JsonConverter(typeof(StringEnumConverter))]
         public RelatedResourceType Type { get; set; }
 
         /// <summary>

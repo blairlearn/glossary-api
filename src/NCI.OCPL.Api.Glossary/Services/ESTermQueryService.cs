@@ -75,7 +75,7 @@ namespace NCI.OCPL.Api.Glossary.Services
             if(null==response.Source){
                 string msg = String.Format("Empty response when searching for dictionary '{0}', audience '{1}', language '{2}' and id '{3}.", dictionary, audience, language, id);
                 _logger.LogError(msg);
-                throw new APIErrorException(200, msg);            
+                throw new APIErrorException(200, msg);
             }
 
             return response.Source;

@@ -1,4 +1,6 @@
 using Nest;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace NCI.OCPL.Api.Glossary
 {
@@ -12,8 +14,8 @@ namespace NCI.OCPL.Api.Glossary
         /// <summary>
         /// Gets or sets the Id for the Glosary Term
         /// </summary>
-        [Number(NumberType.Integer, Name = "term_id")]
-        public long Id { get; set; }
+        [Number(NumberType.Long, Name = "term_id")]
+        public long TermId { get; set; }
 
         /// <summary>
         /// Gets or sets the Language for the Glosary Term
@@ -31,6 +33,7 @@ namespace NCI.OCPL.Api.Glossary
         /// Gets or sets the AudienceType for the Glosary Term
         /// </summary>
         [Nested(Name = "audience")]
+        [JsonConverter(typeof(StringEnumConverter))]
         public AudienceType Audience { get; set; }
 
         /// <summary>
@@ -40,16 +43,22 @@ namespace NCI.OCPL.Api.Glossary
         public string TermName { get; set; }
 
         /// <summary>
+        /// Gets or sets the FirstLetter for the Glosary Term
+        /// </summary>
+        [Keyword(Name = "first_letter")]
+        public string FirstLetter { get; set; }
+
+        /// <summary>
         /// Gets or sets the prettyUrlName for the Glosary Term
         /// </summary>
         [Keyword(Name = "pretty_url_name")]
         public string  PrettyUrlName { get; set; }
 
         /// <summary>
-        /// Gets or sets the pronounciation for the Glosary Term
+        /// Gets or sets the pronunciation for the Glosary Term
         /// </summary>
-        [Nested(Name = "pronounciation")]
-        public Pronounciation Pronounciation  { get; set; }
+        [Nested(Name = "pronunciation")]
+        public Pronunciation Pronunciation  { get; set; }
 
         /// <summary>
         /// Gets or sets the Definition for the Glosary Term
@@ -61,13 +70,15 @@ namespace NCI.OCPL.Api.Glossary
         /// Gets or sets the Definition for the Glosary Term
         /// </summary>
         [Nested(Name = "related_resources")]
-        public IRelatedResource[] RelatedResources  { get; set; }
+        [JsonProperty(ItemConverterType = typeof(RelatedResourceJsonConverter))]
+        public IRelatedResource[] RelatedResources  { get; set; } = new IRelatedResource[] { };
 
         /// <summary>
         /// Gets or sets the Definition for the Glosary Term
         /// </summary>
         [Nested(Name = "media")]
-        public IMedia[] Media  { get; set; }
+        [JsonProperty(ItemConverterType = typeof(MediaJsonConverter))]
+        public IMedia[] Media  { get; set; } = new IMedia[] { };
 
         /// <summary>
         /// no arg constructor

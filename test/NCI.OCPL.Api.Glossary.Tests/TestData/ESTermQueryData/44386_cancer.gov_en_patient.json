@@ -1,0 +1,38 @@
+{
+  "_index": "glossaryv1-20200115093657",
+  "_type": "terms",
+  "_id": "44386_cancer.gov_en_patient",
+  "_version": 1,
+  "found": true,
+  "_source": {
+    "term_id": 44386,
+    "term_name": "HPV",
+    "first_letter": "h",
+    "pretty_url_name": "hpv",
+    "language": "en",
+    "dictionary": "Cancer.gov",
+    "audience": "Patient",
+    "definition": {
+      "text": "A type of virus that can cause abnormal tissue growth (for example, warts) and other changes to cells. Infection for a long time with certain types of HPV can cause cervical cancer. HPV may also play a role in some other types of cancer, such as anal, vaginal, vulvar, penile, and oropharyngeal cancers.  Also called human papillomavirus.",
+      "html": "A type of virus that can cause abnormal tissue growth (for example, warts) and other changes to cells. Infection for a long time with certain types of HPV can cause cervical cancer. HPV may also play a role in some other types of cancer, such as anal, vaginal, vulvar, penile, and oropharyngeal cancers.  Also called human papillomavirus."
+    },
+    "pronunciation": null,
+    "related_resources": [{
+      "text": "HPV and Cancer",
+      "url": "https://www.cancer.gov/about-cancer/causes-prevention/risk/infectious-agents/hpv-and-cancer",
+      "type": "External"
+    }, {
+      "text": "Human Papillomavirus (HPV) Vaccines",
+      "url": "https://www.cancer.gov/about-cancer/causes-prevention/risk/infectious-agents/hpv-vaccine-fact-sheet",
+      "type": "External"
+    }, {
+      "text": "Recombinant Human Papillomavirus (HPV) Bivalent Vaccine",
+      "url": "https://www.cancer.gov/about-cancer/treatment/drugs/recombinant-HPV-bivalent-vaccine",
+      "type": "DrugSummary"
+    }, {
+      "text": "Recombinant Human Papillomavirus (HPV) Quadrivalent Vaccine",
+      "url": "https://www.cancer.gov/about-cancer/treatment/drugs/recombinant-HPV-quadrivalent-vaccine",
+      "type": "DrugSummary"
+    }]
+  }
+}
