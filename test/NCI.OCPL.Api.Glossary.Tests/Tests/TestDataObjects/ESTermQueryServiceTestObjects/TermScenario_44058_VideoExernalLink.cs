@@ -36,6 +36,20 @@ namespace NCI.OCPL.Api.BestBets.Tests.ESTermQueryTestData
           Ref = "CDR0000764135",
           Alt = "Metastasis; drawing shows primary cancer that has spread from the colon to other parts of the body (the liver and the lung). An inset shows cancer cells spreading from the primary cancer, through the blood and lymph system, to another part of the body where a metastatic tumor has formed.",
           Caption = "Metastasis. In metastasis, cancer cells break away from where they first formed (primary cancer), travel through the blood or lymph system, and form new tumors (metastatic tumors) in other parts of the body. The metastatic tumor is the same type of cancer as the primary tumor. ",
+          ImageSources = new ImageSource[] {
+            new ImageSource {
+              Size = "original",
+              Src = new Uri("https://nci-media-dev.cancer.gov/images/pdq/CDR764135.jpg")
+            },
+            new ImageSource {
+              Size = "571",
+              Src = new Uri("https://nci-media-dev.cancer.gov/images/pdq/CDR764135-571.jpg")
+            },
+            new ImageSource {
+              Size = "750",
+              Src = new Uri("https://nci-media-dev.cancer.gov/images/pdq/CDR764135-750.jpg")
+            }
+          }
           //Template = "image-center",
         },
         new Video {

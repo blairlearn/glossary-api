@@ -36,6 +36,20 @@ namespace NCI.OCPL.Api.BestBets.Tests.ESTermQueryTestData
           Ref = "CDR0000466533",
           Alt = "Respiratory anatomy; drawing shows right lung with upper, middle, and lower lobes; left lung with upper and lower lobes; and the trachea, bronchi, lymph nodes, and diaphragm. Inset shows bronchioles, alveoli, artery, and vein.  \n\n",
           Caption = "Anatomy of the respiratory system, showing the trachea and both lungs and their lobes and airways. Lymph nodes and the diaphragm are also shown. Oxygen is inhaled into the lungs and passes through the thin membranes of the alveoli and into the bloodstream (see inset).",
+          ImageSources = new ImageSource[] {
+            new ImageSource {
+              Size = "original",
+              Src = new Uri("https://nci-media-dev.cancer.gov/images/pdq/CDR466533.jpg")
+            },
+            new ImageSource {
+              Size = "571",
+              Src = new Uri("https://nci-media-dev.cancer.gov/images/pdq/CDR466533-571.jpg")
+            },
+            new ImageSource {
+              Size = "750",
+              Src = new Uri("https://nci-media-dev.cancer.gov/images/pdq/CDR466533-750.jpg")
+            }
+          }
           //"template": "image-center"
         }
       },

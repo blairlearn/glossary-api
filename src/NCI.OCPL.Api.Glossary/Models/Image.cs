@@ -19,6 +19,13 @@ namespace NCI.OCPL.Api.Glossary
         public MediaType Type { get; set; }
 
         /// <summary>
+        /// A collection of image source files.
+        /// </summary>
+        /// <value></value>
+        [Nested(Name = "image_sources")]
+        public ImageSource[] ImageSources { get; set; }
+
+        /// <summary>
         /// The CDR ID of the referenced image.
         /// </summary>
         [Keyword(Name = "ref")]

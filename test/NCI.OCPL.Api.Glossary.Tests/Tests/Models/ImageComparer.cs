@@ -28,6 +28,7 @@ namespace NCI.OCPL.Api.BestBets.Tests
         && x.Ref == y.Ref
         && x.Caption == y.Caption
         && x.Alt == y.Alt
+        && AreParamArraysEqual<ImageSource, ImageSourceComparer>(x.ImageSources, y.ImageSources)
       ;
 
       return isEqual;
@@ -45,6 +46,39 @@ namespace NCI.OCPL.Api.BestBets.Tests
 
       return hash;
     }
+
+    /// <summary>
+    /// Helper function to determine param arrays are equal, order does not matter.
+    /// </summary>
+    /// <param name="x">Param array 1</param>
+    /// <param name="y">Param array 2</param>
+    /// <returns></returns>
+    private bool AreParamArraysEqual<T, V>(T[] x, T[] y) where V : IEqualityComparer<T>, new()
+    {
+      // If the items are both null, or if one or the other is null, return
+      // the correct response right away.
+
+      if (x == null && y == null)
+      {
+        return true;
+      }
+      else if (x == null || y == null)
+      {
+        return false;
+      }
+
+      if (x.Count() != y.Count())
+      {
+        return false;
+      }
+
+      //Generate a set of those values that are not in both lists.
+      //if this is not 0, then there is an error.
+      var diffxy = x.Except(y, new V());
+
+      return diffxy.Count() == 0;
+    }
   }
+
 }
 
