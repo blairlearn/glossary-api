@@ -16,8 +16,8 @@ namespace NCI.OCPL.Api.Glossary
         /// <param name="audience">The target audience.</param>
         /// <param name="language">Language (English - en; Spanish - es).</param>
         /// <param name="query">The search query</param>
-        /// <returns>A GlossaryTermResults object containing the desired records.</returns>        
-        Task<List<GlossaryTerm>> getSuggestions(string dictionary, AudienceType audience, string language, string query);
+        /// <returns>A GlossaryTermResults object containing the desired records.</returns>
+        Task<Suggestion[]> GetSuggestions(string dictionary, AudienceType audience, string language, string query);
     }
 
 }

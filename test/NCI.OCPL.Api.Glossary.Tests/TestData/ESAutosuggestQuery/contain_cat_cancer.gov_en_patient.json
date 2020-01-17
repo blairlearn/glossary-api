@@ -1,0 +1,120 @@
+{
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": 8,
+        "max_score": null,
+        "hits": [
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "562550_cancer.gov_en_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "anti-CD22 immunotoxin CAT-8015",
+                    "term_id": 562550
+                },
+                "sort": [
+                    "anti-cd22 immunotoxin cat-8015"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "674942_cancer.gov_en_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "balloon catheter radiation",
+                    "term_id": 674942
+                },
+                "sort": [
+                    "balloon catheter radiation"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "45962_cancer.gov_en_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "central venous access catheter",
+                    "term_id": 45962
+                },
+                "sort": [
+                    "central venous access catheter"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "689016_cancer.gov_en_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "external right atrial catheter",
+                    "term_id": 689016
+                },
+                "sort": [
+                    "external right atrial catheter"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "463728_cancer.gov_en_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "peripheral venous catheter",
+                    "term_id": 463728
+                },
+                "sort": [
+                    "peripheral venous catheter"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "689084_cancer.gov_en_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "peripherally inserted central catheter",
+                    "term_id": 689084
+                },
+                "sort": [
+                    "peripherally inserted central catheter"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "655135_cancer.gov_en_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "transient receptor potential cation channel, subfamily V, member 6",
+                    "term_id": 655135
+                },
+                "sort": [
+                    "transient receptor potential cation channel, subfamily v, member 6"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "689105_cancer.gov_en_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "venous catheter",
+                    "term_id": 689105
+                },
+                "sort": [
+                    "venous catheter"
+                ]
+            }
+        ]
+    }
+}

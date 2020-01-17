@@ -1,0 +1,120 @@
+{
+    "took": 35,
+    "timed_out": false,
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": 8,
+        "max_score": null,
+        "hits": [
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "45018_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "cáncer de mama cutáneo",
+                    "term_id": 45018
+                },
+                "sort": [
+                    "cancer de mama cutaneo"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "795104_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "carcinoma de células escamosas cutáneo",
+                    "term_id": 795104
+                },
+                "sort": [
+                    "carcinoma de celulas escamosas cutaneo"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "765494_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "leiomioma cutáneo",
+                    "term_id": 765494
+                },
+                "sort": [
+                    "leiomioma cutaneo"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "46771_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "linfoma cutáneo de células T",
+                    "term_id": 46771
+                },
+                "sort": [
+                    "linfoma cutaneo de celulas t"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "46773_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "linfoma cutáneo de células T en estadio I",
+                    "term_id": 46773
+                },
+                "sort": [
+                    "linfoma cutaneo de celulas t en estadio i"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "43966_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "linfoma cutáneo de células T en estadio II",
+                    "term_id": 43966
+                },
+                "sort": [
+                    "linfoma cutaneo de celulas t en estadio ii"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "44848_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "linfoma cutáneo de células T en estadio III",
+                    "term_id": 44848
+                },
+                "sort": [
+                    "linfoma cutaneo de celulas t en estadio iii"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "44874_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "linfoma cutáneo de células T en estadio IV",
+                    "term_id": 44874
+                },
+                "sort": [
+                    "linfoma cutaneo de celulas t en estadio iv"
+                ]
+            }
+        ]
+    }
+}

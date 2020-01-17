@@ -7,7 +7,7 @@ namespace NCI.OCPL.Api.Glossary
     public class GlossaryTermResults
     {
         /// <summary>
-        /// Metadatta about the results.
+        /// Metadata about the results.
         /// </summary>
         public ResultsMetadata Meta;
 

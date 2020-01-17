@@ -27,21 +27,20 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <summary>
         /// Search for Terms based on autosuggest criteria
         /// </summary>
-        /// <returns>An array GlossaryTerm objects</returns>   
+        /// <returns>An array GlossaryTerm objects</returns>
         [HttpGet("/{dictionary}/{audience}/{language}/{query}")]
-        public async Task<GlossaryTerm[]> getSuggestions(string dictionary, string audience, string language, string query){
+        public async Task<Suggestion[]> GetSuggestions(string dictionary, string audience, string language, string query){
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || String.IsNullOrWhiteSpace(audience))
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience and language");
 
             if (language.ToLower() != "en" && language.ToLower() != "es")
                 throw new APIErrorException(404, "Unsupported Language. Please try either 'en' or 'es'");
-            
+
             AudienceType audienceType;
             if(!Enum.TryParse(audience,true,out audienceType))
                     throw new APIErrorException(400, "'AudienceType' can  be 'Patient' or 'HealthProfessional' only");
 
-            List<GlossaryTerm> glossaryTermList = await _autosuggestQueryService.getSuggestions(dictionary, audienceType, language, query);
-            return glossaryTermList.ToArray();
+            return await _autosuggestQueryService.GetSuggestions(dictionary, audienceType, language, query);
         }
     }
 }

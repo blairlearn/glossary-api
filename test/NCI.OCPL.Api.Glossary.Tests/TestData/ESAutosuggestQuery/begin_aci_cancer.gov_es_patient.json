@@ -1,0 +1,146 @@
+{
+    "took": 8,
+    "timed_out": false,
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": 53,
+        "max_score": null,
+        "hits": [
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "45167_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "aciclovir",
+                    "term_id": 45167
+                },
+                "sort": [
+                    "aciclovir"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "642991_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "acidez",
+                    "term_id": 642991
+                },
+                "sort": [
+                    "acidez"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "642989_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "acidificación",
+                    "term_id": 642989
+                },
+                "sort": [
+                    "acidificacion"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "642987_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "ácido",
+                    "term_id": 642987
+                },
+                "sort": [
+                    "acido"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "44314_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "ácido 5-hidroxiindolacético",
+                    "term_id": 44314
+                },
+                "sort": [
+                    "acido 5-hidroxiindolacetico"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "655022_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "ácido acético",
+                    "term_id": 655022
+                },
+                "sort": [
+                    "acido acetico"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "46184_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "ácido acético con dextrometorfano",
+                    "term_id": 46184
+                },
+                "sort": [
+                    "acido acetico con dextrometorfano"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "46166_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "ácido acético de dimetilxantenona",
+                    "term_id": 46166
+                },
+                "sort": [
+                    "acido acetico de dimetilxantenona"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "644311_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "ácido acético gosipol",
+                    "term_id": 644311
+                },
+                "sort": [
+                    "acido acetico gosipol"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "443026_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "ácido alfalipoico",
+                    "term_id": 443026
+                },
+                "sort": [
+                    "acido alfalipoico"
+                ]
+            }
+        ]
+    }
+}

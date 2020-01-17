@@ -1,0 +1,81 @@
+{
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": 5,
+        "max_score": null,
+        "hits": [
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "635454_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "DAR",
+                    "term_id": 635454
+                },
+                "sort": [
+                    "dar"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "776992_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "daratumumab",
+                    "term_id": 776992
+                },
+                "sort": [
+                    "daratumumab"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "256550_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "darbepoyetina alfa",
+                    "term_id": 256550
+                },
+                "sort": [
+                    "darbepoyetina alfa"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "798951_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "darolutamida",
+                    "term_id": 798951
+                },
+                "sort": [
+                    "darolutamida"
+                ]
+            },
+            {
+                "_index": "glossaryv1-20200116223000",
+                "_type": "terms",
+                "_id": "776993_cancer.gov_es_patient",
+                "_score": null,
+                "_source": {
+                    "term_name": "Darzalex",
+                    "term_id": 776993
+                },
+                "sort": [
+                    "darzalex"
+                ]
+            }
+        ]
+    }
+}
