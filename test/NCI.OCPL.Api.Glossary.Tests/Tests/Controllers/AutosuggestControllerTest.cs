@@ -17,7 +17,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
-            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("", "HealthProfessional", "en", "suggest"));
+            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("", "HealthProfessional", "en", "suggest", true, 20, 0));
             Assert.Equal("You must supply a valid dictionary, audience and language", exception.Message);
         }
 
@@ -26,7 +26,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
-            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("glossary", "HealthProfessional", "", "suggest"));
+            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("glossary", "HealthProfessional", "", "suggest", false, 20, 0));
             Assert.Equal("You must supply a valid dictionary, audience and language", exception.Message);
         }
 
@@ -35,93 +35,200 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
-            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("glossary", "Patient", "invalid", "suggest"));
+            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("glossary", "Patient", "invalid", "suggest", true, 20, 0));
             Assert.Equal("Unsupported Language. Please try either 'en' or 'es'", exception.Message);
         }
 
         [Fact]
-        public async void GetSuggestions_ErrorMessage_AudienceType(){
+        public async void GetSuggestions_ErrorMessage_AudienceType()
+        {
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
-            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("Dictionary", "InvalidValue", "EN", "Query"));
+            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("Dictionary", "InvalidValue", "EN", "Query", true, 20, 0));
             Assert.Equal("'AudienceType' can  be 'Patient' or 'HealthProfessional' only", exception.Message);
         }
 
-        // [Fact]
-        // public async void SearchForTerms()
-        // {
-        //     Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
-        //     AutosuggestController controller = new AutosuggestController(querySvc.Object);
-        //     string[] requestedFields = new string[] { "TermName", "Pronunciation", "Definition" };
-        //     Pronunciation pronunciation = new Pronunciation("Pronunciation Key", "pronunciation");
-        //     Definition definition = new Definition("<html><h1>Definition</h1></html>", "Sample definition");
-        //     GlossaryTerm glossaryTerm = new GlossaryTerm
-        //     {
-        //         TermId = 1234L,
-        //         Language = "EN",
-        //         Dictionary = "Dictionary",
-        //         Audience = AudienceType.Patient,
-        //         TermName = "TermName",
-        //         FirstLetter = "t",
-        //         PrettyUrlName = "www.glossary-api.com",
-        //         Pronunciation = pronunciation,
-        //         Definition = definition,
-        //         RelatedResources = new IRelatedResource[] {
-        //             new LinkResource()
-        //             {
-        //                 Type = RelatedResourceType.External,
-        //                 Text = "Link to Google",
-        //                 Url = new System.Uri("https://www.google.com")
-        //             },
-        //             new LinkResource()
-        //             {
-        //                 Type = RelatedResourceType.DrugSummary,
-        //                 Text = "Bevacizumab",
-        //                 Url = new System.Uri("https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab")
-        //             },
-        //             new LinkResource()
-        //             {
-        //                 Type = RelatedResourceType.Summary,
-        //                 Text = "Lung cancer treatment",
-        //                 Url = new System.Uri("https://www.cancer.gov/types/lung/patient/small-cell-lung-treatment-pdq")
-        //             },
-        //             new GlossaryResource()
-        //             {
-        //                 Type = RelatedResourceType.GlossaryTerm,
-        //                 Text = "stage II cutaneous T-cell lymphoma",
-        //                 TermId = 43966,
-        //                 Audience = AudienceType.Patient,
-        //                 PrettyUrlName = "stage-ii-cutaneous-t-cell-lymphoma"
-        //             }
-        //         }
-        //     };
-        //     List<GlossaryTerm> glossaryTermList = new List<GlossaryTerm>();
-        //     glossaryTermList.Add(glossaryTerm);
-        //     querySvc.Setup(
-        //         autoSuggestQSvc => autoSuggestQSvc.GetSuggestions(
-        //             It.IsAny<string>(),
-        //             It.IsAny<AudienceType>(),
-        //             It.IsAny<string>(),
-        //             It.IsAny<string>()
-        //         )
-        //     )
-        //     .Returns(Task.FromResult(glossaryTermList));
+        /// <summary>
+        /// Verify that explicit values passed to the controller are passed in turn to the query service.
+        /// </summary>
+        [Fact]
+        public async void Verify_Explicit_Values_Passed_to_Service()
+        {
+            const string dictionary = "Cancer.gov";
+            const AudienceType audience = AudienceType.Patient;
+            const string language = "en";
+            const string queryText = "chicken";
+            const bool contains = true;
+            const int resultSize = 100;
+            const int resultsFrom = 200;
 
-        //     GlossaryTerm[] gsTerm = await controller.getSuggestions("Dictionary", "Patient", "EN", "Query");
-        //     string actualJsonValue = JsonConvert.SerializeObject(
-        //         gsTerm
-        //     );
-        //     string expectedJsonValue = File.ReadAllText(TestingTools.GetPathToTestFile("TestData_SearchForTerms.json"));
+            Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
+            AutosuggestController controller = new AutosuggestController(querySvc.Object);
 
-        //     // Verify that the service layer is called:
-        //     //  a) with the expected values.
-        //     //  b) exactly once.
-        //     querySvc.Verify(
-        //         svc => svc.GetSuggestions("Dictionary", AudienceType.Patient, "EN", "Query"),
-        //         Times.Once
-        //     );
+            // Set up the mock query service to return an empty array.
+            querySvc.Setup(
+                autoSuggestQSvc => autoSuggestQSvc.GetSuggestions(
+                    It.IsAny<string>(),
+                    It.IsAny<AudienceType>(),
+                    It.IsAny<string>(),
+                    It.IsAny<string>(),
+                    It.IsAny<bool>(),
+                    It.IsAny<int>(),
+                    It.IsAny<int>()
+                )
+            )
+            .Returns(Task.FromResult(new Suggestion[] { }));
 
-        //     Assert.Equal(expectedJsonValue, actualJsonValue);
-        // }
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience.ToString(), language, queryText, contains, resultSize, resultsFrom);
+
+            // Verify that the service layer is called:
+            //  a) with the expected values.
+            //  b) exactly once.
+            querySvc.Verify(
+                svc => svc.GetSuggestions(dictionary, audience, language, queryText, contains, resultSize, resultsFrom),
+                Times.Once
+            );
+
+            Assert.Empty(result);
+        }
+
+        /// <summary>
+        /// Verify the correct defaults are passed to the query service when no valies are specified for beginsWith, size, and from.
+        /// </summary>
+        [Fact]
+        public async void Verify_Default_Values_Passed_to_Service()
+        {
+            const string dictionary = "Cancer.gov";
+            const AudienceType audience = AudienceType.Patient;
+            const string language = "en";
+            const string queryText = "chicken";
+
+            const bool expectedContainsRequest = false;
+            const int expecedSizeRequest = 20;
+            const int expectedFromRequest = 0;
+
+            Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
+            AutosuggestController controller = new AutosuggestController(querySvc.Object);
+
+            // Set up the mock query service to return an empty array.
+            querySvc.Setup(
+                autoSuggestQSvc => autoSuggestQSvc.GetSuggestions(
+                    It.IsAny<string>(),
+                    It.IsAny<AudienceType>(),
+                    It.IsAny<string>(),
+                    It.IsAny<string>(),
+                    It.IsAny<bool>(),
+                    It.IsAny<int>(),
+                    It.IsAny<int>()
+                )
+            )
+            .Returns(Task.FromResult(new Suggestion[] { }));
+
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience.ToString(), language, queryText);
+
+            // Verify that the service layer is called:
+            //  a) with the expected values.
+            //  b) exactly once.
+            querySvc.Verify(
+                svc => svc.GetSuggestions(dictionary, audience, language, queryText, expectedContainsRequest, expecedSizeRequest, expectedFromRequest),
+                Times.Once
+            );
+
+            Assert.Empty(result);
+        }
+
+        /// <summary>
+        /// Verify that negative values for size and from are properly handled before the service is invoked.
+        /// </summary>
+        [Fact]
+        public async void Verify_Negative_Value_Handling()
+        {
+            const string dictionary = "Cancer.gov";
+            const AudienceType audience = AudienceType.Patient;
+            const string language = "en";
+            const string queryText = "chicken";
+            const bool contains = true;
+            const int invalidSize = -200;
+            const int invalidFrom = -100;
+
+            const int expecedSizeRequest = 20;
+            const int expectedFromRequest = 0;
+
+            Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
+            AutosuggestController controller = new AutosuggestController(querySvc.Object);
+
+            // Set up the mock query service to return an empty array.
+            querySvc.Setup(
+                autoSuggestQSvc => autoSuggestQSvc.GetSuggestions(
+                    It.IsAny<string>(),
+                    It.IsAny<AudienceType>(),
+                    It.IsAny<string>(),
+                    It.IsAny<string>(),
+                    It.IsAny<bool>(),
+                    It.IsAny<int>(),
+                    It.IsAny<int>()
+                )
+            )
+            .Returns(Task.FromResult(new Suggestion[] { }));
+
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience.ToString(), language, queryText, contains, invalidSize, invalidFrom);
+
+            // Verify that the service layer is called:
+            //  a) with the expected values.
+            //  b) exactly once.
+            querySvc.Verify(
+                svc => svc.GetSuggestions(dictionary, audience, language, queryText, contains, expecedSizeRequest, expectedFromRequest),
+                Times.Once
+            );
+
+            Assert.Empty(result);
+        }
+
+        /// <summary>
+        /// Verify that passing zero for the  size argument is properly handled before the service is invoked.
+        /// </summary>
+        [Fact]
+        public async void Verify_Zero_Size_Handling()
+        {
+            const string dictionary = "Cancer.gov";
+            const AudienceType audience = AudienceType.Patient;
+            const string language = "en";
+            const string queryText = "chicken";
+            const bool contains = false;
+            const int invalidSize = 0;
+            const int from = 10;
+
+            const int expecedSizeRequest = 20;
+
+            Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
+            AutosuggestController controller = new AutosuggestController(querySvc.Object);
+
+            // Set up the mock query service to return an empty array.
+            querySvc.Setup(
+                autoSuggestQSvc => autoSuggestQSvc.GetSuggestions(
+                    It.IsAny<string>(),
+                    It.IsAny<AudienceType>(),
+                    It.IsAny<string>(),
+                    It.IsAny<string>(),
+                    It.IsAny<bool>(),
+                    It.IsAny<int>(),
+                    It.IsAny<int>()
+                )
+            )
+            .Returns(Task.FromResult(new Suggestion[] { }));
+
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience.ToString(), language, queryText, contains, invalidSize, from);
+
+            // Verify that the service layer is called:
+            //  a) with the expected values.
+            //  b) exactly once.
+            querySvc.Verify(
+                svc => svc.GetSuggestions(dictionary, audience, language, queryText, contains, expecedSizeRequest, from),
+                Times.Once
+            );
+
+            Assert.Empty(result);
+        }
+
     }
 }

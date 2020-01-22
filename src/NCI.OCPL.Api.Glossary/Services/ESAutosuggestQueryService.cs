@@ -23,24 +23,18 @@ namespace NCI.OCPL.Api.Glossary.Services
 
         /// <summary>
         /// Search for Terms based on the search criteria.
+        /// </summary>
         /// <param name="dictionary">The value for dictionary.</param>
         /// <param name="audience">Patient or Healthcare provider</param>
         /// <param name="language">The language in which the details needs to be fetched</param>
         /// <param name="query">The search query</param>
-        /// <returns>A list of GlossaryTerm</returns>
-        /// </summary>
-        public async Task<Suggestion[]> GetSuggestions(string dictionary, AudienceType audience, string language, string query)
+        /// <param name="contains">Set to true to allow search to find terms which contain the query string instead of explicitly starting with it.</param>
+        /// <param name="size">The number of records to retrieve.</param>
+        /// <param name="from">The offset into the overall set to use for the first record.</param>
+        /// <returns>An array of Suggestion objects</returns>
+        public async Task<Suggestion[]> GetSuggestions(string dictionary, AudienceType audience, string language, string query, bool contains, int size, int from)
         {
-            // Temporary Solution till we have Elastic Search
-            List<Suggestion> suggestionList = new List<Suggestion>();
-            suggestionList.AddRange(GenerateSampleTerms());
-
-            return suggestionList.ToArray();
-        }
-
-        private Suggestion[] GenerateSampleTerms(){
-
-            Suggestion[] results = new Suggestion[]{
+            return new Suggestion[]{
 
                 new Suggestion(){
                     TermId = 123,
@@ -54,10 +48,7 @@ namespace NCI.OCPL.Api.Glossary.Services
                     TermId = 789,
                     TermName = "suggestion 3"
                 }
-
             };
-
-            return results;
         }
 
     }

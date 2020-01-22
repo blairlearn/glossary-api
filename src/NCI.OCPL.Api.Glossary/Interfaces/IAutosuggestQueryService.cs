@@ -16,8 +16,11 @@ namespace NCI.OCPL.Api.Glossary
         /// <param name="audience">The target audience.</param>
         /// <param name="language">Language (English - en; Spanish - es).</param>
         /// <param name="query">The search query</param>
-        /// <returns>A GlossaryTermResults object containing the desired records.</returns>
-        Task<Suggestion[]> GetSuggestions(string dictionary, AudienceType audience, string language, string query);
+        /// <param name="contains">Set to true to allow search to find terms which contain the query string instead of explicitly starting with it.</param>
+        /// <param name="size">The number of records to retrieve.</param>
+        /// <param name="from">The offset into the overall set to use for the first record.</param>
+        /// <returns>An array of Suggestion objects</returns>
+        Task<Suggestion[]> GetSuggestions(string dictionary, AudienceType audience, string language, string query, bool contains, int size, int from);
     }
 
 }

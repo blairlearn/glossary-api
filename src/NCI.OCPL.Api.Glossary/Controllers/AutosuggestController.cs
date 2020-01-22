@@ -29,7 +29,9 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// </summary>
         /// <returns>An array GlossaryTerm objects</returns>
         [HttpGet("/{dictionary}/{audience}/{language}/{query}")]
-        public async Task<Suggestion[]> GetSuggestions(string dictionary, string audience, string language, string query){
+        public async Task<Suggestion[]> GetSuggestions(string dictionary, string audience, string language, string query,
+            [FromQuery] bool contains = false, [FromQuery] int size = 20, [FromQuery] int from = 0)
+        {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || String.IsNullOrWhiteSpace(audience))
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience and language");
 
@@ -38,9 +40,16 @@ namespace NCI.OCPL.Api.Glossary.Controllers
 
             AudienceType audienceType;
             if(!Enum.TryParse(audience,true,out audienceType))
-                    throw new APIErrorException(400, "'AudienceType' can  be 'Patient' or 'HealthProfessional' only");
+                throw new APIErrorException(400, "'AudienceType' can  be 'Patient' or 'HealthProfessional' only");
 
-            return await _autosuggestQueryService.GetSuggestions(dictionary, audienceType, language, query);
+            if (size <= 0)
+                size = 20;
+
+            if (from < 0)
+                from = 0;
+
+
+            return await _autosuggestQueryService.GetSuggestions(dictionary, audienceType, language, query, contains, size, from);
         }
     }
 }
