@@ -23,7 +23,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             TermsController controller = new TermsController(querySvc.Object);
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.getAll("", "HealthProfessional", "en"));
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.getAll("", AudienceType.HealthProfessional, "en"));
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             TermsController controller = new TermsController(querySvc.Object);
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.getAll("glossary", "HealthProfessional", ""));
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.getAll("glossary", AudienceType.HealthProfessional, ""));
         }
 
         [Fact]
@@ -43,7 +43,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             TermsController controller = new TermsController(querySvc.Object);
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.getAll("glossary", "HealthProfessional", "turducken"));
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.getAll("glossary", AudienceType.HealthProfessional, "turducken"));
         }
 
         /// <Summary>
@@ -69,7 +69,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(querySvc.Object);
-            await controller.getAll("glossary", "HealthProfessional", "en");
+            await controller.getAll("glossary", AudienceType.HealthProfessional, "en");
 
             // Verify that the query layer is called:
             //  a) with the expected values.
@@ -104,7 +104,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(querySvc.Object);
-            await controller.getAll("glossary", "HealthProfessional", "es", 200, 2, new string[] {"Field1", "Field2", "Field3"});
+            await controller.getAll("glossary", AudienceType.HealthProfessional, "es", 200, 2, new string[] {"Field1", "Field2", "Field3"});
 
             // Verify that the query layer is called:
             //  a) with the expected values.
@@ -116,12 +116,13 @@ namespace NCI.OCPL.Api.Glossary.Tests
             );
         }
 
-       [Fact]
+        [Fact]
         public async void SearchForTerms_ErrorMessage_MatchType(){
             Mock<ITermsQueryService> termsQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(termsQueryService.Object);
-            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.Search("Dictionary", "Patient", "EN", "Query",
-                                "doesnotcontain",1,1,new string[]{}));
+            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
+                () => controller.Search("Dictionary", AudienceType.Patient, "EN", "Query", "doesnotcontain",1,1,new string[]{})
+            );
             Assert.Equal("'matchType' can only be 'begins' or 'contains'", exception.Message);
         }
 
@@ -129,9 +130,10 @@ namespace NCI.OCPL.Api.Glossary.Tests
         public async void SearchForTerms_ErrorMessage_AudienceType(){
             Mock<ITermsQueryService> termsQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(termsQueryService.Object);
-            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.Search("Dictionary", "InvalidValue", "EN", "Query",
-                                "contains",0,1,new string[]{}));
-            Assert.Equal("'AudienceType' can  be 'Patient' or 'HealthProfessional' only", exception.Message);
+            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
+                () => controller.Search("Dictionary", (AudienceType)(-18), "EN", "Query", "contains",0,1,new string[]{})
+            );
+            Assert.Equal("You must supply a valid dictionary, audience and language.", exception.Message);
         }
 
 
@@ -199,7 +201,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             )
             .Returns(Task.FromResult(glossaryTermList));
 
-            GlossaryTerm[] gsTerm = await controller.Search("Dictionary", "Patient", "EN", "Query", "contains",1,0,new string[] {"TermName","Pronunciation","Definition"});
+            GlossaryTerm[] gsTerm = await controller.Search("Dictionary", AudienceType.Patient, "EN", "Query", "contains",1,0,new string[] {"TermName","Pronunciation","Definition"});
             string actualJsonValue = JsonConvert.SerializeObject(gsTerm);
             string expectedJsonValue = File.ReadAllText(TestingTools.GetPathToTestFile("TestData_SearchForTerms.json"));
 
@@ -214,7 +216,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Assert.Equal(expectedJsonValue, actualJsonValue);
         }
 
-       [Fact]
+        [Fact]
         public async void SearchForTermsWithsize()
         {
             Mock<ITermsQueryService> termsQueryService = new Mock<ITermsQueryService>();
@@ -280,7 +282,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             )
             .Returns(Task.FromResult(glossaryTermList));
 
-            GlossaryTerm[] gsTerm = await controller.Search("Dictionary", "Patient", "EN", "Query", "contains",0,0,requestedFields);
+            GlossaryTerm[] gsTerm = await controller.Search("Dictionary", AudienceType.Patient, "EN", "Query", "contains",0,0,requestedFields);
             string actualJsonValue = JsonConvert.SerializeObject(gsTerm);
             string expectedJsonValue = File.ReadAllText(TestingTools.GetPathToTestFile("TestData_SearchForTerms.json"));
 
@@ -359,7 +361,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             )
             .Returns(Task.FromResult(glossaryTermList));
 
-            GlossaryTerm[] gsTerm = await controller.Search("Dictionary", "Patient", "EN", "Query", "contains",1,0,requestedFields );
+            GlossaryTerm[] gsTerm = await controller.Search("Dictionary", AudienceType.Patient, "EN", "Query", "contains",1,0,requestedFields );
             string actualJsonValue = JsonConvert.SerializeObject(gsTerm);
             string expectedJsonValue = File.ReadAllText(TestingTools.GetPathToTestFile("TestData_SearchForTerms.json"));
 

@@ -32,21 +32,14 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         public Task<GlossaryTerm> GetById(string dictionary, AudienceType audience, string language, long id, [FromQuery] string[] requestedFields)
         {
 
-             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || id <= 0){
+            if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience) || id <= 0)
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience, language and id");
-             }
 
-             if(null == requestedFields){
-                 requestedFields =  new string[] {};
-             }
+            if (null == requestedFields || requestedFields.Length == 0)
+                requestedFields = new string[] { "TermName", "Pronunciation", "Definition" };
 
-            // if requestedFields is empty populate it with default values
-             if(requestedFields.Length == 0){
-                  requestedFields =  new string[]{"TermName","Pronunciation","Definition"};
-             }
-
-             return _termQueryService.GetById(dictionary,audience,language,id, requestedFields);
-        }    
+            return _termQueryService.GetById(dictionary, audience, language, id, requestedFields);
+        }
     }
 
 }

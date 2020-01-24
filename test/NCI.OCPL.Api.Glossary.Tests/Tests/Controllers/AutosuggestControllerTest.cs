@@ -17,8 +17,10 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
-            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("", "HealthProfessional", "en", "suggest", true, 20, 0));
-            Assert.Equal("You must supply a valid dictionary, audience and language", exception.Message);
+            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
+                () => controller.GetSuggestions("", AudienceType.HealthProfessional, "en", "suggest", true, 20, 0)
+            );
+            Assert.Equal("You must supply a valid dictionary, audience and language.", exception.Message);
         }
 
         [Fact]
@@ -26,8 +28,10 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
-            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("glossary", "HealthProfessional", "", "suggest", false, 20, 0));
-            Assert.Equal("You must supply a valid dictionary, audience and language", exception.Message);
+            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
+                () => controller.GetSuggestions("glossary", AudienceType.HealthProfessional, "", "suggest", false, 20, 0)
+            );
+            Assert.Equal("You must supply a valid dictionary, audience and language.", exception.Message);
         }
 
         [Fact]
@@ -35,8 +39,10 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
-            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("glossary", "Patient", "invalid", "suggest", true, 20, 0));
-            Assert.Equal("Unsupported Language. Please try either 'en' or 'es'", exception.Message);
+            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
+                () => controller.GetSuggestions("glossary", AudienceType.Patient, "invalid", "suggest", true, 20, 0)
+            );
+            Assert.Equal("Unsupported Language. Valid values are 'en' and 'es'.", exception.Message);
         }
 
         [Fact]
@@ -44,8 +50,10 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
-            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetSuggestions("Dictionary", "InvalidValue", "EN", "Query", true, 20, 0));
-            Assert.Equal("'AudienceType' can  be 'Patient' or 'HealthProfessional' only", exception.Message);
+            APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
+                () => controller.GetSuggestions("Dictionary", (AudienceType)(-20937), "EN", "Query", true, 20, 0)
+            );
+            Assert.Equal("You must supply a valid dictionary, audience and language.", exception.Message);
         }
 
         /// <summary>
@@ -79,7 +87,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             )
             .Returns(Task.FromResult(new Suggestion[] { }));
 
-            Suggestion[] result = await controller.GetSuggestions(dictionary, audience.ToString(), language, queryText, contains, resultSize, resultsFrom);
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText, contains, resultSize, resultsFrom);
 
             // Verify that the service layer is called:
             //  a) with the expected values.
@@ -124,7 +132,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             )
             .Returns(Task.FromResult(new Suggestion[] { }));
 
-            Suggestion[] result = await controller.GetSuggestions(dictionary, audience.ToString(), language, queryText);
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText);
 
             // Verify that the service layer is called:
             //  a) with the expected values.
@@ -171,7 +179,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             )
             .Returns(Task.FromResult(new Suggestion[] { }));
 
-            Suggestion[] result = await controller.GetSuggestions(dictionary, audience.ToString(), language, queryText, contains, invalidSize, invalidFrom);
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText, contains, invalidSize, invalidFrom);
 
             // Verify that the service layer is called:
             //  a) with the expected values.
@@ -217,7 +225,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             )
             .Returns(Task.FromResult(new Suggestion[] { }));
 
-            Suggestion[] result = await controller.GetSuggestions(dictionary, audience.ToString(), language, queryText, contains, invalidSize, from);
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText, contains, invalidSize, from);
 
             // Verify that the service layer is called:
             //  a) with the expected values.

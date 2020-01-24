@@ -29,18 +29,14 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// </summary>
         /// <returns>An array GlossaryTerm objects</returns>
         [HttpGet("/{dictionary}/{audience}/{language}/{query}")]
-        public async Task<Suggestion[]> GetSuggestions(string dictionary, string audience, string language, string query,
+        public async Task<Suggestion[]> GetSuggestions(string dictionary, AudienceType audience, string language, string query,
             [FromQuery] bool contains = false, [FromQuery] int size = 20, [FromQuery] int from = 0)
         {
-            if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || String.IsNullOrWhiteSpace(audience))
-                throw new APIErrorException(400, "You must supply a valid dictionary, audience and language");
+            if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience))
+                throw new APIErrorException(400, "You must supply a valid dictionary, audience and language.");
 
             if (language.ToLower() != "en" && language.ToLower() != "es")
-                throw new APIErrorException(404, "Unsupported Language. Please try either 'en' or 'es'");
-
-            AudienceType audienceType;
-            if(!Enum.TryParse(audience,true,out audienceType))
-                throw new APIErrorException(400, "'AudienceType' can  be 'Patient' or 'HealthProfessional' only");
+                throw new APIErrorException(404, "Unsupported Language. Valid values are 'en' and 'es'.");
 
             if (size <= 0)
                 size = 20;
@@ -49,7 +45,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 from = 0;
 
 
-            return await _autosuggestQueryService.GetSuggestions(dictionary, audienceType, language, query, contains, size, from);
+            return await _autosuggestQueryService.GetSuggestions(dictionary, audience, language, query, contains, size, from);
         }
     }
 }
