@@ -23,7 +23,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             TermsController controller = new TermsController(querySvc.Object);
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.getAll("", AudienceType.HealthProfessional, "en"));
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetAll("", AudienceType.HealthProfessional, "en"));
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             TermsController controller = new TermsController(querySvc.Object);
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.getAll("glossary", AudienceType.HealthProfessional, ""));
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetAll("glossary", AudienceType.HealthProfessional, ""));
         }
 
         [Fact]
@@ -43,7 +43,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             TermsController controller = new TermsController(querySvc.Object);
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.getAll("glossary", AudienceType.HealthProfessional, "turducken"));
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetAll("glossary", AudienceType.HealthProfessional, "turducken"));
         }
 
         /// <Summary>
@@ -69,7 +69,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(querySvc.Object);
-            await controller.getAll("glossary", AudienceType.HealthProfessional, "en");
+            await controller.GetAll("glossary", AudienceType.HealthProfessional, "en");
 
             // Verify that the query layer is called:
             //  a) with the expected values.
@@ -104,7 +104,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(querySvc.Object);
-            await controller.getAll("glossary", AudienceType.HealthProfessional, "es", 200, 2, new string[] {"Field1", "Field2", "Field3"});
+            await controller.GetAll("glossary", AudienceType.HealthProfessional, "es", 200, 2, new string[] {"Field1", "Field2", "Field3"});
 
             // Verify that the query layer is called:
             //  a) with the expected values.

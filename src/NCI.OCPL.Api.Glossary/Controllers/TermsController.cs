@@ -37,8 +37,8 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <param name="from">The offset into the overall set to use for the first record.</param>
         /// <param name="requestedFields">The fields to retrieve.  If not specified, defaults to TermName, Pronunciation, and Definition.</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
-        [HttpGet("/glossary/v1/terms/{dictionary}/{audience}/{language}")]
-        public async Task<GlossaryTermResults> getAll(string dictionary, AudienceType audience, string language, int size = 10, int from = 0, string[] requestedFields = null)
+        [HttpGet("{dictionary}/{audience}/{language}")]
+        public async Task<GlossaryTermResults> GetAll(string dictionary, AudienceType audience, string language, int size = 10, int from = 0, string[] requestedFields = null)
         {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience))
                 throw new APIErrorException(400, "You must specify a dictionary, audience, and language.");

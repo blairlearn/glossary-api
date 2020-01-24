@@ -28,7 +28,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// Search for Terms based on autosuggest criteria
         /// </summary>
         /// <returns>An array GlossaryTerm objects</returns>
-        [HttpGet("/{dictionary}/{audience}/{language}/{query}")]
+        [HttpGet("{dictionary}/{audience}/{language}/{query}")]
         public async Task<Suggestion[]> GetSuggestions(string dictionary, AudienceType audience, string language, string query,
             [FromQuery] bool contains = false, [FromQuery] int size = 20, [FromQuery] int from = 0)
         {
