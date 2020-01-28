@@ -28,12 +28,26 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// Search for Terms based on autosuggest criteria
         /// </summary>
         /// <returns>An array GlossaryTerm objects</returns>
-        [HttpGet("{dictionary}/{audience}/{language}/{query}")]
-        public async Task<Suggestion[]> GetSuggestions(string dictionary, AudienceType audience, string language, string query,
-            [FromQuery] bool contains = false, [FromQuery] int size = 20, [FromQuery] int from = 0)
+
+        /// <summary>
+        /// Searches for dictionary terms with names matching the query text.
+        /// </summary>
+        /// <param name="dictionary">The specific dictionary to retrieve from.</param>
+        /// <param name="audience">The target audience.</param>
+        /// <param name="language">Language (English - en; Spanish - es).</param>
+        /// <param name="searchText">Text to match against</param>
+        /// <param name="matchType">Should the search match items beginning with the search text, or containing it?</param>
+        /// <param name="size">The number of records to retrieve.</param>
+        /// <returns></returns>
+        [HttpGet("{dictionary:required}/{audience:required}/{language:required}/{searchText:required}")]
+        public async Task<Suggestion[]> GetSuggestions(string dictionary, AudienceType audience, string language, string searchText,
+            [FromQuery] MatchType matchType = MatchType.Begins, [FromQuery] int size = 20)
         {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience))
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience and language.");
+
+            if(!Enum.IsDefined(typeof(MatchType), matchType))
+                throw new APIErrorException(400, "The `matchType` parameter must be either 'Begins' or 'Contains'.");
 
             if (language.ToLower() != "en" && language.ToLower() != "es")
                 throw new APIErrorException(404, "Unsupported Language. Valid values are 'en' and 'es'.");
@@ -41,11 +55,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             if (size <= 0)
                 size = 20;
 
-            if (from < 0)
-                from = 0;
-
-
-            return await _autosuggestQueryService.GetSuggestions(dictionary, audience, language, query, contains, size, from);
+            return await _autosuggestQueryService.GetSuggestions(dictionary, audience, language, searchText, matchType, size);
         }
     }
 }

@@ -11,6 +11,7 @@ namespace NCI.OCPL.Api.Glossary
         /// The term's CDR ID.
         /// </summary>
         /// <value></value>
+        [Number(Name = "term_id")]
         public long TermId { get; set; }
 
         /// <summary>

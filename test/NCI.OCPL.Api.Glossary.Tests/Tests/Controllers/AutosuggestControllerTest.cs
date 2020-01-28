@@ -18,7 +18,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
             APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.GetSuggestions("", AudienceType.HealthProfessional, "en", "suggest", true, 20, 0)
+                () => controller.GetSuggestions("", AudienceType.HealthProfessional, "en", "suggest", MatchType.Contains, 20)
             );
             Assert.Equal("You must supply a valid dictionary, audience and language.", exception.Message);
         }
@@ -29,7 +29,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
             APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.GetSuggestions("glossary", AudienceType.HealthProfessional, "", "suggest", false, 20, 0)
+                () => controller.GetSuggestions("glossary", AudienceType.HealthProfessional, "", "suggest", MatchType.Begins, 20)
             );
             Assert.Equal("You must supply a valid dictionary, audience and language.", exception.Message);
         }
@@ -40,7 +40,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
             APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.GetSuggestions("glossary", AudienceType.Patient, "invalid", "suggest", true, 20, 0)
+                () => controller.GetSuggestions("glossary", AudienceType.Patient, "invalid", "suggest", MatchType.Contains, 20)
             );
             Assert.Equal("Unsupported Language. Valid values are 'en' and 'es'.", exception.Message);
         }
@@ -51,7 +51,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
             APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.GetSuggestions("Dictionary", (AudienceType)(-20937), "EN", "Query", true, 20, 0)
+                () => controller.GetSuggestions("Dictionary", (AudienceType)(-20937), "EN", "Query", MatchType.Contains, 20)
             );
             Assert.Equal("You must supply a valid dictionary, audience and language.", exception.Message);
         }
@@ -66,9 +66,8 @@ namespace NCI.OCPL.Api.Glossary.Tests
             const AudienceType audience = AudienceType.Patient;
             const string language = "en";
             const string queryText = "chicken";
-            const bool contains = true;
+            const MatchType matchType = MatchType.Contains;
             const int resultSize = 100;
-            const int resultsFrom = 200;
 
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
@@ -80,20 +79,19 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<AudienceType>(),
                     It.IsAny<string>(),
                     It.IsAny<string>(),
-                    It.IsAny<bool>(),
-                    It.IsAny<int>(),
+                    It.IsAny<MatchType>(),
                     It.IsAny<int>()
                 )
             )
             .Returns(Task.FromResult(new Suggestion[] { }));
 
-            Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText, contains, resultSize, resultsFrom);
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText, matchType, resultSize);
 
             // Verify that the service layer is called:
             //  a) with the expected values.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.GetSuggestions(dictionary, audience, language, queryText, contains, resultSize, resultsFrom),
+                svc => svc.GetSuggestions(dictionary, audience, language, queryText, matchType, resultSize),
                 Times.Once
             );
 
@@ -111,9 +109,8 @@ namespace NCI.OCPL.Api.Glossary.Tests
             const string language = "en";
             const string queryText = "chicken";
 
-            const bool expectedContainsRequest = false;
+            const MatchType expectedMatchType = MatchType.Begins;
             const int expecedSizeRequest = 20;
-            const int expectedFromRequest = 0;
 
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
@@ -125,8 +122,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<AudienceType>(),
                     It.IsAny<string>(),
                     It.IsAny<string>(),
-                    It.IsAny<bool>(),
-                    It.IsAny<int>(),
+                    It.IsAny<MatchType>(),
                     It.IsAny<int>()
                 )
             )
@@ -138,7 +134,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             //  a) with the expected values.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.GetSuggestions(dictionary, audience, language, queryText, expectedContainsRequest, expecedSizeRequest, expectedFromRequest),
+                svc => svc.GetSuggestions(dictionary, audience, language, queryText, expectedMatchType, expecedSizeRequest),
                 Times.Once
             );
 
@@ -155,12 +151,10 @@ namespace NCI.OCPL.Api.Glossary.Tests
             const AudienceType audience = AudienceType.Patient;
             const string language = "en";
             const string queryText = "chicken";
-            const bool contains = true;
+            const MatchType matchType = MatchType.Contains;
             const int invalidSize = -200;
-            const int invalidFrom = -100;
 
             const int expecedSizeRequest = 20;
-            const int expectedFromRequest = 0;
 
             Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
             AutosuggestController controller = new AutosuggestController(querySvc.Object);
@@ -172,20 +166,19 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<AudienceType>(),
                     It.IsAny<string>(),
                     It.IsAny<string>(),
-                    It.IsAny<bool>(),
-                    It.IsAny<int>(),
+                    It.IsAny<MatchType>(),
                     It.IsAny<int>()
                 )
             )
             .Returns(Task.FromResult(new Suggestion[] { }));
 
-            Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText, contains, invalidSize, invalidFrom);
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText, matchType, invalidSize);
 
             // Verify that the service layer is called:
             //  a) with the expected values.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.GetSuggestions(dictionary, audience, language, queryText, contains, expecedSizeRequest, expectedFromRequest),
+                svc => svc.GetSuggestions(dictionary, audience, language, queryText, matchType, expecedSizeRequest),
                 Times.Once
             );
 
@@ -202,9 +195,8 @@ namespace NCI.OCPL.Api.Glossary.Tests
             const AudienceType audience = AudienceType.Patient;
             const string language = "en";
             const string queryText = "chicken";
-            const bool contains = false;
+            const MatchType matchType = MatchType.Begins;
             const int invalidSize = 0;
-            const int from = 10;
 
             const int expecedSizeRequest = 20;
 
@@ -218,20 +210,19 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<AudienceType>(),
                     It.IsAny<string>(),
                     It.IsAny<string>(),
-                    It.IsAny<bool>(),
-                    It.IsAny<int>(),
+                    It.IsAny<MatchType>(),
                     It.IsAny<int>()
                 )
             )
             .Returns(Task.FromResult(new Suggestion[] { }));
 
-            Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText, contains, invalidSize, from);
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText, matchType, invalidSize);
 
             // Verify that the service layer is called:
             //  a) with the expected values.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.GetSuggestions(dictionary, audience, language, queryText, contains, expecedSizeRequest, from),
+                svc => svc.GetSuggestions(dictionary, audience, language, queryText, matchType, expecedSizeRequest),
                 Times.Once
             );
 

@@ -8,15 +8,7 @@ namespace NCI.OCPL.Api.Glossary.Tests.ESAutosuggestQueryTestData
     /// </summary>
     public class AutosuggestScenario_ContainCatEnglishPatient : BaseAutosuggestTestData
     {
-        public override string filename => "contain_cat_cancer.gov_en_patient.json";
-
-        public override bool BeginsWith => false;
-
-        public override string DictionaryName => "Cancer.gov";
-
-        public override string Language => "en";
-
-        public override AudienceType Audience => AudienceType.Patient;
+        public override string TestFilename => "contain_cat_cancer.gov_en_patient.json";
 
         public override Suggestion[] ExpectedData => new Suggestion[]
         {

@@ -14,9 +14,8 @@
 
   <ItemGroup>
     <None Include="TestData\*" CopyToOutputDirectory="Always" />
-    <None Include="TestData\TermsControllerData\*" CopyToOutputDirectory="Always" />
-    <None Include="TestData\ESTermsQueryData\GetById\*" CopyToOutputDirectory="Always" />
-    <None Include="TestData\ESTermsQueryData\Expand\*" CopyToOutputDirectory="Always" />
+    <None Include="TestData\*\*" CopyToOutputDirectory="Always" />
+    <None Include="TestData\*\*\*" CopyToOutputDirectory="Always" />
   </ItemGroup>
 
   <ItemGroup>
