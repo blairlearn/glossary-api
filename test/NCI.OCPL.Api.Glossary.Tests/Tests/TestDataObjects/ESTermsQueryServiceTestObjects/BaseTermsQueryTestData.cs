@@ -1,9 +1,9 @@
 using System;
 using NCI.OCPL.Api.Glossary;
 
-namespace NCI.OCPL.Api.BestBets.Tests.ESTermQueryTestData
+namespace NCI.OCPL.Api.BestBets.Tests.ESTermsQueryTestData
 {
-    public abstract class BaseTermQueryTestData
+    public abstract class BaseTermsQueryTestData
     {
         /// <summary>
         /// Gets the full Elasticsearch Term ID for this term.

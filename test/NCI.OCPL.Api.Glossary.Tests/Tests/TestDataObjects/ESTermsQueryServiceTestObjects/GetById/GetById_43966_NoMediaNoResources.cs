@@ -1,9 +1,9 @@
 using System;
 using NCI.OCPL.Api.Glossary;
 
-namespace NCI.OCPL.Api.BestBets.Tests.ESTermQueryTestData
+namespace NCI.OCPL.Api.BestBets.Tests.ESTermsQueryTestData
 {
-    public class TermScenario_43966_NoMediaNoResources : BaseTermQueryTestData
+    public class GetById_43966_NoMediaNoResources : BaseTermsQueryTestData
     {
         public override string DictionaryName => "cancer.gov";
         public override AudienceType Audience => AudienceType.Patient;

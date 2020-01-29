@@ -42,7 +42,6 @@ namespace NCI.OCPL.Api.Glossary
         protected override void AddAppServices(IServiceCollection services)
         {
             //Add our Term Query Service
-            services.AddTransient<ITermQueryService, ESTermQueryService>();
             services.AddTransient<ITermsQueryService, ESTermsQueryService>();
             services.AddTransient<IAutosuggestQueryService, ESAutosuggestQueryService>();
             services.Configure<GlossaryAPIOptions>(Configuration.GetSection("GlossaryAPI"));

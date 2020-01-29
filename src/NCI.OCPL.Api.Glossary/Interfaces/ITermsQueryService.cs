@@ -9,6 +9,17 @@ namespace NCI.OCPL.Api.Glossary
     /// </summary>
     public interface ITermsQueryService
     {
+/// <summary>
+        /// Get Term details based on the input values
+        /// <param name="dictionary">The value for dictionary.</param>
+        /// <param name="audience">Patient or Healthcare provider</param>
+        /// <param name="language">The language in which the details needs to be fetched</param>
+        /// <param name="id">The Id for the term</param>
+        /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
+        /// <returns>An object of GlossaryTerm</returns>
+        /// </summary>
+        Task<GlossaryTerm> GetById(string dictionary, AudienceType audience, string language, long id, string[] requestedFields);
+
         /// <summary>
         /// Retrieves a portion of the overall set of glossary terms for a given combination of dictionary, audience, and language.
         /// </summary>
@@ -31,7 +42,7 @@ namespace NCI.OCPL.Api.Glossary
         /// <param name="size">Defines the size of the search</param>
         /// <param name="from">Defines the Offset for search</param>
         /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
-        /// <returns>A list of GlossaryTerm</returns>        
+        /// <returns>A list of GlossaryTerm</returns>
         /// </summary>
         Task<List<GlossaryTerm>> Search(string dictionary, AudienceType audience, string language, string query,string matchType, int size, int from, string[] requestedFields);
 
@@ -45,8 +56,8 @@ namespace NCI.OCPL.Api.Glossary
         /// <param name="size">Defines the size of the search</param>
         /// <param name="from">Defines the Offset for search</param>
         /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
-        /// <returns>A list of GlossaryTerm</returns>        
+        /// <returns>A list of GlossaryTerm</returns>
         /// </summary>
-        Task<List<GlossaryTerm>> Expand(string dictionary, AudienceType audience, string language, string expandCharacter,string matchType, int size, int from, string[] requestedFields);        
-    }    
+        Task<List<GlossaryTerm>> Expand(string dictionary, AudienceType audience, string language, string expandCharacter,string matchType, int size, int from, string[] requestedFields);
+    }
 }

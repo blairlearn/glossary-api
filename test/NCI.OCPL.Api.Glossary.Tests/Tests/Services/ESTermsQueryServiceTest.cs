@@ -5,7 +5,7 @@ using Moq;
 using NCI.OCPL.Api.Common.Testing;
 using NCI.OCPL.Api.Glossary.Models;
 using NCI.OCPL.Api.Glossary.Services;
-using NCI.OCPL.Api.BestBets.Tests.ESTermQueryTestData;
+using NCI.OCPL.Api.BestBets.Tests.ESTermsQueryTestData;
 using Nest;
 using Microsoft.Extensions.Logging.Testing;
 using System.Collections.Generic;
@@ -13,24 +13,85 @@ using Xunit;
 using NCI.OCPL.Api.Common;
 using NCI.OCPL.Api.BestBets.Tests;
 
-namespace NCI.OCPL.Api.Glossary.Tests{
-    public class ESTermQueryServiceTest{
+namespace NCI.OCPL.Api.Glossary.Tests
+{
+    public class ESTermsQueryServiceTest
+    {
 
-        public static IEnumerable<object[]> JsonData => new[] {
-            new object[] { new TermScenario_43966_NoMediaNoResources() },
-            new object[] { new TermScenario_445043_ImageAndExternalLink() },
-            new object[] { new TermScenario_44058_VideoExernalLink() },
-            new object[] { new TermScenario_44759_NoMediaGlossaryResource() },
-            new object[] { new TermScenario_44178_NoMediaSummaryLink() },
-            new object[] { new TermScenario_44386_NoMediaDrugSummary() },
-            new object[] { new TermScenario_339337_HealthProfessional() },
+        public static IEnumerable<object[]> GetByIdData => new[] {
+            new object[] { new GetById_43966_NoMediaNoResources() },
+            new object[] { new GetById_44058_VideoExernalLink() },
+            new object[] { new GetById_44759_NoMediaGlossaryResource() },
+            new object[] { new GetById_44178_NoMediaSummaryLink() },
+            new object[] { new GetById_44386_NoMediaDrugSummary() },
+            new object[] { new GetById_339337_HealthProfessional() },
+            new object[] { new GetById_445043_ImageAndExternalLink() },
         };
 
+        #region GetById tests
+
         /// <summary>
-        /// Test that URI for Elasticsearch is set up correctly.
+        /// Test failure to connect to and retrieve response from API in GetById.
         /// </summary>
-        [Theory, MemberData(nameof(JsonData))]
-        public async void GetByIdForGlossaryTerm(BaseTermQueryTestData data){
+        [Fact]
+        public async void GetById_TestAPIConnectionFailure()
+        {
+            ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
+            conn.RegisterRequestHandlerForType<Nest.GetResponse<GlossaryTerm>>((req, res) =>
+            {
+                res.StatusCode = 500;
+            });
+
+            // While this has a URI, it does not matter, an InMemoryConnection never requests
+            // from the server.
+            var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
+
+            var connectionSettings = new ConnectionSettings(pool, conn);
+            IElasticClient client = new ElasticClient(connectionSettings);
+
+            // Setup the mocked Options
+            IOptions<GlossaryAPIOptions> gTermClientOptions = GetMockOptions();
+
+            ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermClientOptions, new NullLogger<ESTermsQueryService>());
+
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.GetById("cancer.gov", AudienceType.Patient, "en", 43966L, new string[] { }));
+            Assert.Equal(500, ex.HttpStatusCode);
+        }
+
+        /// <summary>
+        /// Test failure to connect to ES or receiving an invalid response from ES in GetById.
+        /// </summary>
+        [Fact]
+        public async void GetById_TestInvalidResponse()
+        {
+            ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
+            conn.RegisterRequestHandlerForType<Nest.GetResponse<GlossaryTerm>>((req, res) =>
+            {
+
+            });
+
+            // While this has a URI, it does not matter, an InMemoryConnection never requests
+            // from the server.
+            var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
+
+            var connectionSettings = new ConnectionSettings(pool, conn);
+            IElasticClient client = new ElasticClient(connectionSettings);
+
+            // Setup the mocked Options
+            IOptions<GlossaryAPIOptions> gTermClientOptions = GetMockOptions();
+
+            ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermClientOptions, new NullLogger<ESTermsQueryService>());
+
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.GetById("cancer.gov", AudienceType.Patient, "en", 43966L, new string[] { }));
+            Assert.Equal(500, ex.HttpStatusCode);
+        }
+
+        /// <summary>
+        /// Test that GetById URI for Elasticsearch is set up correctly.
+        /// </summary>
+        [Theory, MemberData(nameof(GetByIdData))]
+        public async void GetById_TestUriSetup(BaseTermsQueryTestData data)
+        {
             Uri esURI = null;
 
             ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
@@ -44,8 +105,8 @@ namespace NCI.OCPL.Api.Glossary.Tests{
                 esURI = req.Uri;
             });
 
-            //While this has a URI, it does not matter, an InMemoryConnection never requests
-            //from the server.
+            // While this has a URI, it does not matter, an InMemoryConnection never requests
+            // from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
             var connectionSettings = new ConnectionSettings(pool, conn);
@@ -54,7 +115,7 @@ namespace NCI.OCPL.Api.Glossary.Tests{
             // Setup the mocked Options
             IOptions<GlossaryAPIOptions> gTermClientOptions = GetMockOptions();
 
-            ESTermQueryService termClient = new ESTermQueryService(client, gTermClientOptions, new NullLogger<ESTermQueryService>());
+            ESTermsQueryService termClient = new ESTermsQueryService(client, gTermClientOptions, new NullLogger<ESTermsQueryService>());
 
             // We don't actually care that this returns anything - only that the intercepting connection
             // sets up the request URI correctly.
@@ -63,7 +124,7 @@ namespace NCI.OCPL.Api.Glossary.Tests{
                 data.Audience,
                 data.Language,
                 data.TermID,
-                new string[]{}
+                new string[] { }
             );
 
 
@@ -75,85 +136,32 @@ namespace NCI.OCPL.Api.Glossary.Tests{
         }
 
         /// <summary>
-        /// Test failure to connect to and retrieve response from API.
-        /// </summary>
-        [Fact]
-        public async void GetByIdForGlossaryTerm_TestAPIConnectionFailure()
-        {
-            ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
-            conn.RegisterRequestHandlerForType<Nest.GetResponse<GlossaryTerm>>((req, res) =>
-            {
-                res.StatusCode = 500;
-            });
-
-            //While this has a URI, it does not matter, an InMemoryConnection never requests
-            //from the server.
-            var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
-
-            var connectionSettings = new ConnectionSettings(pool, conn);
-            IElasticClient client = new ElasticClient(connectionSettings);
-
-            // Setup the mocked Options
-            IOptions<GlossaryAPIOptions> gTermClientOptions = GetMockOptions();
-
-            ESTermQueryService termClient = new ESTermQueryService(client, gTermClientOptions, new NullLogger<ESTermQueryService>());
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termClient.GetById("cancer.gov",AudienceType.Patient,"en",43966L,new string[]{}));
-            Assert.Equal(500, ex.HttpStatusCode);
-        }
-
-        /// <summary>
-        /// This use case tests the scenario if ES has failed to connect or sends back
-        /// invalid response.
-        /// </summary>
-
-        [Fact]
-        public async void GetByIdForGlossaryTerm_TestInvalidResponse()
-        {
-            ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
-            conn.RegisterRequestHandlerForType<Nest.GetResponse<GlossaryTerm>>((req, res) =>
-            {
-
-            });
-
-            //While this has a URI, it does not matter, an InMemoryConnection never requests
-            //from the server.
-            var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
-
-            var connectionSettings = new ConnectionSettings(pool, conn);
-            IElasticClient client = new ElasticClient(connectionSettings);
-
-            // Setup the mocked Options
-            IOptions<GlossaryAPIOptions> gTermClientOptions = GetMockOptions();
-
-            ESTermQueryService termClient = new ESTermQueryService(client, gTermClientOptions, new NullLogger<ESTermQueryService>());
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termClient.GetById("cancer.gov",AudienceType.Patient,"en",43966L,new string[]{}));
-            Assert.Equal(500, ex.HttpStatusCode);
-        }
-
-        /// <summary>
-        /// Tests the correct loading of various data files.
+        /// Tests the correct loading of various data files for GetById.
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        [Theory, MemberData(nameof(JsonData))]
-        public async void GetBestBetForDisplay_DataLoading(BaseTermQueryTestData data)
+        [Theory, MemberData(nameof(GetByIdData))]
+        public async void GetById_DataLoading(BaseTermsQueryTestData data)
         {
             IElasticClient client = GetElasticClientWithData(data);
 
             // Setup the mocked Options
             IOptions<GlossaryAPIOptions> gTermClientOptions = GetMockOptions();
 
-            ESTermQueryService termClient = new ESTermQueryService(client, gTermClientOptions, new NullLogger<ESTermQueryService>());
+            ESTermsQueryService termClient = new ESTermsQueryService(client, gTermClientOptions, new NullLogger<ESTermsQueryService>());
 
-			GlossaryTerm glossaryTerm = await termClient.GetById("cancer.gov",AudienceType.Patient,"en",43966L,new string[]{});
+            GlossaryTerm glossaryTerm = await termClient.GetById("cancer.gov", AudienceType.Patient, "en", 43966L, new string[] { });
 
             Assert.Equal(data.ExpectedData, glossaryTerm, new GlossaryTermComparer());
         }
 
+        #endregion
+
         ///<summary>
         ///A private method to enrich data from file
         ///</summary>
-        private IElasticClient GetElasticClientWithData(BaseTermQueryTestData data) {
+        private IElasticClient GetElasticClientWithData(BaseTermsQueryTestData data)
+        {
             ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
             conn.RegisterRequestHandlerForType<Nest.GetResponse<GlossaryTerm>>((req, res) =>
             {

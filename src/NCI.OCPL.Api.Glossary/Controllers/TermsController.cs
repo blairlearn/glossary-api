@@ -28,6 +28,32 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         }
 
         /// <summary>
+        /// Get the Glossary Term based on Id.
+        /// </summary>
+        /// <returns>GlossaryTerm object</returns>
+        [HttpGet("{dictionary}/{audience}/{language}/{id}")]
+        public Task<GlossaryTerm> GetById(string dictionary, AudienceType audience, string language, long id, [FromQuery] string[] requestedFields)
+        {
+            if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || id <= 0)
+            {
+                throw new APIErrorException(400, "You must supply a valid dictionary, audience, language and id");
+            }
+
+            if (null == requestedFields)
+            {
+                requestedFields = new string[] { };
+            }
+
+            // if requestedFields is empty populate it with default values
+            if (requestedFields.Length == 0)
+            {
+                requestedFields = new string[] { "TermName", "Pronunciation", "Definition" };
+            }
+
+            return _termsQueryService.GetById(dictionary, audience, language, id, requestedFields);
+        }
+
+        /// <summary>
         /// Retrieves a portion of the overall set of glossary terms for a given combination of dictionary, audience, and language.
         /// </summary>
         /// <param name="dictionary">The specific dictionary to retrieve from.</param>
