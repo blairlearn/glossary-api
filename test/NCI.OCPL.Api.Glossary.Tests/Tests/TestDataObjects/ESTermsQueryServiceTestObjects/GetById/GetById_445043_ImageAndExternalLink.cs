@@ -1,7 +1,7 @@
 using System;
 using NCI.OCPL.Api.Glossary;
 
-namespace NCI.OCPL.Api.BestBets.Tests.ESTermsQueryTestData
+namespace NCI.OCPL.Api.Glossary.Tests.ESTermsQueryTestData
 {
     public class GetById_445043_ImageAndExternalLink : BaseTermsQueryTestData
     {

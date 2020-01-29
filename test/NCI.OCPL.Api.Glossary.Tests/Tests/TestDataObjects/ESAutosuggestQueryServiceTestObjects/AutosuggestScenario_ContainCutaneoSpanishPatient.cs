@@ -1,6 +1,6 @@
 using NCI.OCPL.Api.Glossary;
 
-namespace NCI.OCPL.Api.BestBets.Tests.ESAutosuggestQueryTestData
+namespace NCI.OCPL.Api.Glossary.Tests.ESAutosuggestQueryTestData
 {
     /// <summary>
     /// Expected to match test data from

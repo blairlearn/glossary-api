@@ -5,13 +5,13 @@ using Moq;
 using NCI.OCPL.Api.Common.Testing;
 using NCI.OCPL.Api.Glossary.Models;
 using NCI.OCPL.Api.Glossary.Services;
-using NCI.OCPL.Api.BestBets.Tests.ESTermsQueryTestData;
+using NCI.OCPL.Api.Glossary.Tests.ESTermsQueryTestData;
 using Nest;
 using Microsoft.Extensions.Logging.Testing;
 using System.Collections.Generic;
 using Xunit;
 using NCI.OCPL.Api.Common;
-using NCI.OCPL.Api.BestBets.Tests;
+using NCI.OCPL.Api.Glossary.Tests;
 
 namespace NCI.OCPL.Api.Glossary.Tests
 {

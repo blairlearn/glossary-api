@@ -5,7 +5,7 @@ using Moq;
 using NCI.OCPL.Api.Common.Testing;
 using NCI.OCPL.Api.Glossary.Models;
 using NCI.OCPL.Api.Glossary.Services;
-using NCI.OCPL.Api.BestBets.Tests.ESAutosuggestQueryTestData;
+using NCI.OCPL.Api.Glossary.Tests.ESAutosuggestQueryTestData;
 
 
 namespace NCI.OCPL.Api.Glossary.Tests
