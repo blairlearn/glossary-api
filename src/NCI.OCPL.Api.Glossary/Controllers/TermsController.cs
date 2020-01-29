@@ -81,7 +81,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             if (requestedFields == null || requestedFields.Length == 0)
                 requestedFields = new string[] { "TermName", "Pronunciation", "Definition" };
 
-            GlossaryTermResults res = await _termsQueryService.getAll(dictionary, audience, language, size, from, requestedFields);
+            GlossaryTermResults res = await _termsQueryService.GetAll(dictionary, audience, language, size, from, requestedFields);
 
             return res;
         }

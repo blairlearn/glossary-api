@@ -245,7 +245,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // Create a mock query that always returns the same result.
             Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
             querySvc.Setup(
-                svc => svc.getAll(
+                svc => svc.GetAll(
                     It.IsAny<string>(),
                     It.IsAny<AudienceType>(),
                     It.IsAny<string>(),
@@ -264,7 +264,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             //  a) with the expected values.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.getAll("glossary", AudienceType.HealthProfessional, "en", 10, 0, new string[] { "TermName", "Pronunciation", "Definition" }),
+                svc => svc.GetAll("glossary", AudienceType.HealthProfessional, "en", 10, 0, new string[] { "TermName", "Pronunciation", "Definition" }),
                 Times.Once,
                 "ITermsQueryService::getAll() should be called once, with default values for size, from, and requestedFields"
             );
@@ -280,7 +280,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // Create a mock query that always returns the same result.
             Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
             querySvc.Setup(
-                svc => svc.getAll(
+                svc => svc.GetAll(
                     It.IsAny<string>(),
                     It.IsAny<AudienceType>(),
                     It.IsAny<string>(),
@@ -299,7 +299,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             //  a) with the expected values.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.getAll("glossary", AudienceType.HealthProfessional, "es", 200, 2, new string[] { "Field1", "Field2", "Field3" }),
+                svc => svc.GetAll("glossary", AudienceType.HealthProfessional, "es", 200, 2, new string[] { "Field1", "Field2", "Field3" }),
                 Times.Once,
                 "ITermsQueryService::getAll() should be called once, with the specified values for size, from, and requestedFields"
             );

@@ -95,7 +95,7 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <param name="from">The offset into the overall set to use for the first record.</param>
         /// <param name="requestedFields">The fields to retrieve.  If not specified, defaults to TermName, Pronunciation, and Definition.</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
-        public async Task<GlossaryTermResults> getAll(string dictionary, AudienceType audience, string language, int size, int from, string[] requestedFields)
+        public async Task<GlossaryTermResults> GetAll(string dictionary, AudienceType audience, string language, int size, int from, string[] requestedFields)
         {
             // Dummy return for now.
             GlossaryTermResults results = new GlossaryTermResults()

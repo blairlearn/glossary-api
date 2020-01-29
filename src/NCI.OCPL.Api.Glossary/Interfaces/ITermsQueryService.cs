@@ -30,7 +30,7 @@ namespace NCI.OCPL.Api.Glossary
         /// <param name="from">The offset into the overall set to use for the first record.</param>
         /// <param name="requestedFields">The fields to retrieve.  If not specified, defaults to TermName, Pronunciation, and Definition.</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
-        Task<GlossaryTermResults> getAll(string dictionary, AudienceType audience, string language, int size, int from, string[] requestedFields);
+        Task<GlossaryTermResults> GetAll(string dictionary, AudienceType audience, string language, int size, int from, string[] requestedFields);
 
         /// <summary>
         /// Search for Terms based on the search criteria.
