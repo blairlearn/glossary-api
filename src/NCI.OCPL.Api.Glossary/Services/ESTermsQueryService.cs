@@ -57,7 +57,7 @@ namespace NCI.OCPL.Api.Glossary.Services
 
             try
             {
-                string idValue = id + "_" + dictionary + "_" + language + "_" + audience.ToString().ToLower();
+                string idValue = $"{id}_{dictionary?.ToLower()}_{language?.ToLower()}_{audience.ToString().ToLower()}";
                 response = await _elasticClient.GetAsync<GlossaryTerm>(new DocumentPath<GlossaryTerm>(idValue),
                         g => g.Index( this._apiOptions.AliasName ).Type("terms"));
 
