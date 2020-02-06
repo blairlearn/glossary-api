@@ -127,12 +127,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 new string[] { }
             );
 
-
-            Assert.Equal(
-                esURI.Segments,
-                new string[] { "/", "glossaryv1/", "terms/", data.ESTermID },
-                new ArrayComparer()
-            );
+            Assert.Equal( $"/glossaryv1/terms/{data.ESTermID}", esURI.AbsolutePath);
         }
 
         /// <summary>
