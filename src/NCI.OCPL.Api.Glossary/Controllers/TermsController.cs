@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using NCI.OCPL.Api.Glossary;
 using NCI.OCPL.Api.Common;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NCI.OCPL.Api.Glossary.Controllers
 {
@@ -120,10 +121,17 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <summary>
         /// Search for Terms based on the character passed
         /// </summary>
-        /// <returns>An array GlossaryTerm objects</returns>
+        /// <param name="dictionary">The specific dictionary to retrieve from.</param>
+        /// <param name="audience">The target audience.</param>
+        /// <param name="character">The character to search the query</param>
+        /// <param name="language">Language (English - en; Spanish - es).</param>
+        /// <param name="size">The number of records to retrieve.</param>
+        /// <param name="from">The offset into the overall set to use for the first record.</param>
+        /// <param name="requestedFields">The fields to retrieve.  If not specified, defaults to TermID, TermName, Pretty URL Name, Pronunciation, and Definition.</param>
+        /// <returns>A GlossaryTermResults object containing the desired records.</returns>
         [HttpGet("expand/{dictionary}/{audience}/{language}/{character}")]
-        public async Task<GlossaryTerm[]> Expand(string dictionary, AudienceType audience, string language, string character,
-            [FromQuery] string matchType, [FromQuery] int size, [FromQuery] int from, [FromQuery] string[] requestedFields)
+        public async Task<GlossaryTermResults> Expand(string dictionary, AudienceType audience, string language, string character,
+            [FromQuery] int size = 100, [FromQuery] int from = 0, [FromQuery] string[] requestedFields = null)
         {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience))
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience and language");
@@ -131,20 +139,17 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             if (language.ToLower() != "en" && language.ToLower() != "es")
                 throw new APIErrorException(404, "Unsupported Language. Please try either 'en' or 'es'");
 
-            if (null == matchType || !(matchType.Equals("begins", StringComparison.InvariantCultureIgnoreCase) || matchType.Equals("contains", StringComparison.InvariantCultureIgnoreCase)))
-                throw new APIErrorException(400, "'matchType' may only be 'begins' or 'contains'");
-
             if (size <= 0)
                 size = 100;
 
             if (from < 0)
                 from = 0;
 
-            if (null == requestedFields || requestedFields.Length == 0)
-                requestedFields = new string[] { "TermName", "Pronunciation", "Definition" };
+            if (requestedFields == null || requestedFields.Length == 0 || requestedFields.Where(f => f != null).Count() == 0)
+                requestedFields = new string[]{"term_id", "language", "dictionary", "audience", "term_name", "first_letter", "pretty_url_name", "definition", "pronunciation"};
 
-            List<GlossaryTerm> glossaryTermList = await _termsQueryService.Expand(dictionary, audience, language, character, matchType, size, from, requestedFields);
-            return glossaryTermList.ToArray();
+            GlossaryTermResults res = await _termsQueryService.Expand(dictionary, audience, language, character, size, from, requestedFields);
+            return res;
 
         }
     }

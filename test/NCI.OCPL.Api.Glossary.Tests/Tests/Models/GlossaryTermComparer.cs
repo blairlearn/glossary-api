@@ -28,7 +28,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 && x.TermName == y.TermName
                 && x.FirstLetter == y.FirstLetter
                 && x.Language == y.Language
-                && x.Dictionary.ToLower() == y.Dictionary.ToLower()
+                && x.Dictionary?.ToLower() == y.Dictionary?.ToLower()
                 && x.Audience.ToString() == y.Audience.ToString()
                 && x.PrettyUrlName == y.PrettyUrlName
                 && AreParamArraysEqual<IRelatedResource, IRelatedResourceComparer>(x.RelatedResources, y.RelatedResources)
