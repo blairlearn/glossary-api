@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -331,6 +332,47 @@ namespace NCI.OCPL.Api.Glossary.Services
         }
 
         /// <summary>
+        /// Get the total number of terms available in the version of a dictionary matching a specific audience and language.
+        /// </summary>
+        /// <param name="dictionary">The specific dictionary to retrieve from.</param>
+        /// <param name="audience">The target audience.</param>
+        /// <param name="language">Language (English - en; Spanish - es).</param>
+        /// <returns>The number of terms available.</returns>
+        public async Task<long> GetCount(string dictionary, AudienceType audience, string language)
+        {
+            // Set up the CountRequest to send to elasticsearch.
+            Indices index = Indices.Index(new string[] { this._apiOptions.AliasName });
+            Types types = Types.Type(new string[] { "terms" });
+            CountRequest request = new CountRequest(index, types)
+            {
+                Query = new TermQuery { Field = "language", Value = language.ToString() } &&
+                        new TermQuery { Field = "audience", Value = audience.ToString() } &&
+                        new TermQuery { Field = "dictionary", Value = dictionary.ToString() }
+            };
+
+            ICountResponse response = null;
+            try
+            {
+                response = await _elasticClient.CountAsync<GlossaryTerm>(request);
+            }
+            catch (Exception ex)
+            {
+                String msg = $"Could not get a count for dictionary '{dictionary}', audience '{audience}', language '{language}'";
+                _logger.LogError(msg, ex);
+                throw new APIErrorException(500, msg);
+            }
+
+            if(!response.IsValid)
+            {
+                String msg = $"Invalid response when searching for dictionary '{dictionary}', audience '{audience}', language '{language}'";
+                _logger.LogError(msg);
+                throw new APIErrorException(500, "errors occured");
+            }
+
+            return response.Count;
+        }
+
+        /// <summary>
         /// This temporary method will create a GlossaryTerm
         /// object to testing purpose.
         /// </summary>
@@ -398,5 +440,7 @@ namespace NCI.OCPL.Api.Glossary.Services
             };
             return _GlossaryTerm;
         }
+
+
     }
 }

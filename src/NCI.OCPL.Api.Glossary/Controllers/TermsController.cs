@@ -150,7 +150,22 @@ namespace NCI.OCPL.Api.Glossary.Controllers
 
             GlossaryTermResults res = await _termsQueryService.Expand(dictionary, audience, language, character, size, from, requestedFields);
             return res;
+        }
 
+        /// <summary>
+        /// Get the total number of terms available in the version of a dictionary matching a specific audience and language.
+        /// </summary>
+        /// <param name="dictionary">The specific dictionary to retrieve from.</param>
+        /// <param name="audience">The target audience.</param>
+        /// <param name="language">Language (English - en; Spanish - es).</param>
+        /// <returns>The number of terms available.</returns>
+        [HttpGet("count/{dictionary:required}/{audience:required}/{language:required}")]
+        public async Task<long> GetCount(string dictionary, AudienceType audience, string language)
+        {
+            if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience))
+                throw new APIErrorException(400, "You must supply a valid dictionary, audience and language.");
+
+            return await _termsQueryService.GetCount(dictionary, audience, language);
         }
     }
 }

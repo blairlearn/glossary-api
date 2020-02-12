@@ -58,5 +58,14 @@ namespace NCI.OCPL.Api.Glossary
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
         /// </summary>
         Task<GlossaryTermResults> Expand(string dictionary, AudienceType audience, string language, string expandCharacter, int size, int from, string[] requestedFields);
+
+        /// <summary>
+        /// Get the total number of terms available in the version of a dictionary matching a specific audience and language.
+        /// </summary>
+        /// <param name="dictionary">The specific dictionary to retrieve from.</param>
+        /// <param name="audience">The target audience.</param>
+        /// <param name="language">Language (English - en; Spanish - es).</param>
+        /// <returns>The number of terms available.</returns>
+        Task<long> GetCount(string dictionary, AudienceType audience, string language);
     }
 }
