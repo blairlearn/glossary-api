@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -188,9 +190,17 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <param name="from">Defines the Offset for search</param>
         /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
+        /// <exception cref="System.ArgumentNullException">Thrown when requestedFields is null</exception>
+        /// <exception cref="System.ArgumentException">Thrown when requestedFields contains one or more null values</exception>
         /// </summary>
         public async Task<GlossaryTermResults> Expand(string dictionary, AudienceType audience, string language, string expandCharacter, int size, int from, string[] requestedFields)
         {
+            // Elasticsearch knows how to figure out what the ElasticSearch name is for
+            // a given field when given a PropertyInfo.
+            Field[] requestedESFields = convertRequestedFieldsToProperties(requestedFields)
+                                            .Select(pi => new Field(pi))
+                                            .ToArray();
+
             // Set up the SearchRequest to send to elasticsearch.
             Indices index = Indices.Index(new string[] { this._apiOptions.AliasName});
             Types types = Types.Type(new string[] { "terms" });
@@ -209,7 +219,7 @@ namespace NCI.OCPL.Api.Glossary.Services
                 From = from,
                 Source = new SourceFilter
                 {
-                    Includes = requestedFields
+                    Includes = requestedESFields
                 }
             };
 
@@ -263,6 +273,61 @@ namespace NCI.OCPL.Api.Glossary.Services
             }
 
             return glossaryTermResults;
+        }
+
+        /// <summary>
+        /// Yields a collection of PropertyInfo objects representing the named requestedFields passed into the API.
+        /// </summary>
+        /// <param name="requestedFields">The requested fields. An array of nulls will be treated as an empty array.</param>
+        /// <returns>An array of PropertyInfo objects representing the fields. NOTE: If a field is a value type then it
+        /// must be returned as part of the object so that we do not get incorrect default values. Dotnet cannot actually change
+        /// the shape of our object, or at least not without major trouble. So we will force the return here.</returns>
+        /// <exception cref="System.ArgumentNullException">Thrown when requestedFields is null.</exception>
+        /// <exception cref="System.ArgumentException">Thrown when requestedFields contains one or more null values.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when an unknown field is requested.</exception>
+        private IEnumerable<PropertyInfo> convertRequestedFieldsToProperties(string[] requestedFields)
+        {
+            if (requestedFields == null)
+            {
+                throw new ArgumentNullException("requestedFields");
+            }
+
+            if (requestedFields.Contains(null))
+            {
+                throw new ArgumentException("Null requested field encountered.", "requestedFields");
+            }
+
+            // Lowercase our field names.
+            string[] fieldsList = requestedFields
+                                    .Select(f => f.ToLower())
+                                    .ToArray();
+
+            // Now we will use reflection to get a list of the properties of the GlossaryTerm class.
+            // Then we will loop through returning only those that match our list of names
+            Type glossaryTermType = typeof(GlossaryTerm);
+            PropertyInfo[] properties = glossaryTermType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            var propertyNames = properties.Select(p => p.Name.ToLower());
+            var badFields = fieldsList.Except(propertyNames);
+
+            if (badFields.Count() > 0)
+            {
+                throw new ArgumentOutOfRangeException("requestedFields", $"Unknown fields: {String.Join(", ", badFields)} ");
+            }
+
+            foreach (PropertyInfo property in properties)
+            {
+                if (property.PropertyType.IsValueType)
+                {
+                    // This should be Ints, Enums, etc.
+                    // It will not be strings.
+                    yield return property;
+                }
+                else if (fieldsList.Contains(property.Name.ToLower()))
+                {
+                    yield return property;
+                }
+            }
         }
 
         /// <summary>

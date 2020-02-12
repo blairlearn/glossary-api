@@ -146,7 +146,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 from = 0;
 
             if (requestedFields == null || requestedFields.Length == 0 || requestedFields.Where(f => f != null).Count() == 0)
-                requestedFields = new string[]{"term_id", "language", "dictionary", "audience", "term_name", "first_letter", "pretty_url_name", "definition", "pronunciation"};
+                requestedFields = new string[]{"termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation"};
 
             GlossaryTermResults res = await _termsQueryService.Expand(dictionary, audience, language, character, size, from, requestedFields);
             return res;
