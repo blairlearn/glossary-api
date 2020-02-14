@@ -170,14 +170,90 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
         /// <returns>A list of GlossaryTerm</returns>
         /// </summary>
-        public async Task<List<GlossaryTerm>> Search(string dictionary, AudienceType audience, string language, string query,string matchType, int size, int from, string[] requestedFields)
+        public async Task<GlossaryTermResults> Search(string dictionary, AudienceType audience, string language, string query,MatchType matchType, int size, int from, string[] requestedFields)
         {
-            // Temporary Solution till we have Elastic Search
-            List<GlossaryTerm> glossaryTermList = new List<GlossaryTerm>();
-            glossaryTermList.Add(GenerateSampleTerm(requestedFields));
-            glossaryTermList.Add(GenerateSampleTerm(requestedFields));
+            // Elasticsearch knows how to figure out what the ElasticSearch name is for
+            // a given field when given a PropertyInfo.
+            Field[] requestedESFields = convertRequestedFieldsToProperties(requestedFields)
+                                            .Select(pi => new Field(pi))
+                                            .ToArray();
 
-            return glossaryTermList;
+            // Set up the SearchRequest to send to elasticsearch.
+            Indices index = Indices.Index(new string[] { this._apiOptions.AliasName});
+            Types types = Types.Type(new string[] { "terms" });
+            SearchRequest request = new SearchRequest(index, types)
+            {
+                Query = new TermQuery {Field = "language", Value = language.ToString()} &&
+                        new TermQuery {Field = "audience", Value = audience.ToString()} &&
+                        new TermQuery {Field = "dictionary", Value = dictionary.ToString()} &&
+                        (matchType == MatchType.Begins ?
+                            (QueryBase) new PrefixQuery {Field = "term_name", Value = query } :
+                            (QueryBase) new MatchQuery {Field = "term_name._contain", Query = query }
+                        )
+                ,
+                Sort = new List<ISort>
+                {
+                    new SortField { Field = "term_name" }
+                },
+                Size = size,
+                From = from,
+                Source = new SourceFilter
+                {
+                    Includes = requestedESFields
+                }
+            };
+
+            ISearchResponse<GlossaryTerm> response = null;
+            try
+            {
+                response = await _elasticClient.SearchAsync<GlossaryTerm>(request);
+            }
+            catch (Exception ex)
+            {
+                String msg = String.Format("Could not search dictionary '{0}', audience '{1}', language '{2}', query '{3}', size '{4}', from '{5}'.", dictionary, audience, language, query, size, from);
+                _logger.LogError(msg, ex);
+                throw new APIErrorException(500, msg);
+            }
+
+            if (!response.IsValid)
+            {
+                String msg = String.Format("Invalid response when searching for dictionary '{0}', audience '{1}', language '{2}', query '{3}', size '{4}', from '{5}'.", dictionary, audience, language, query, size, from);
+                _logger.LogError(msg);
+                throw new APIErrorException(500, "errors occured");
+            }
+
+            GlossaryTermResults glossaryTermResults = new GlossaryTermResults();
+
+            if (response.Total > 0)
+            {
+                // Build the array of glossary terms for the returned results.
+                List<GlossaryTerm> termResults = new List<GlossaryTerm>();
+                foreach (GlossaryTerm res in response.Documents)
+                {
+                    termResults.Add(res);
+                }
+
+                glossaryTermResults.Results = termResults.ToArray();
+
+                // Add the metadata for the returned results
+                glossaryTermResults.Meta = new ResultsMetadata() {
+                    TotalResults = (int)response.Total,
+                    From = from
+                };
+            }
+            else if (response.Total == 0) {
+                // Add the defualt value of empty GlossaryTerm list.
+                glossaryTermResults.Results = new GlossaryTerm[] {};
+
+                // Add the metadata for the returned results
+                glossaryTermResults.Meta = new ResultsMetadata() {
+                    TotalResults = (int)response.Total,
+                    From = from
+                };
+            }
+
+            return glossaryTermResults;
+
         }
 
 
@@ -371,76 +447,6 @@ namespace NCI.OCPL.Api.Glossary.Services
 
             return response.Count;
         }
-
-        /// <summary>
-        /// This temporary method will create a GlossaryTerm
-        /// object to testing purpose.
-        /// </summary>
-        /// <returns>The GlossaryTerm</returns>
-        private GlossaryTerm GenerateSampleTerm(string[] requestedFields){
-            GlossaryTerm _GlossaryTerm = new GlossaryTerm();
-            Pronunciation pronunciation = new Pronunciation("Pronunciation Key", "pronunciation");
-            Definition definition = new Definition("<html><h1>Definition</h1></html>", "Sample definition");
-            _GlossaryTerm.TermId = 7890L;
-            _GlossaryTerm.Language = "EN";
-            _GlossaryTerm.Dictionary = "Dictionary";
-            _GlossaryTerm.Audience = AudienceType.Patient;
-            _GlossaryTerm.TermName = "TermName";
-            _GlossaryTerm.PrettyUrlName = "www.glossary-api.com";
-            _GlossaryTerm.Pronunciation = pronunciation;
-            _GlossaryTerm.Definition = definition;
-            foreach (string field in requestedFields)
-            {
-                if(field.Equals("Id")){
-                    _GlossaryTerm.TermId = 1234L;
-                }else  if(field.Equals("Language",StringComparison.InvariantCultureIgnoreCase)){
-                    _GlossaryTerm.Language = "EN";
-                }else  if(field.Equals("Dictionary",StringComparison.InvariantCultureIgnoreCase)){
-                    _GlossaryTerm.Dictionary = "Dictionary";
-                }else  if(field.Equals("Audience",StringComparison.InvariantCultureIgnoreCase)){
-                    _GlossaryTerm.Audience = AudienceType.Patient;
-                }else  if(field.Equals("TermName",StringComparison.InvariantCultureIgnoreCase)){
-                    _GlossaryTerm.TermName = "TermName";
-                }else  if(field.Equals("PrettyUrlName",StringComparison.InvariantCultureIgnoreCase)){
-                    _GlossaryTerm.PrettyUrlName = "www.glossary-api.com";
-                }else  if(field.Equals("Pronunciation",StringComparison.InvariantCultureIgnoreCase)){
-                    _GlossaryTerm.Pronunciation = pronunciation;
-                }else  if(field.Equals("Definition",StringComparison.InvariantCultureIgnoreCase)){
-                    _GlossaryTerm.Definition = definition;
-                }
-            }
-
-            _GlossaryTerm.RelatedResources = new IRelatedResource[] {
-                new LinkResource()
-                {
-                    Type = RelatedResourceType.External,
-                    Text = "Link to Google",
-                    Url = new System.Uri("https://www.google.com")
-                },
-                new LinkResource()
-                {
-                    Type = RelatedResourceType.DrugSummary,
-                    Text = "Bevacizumab",
-                    Url = new System.Uri("https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab")
-                },
-                new LinkResource()
-                {
-                    Type = RelatedResourceType.Summary,
-                    Text = "Lung cancer treatment",
-                    Url = new System.Uri("https://www.cancer.gov/types/lung/patient/small-cell-lung-treatment-pdq")
-                },
-                new GlossaryResource()
-                {
-                    Type = RelatedResourceType.GlossaryTerm,
-                    Text = "stage II cutaneous T-cell lymphoma",
-                    TermId = 43966,
-                    Audience = AudienceType.Patient,
-                    PrettyUrlName = "stage-ii-cutaneous-t-cell-lymphoma"
-                }
-            };
-            return _GlossaryTerm;
-        }
-
 
     }
 }

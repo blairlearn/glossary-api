@@ -42,9 +42,9 @@ namespace NCI.OCPL.Api.Glossary
         /// <param name="size">Defines the size of the search</param>
         /// <param name="from">Defines the Offset for search</param>
         /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
-        /// <returns>A list of GlossaryTerm</returns>
+        /// <returns>A GlossaryTermResults object containing the desired records.</returns>
         /// </summary>
-        Task<List<GlossaryTerm>> Search(string dictionary, AudienceType audience, string language, string query,string matchType, int size, int from, string[] requestedFields);
+        Task<GlossaryTermResults> Search(string dictionary, AudienceType audience, string language, string query, MatchType matchType, int size, int from, string[] requestedFields);
 
         /// <summary>
         /// Search for Terms based on the character passed.
