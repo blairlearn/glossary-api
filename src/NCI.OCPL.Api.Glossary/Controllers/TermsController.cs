@@ -33,25 +33,17 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// </summary>
         /// <returns>GlossaryTerm object</returns>
         [HttpGet("{dictionary:required}/{audience:required}/{language:required}/{id:long}")]
-        public Task<GlossaryTerm> GetById(string dictionary, AudienceType audience, string language, long id, [FromQuery] string[] requestedFields)
+        public Task<GlossaryTerm> GetById(string dictionary, AudienceType audience, string language, long id)
         {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || id <= 0)
             {
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience, language and id");
             }
 
-            if (null == requestedFields)
-            {
-                requestedFields = new string[] { };
-            }
+            if (language.ToLower() != "en" && language.ToLower() != "es")
+                throw new APIErrorException(404, "Unsupported Language. Please try either 'en' or 'es'");
 
-            // if requestedFields is empty populate it with default values
-            if (requestedFields.Length == 0)
-            {
-                requestedFields = new string[] { "TermName", "Pronunciation", "Definition" };
-            }
-
-            return _termsQueryService.GetById(dictionary, audience, language, id, requestedFields);
+            return _termsQueryService.GetById(dictionary, audience, language, id);
         }
 
         /// <summary>
@@ -68,6 +60,9 @@ namespace NCI.OCPL.Api.Glossary.Controllers
 
             if (language.ToLower() != "en" && language.ToLower() != "es")
                 throw new APIErrorException(404, "Unsupported Language. Please try either 'en' or 'es'");
+
+            if (String.IsNullOrWhiteSpace(prettyUrlName))
+                throw new APIErrorException(404, "You must specify the prettyUrlName parameter.");
 
             // Call GetByName with specified parameters. Size and from are set to 9999 and 0, respectively, as they are needed
             // to build the query but the values don't actually matter when searching for a specific term with pretty URL name.

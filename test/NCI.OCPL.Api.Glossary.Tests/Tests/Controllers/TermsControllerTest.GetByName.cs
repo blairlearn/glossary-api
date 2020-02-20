@@ -59,6 +59,22 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Assert.Equal("Unsupported Language. Please try either 'en' or 'es'", exception.Message);
         }
 
+        [Fact]
+        public async void GetByName_ErrorMessage_MissingPrettyUrl()
+        {
+            Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
+            TermsController controller = new TermsController(termQueryService.Object);
+            var exception = await Assert.ThrowsAsync<APIErrorException>(
+                () => controller.GetByName("Cancer.gov", AudienceType.Patient, "en", null)
+            );
+            Assert.Equal("You must specify the prettyUrlName parameter.", exception.Message);
+
+            exception = await Assert.ThrowsAsync<APIErrorException>(
+                () => controller.GetByName("Cancer.gov", AudienceType.Patient, "en", "")
+            );
+            Assert.Equal("You must specify the prettyUrlName parameter.", exception.Message);
+        }
+
         /// <summary>
         /// Verify that GetByName endpoint makes the correct call to the query service,
         /// and returns the correct response for the specified parameters.

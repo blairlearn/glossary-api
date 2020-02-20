@@ -53,7 +53,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.GetById("cancer.gov", AudienceType.Patient, "en", 43966L, new string[] { }));
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.GetById("cancer.gov", AudienceType.Patient, "en", 43966L));
             Assert.Equal(500, ex.HttpStatusCode);
         }
 
@@ -81,7 +81,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.GetById("cancer.gov", AudienceType.Patient, "en", 43966L, new string[] { }));
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.GetById("cancer.gov", AudienceType.Patient, "en", 43966L));
             Assert.Equal(500, ex.HttpStatusCode);
         }
 
@@ -122,8 +122,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 data.DictionaryName,
                 data.Audience,
                 data.Language,
-                data.TermID,
-                new string[] { }
+                data.TermID
             );
 
             Assert.Equal( $"/glossaryv1/terms/{data.ESTermID}", esURI.AbsolutePath);
@@ -144,7 +143,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
 
-            GlossaryTerm glossaryTerm = await termsClient.GetById("cancer.gov", AudienceType.Patient, "en", 43966L, new string[] { });
+            GlossaryTerm glossaryTerm = await termsClient.GetById("cancer.gov", AudienceType.Patient, "en", 43966L);
 
             Assert.Equal(data.ExpectedData, glossaryTerm, new GlossaryTermComparer());
         }

@@ -21,7 +21,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(termQueryService.Object);
-            var exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetById("", AudienceType.Patient, "EN", 10L, new string[] { }));
+            var exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetById("", AudienceType.Patient, "EN", 10L));
             Assert.Equal("You must supply a valid dictionary, audience, language and id", exception.Message);
         }
 
@@ -30,7 +30,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(termQueryService.Object);
-            var exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetById("Dictionary", AudienceType.Patient, "", 10L, new string[] { }));
+            var exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetById("Dictionary", AudienceType.Patient, "", 10L));
             Assert.Equal("You must supply a valid dictionary, audience, language and id", exception.Message);
         }
 
@@ -39,15 +39,24 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(termQueryService.Object);
-            var exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetById("Dictionary", AudienceType.Patient, "EN", 0L, new string[] { }));
+            var exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetById("Dictionary", AudienceType.Patient, "EN", 0L));
             Assert.Equal("You must supply a valid dictionary, audience, language and id", exception.Message);
+        }
+
+        [Fact]
+        public async void GetById_ErrorMessage_InvalidLanguage()
+        {
+            Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
+            TermsController controller = new TermsController(termQueryService.Object);
+            var exception = await Assert.ThrowsAsync<APIErrorException>(() => controller.GetById("Cancer.gov", AudienceType.Patient, "chicken", 10L)
+            );
+            Assert.Equal("Unsupported Language. Please try either 'en' or 'es'", exception.Message);
         }
 
         [Fact]
         public async void GetById()
         {
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
-            string[] requestedFields = { "TermName", "Pronunciation", "Definition" };
             Pronunciation pronunciation = new Pronunciation("Pronunciation Key", "pronunciation");
             Definition definition = new Definition("<html><h1>Definition</h1></html>", "Sample definition");
             GlossaryTerm glossaryTerm = new GlossaryTerm
@@ -95,14 +104,13 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<String>(),
                     It.IsAny<AudienceType>(),
                     It.IsAny<string>(),
-                    It.IsAny<long>(),
-                    It.IsAny<string[]>()
+                    It.IsAny<long>()
                 )
             )
             .Returns(Task.FromResult(glossaryTerm));
 
             TermsController controller = new TermsController(termQueryService.Object);
-            GlossaryTerm gsTerm = await controller.GetById("Dictionary", AudienceType.Patient, "EN", 1234L, requestedFields);
+            GlossaryTerm gsTerm = await controller.GetById("Dictionary", AudienceType.Patient, "EN", 1234L);
             string actualJsonValue = JsonConvert.SerializeObject(gsTerm);
             string expectedJsonValue = File.ReadAllText(TestingTools.GetPathToTestFile("TermsControllerData/TestData.json"));
 
@@ -110,7 +118,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // a) with the expected values.
             // b) exactly once.
             termQueryService.Verify(
-                svc => svc.GetById("Dictionary", AudienceType.Patient, "EN", 1234L, new string[] { "TermName", "Pronunciation", "Definition" }),
+                svc => svc.GetById("Dictionary", AudienceType.Patient, "EN", 1234L),
                 Times.Once
             );
 
@@ -121,7 +129,6 @@ namespace NCI.OCPL.Api.Glossary.Tests
         public async void GetById_BlankRequiredFields()
         {
             Mock<ITermsQueryService> termsQueryService = new Mock<ITermsQueryService>();
-            string[] requestedFields = new string[] { };
             Pronunciation pronunciation = new Pronunciation("Pronunciation Key", "pronunciation");
             Definition definition = new Definition("<html><h1>Definition</h1></html>", "Sample definition");
             GlossaryTerm glossaryTerm = new GlossaryTerm
@@ -170,14 +177,13 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<String>(),
                     It.IsAny<AudienceType>(),
                     It.IsAny<string>(),
-                    It.IsAny<long>(),
-                    It.IsAny<string[]>()
+                    It.IsAny<long>()
                 )
             )
             .Returns(Task.FromResult(glossaryTerm));
 
             TermsController controller = new TermsController(termsQueryService.Object);
-            GlossaryTerm gsTerm = await controller.GetById("Dictionary", AudienceType.Patient, "EN", 1234L, requestedFields);
+            GlossaryTerm gsTerm = await controller.GetById("Dictionary", AudienceType.Patient, "EN", 1234L);
             string actualJsonValue = JsonConvert.SerializeObject(gsTerm);
             string expectedJsonValue = File.ReadAllText(TestingTools.GetPathToTestFile("TermsControllerData/TestData.json"));
 
@@ -185,7 +191,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             //  a) with the expected values.
             //  b) exactly once.
             termsQueryService.Verify(
-                svc => svc.GetById("Dictionary", AudienceType.Patient, "EN", 1234L, new string[] { "TermName", "Pronunciation", "Definition" }),
+                svc => svc.GetById("Dictionary", AudienceType.Patient, "EN", 1234L),
                 Times.Once
             );
 
