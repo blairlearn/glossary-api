@@ -4,18 +4,18 @@ using NCI.OCPL.Api.Glossary;
 
 namespace NCI.OCPL.Api.Glossary.Tests.ESTermsQueryTestData
 {
-    public abstract class ExpandTermsQueryTestData
+    public abstract class GetByNameTermsQueryTestData
     {
         /// <summary>
         /// Gets an instance of the Expected Data object
         /// </summary>
         /// <returns></returns>
-        public abstract GlossaryTermResults ExpectedData { get; }
+        public abstract GlossaryTerm ExpectedData { get; }
 
         /// <summary>
-        /// Gets the type of Expand test we are performing
+        /// Gets the pretty URL name for the object
         /// </summary>
         /// <returns></returns>
-        public abstract string ExpandTestType { get; }
+        public abstract string PrettyUrlName { get; }
     }
 }

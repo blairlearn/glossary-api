@@ -32,7 +32,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// Get the Glossary Term based on Id.
         /// </summary>
         /// <returns>GlossaryTerm object</returns>
-        [HttpGet("{dictionary}/{audience}/{language}/{id}")]
+        [HttpGet("{dictionary:required}/{audience:required}/{language:required}/{id:long}")]
         public Task<GlossaryTerm> GetById(string dictionary, AudienceType audience, string language, long id, [FromQuery] string[] requestedFields)
         {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || id <= 0)
@@ -52,6 +52,26 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             }
 
             return _termsQueryService.GetById(dictionary, audience, language, id, requestedFields);
+        }
+
+        /// <summary>
+        /// Get the Glossary Term based on Pretty URL Name.
+        /// </summary>
+        /// <returns>GlossaryTerm object</returns>
+        [HttpGet("{dictionary:required}/{audience:required}/{language:required}/{prettyUrlName}")]
+        public async Task<GlossaryTerm> GetByName(string dictionary, AudienceType audience, string language, string prettyUrlName)
+        {
+            if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience))
+            {
+                throw new APIErrorException(400, "You must supply a valid dictionary, audience, and language.");
+            }
+
+            if (language.ToLower() != "en" && language.ToLower() != "es")
+                throw new APIErrorException(404, "Unsupported Language. Please try either 'en' or 'es'");
+
+            // Call GetByName with specified parameters. Size and from are set to 9999 and 0, respectively, as they are needed
+            // to build the query but the values don't actually matter when searching for a specific term with pretty URL name.
+            return await _termsQueryService.GetByName(dictionary, audience, language, prettyUrlName);
         }
 
         /// <summary>

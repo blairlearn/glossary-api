@@ -21,6 +21,16 @@ namespace NCI.OCPL.Api.Glossary
         Task<GlossaryTerm> GetById(string dictionary, AudienceType audience, string language, long id, string[] requestedFields);
 
         /// <summary>
+        /// Search for Term based on the pretty URL name passed.
+        /// <param name="dictionary">The value for dictionary.</param>
+        /// <param name="audience">Patient or Healthcare provider</param>
+        /// <param name="language">The language in which the details needs to be fetched</param>
+        /// <param name="prettyUrlName">The pretty url name to search for</param>
+        /// <returns>An object of GlossaryTerm</returns>
+        /// </summary>
+        Task<GlossaryTerm> GetByName(string dictionary, AudienceType audience, string language, string prettyUrlName);
+
+        /// <summary>
         /// Retrieves a portion of the overall set of glossary terms for a given combination of dictionary, audience, and language.
         /// </summary>
         /// <param name="dictionary">The specific dictionary to retrieve from.</param>

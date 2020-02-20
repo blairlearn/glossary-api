@@ -89,6 +89,73 @@ namespace NCI.OCPL.Api.Glossary.Services
         }
 
         /// <summary>
+        /// Search for Term based on the pretty URL name passed.
+        /// <param name="dictionary">The value for dictionary.</param>
+        /// <param name="audience">Patient or Healthcare provider</param>
+        /// <param name="language">The language in which the details needs to be fetched</param>
+        /// <param name="prettyUrlName">The pretty url name to search for</param>
+        /// <returns>An object of GlossaryTerm</returns>
+        /// </summary>
+        public async Task<GlossaryTerm> GetByName(string dictionary, AudienceType audience, string language, string prettyUrlName)
+        {
+            // Set up the SearchRequest to send to elasticsearch.
+            Indices index = Indices.Index(new string[] { this._apiOptions.AliasName});
+            Types types = Types.Type(new string[] { "terms" });
+            SearchRequest request = new SearchRequest(index, types)
+            {
+                Query = new TermQuery {Field = "language", Value = language.ToString()} &&
+                        new TermQuery {Field = "audience", Value = audience.ToString()} &&
+                        new TermQuery {Field = "dictionary", Value = dictionary.ToString()} &&
+                        new TermQuery {Field = "pretty_url_name", Value = prettyUrlName.ToString()}
+                ,
+                Sort = new List<ISort>
+                {
+                    new SortField { Field = "term_name" }
+                }
+            };
+
+            ISearchResponse<GlossaryTerm> response = null;
+            try
+            {
+                response = await _elasticClient.SearchAsync<GlossaryTerm>(request);
+            }
+            catch (Exception ex)
+            {
+                String msg = String.Format("Could not search dictionary '{0}', audience '{1}', language '{2}', pretty URL name '{3}'.", dictionary, audience, language, prettyUrlName);
+                _logger.LogError(msg, ex);
+                throw new APIErrorException(500, msg);
+            }
+
+            if (!response.IsValid)
+            {
+                String msg = String.Format("Invalid response when searching for dictionary '{0}', audience '{1}', language '{2}', pretty URL name '{3}'.", dictionary, audience, language, prettyUrlName);
+                _logger.LogError(msg);
+                throw new APIErrorException(500, "errors occured");
+            }
+
+            GlossaryTerm glossaryTerm = new GlossaryTerm();
+
+            // If there is only one term in the response, then the search by pretty URL name was successful.
+            if (response.Total == 1)
+            {
+                glossaryTerm = response.Documents.First();
+            }
+            else if (response.Total == 0)
+            {
+                string msg = String.Format("Empty response when searching for dictionary '{0}', audience '{1}', language '{2}', pretty URL name '{3}'.", dictionary, audience, language, prettyUrlName);
+                _logger.LogError(msg);
+                throw new APIErrorException(200, msg);
+            }
+            else {
+                string msg = String.Format("Incorrect response when searching for dictionary '{0}', audience '{1}', language '{2}', pretty URL name '{3}'.", dictionary, audience, language, prettyUrlName);
+                _logger.LogError(msg);
+                throw new APIErrorException(200, msg);
+            }
+
+            return glossaryTerm;
+        }
+
+        /// <summary>
         /// Retrieves a portion of the overall set of glossary terms for a given combination of dictionary, audience, and language.
         /// </summary>
         /// <param name="dictionary">The specific dictionary to retrieve from.</param>
@@ -288,8 +355,6 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <param name="from">Defines the Offset for search</param>
         /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
-        /// <exception cref="System.ArgumentNullException">Thrown when requestedFields is null</exception>
-        /// <exception cref="System.ArgumentException">Thrown when requestedFields contains one or more null values</exception>
         /// </summary>
         public async Task<GlossaryTermResults> Expand(string dictionary, AudienceType audience, string language, string expandCharacter, int size, int from, string[] requestedFields)
         {
