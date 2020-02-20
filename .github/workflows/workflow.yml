@@ -31,7 +31,7 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet }}
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration Release /WarnAsError
       - name: Unit Tests (with Coverage)
         run: |
               if [ "$RUNNER_OS" == "Windows" ]; then
