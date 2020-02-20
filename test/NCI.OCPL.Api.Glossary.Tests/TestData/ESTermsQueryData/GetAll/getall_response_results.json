@@ -1,0 +1,174 @@
+{
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "failed": 0,
+        "failures": []
+    },
+    "aggregations": {},
+    "suggest": {},
+    "took": 2,
+    "timed_out": false,
+    "terminated_early": false,
+    "hits": {
+        "total": 854,
+        "max_score": 0.0,
+        "hits": [
+            {
+                "fields": {},
+                "_source": {
+                    "term_id": 46716,
+                    "language": "en",
+                    "dictionary": "Cancer.gov",
+                    "audience": "Patient",
+                    "term_name": "S-1",
+                    "first_letter": "s",
+                    "pretty_url_name": "s-1",
+                    "definition": {
+                    "html": "A drug that is being studied for its ability to enhance the effectiveness of fluorouracil and prevent gastrointestinal side effects caused by fluorouracil. It belongs to the family of drugs called antimetabolites.",
+                    "text": "A drug that is being studied for its ability to enhance the effectiveness of fluorouracil and prevent gastrointestinal side effects caused by fluorouracil. It belongs to the family of drugs called antimetabolites."
+                    },
+                    "related_resources": [],
+                    "media": []
+                },
+                "_index": "glossaryv1-20200205223000",
+                "inner_hits": {},
+                "_type": "terms",
+                "_id": "46716_cancer.gov_en_patient",
+                "sort": [
+                    "s-1"
+                ],
+                "highlights": {},
+                "matched_queries": []
+            },
+            {
+                "fields": {},
+                "_source": {
+                    "term_id": 44771,
+                    "language": "en",
+                    "dictionary": "Cancer.gov",
+                    "audience": "Patient",
+                    "term_name": "S-phase fraction",
+                    "first_letter": "s",
+                    "pretty_url_name": "s-phase-fraction",
+                    "pronunciation": {
+                    "key": "(... fayz FRAK-shun)",
+                    "audio": "https://nci-media-dev.cancer.gov/audio/pdq/705947.mp3"
+                    },
+                    "definition": {
+                    "html": "A measure of the percentage of cells in a tumor that are in the phase of the cell cycle during which DNA is synthesized. The S-phase fraction may be used with the proliferative index to give a more complete understanding of how fast a tumor is growing.",
+                    "text": "A measure of the percentage of cells in a tumor that are in the phase of the cell cycle during which DNA is synthesized. The S-phase fraction may be used with the proliferative index to give a more complete understanding of how fast a tumor is growing."
+                    },
+                    "related_resources": [],
+                    "media": []
+                },
+                "_index": "glossaryv1-20200205223000",
+                "inner_hits": {},
+                "_type": "terms",
+                "_id": "44771_cancer.gov_en_patient",
+                "sort": [
+                    "s-phase fraction"
+                ],
+                "highlights": {},
+                "matched_queries": []
+            },
+            {
+                "fields": {},
+                "_source": {
+                    "term_id": 572148,
+                    "language": "en",
+                    "dictionary": "Cancer.gov",
+                    "audience": "Patient",
+                    "term_name": "S100 calcium binding protein A8",
+                    "first_letter": "s",
+                    "pretty_url_name": "s100-calcium-binding-protein-a8",
+                    "pronunciation": {
+                    "key": "(… KAL-see-um … PROH-teen …)",
+                    "audio": "https://nci-media-dev.cancer.gov/audio/pdq/720720.mp3"
+                    },
+                    "definition": {
+                    "html": "A protein that is made by many different types of cells and is involved in processes that take place both inside and outside of the cell. It is made in larger amounts in inflammatory diseases such as rheumatoid arthritis, and in some types of cancer. It is being studied as a biomarker for breast cancer. Also called calgranulin A.",
+                    "text": "A protein that is made by many different types of cells and is involved in processes that take place both inside and outside of the cell. It is made in larger amounts in inflammatory diseases such as rheumatoid arthritis, and in some types of cancer. It is being studied as a biomarker for breast cancer. Also called calgranulin A."
+                    },
+                    "related_resources": [],
+                    "media": []
+                },
+                "_index": "glossaryv1-20200205223000",
+                "inner_hits": {},
+                "_type": "terms",
+                "_id": "572148_cancer.gov_en_patient",
+                "sort": [
+                    "s100 calcium binding protein a8"
+                ],
+                "highlights": {},
+                "matched_queries": []
+            },
+            {
+                "fields": {},
+                "_source": {
+                    "term_id": 572151,
+                    "language": "en",
+                    "dictionary": "Cancer.gov",
+                    "audience": "Patient",
+                    "term_name": "S100 calcium binding protein A9",
+                    "first_letter": "s",
+                    "pretty_url_name": "s100-calcium-binding-protein-a9",
+                    "pronunciation": {
+                    "key": "(… KAL-see-um … PROH-teen …)",
+                    "audio": "https://nci-media-dev.cancer.gov/audio/pdq/720722.mp3"
+                    },
+                    "definition": {
+                    "html": "A protein that is made by many different types of cells and is involved in processes that take place both inside and outside of the cell. It is made in larger amounts in inflammatory diseases such as rheumatoid arthritis, and in some types of cancer. It is being studied as a biomarker for breast cancer. Also called calgranulin B.",
+                    "text": "A protein that is made by many different types of cells and is involved in processes that take place both inside and outside of the cell. It is made in larger amounts in inflammatory diseases such as rheumatoid arthritis, and in some types of cancer. It is being studied as a biomarker for breast cancer. Also called calgranulin B."
+                    },
+                    "related_resources": [],
+                    "media": []
+                },
+                "_index": "glossaryv1-20200205223000",
+                "inner_hits": {},
+                "_type": "terms",
+                "_id": "572151_cancer.gov_en_patient",
+                "sort": [
+                    "s100 calcium binding protein a9"
+                ],
+                "highlights": {},
+                "matched_queries": []
+            },
+            {
+                "fields": {},
+                "_source": {
+                    "term_id": 651217,
+                    "language": "en",
+                    "dictionary": "Cancer.gov",
+                    "audience": "Patient",
+                    "term_name": "SAB",
+                    "first_letter": "s",
+                    "pretty_url_name": "sab",
+                    "definition": {
+                    "html": "A temporary loss of feeling in the abdomen and/or the lower part of the body. Special drugs called anesthetics are injected into the fluid in the lower part of the spinal column to cause the loss of feeling. The patient stays awake during the procedure.  It is a type of regional anesthesia. Also called spinal anesthesia, spinal block,  and subarachnoid block.",
+                    "text": "A temporary loss of feeling in the abdomen and/or the lower part of the body. Special drugs called anesthetics are injected into the fluid in the lower part of the spinal column to cause the loss of feeling. The patient stays awake during the procedure.  It is a type of regional anesthesia. Also called spinal anesthesia, spinal block,  and subarachnoid block."
+                    },
+                    "related_resources": [],
+                    "media": []
+                },
+                "_index": "glossaryv1-20200205223000",
+                "inner_hits": {},
+                "_type": "terms",
+                "_id": "651217_cancer.gov_en_patient",
+                "sort": [
+                    "sab"
+                ],
+                "highlights": {},
+                "matched_queries": []
+            }
+        ]
+    },
+    "num_reduce_phases": 0,
+    "fields": [
+        {},
+        {},
+        {},
+        {},
+        {}
+    ]
+}

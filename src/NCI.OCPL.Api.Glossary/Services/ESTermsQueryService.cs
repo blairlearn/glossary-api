@@ -100,62 +100,83 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
         public async Task<GlossaryTermResults> GetAll(string dictionary, AudienceType audience, string language, int size, int from, string[] requestedFields)
         {
-            // Dummy return for now.
-            GlossaryTermResults results = new GlossaryTermResults()
+            // Elasticsearch knows how to figure out what the ElasticSearch name is for
+            // a given field when given a PropertyInfo.
+            Field[] requestedESFields = convertRequestedFieldsToProperties(requestedFields)
+                                            .Select(pi => new Field(pi))
+                                            .ToArray();
+
+            // Set up the SearchRequest to send to elasticsearch.
+            Indices index = Indices.Index(new string[] { this._apiOptions.AliasName});
+            Types types = Types.Type(new string[] { "terms" });
+            SearchRequest request = new SearchRequest(index, types)
             {
-                Meta = new ResultsMetadata()
+                Query = new TermQuery {Field = "language", Value = language.ToString()} &&
+                        new TermQuery {Field = "audience", Value = audience.ToString()} &&
+                        new TermQuery {Field = "dictionary", Value = dictionary.ToString()}
+                ,
+                Sort = new List<ISort>
                 {
-                    TotalResults = 200,
-                    From = 20
+                    new SortField { Field = "term_name" }
                 },
-                Links = new Metalink()
+                Size = size,
+                From = from,
+                Source = new SourceFilter
                 {
-                    Self = new System.Uri("https://www.cancer.gov")
-                },
-                Results = new GlossaryTerm[]
-                {
-                    new GlossaryTerm()
-                    {
-                        TermId =43966,
-                        Language = "en",
-                        Dictionary = "Cancer.gov",
-                        Audience = AudienceType.HealthProfessional,
-                        TermName = "stage II cutaneous T-cell lymphoma",
-                        PrettyUrlName = "stage-ii-cutaneous-t-cell-lymphoma",
-                        Pronunciation = new Pronunciation()
-                        {
-                            Key = "kyoo-TAY-nee-us T-sel lim-FOH-muh",
-                            Audio = "https://www.cancer.gov/PublishedContent/Media/CDR/media/703959.mp3"
-                        },
-                        Definition = new Definition()
-                        {
-                            Html = "Stage II cutaneous T-cell lymphoma may be either of the following: (1) stage IIA, in which the skin has red, dry, scaly patches but no tumors, and lymph nodes are enlarged but do not contain cancer cells; (2) stage IIB, in which tumors are found on the skin, and lymph nodes are enlarged but do not contain cancer cells.",
-                            Text = "Stage II cutaneous T-cell lymphoma may be either of the following: (1) stage IIA, in which the skin has red, dry, scaly patches but no tumors, and lymph nodes are enlarged but do not contain cancer cells; (2) stage IIB, in which tumors are found on the skin, and lymph nodes are enlarged but do not contain cancer cells."
-                        }
-                    },
-                    new GlossaryTerm()
-                    {
-                        TermId =43971,
-                        Language = "en",
-                        Dictionary = "Cancer.gov",
-                        Audience = AudienceType.Patient,
-                        TermName = "bcl-2 antisense oligodeoxynucleotide G3139",
-                        PrettyUrlName = "bcl-2-antisense-oligodeoxynucleotide-g3139",
-                        Pronunciation = new Pronunciation()
-                        {
-                            Key = "AN-tee-sents AH-lih-goh-dee-OK-see-NOO-klee-oh-tide",
-                            Audio = "https://www.cancer.gov/PublishedContent/Media/CDR/media/703968mp3"
-                        },
-                        Definition = new Definition()
-                        {
-                            Html = "A substance being studied in the treatment of cancer. It may kill cancer cells by blocking the production of a protein that makes cancer cells live longer and by making them more sensitive to anticancer drugs. It is a type of antisense oligodeoxyribonucleotide. Also called augmerosen, Genasense, and oblimersen sodium.",
-                            Text = "A substance being studied in the treatment of cancer. It may kill cancer cells by blocking the production of a protein that makes cancer cells live longer and by making them more sensitive to anticancer drugs. It is a type of antisense oligodeoxyribonucleotide. Also called augmerosen, Genasense, and oblimersen sodium."
-                        }
-                    }
+                    Includes = requestedESFields
                 }
             };
 
-            return results;
+            ISearchResponse<GlossaryTerm> response = null;
+            try
+            {
+                response = await _elasticClient.SearchAsync<GlossaryTerm>(request);
+            }
+            catch (Exception ex)
+            {
+                String msg = String.Format("Could not get dictionary '{0}', audience '{1}', language '{2}', size '{3}', from '{4}'.", dictionary, audience, language, size, from);
+                _logger.LogError(msg, ex);
+                throw new APIErrorException(500, msg);
+            }
+
+            if (!response.IsValid)
+            {
+                String msg = String.Format("Invalid response when getting dictionary '{0}', audience '{1}', language '{2}', size '{3}', from '{4}'.", dictionary, audience, language, size, from);
+                _logger.LogError(msg);
+                throw new APIErrorException(500, "errors occured");
+            }
+
+            GlossaryTermResults glossaryTermResults = new GlossaryTermResults();
+
+            if (response.Total > 0)
+            {
+                // Build the array of glossary terms for the returned results.
+                List<GlossaryTerm> termResults = new List<GlossaryTerm>();
+                foreach (GlossaryTerm res in response.Documents)
+                {
+                    termResults.Add(res);
+                }
+
+                glossaryTermResults.Results = termResults.ToArray();
+
+                // Add the metadata for the returned results
+                glossaryTermResults.Meta = new ResultsMetadata() {
+                    TotalResults = (int)response.Total,
+                    From = from
+                };
+            }
+            else if (response.Total == 0) {
+                // Add the defualt value of empty GlossaryTerm list.
+                glossaryTermResults.Results = new GlossaryTerm[] {};
+
+                // Add the metadata for the returned results
+                glossaryTermResults.Meta = new ResultsMetadata() {
+                    TotalResults = (int)response.Total,
+                    From = from
+                };
+            }
+
+            return glossaryTermResults;
         }
 
         /// <summary>
