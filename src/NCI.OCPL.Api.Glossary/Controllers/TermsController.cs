@@ -65,7 +65,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <param name="requestedFields">The fields to retrieve.  If not specified, defaults to TermName, Pronunciation, and Definition.</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
         [HttpGet("{dictionary}/{audience}/{language}")]
-        public async Task<GlossaryTermResults> GetAll(string dictionary, AudienceType audience, string language, int size = 10, int from = 0, string[] requestedFields = null)
+        public async Task<GlossaryTermResults> GetAll(string dictionary, AudienceType audience, string language, int size = 100, int from = 0, string[] requestedFields = null)
         {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience))
                 throw new APIErrorException(400, "You must specify a dictionary, audience, and language.");
@@ -74,7 +74,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 throw new APIErrorException(404, "Unsupported Language. Please try either 'en' or 'es'");
 
             if (size <= 0)
-                size = 20;
+                size = 100;
 
             if (from < 0)
                 from = 0;
