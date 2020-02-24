@@ -1,0 +1,197 @@
+{
+    "settings": {
+      "index": {
+       "number_of_shards": "1",
+        "analysis": {
+          "filter": {
+            "autocomplete_filter": {
+              "type": "edge_ngram",
+              "min_gram": 3,
+              "max_gram": 30,
+              "token_chars": [
+                "letter",
+                "digit",
+                "punctuation",
+                "symbol"
+              ]
+            },
+            "ngram_filter": {
+              "type": "ngram",
+              "min_gram": 1,
+              "max_gram": 30,
+              "token_chars": [
+                "letter",
+                "digit",
+                "punctuation",
+                "symbol"
+              ]
+            }
+          },
+          "analyzer": {
+            "autocomplete_index": {
+              "type": "custom",
+              "tokenizer": "whitespace",
+              "filter": [
+                "lowercase",
+                "autocomplete_filter",
+                "asciifolding"
+              ]
+            },
+            "lowercase_search": {
+              "tokenizer": "keyword",
+              "filter": [
+                "lowercase",
+                "asciifolding"
+              ]
+            },
+            "ngram_analyzer": {
+              "type": "custom",
+              "tokenizer": "whitespace",
+              "filter": [
+                "lowercase",
+                "ngram_filter",
+                "asciifolding"
+              ]
+            }
+          },
+          "normalizer": {
+            "caseinsensitive_normalizer": {
+              "type": "custom",
+              "char_filter": [
+
+              ],
+              "filter": [
+                "lowercase",
+                "asciifolding"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "mappings": {
+      "terms": {
+        "dynamic": "strict",
+        "properties": {
+          "term_id": {
+            "type": "long"
+          },
+          "language": {
+            "type": "keyword"
+          },
+          "dictionary": {
+            "type": "keyword"
+          },
+          "audience": {
+            "type": "keyword"
+          },
+          "term_name": {
+            "type": "keyword",
+            "normalizer": "caseinsensitive_normalizer",
+            "fields": {
+              "_autocomplete": {
+                "type": "text",
+                "analyzer": "autocomplete_index",
+                "search_analyzer": "lowercase_search"
+              },
+              "_contain": {
+                "type": "text",
+                "analyzer": "ngram_analyzer",
+                "search_analyzer": "lowercase_search"
+              }
+            }
+          },
+          "first_letter": {
+            "type": "keyword",
+            "normalizer": "caseinsensitive_normalizer"
+          },
+          "pretty_url_name": {
+            "type": "keyword"
+          },
+          "pronunciation": {
+            "properties": {
+              "key": {
+                "type": "keyword"
+              },
+              "audio": {
+                "type": "keyword"
+              }
+            }
+          },
+          "definition": {
+            "properties": {
+              "html": {
+                "type": "keyword"
+              },
+              "text": {
+                "type": "keyword"
+              }
+            }
+          },
+          "media": {
+            "properties": {
+              "type": {
+                "type": "keyword"
+              },
+              "ref": {
+                "type": "keyword"
+              },
+              "alt": {
+                "type": "keyword"
+              },
+              "caption": {
+                "type": "keyword"
+              },
+              "hosting": {
+                "type": "keyword"
+              },
+              "unique_id": {
+                "type": "keyword"
+              },
+              "title": {
+                "type": "keyword"
+              },
+              "template": {
+                "type": "keyword"
+              },
+              "image_sources": {
+                "properties": {
+                  "size": {
+                    "type": "keyword"
+                  },
+                  "src": {
+                    "type": "keyword"
+                  },
+                  "template": {
+                    "type": "keyword"
+                  }
+                }
+              }
+            }
+          },
+          "related_resources": {
+            "properties": {
+              "type": {
+                "type": "keyword"
+              },
+              "text": {
+                "type": "keyword"
+              },
+              "url": {
+                "type": "keyword"
+              },
+              "term_id": {
+                "type": "long"
+              },
+              "audience": {
+                "type": "keyword"
+              },
+              "pretty_url_name": {
+                "type": "keyword"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
