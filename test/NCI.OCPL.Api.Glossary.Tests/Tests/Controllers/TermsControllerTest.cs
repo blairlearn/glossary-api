@@ -114,8 +114,8 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termQueryService.Object);
             GlossaryTerm gsTerm = await controller.GetById("Dictionary", AudienceType.Patient, "EN", 1234L);
-            string actualJsonValue = JsonConvert.SerializeObject(gsTerm);
-            string expectedJsonValue = File.ReadAllText(TestingTools.GetPathToTestFile("TermsControllerData/TestData_GetById.json"));
+            JObject actual = JObject.Parse(JsonConvert.SerializeObject(gsTerm));
+            JObject expected = JObject.Parse(File.ReadAllText(TestingTools.GetPathToTestFile("TermsControllerData/TestData_GetById.json")));
 
             // Verify that the service layer is called:
             // a) with the expected values.
@@ -125,7 +125,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 Times.Once
             );
 
-            Assert.Equal(expectedJsonValue, actualJsonValue);
+            Assert.Equal(expected, actual, new JTokenEqualityComparer());
         }
 
         // This test is for the HealthProfessional fallback logic for GetById.

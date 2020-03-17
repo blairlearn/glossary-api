@@ -1,1 +1,44 @@
-[{"TermId":1234,"Language":"EN","Dictionary":"Dictionary","Audience":"Patient","TermName":"TermName","FirstLetter":"t","PrettyUrlName":"www.glossary-api.com","Pronunciation":{"Key":"Pronunciation Key","Audio":"pronunciation"},"Definition":{"Html":"<html><h1>Definition</h1></html>","Text":"Sample definition"},"RelatedResources":[{"Url":"https://www.google.com","Type":"External","Text":"Link to Google"},{"Url":"https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab","Type":"DrugSummary","Text":"Bevacizumab"},{"Url":"https://www.cancer.gov/types/lung/patient/small-cell-lung-treatment-pdq","Type":"Summary","Text":"Lung cancer treatment"},{"Type":"GlossaryTerm","Text":"stage II cutaneous T-cell lymphoma","TermId":43966,"Audience":"Patient","PrettyUrlName":"stage-ii-cutaneous-t-cell-lymphoma"}],"Media":[]}]
+[
+    {
+        "TermId": 1234,
+        "Language": "EN",
+        "Dictionary": "Dictionary",
+        "Audience": "Patient",
+        "TermName": "TermName",
+        "FirstLetter": "t",
+        "PrettyUrlName": "www.glossary-api.com",
+        "Pronunciation": {
+            "Key": "Pronunciation Key",
+            "Audio": "pronunciation"
+        },
+        "Definition": {
+            "Html": "<html><h1>Definition</h1></html>",
+            "Text": "Sample definition"
+        },
+        "RelatedResources": [
+            {
+                "Url": "https://www.google.com",
+                "Type": "External",
+                "Text": "Link to Google"
+            },
+            {
+                "Url": "https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab",
+                "Type": "DrugSummary",
+                "Text": "Bevacizumab"
+            },
+            {
+                "Url": "https://www.cancer.gov/types/lung/patient/small-cell-lung-treatment-pdq",
+                "Type": "Summary",
+                "Text": "Lung cancer treatment"
+            },
+            {
+                "Type": "GlossaryTerm",
+                "Text": "stage II cutaneous T-cell lymphoma",
+                "TermId": 43966,
+                "Audience": "Patient",
+                "PrettyUrlName": "stage-ii-cutaneous-t-cell-lymphoma"
+            }
+        ],
+        "Media":[]
+    }
+]

@@ -121,8 +121,8 @@ namespace NCI.OCPL.Api.Glossary.Tests
             .Returns(Task.FromResult(glossaryTerm));
 
             GlossaryTerm term = await controller.GetByName("Cancer.gov", AudienceType.Patient, "en", "s-phase-fraction");
-            string actualJsonValue = JsonConvert.SerializeObject(term);
-            string expectedJsonValue = File.ReadAllText(TestingTools.GetPathToTestFile("TermsControllerData/TestData_GetByName.json"));
+            JObject actual = JObject.Parse(JsonConvert.SerializeObject(term));
+            JObject expected = JObject.Parse(File.ReadAllText(TestingTools.GetPathToTestFile("TermsControllerData/TestData_GetByName.json")));
 
             // Verify that the service layer is called:
             //  a) with the expected values.
@@ -133,7 +133,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             );
 
             Assert.Equal(glossaryTerm, term, new GlossaryTermComparer());
-            Assert.Equal(expectedJsonValue, actualJsonValue);
+            Assert.Equal(expected, actual, new JTokenEqualityComparer());
         }
 
         // This test is for the HealthProfessional fallback logic for GetByName.

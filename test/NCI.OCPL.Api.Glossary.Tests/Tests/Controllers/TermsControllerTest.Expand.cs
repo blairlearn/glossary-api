@@ -11,6 +11,7 @@ using NCI.OCPL.Api.Glossary.Controllers;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.IO;
 using NCI.OCPL.Api.Common.Testing;
 
@@ -409,8 +410,8 @@ namespace NCI.OCPL.Api.Glossary.Tests
             .Returns(Task.FromResult(glossaryTermResults));
 
             GlossaryTermResults termResults = await controller.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 5, 0, requestedFields );
-            string actualJsonValue = JsonConvert.SerializeObject(termResults);
-            string expectedJsonValue = File.ReadAllText(TestingTools.GetPathToTestFile("TermsControllerData/TestData_Expand.json"));
+            JObject actual = JObject.Parse(JsonConvert.SerializeObject(termResults));
+            JObject expected = JObject.Parse(File.ReadAllText(TestingTools.GetPathToTestFile("TermsControllerData/TestData_Expand.json")));
 
             // Verify that the service layer is called:
             //  a) with the expected values.
@@ -423,7 +424,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Assert.Equal(glossaryTermResults.Results, termResults.Results, new GlossaryTermComparer());
             Assert.Equal(glossaryTermResults.Meta.TotalResults, termResults.Meta.TotalResults);
             Assert.Equal(glossaryTermResults.Meta.From, termResults.Meta.From);
-            Assert.Equal(expectedJsonValue, actualJsonValue);
+            Assert.Equal(expected, actual, new JTokenEqualityComparer());
         }
 
     }
