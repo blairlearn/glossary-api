@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using NCI.OCPL.Api.Glossary;
 using NCI.OCPL.Api.Common;
 using System.Collections.Generic;
@@ -18,13 +19,39 @@ namespace NCI.OCPL.Api.Glossary.Controllers
     [ApiController]
     public class TermsController : Controller
     {
+        private readonly ILogger _logger;
         private readonly ITermsQueryService _termsQueryService;
+
+        private readonly LinkedList<Tuple<string, AudienceType>> _fallbackOptionsPatient = new LinkedList<Tuple<string, AudienceType>>(
+            new Tuple<string, AudienceType>[]
+            {
+                new Tuple<string, AudienceType>("Cancer.gov", AudienceType.Patient),
+                new Tuple<string, AudienceType>("Cancer.gov", AudienceType.HealthProfessional),
+                new Tuple<string, AudienceType>("NotSet", AudienceType.Patient),
+                new Tuple<string, AudienceType>("NotSet", AudienceType.HealthProfessional),
+                new Tuple<string, AudienceType>("Genetics", AudienceType.Patient),
+                new Tuple<string, AudienceType>("Genetics", AudienceType.HealthProfessional)
+            }
+        );
+
+        private readonly LinkedList<Tuple<string, AudienceType>> _fallbackOptionsHP = new LinkedList<Tuple<string, AudienceType>>(
+            new Tuple<string, AudienceType>[]
+            {
+                new Tuple<string, AudienceType>("Genetics", AudienceType.HealthProfessional),
+                new Tuple<string, AudienceType>("Genetics", AudienceType.Patient),
+                new Tuple<string, AudienceType>("Cancer.gov", AudienceType.HealthProfessional),
+                new Tuple<string, AudienceType>("Cancer.gov", AudienceType.Patient),
+                new Tuple<string, AudienceType>("NotSet", AudienceType.HealthProfessional),
+                new Tuple<string, AudienceType>("NotSet", AudienceType.Patient)
+            }
+        );
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public TermsController(ITermsQueryService service)
+        public TermsController(ILogger<TermsController> logger, ITermsQueryService service)
         {
+            _logger = logger;
             _termsQueryService = service;
         }
 
@@ -33,7 +60,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// </summary>
         /// <returns>GlossaryTerm object</returns>
         [HttpGet("{dictionary:required}/{audience:required}/{language:required}/{id:long}")]
-        public Task<GlossaryTerm> GetById(string dictionary, AudienceType audience, string language, long id)
+        public async Task<GlossaryTerm> GetById(string dictionary, AudienceType audience, string language, long id, bool useFallback = false)
         {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || id <= 0)
             {
@@ -43,7 +70,37 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             if (language.ToLower() != "en" && language.ToLower() != "es")
                 throw new APIErrorException(404, "Unsupported Language. Please try either 'en' or 'es'");
 
-            return _termsQueryService.GetById(dictionary, audience, language, id);
+            if (useFallback == false) {
+                return await _termsQueryService.GetById(dictionary, audience, language, id);
+            }
+            // Implement fallback logic.
+            // Depending on the given Dictionary and Audience inputs, loop through the fallback logic
+            // options until a term is found. If none of the options return a term, then throw an error.
+            else {
+                // Set order of fallback options based on current audience.
+                var fallbackOptions = audience == AudienceType.Patient ? _fallbackOptionsPatient : _fallbackOptionsHP;
+
+                Tuple<string, AudienceType> currentValue = new Tuple<string, AudienceType>(dictionary, audience);
+                LinkedListNode<Tuple<string, AudienceType>> start = fallbackOptions.Find(currentValue);
+                LinkedListNode<Tuple<string, AudienceType>> current = start;
+
+                do
+                {
+                    try {
+                        return await _termsQueryService.GetById(current.Value.Item1, current.Value.Item2, language, id);
+                    }
+                    catch (Exception ex) {
+                        // Swallow this Exception and move to the next combination.
+                        string msg = String.Format("Could not find fallback term with ID '{0}', dictionary '{1}', audience '{2}', and language '{3}'.", id, currentValue.Item1, currentValue.Item2, language);
+                        _logger.LogDebug(msg, ex);
+                    }
+                    current = current.Next == null ? fallbackOptions.First : current.Next;
+                } while ( current != start );
+
+                string message = String.Format("Could not find fallback term with ID '{0}' for any combination of dictionary and audience.", id);
+                _logger.LogError(message);
+                throw new APIErrorException(500, message);
+            }
         }
 
         /// <summary>
@@ -51,7 +108,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// </summary>
         /// <returns>GlossaryTerm object</returns>
         [HttpGet("{dictionary:required}/{audience:required}/{language:required}/{prettyUrlName}")]
-        public async Task<GlossaryTerm> GetByName(string dictionary, AudienceType audience, string language, string prettyUrlName)
+        public async Task<GlossaryTerm> GetByName(string dictionary, AudienceType audience, string language, string prettyUrlName, bool useFallback = false)
         {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience))
             {
@@ -64,9 +121,39 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             if (String.IsNullOrWhiteSpace(prettyUrlName))
                 throw new APIErrorException(404, "You must specify the prettyUrlName parameter.");
 
-            // Call GetByName with specified parameters. Size and from are set to 9999 and 0, respectively, as they are needed
-            // to build the query but the values don't actually matter when searching for a specific term with pretty URL name.
-            return await _termsQueryService.GetByName(dictionary, audience, language, prettyUrlName);
+            // Call GetByName with specified parameters.
+            if (useFallback == false) {
+                return await _termsQueryService.GetByName(dictionary, audience, language, prettyUrlName);
+            }
+            // Implement fallback logic.
+            // Depending on the given Dictionary and Audience inputs, loop through the fallback logic
+            // options until a term is found. If none of the options return a term, then throw an error.
+            else {
+                // Set order of fallback options based on current audience.
+                var fallbackOptions = audience == AudienceType.Patient ? _fallbackOptionsPatient : _fallbackOptionsHP;
+
+                Tuple<string, AudienceType> currentValue = new Tuple<string, AudienceType>(dictionary, audience);
+                LinkedListNode<Tuple<string, AudienceType>> start = fallbackOptions.Find(currentValue);
+                LinkedListNode<Tuple<string, AudienceType>> current = start;
+
+                do
+                {
+                    try {
+                        return await _termsQueryService.GetByName(current.Value.Item1, current.Value.Item2, language, prettyUrlName);
+                    }
+                    catch (Exception ex) {
+                        // Swallow this Exception and move to the next combination.
+                        string msg = String.Format("Could not find fallback term with pretty URL name '{0}', dictionary '{1}', audience '{2}', and language '{3}'.", prettyUrlName, currentValue.Item1, currentValue.Item2, language);
+                        _logger.LogDebug(msg, ex);
+                    }
+
+                    current = current.Next == null ? fallbackOptions.First : current.Next;
+                } while ( current != start );
+
+                string message = String.Format("Could not find fallback term with pretty URL name '{0}' for any combination of dictionary and audience.", prettyUrlName);
+                _logger.LogError(message);
+                throw new APIErrorException(500, message);
+            }
         }
 
         /// <summary>

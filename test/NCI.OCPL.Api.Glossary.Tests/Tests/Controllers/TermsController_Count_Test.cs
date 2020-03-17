@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Moq;
 using Xunit;
 
+using Microsoft.Extensions.Logging.Testing;
+
 using NCI.OCPL.Api.Common;
 using NCI.OCPL.Api.Glossary.Controllers;
 
@@ -20,7 +22,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         public async void Count_ErrorMessage_Dictionary(string dictionary)
         {
             Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
 
             APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.GetCount(dictionary, AudienceType.HealthProfessional, "en")
@@ -35,7 +37,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         public async void Count_ErrorMessage_Audience()
         {
             Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
 
             APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.GetCount("Cancer.gov", (AudienceType)6, "en")
@@ -52,7 +54,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         public async void Count_ErrorMessage_Language(string badLanguage)
         {
             Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
 
             APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.GetCount("Cancer.gov", AudienceType.Patient, badLanguage)
@@ -75,7 +77,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         public async void Count_QueryValues(string dictionary, AudienceType audience, string language)
         {
             Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
 
             // Set up the mock query service to handle the GetCount() call.
             // The return value is unimportant for this test.
@@ -112,7 +114,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         public async void Count_QueryReturn(long returnCount)
         {
             Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
 
             // Set up the mock query service to handle the GetCount() call.
             // The return value is unimportant for this test.

@@ -3,6 +3,8 @@ using System;
 using Moq;
 using Xunit;
 
+using Microsoft.Extensions.Logging.Testing;
+
 using NCI.OCPL.Api.Common;
 using NCI.OCPL.Api.Glossary.Controllers;
 using System.Threading.Tasks;
@@ -17,7 +19,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
 
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
 
             var exception = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.GetAll("", AudienceType.HealthProfessional, "en")
@@ -30,7 +32,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
 
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
 
             var exception = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.GetAll("glossary", AudienceType.HealthProfessional, "")
@@ -43,7 +45,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
 
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
 
             var exception = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.GetAll("glossary", AudienceType.HealthProfessional, "turducken")
@@ -73,7 +75,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             .Returns(Task.FromResult(new GlossaryTermResults()));
 
             // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
             await controller.GetAll("glossary", AudienceType.HealthProfessional, "en");
 
             // Verify that the query layer is called:
@@ -108,7 +110,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             .Returns(Task.FromResult(new GlossaryTermResults()));
 
             // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
             await controller.GetAll("glossary", AudienceType.HealthProfessional, "es", 200, 2, new string[] {"Field1", "Field2", "Field3"});
 
             // Verify that the query layer is called:

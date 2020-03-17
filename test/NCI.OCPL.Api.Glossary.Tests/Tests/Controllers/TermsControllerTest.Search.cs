@@ -3,6 +3,8 @@ using System;
 using Moq;
 using Xunit;
 
+using Microsoft.Extensions.Logging.Testing;
+
 using NCI.OCPL.Api.Common;
 using NCI.OCPL.Api.Glossary;
 using NCI.OCPL.Api.Glossary.Controllers;
@@ -21,7 +23,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         public async void Search_ErrorMessage_Dictionary()
         {
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
-            TermsController controller = new TermsController(termQueryService.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termQueryService.Object);
             var exception = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.Search("", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
             );
@@ -31,7 +33,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         public async void Search_ErrorMessage_EmptyLanguage()
         {
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
-            TermsController controller = new TermsController(termQueryService.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termQueryService.Object);
             var exception = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.Search("Cancer.gov", AudienceType.Patient, "", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
             );
@@ -42,7 +44,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         public async void Search_ErrorMessage_InvalidLanguage()
         {
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
-            TermsController controller = new TermsController(termQueryService.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termQueryService.Object);
             var exception = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.Search("Cancer.gov", AudienceType.Patient, "chicken", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
             );
@@ -52,7 +54,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         [Fact]
         public async void Search_ErrorMessage_AudienceType(){
             Mock<ITermsQueryService> termsQueryService = new Mock<ITermsQueryService>();
-            TermsController controller = new TermsController(termsQueryService.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termsQueryService.Object);
             APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.Search("Cancer.gov", (AudienceType)(-18), "en", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
             );
@@ -69,7 +71,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> querySvc = getDumbSearchSvcMock();
 
             // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
             await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken");
 
             // Verify that the query layer is called:
@@ -92,7 +94,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> querySvc = getDumbSearchSvcMock();
 
             // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
             var exception = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", (MatchType)5, -1, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
             );
@@ -109,7 +111,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> querySvc = getDumbSearchSvcMock();
 
             // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
             await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, -1, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" });
 
             // Verify that the query layer is called:
@@ -132,7 +134,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> querySvc = getDumbSearchSvcMock();
 
             // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
             await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, -1, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" });
 
             // Verify that the query layer is called:
@@ -155,7 +157,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> querySvc = getDumbSearchSvcMock();
 
             // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
             await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, -1, null);
 
             // Verify that the query layer is called:
@@ -179,7 +181,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> querySvc = getDumbSearchSvcMock();
 
             // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
             await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, new string[]{null, null, null});
 
             // Verify that the query layer is called:
@@ -202,7 +204,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> querySvc = getDumbSearchSvcMock();
 
             // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(querySvc.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
             await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, new string[]{});
 
             // Verify that the query layer is called:
@@ -335,7 +337,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             };
 
             Mock<ITermsQueryService> termsQueryService = getDumbSearchSvcMock(glossaryTermResults);
-            TermsController controller = new TermsController(termsQueryService.Object);
+            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termsQueryService.Object);
             string[] requestedFields = new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" };
 
 
