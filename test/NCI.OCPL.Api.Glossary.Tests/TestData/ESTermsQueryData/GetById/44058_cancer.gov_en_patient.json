@@ -45,6 +45,11 @@
       "caption": "Many cancer deaths are caused when cancer moves from the original tumor and spreads to other tissues and organs. This is called metastatic cancer. This animation shows how cancer cells travel from the place in the body where they first formed to other parts of the body.",
       "template": "Video75NoTitle"
     }],
+    "other_languages" : [{
+        "language" : "es",
+        "term_name" : "metastásico",
+        "pretty_url_name" : "metastasico"
+    }],
     "related_resources": [{
       "text": "Metastatic Cancer",
       "url": "https://www.cancer.gov/types/metastatic-cancer",

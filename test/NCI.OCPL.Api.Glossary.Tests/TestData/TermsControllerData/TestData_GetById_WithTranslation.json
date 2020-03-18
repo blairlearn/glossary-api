@@ -14,7 +14,11 @@
         "Html":"<html><h1>Definition</h1></html>",
         "Text":"Sample definition"
     },
-    "OtherLanguages": [],
+    "OtherLanguages": [{
+        "Language" : "es",
+        "TermName" : "metastásico",
+        "PrettyUrlName" : "metastasico"
+    }],
     "RelatedResources": [
         {
             "Url": "https://www.google.com",

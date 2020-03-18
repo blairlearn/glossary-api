@@ -62,6 +62,13 @@ namespace NCI.OCPL.Api.Glossary.Tests.ESTermsQueryTestData
                     Title = "Metastasis: How Cancer Spreads"
                 }
             },
+            OtherLanguages = new TermOtherLanguage[] {
+                new TermOtherLanguage {
+                    Language = "es",
+                    TermName = "metastásico",
+                    PrettyUrlName = "metastasico"
+                }
+            },
             RelatedResources = new IRelatedResource[] {
                 new LinkResource {
                     Text = "Metastatic Cancer",

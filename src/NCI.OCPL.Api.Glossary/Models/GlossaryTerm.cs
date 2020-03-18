@@ -67,6 +67,12 @@ namespace NCI.OCPL.Api.Glossary
         public Definition Definition  { get; set; }
 
         /// <summary>
+        /// Gets or sets the translations of this term.
+        /// </summary>
+        [Nested(Name = "other_languages")]
+        public TermOtherLanguage[] OtherLanguages { get; set; } = new TermOtherLanguage[] { };
+
+        /// <summary>
         /// Gets or sets the Definition for the Glosary Term
         /// </summary>
         [Nested(Name = "related_resources")]

@@ -31,6 +31,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 && x.Dictionary?.ToLower() == y.Dictionary?.ToLower()
                 && x.Audience.ToString() == y.Audience.ToString()
                 && x.PrettyUrlName == y.PrettyUrlName
+                && AreParamArraysEqual<TermOtherLanguage, TermOtherLanguageComparer>(x.OtherLanguages, y.OtherLanguages)
                 && AreParamArraysEqual<IRelatedResource, IRelatedResourceComparer>(x.RelatedResources, y.RelatedResources)
                 && AreParamArraysEqual<IMedia, IMediaComparer>(x.Media, y.Media)
                 && new PronunciationComparer().Equals(x.Pronunciation, y.Pronunciation)
@@ -51,6 +52,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 ^ obj.Dictionary.GetHashCode()
                 ^ obj.Audience.GetHashCode()
                 ^ (obj.PrettyUrlName != null ? obj.PrettyUrlName.GetHashCode() : 0)
+                ^ obj.OtherLanguages.GetHashCode()
                 ^ obj.RelatedResources.GetHashCode()
                 ^ obj.Media.GetHashCode()
                 ^ (obj.Pronunciation != null ? new PronunciationComparer().GetHashCode(obj.Pronunciation) : 0)
