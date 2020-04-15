@@ -84,7 +84,7 @@ namespace NCI.OCPL.Api.Common
             //
             // AddTransient means that it will instantiate a new instance of our client
             // for each instance of the controller.  So the function below will be called
-            // on each request.   
+            // on each request.
             services.AddTransient<IElasticClient>(p => {
 
                 // Get the ElasticSearch credentials.
@@ -94,7 +94,7 @@ namespace NCI.OCPL.Api.Common
                 //Get the ElasticSearch servers that we will be connecting to.
                 List<Uri> uris = GetServerUriList();
 
-                // Create the connection pool, the SniffingConnectionPool will 
+                // Create the connection pool, the SniffingConnectionPool will
                 // keep tabs on the health of the servers in the cluster and
                 // probe them to ensure they are healthy.  This is how we handle
                 // redundancy and load balancing.
@@ -121,6 +121,19 @@ namespace NCI.OCPL.Api.Common
             // Add framework services.
             services.AddMvc();
 
+            // Enable Swagger
+            // This creates the Swagger Json
+            services.AddOpenApiDocument(config => {
+                if (!string.IsNullOrEmpty(Configuration["NSwag:Title"]))
+                {
+                    config.Title = Configuration["NSwag:Title"];
+                }
+
+                if (!string.IsNullOrEmpty(Configuration["NSwag:Description"]))
+                {
+                    config.Description = Configuration["NSwag:Description"];
+                }
+            });
 
             // Add framework services
             return services.BuildServiceProvider();
@@ -147,27 +160,16 @@ namespace NCI.OCPL.Api.Common
             app.UseStaticFiles();
 
             // Enable the Swagger UI middleware and the Swagger generator
-            // NOTE: the this.GetType is important here as the actual swagger'ed
-            // classes will not live in this assembly!
-            app.UseSwaggerUi3(this.GetType().GetTypeInfo().Assembly, settings =>
-            {
-                settings.GeneratorSettings.DefaultPropertyNameHandling = PropertyNameHandling.CamelCase;
-
-                if (!string.IsNullOrEmpty(Configuration["NSwag:Title"]))
-                {
-                    settings.GeneratorSettings.Title = Configuration["NSwag:Title"];
-                }
-
-                if (!string.IsNullOrEmpty(Configuration["NSwag:Description"]))
-                {
-                    settings.GeneratorSettings.Description = Configuration["NSwag:Description"];
-                }
-
-                settings.SwaggerUiRoute = "";
-                settings.PostProcess = document => {
-                    document.Host = null;
+            // This serves the Swagger.json
+            app.UseOpenApi(settings => {
+                settings.PostProcess = (document , request) => {
+                    document.Servers.Clear();
                 };
-
+            });
+            // This servers the Swagger UI
+            app.UseSwaggerUi3(settings => {
+                // Set this as the default path.
+                settings.Path = "";
             });
 
             // Allow use from anywhere.
@@ -192,7 +194,7 @@ namespace NCI.OCPL.Api.Common
                         //display the issue.
                         string message = "Errors have occurred.  Type: " + ex.GetType().ToString();
 
-                        //Our own exceptions should be sanitized enough.                        
+                        //Our own exceptions should be sanitized enough.
                         if (ex is APIErrorException)
                         {
                             context.Response.StatusCode = ((APIErrorException)ex).HttpStatusCode;
@@ -217,7 +219,7 @@ namespace NCI.OCPL.Api.Common
                 });
             });
 
-            //Call derrived class' method for configuring additional 
+            //Call derrived class' method for configuring additional
             //functionality
             ConfigureAppSpecific(app, env, loggerFactory);
 
@@ -273,14 +275,14 @@ namespace NCI.OCPL.Api.Common
 
 
         /// <summary>
-        /// Retrieves a list of Elasticsearch server URIs from the configuration's Elasticsearch:Servers setting. 
+        /// Retrieves a list of Elasticsearch server URIs from the configuration's Elasticsearch:Servers setting.
         /// </summary>
         /// <returns>Returns a list of one or more Uri objects representing the configured set of Elasticsearch servers</returns>
         /// <remarks>
         /// The configuration's Elasticsearch:Servers property is required to contain URIs for one or more Elasticsearch servers.
         /// Each URI must include a protocol (http or https), a server name, and optionally, a port number.
         /// Multiple URIs are separated by a comma.  (e.g. "https://fred:9200, https://george:9201, https://ginny:9202")
-        /// 
+        ///
         /// Throws ConfigurationException if no servers are configured.
         ///
         /// Throws UriFormatException if any of the configured server URIs are not formatted correctly.
