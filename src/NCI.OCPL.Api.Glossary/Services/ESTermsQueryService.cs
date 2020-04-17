@@ -201,7 +201,9 @@ namespace NCI.OCPL.Api.Glossary.Services
             catch (Exception ex)
             {
                 String msg = String.Format("Could not get dictionary '{0}', audience '{1}', language '{2}', size '{3}', from '{4}'.", dictionary, audience, language, size, from);
-                _logger.LogError(msg, ex);
+                _logger.LogError("Error Fetching All from index: " + this._apiOptions.AliasName);
+                _logger.LogError(ex, msg);
+
                 throw new APIErrorException(500, msg);
             }
 
