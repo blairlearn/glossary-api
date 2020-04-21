@@ -91,13 +91,13 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                     }
                     catch (Exception ex) {
                         // Swallow this Exception and move to the next combination.
-                        string msg = String.Format("Could not find fallback term with ID '{0}', dictionary '{1}', audience '{2}', and language '{3}'.", id, currentValue.Item1, currentValue.Item2, language);
-                        _logger.LogDebug(msg, ex);
+                        string msg = $"Could not find fallback term with ID '{id}', dictionary '{currentValue.Item1}', audience '{currentValue.Item2}', and language '{language}'.";
+                        _logger.LogDebug(ex, msg);
                     }
                     current = current.Next == null ? fallbackOptions.First : current.Next;
                 } while ( current != start );
 
-                string message = String.Format("Could not find fallback term with ID '{0}' for any combination of dictionary and audience.", id);
+                string message = $"Could not find fallback term with ID '{id}' for any combination of dictionary and audience.";
                 _logger.LogError(message);
                 throw new APIErrorException(500, message);
             }
@@ -143,14 +143,14 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                     }
                     catch (Exception ex) {
                         // Swallow this Exception and move to the next combination.
-                        string msg = String.Format("Could not find fallback term with pretty URL name '{0}', dictionary '{1}', audience '{2}', and language '{3}'.", prettyUrlName, currentValue.Item1, currentValue.Item2, language);
-                        _logger.LogDebug(msg, ex);
+                        string msg = $"Could not find fallback term with pretty URL name '{prettyUrlName}', dictionary '{currentValue.Item1}', audience '{currentValue.Item2}', and language '{language}'.";
+                        _logger.LogDebug(ex, msg);
                     }
 
                     current = current.Next == null ? fallbackOptions.First : current.Next;
                 } while ( current != start );
 
-                string message = String.Format("Could not find fallback term with pretty URL name '{0}' for any combination of dictionary and audience.", prettyUrlName);
+                string message = $"Could not find fallback term with pretty URL name '{prettyUrlName}' for any combination of dictionary and audience.";
                 _logger.LogError(message);
                 throw new APIErrorException(500, message);
             }
