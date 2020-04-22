@@ -79,9 +79,9 @@ namespace NCI.OCPL.Api.Glossary.Services
             }
 
             if(null==response.Source){
-                string msg = $"Empty response when searching for dictionary '{dictionary}', audience '{audience}', language '{language}' and id '{id}.";
+                string msg = $"No match for dictionary '{dictionary}', audience '{audience}', language '{language}' and id '{id}.";
                 _logger.LogDebug(msg);
-                throw new APIErrorException(200, msg);
+                throw new APIErrorException(404, msg);
             }
 
             return response.Source;
@@ -142,14 +142,14 @@ namespace NCI.OCPL.Api.Glossary.Services
             }
             else if (response.Total == 0)
             {
-                string msg = $"Empty response when searching for dictionary '{dictionary}', audience '{audience}', language '{language}', pretty URL name '{prettyUrlName}'.";
+                string msg = $"No match for dictionary '{dictionary}', audience '{audience}', language '{language}', pretty URL name '{prettyUrlName}'.";
                 _logger.LogDebug(msg);
-                throw new APIErrorException(200, msg);
+                throw new APIErrorException(404, msg);
             }
             else {
                 string msg = $"Incorrect response when searching for dictionary '{dictionary}', audience '{audience}', language '{language}', pretty URL name '{prettyUrlName}'.";
                 _logger.LogError(msg);
-                throw new APIErrorException(200, msg);
+                throw new APIErrorException(500, "Errors have occured.");
             }
 
             return glossaryTerm;

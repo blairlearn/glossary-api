@@ -68,7 +68,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             }
 
             if (language.ToLower() != "en" && language.ToLower() != "es")
-                throw new APIErrorException(404, "Unsupported Language. Please try either 'en' or 'es'");
+                throw new APIErrorException(400, "Unsupported Language. Please try either 'en' or 'es'");
 
             if (useFallback == false) {
                 return await _termsQueryService.GetById(dictionary, audience, language, id);
@@ -99,7 +99,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
 
                 string message = $"Could not find fallback term with ID '{id}' for any combination of dictionary and audience.";
                 _logger.LogError(message);
-                throw new APIErrorException(500, message);
+                throw new APIErrorException(404, message);
             }
         }
 
@@ -116,10 +116,10 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             }
 
             if (language.ToLower() != "en" && language.ToLower() != "es")
-                throw new APIErrorException(404, "Unsupported Language. Please try either 'en' or 'es'");
+                throw new APIErrorException(400, "Unsupported Language. Please try either 'en' or 'es'");
 
             if (String.IsNullOrWhiteSpace(prettyUrlName))
-                throw new APIErrorException(404, "You must specify the prettyUrlName parameter.");
+                throw new APIErrorException(400, "You must specify the prettyUrlName parameter.");
 
             // Call GetByName with specified parameters.
             if (useFallback == false) {
@@ -152,7 +152,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
 
                 string message = $"Could not find fallback term with pretty URL name '{prettyUrlName}' for any combination of dictionary and audience.";
                 _logger.LogError(message);
-                throw new APIErrorException(500, message);
+                throw new APIErrorException(404, message);
             }
         }
 
@@ -173,7 +173,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience and language.");
 
             if (language.ToLower() != "en" && language.ToLower() != "es")
-                throw new APIErrorException(404, "Unsupported Language. Valid values are 'en' and 'es'.");
+                throw new APIErrorException(400, "Unsupported Language. Valid values are 'en' and 'es'.");
 
             if (size <= 0)
                 size = 100;
@@ -210,7 +210,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience and language.");
 
             if (language.ToLower() != "en" && language.ToLower() != "es")
-                throw new APIErrorException(404, "Unsupported Language. Valid values are 'en' and 'es'.");
+                throw new APIErrorException(400, "Unsupported Language. Valid values are 'en' and 'es'.");
 
             if (!Enum.IsDefined(typeof(MatchType), matchType))
                 throw new APIErrorException(400, "The `matchType` parameter must be either 'Begins' or 'Contains'.");
@@ -248,7 +248,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience and language");
 
             if (language.ToLower() != "en" && language.ToLower() != "es")
-                throw new APIErrorException(404, "Unsupported Language. Please try either 'en' or 'es'");
+                throw new APIErrorException(400, "Unsupported Language. Please try either 'en' or 'es'");
 
             if (size <= 0)
                 size = 100;

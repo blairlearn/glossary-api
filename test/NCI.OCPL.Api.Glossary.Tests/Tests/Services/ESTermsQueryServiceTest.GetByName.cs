@@ -168,9 +168,9 @@ namespace NCI.OCPL.Api.Glossary.Tests
         /// Test that GetByName throws correct error for no results.
         /// </summary>
         [Theory]
-        [InlineData("getbyname_noresults", "Empty response when searching for dictionary 'Cancer.gov', audience 'Patient', language 'en', pretty URL name 's-1'.")]
-        [InlineData("getbyname_multiplehits", "Incorrect response when searching for dictionary 'Cancer.gov', audience 'Patient', language 'en', pretty URL name 's-1'.")]
-        public async void GetByName_TestNoOrIncorrectResults(string file, string message)
+        [InlineData("getbyname_noresults", 404, "No match for dictionary 'Cancer.gov', audience 'Patient', language 'en', pretty URL name 's-1'.")]
+        [InlineData("getbyname_multiplehits", 500, "Errors have occured.")]
+        public async void GetByName_TestNoOrIncorrectResults(string file, int expectedStatusCode, string expectedMessage)
         {
             IElasticClient client = GetByName_GetElasticClientWithData(file);
 
@@ -180,8 +180,8 @@ namespace NCI.OCPL.Api.Glossary.Tests
             ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
 
             APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.GetByName("Cancer.gov", AudienceType.Patient, "en", "s-1"));
-            Assert.Equal(200, ex.HttpStatusCode);
-            Assert.Equal(ex.Message, message);
+            Assert.Equal(expectedStatusCode, ex.HttpStatusCode);
+            Assert.Equal(expectedMessage, ex.Message);
         }
 
         /// <summary>

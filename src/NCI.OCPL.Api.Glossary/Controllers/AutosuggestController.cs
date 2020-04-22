@@ -50,7 +50,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 throw new APIErrorException(400, "The `matchType` parameter must be either 'Begins' or 'Contains'.");
 
             if (language.ToLower() != "en" && language.ToLower() != "es")
-                throw new APIErrorException(404, "Unsupported Language. Valid values are 'en' and 'es'.");
+                throw new APIErrorException(400, "Unsupported Language. Valid values are 'en' and 'es'.");
 
             if (size <= 0)
                 size = 20;
