@@ -164,9 +164,14 @@ namespace NCI.OCPL.Api.Common
             app.UseOpenApi(settings => {
                 settings.PostProcess = (document , request) => {
                     document.Servers.Clear();
+
+                    // Force the document's base path to match the request.
+                    // This is important as the request that generated the document won't
+                    // match when IIS is acting as a proxy.
+                    document.BasePath = request.PathBase;
                 };
             });
-            // This servers the Swagger UI
+            // This serves the Swagger UI
             app.UseSwaggerUi3(settings => {
                 // Set this as the default path.
                 settings.Path = "";
