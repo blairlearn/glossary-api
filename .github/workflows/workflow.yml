@@ -46,7 +46,7 @@ jobs:
           path: lcov.info
         if: matrix.operating-system != 'windows-latest'
       - name: Publish
-        run: dotnet publish -c Release -o $GITHUB_WORKSPACE/out
+        run: dotnet publish -c Release -o $GITHUB_WORKSPACE/out src/NCI.OCPL.Api.Glossary/
         shell: bash
       - name: Upload Published Artifact
         uses: actions/upload-artifact@v1
