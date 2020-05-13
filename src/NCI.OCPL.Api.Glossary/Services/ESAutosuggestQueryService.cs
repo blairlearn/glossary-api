@@ -175,7 +175,7 @@ namespace NCI.OCPL.Api.Glossary.Services
              *         [{"term" : { "language" : "es" }},
              *         {"term" : { "dictionary" : "Cancer.gov" }},
              *         {"term": { "audience": "Patient"}},
-             *         {"match":{"term_name._autocomplete":"cutáneo"}}
+             *         {"match_phrase":{"term_name._autocomplete":"cutáneo"}}
              *         ],
              *          "must_not" :  {"prefix" : {"term_name" : "cutáneo"}}
              *       }
@@ -191,7 +191,7 @@ namespace NCI.OCPL.Api.Glossary.Services
                 Query = new TermQuery {Field = "language", Value = language.ToString() } &&
                         new TermQuery {Field = "audience", Value = audience.ToString() } &&
                         new TermQuery {Field = "dictionary", Value = dictionary.ToString() } &&
-                        new MatchQuery {Field = "term_name._autocomplete", Query = query.ToString() } &&
+                        new MatchPhraseQuery {Field = "term_name._autocomplete", Query = query.ToString() } &&
                         !new PrefixQuery {Field = "term_name", Value = query.ToString() },
                 Sort = new List<ISort>
                 {

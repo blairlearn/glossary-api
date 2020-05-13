@@ -1,5 +1,17 @@
 [
     {
+        "termId": 44850,
+        "termName": "3-aminopyridine-2-carboxaldehyde thiosemicarbazone"
+    },
+    {
+        "termId": 641985,
+        "termName": "acetyl-L-carnitine"
+    },
+    {
+        "termId": 641987,
+        "termName": "acetyl-L-carnitine hydrochloride"
+    },
+    {
         "termId": 44849,
         "termName": "acridine carboxamide"
     },
@@ -66,17 +78,5 @@
     {
         "termId": 795104,
         "termName": "cutaneous squamous cell carcinoma"
-    },
-    {
-        "termId": 45085,
-        "termName": "ductal carcinoma"
-    },
-    {
-        "termId": 45674,
-        "termName": "ductal carcinoma in situ"
-    },
-    {
-        "termId": 774823,
-        "termName": "end-of-life care"
     }
 ]
