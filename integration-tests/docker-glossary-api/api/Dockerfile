@@ -9,8 +9,8 @@ RUN dotnet publish -c Release -o /app/out
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.1
 WORKDIR /app
 COPY --from=build-env /app/out .
-COPY ./integration-tests/docker/api/build/appsettings.inttest.json .
-COPY ./integration-tests/docker/api/build/hosting.json .
+COPY ./integration-tests/docker-glossary-api/api/build/appsettings.inttest.json .
+COPY ./integration-tests/docker-glossary-api/api/build/hosting.json .
 ## This does not need to wait for the loader or other resources.
 ## Any integration tests will need to wait for the API to report being healthy
 EXPOSE 5001

@@ -26,7 +26,7 @@ services:
             ## project, which is where our code lives.
             context: ../../
             ## This path is relative to the context. Fun, eh?
-            dockerfile: integration-tests/docker/api/Dockerfile
+            dockerfile: integration-tests/docker-glossary-api/api/Dockerfile
         ports:
             # Lets make it one more than the default aspnetcore app
             - "5000:5000"
