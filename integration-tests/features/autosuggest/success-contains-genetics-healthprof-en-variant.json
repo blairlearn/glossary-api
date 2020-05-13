@@ -1,0 +1,66 @@
+[
+    {
+        "termId": 600383,
+        "termName": "copy number variant"
+    },
+    {
+        "termId": 783882,
+        "termName": "de novo variant"
+    },
+    {
+        "termId": 783961,
+        "termName": "epigenetic variant"
+    },
+    {
+        "termId": 783962,
+        "termName": "founder variant"
+    },
+    {
+        "termId": 783963,
+        "termName": "frameshift variant"
+    },
+    {
+        "termId": 776887,
+        "termName": "genetic variant"
+    },
+    {
+        "termId": 781852,
+        "termName": "germline variant"
+    },
+    {
+        "termId": 783964,
+        "termName": "missense variant"
+    },
+    {
+        "termId": 783883,
+        "termName": "new variant"
+    },
+    {
+        "termId": 783965,
+        "termName": "nonsense variant"
+    },
+    {
+        "termId": 783966,
+        "termName": "novel variant"
+    },
+    {
+        "termId": 783960,
+        "termName": "pathogenic variant"
+    },
+    {
+        "termId": 783967,
+        "termName": "point variant"
+    },
+    {
+        "termId": 781854,
+        "termName": "somatic variant"
+    },
+    {
+        "termId": 783968,
+        "termName": "splice-site variant"
+    },
+    {
+        "termId": 556494,
+        "termName": "unclassified variant"
+    }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "termId": 46634,
+    "termName": "tumor"
+  },
+  {
+    "termId": 46079,
+    "termName": "tumor benigno"
+  },
+  {
+    "termId": 44233,
+    "termName": "tumor carcinoide"
+  },
+  {
+    "termId": 446559,
+    "termName": "tumor carcinoide gastrointestinal"
+  },
+  {
+    "termId": 785688,
+    "termName": "tumor de Abrikósov"
+  },
+  {
+    "termId": 411386,
+    "termName": "tumor de célula plasmática"
+  },
+  {
+    "termId": 657855,
+    "termName": "tumor de células beta del páncreas"
+  },
+  {
+    "termId": 44780,
+    "termName": "tumor de células de la granulosa"
+  },
+  {
+    "termId": 573196,
+    "termName": "tumor de células de los islotes"
+  },
+  {
+    "termId": 407748,
+    "termName": "tumor de células de Sertoli-Leydig del ovario"
+  },
+  {
+    "termId": 782531,
+    "termName": "tumor de células epitelioides perivasculares"
+  },
+  {
+    "termId": 44506,
+    "termName": "tumor de células fusiformes"
+  },
+  {
+    "termId": 438722,
+    "termName": "tumor de células germinales del ovario en estadio I"
+  },
+  {
+    "termId": 438723,
+    "termName": "tumor de células germinales del ovario en estadio II"
+  },
+  {
+    "termId": 45695,
+    "termName": "tumor de células germinativas"
+  },
+  {
+    "termId": 446560,
+    "termName": "tumor de células germinativas de ovario"
+  },
+  {
+    "termId": 695185,
+    "termName": "tumor de células germinativas de testículo"
+  },
+  {
+    "termId": 438724,
+    "termName": "tumor de células germinativas del ovario en estadio III"
+  },
+  {
+    "termId": 438725,
+    "termName": "tumor de células germinativas del ovario en estadio IV"
+  },
+  {
+    "termId": 752738,
+    "termName": "tumor de células gigantes"
+  }
+]
