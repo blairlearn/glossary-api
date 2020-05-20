@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -39,7 +40,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <param name="matchType">Should the search match items beginning with the search text, or containing it?</param>
         /// <param name="size">The number of records to retrieve.</param>
         /// <returns></returns>
-        [HttpGet("{dictionary:required}/{audience:required}/{language:required}/{searchText:required}")]
+        [HttpGet("{dictionary:required}/{audience:required}/{language:required}/{*searchText:required}")]
         public async Task<Suggestion[]> GetSuggestions(string dictionary, AudienceType audience, string language, string searchText,
             [FromQuery] MatchType matchType = MatchType.Begins, [FromQuery] int size = 20)
         {
@@ -54,6 +55,9 @@ namespace NCI.OCPL.Api.Glossary.Controllers
 
             if (size <= 0)
                 size = 20;
+
+            // searchText uses a catch-all route, make sure it's been decoded.
+            searchText = WebUtility.UrlDecode(searchText);
 
             return await _autosuggestQueryService.GetSuggestions(dictionary, audience, language, searchText, matchType, size);
         }

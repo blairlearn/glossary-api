@@ -1,82 +1,82 @@
 [
-  {
-    "termId": 672833,
-    "termName": "acquired pure red cell aplasia"
-  },
-  {
-    "termId": 672499,
-    "termName": "adoptive cell therapy"
-  },
-  {
-    "termId": 797094,
-    "termName": "adoptive cell transfer"
-  },
-  {
-    "termId": 269410,
-    "termName": "adult T-cell leukemia/lymphoma"
-  },
-  {
-    "termId": 270732,
-    "termName": "allogeneic stem cell transplantation"
-  },
-  {
-    "termId": 45552,
-    "termName": "anaplastic large cell lymphoma"
-  },
-  {
-    "termId": 346464,
-    "termName": "angioimmunoblastic T-cell lymphoma"
-  },
-  {
-    "termId": 653102,
-    "termName": "antibody-dependent cell-mediated cytotoxicity"
-  },
-  {
-    "termId": 653103,
-    "termName": "antibody-dependent cellular cytotoxicity"
-  },
-  {
-    "termId": 44914,
-    "termName": "antigen-presenting cell"
-  },
-  {
-    "termId": 44915,
-    "termName": "antigen-presenting cell vaccine"
-  },
-  {
-    "termId": 659607,
-    "termName": "atypical glandular cells"
-  },
-  {
-    "termId": 643114,
-    "termName": "atypical glandular cells of uncertain significance"
-  },
-  {
-    "termId": 643113,
-    "termName": "atypical glandular cells of undetermined significance"
-  },
-  {
-    "termId": 655175,
-    "termName": "atypical squamous cells of undetermined significance"
-  },
-  {
-    "termId": 752840,
-    "termName": "atypical squamous cells, cannot exclude a high-grade lesion"
-  },
-  {
-    "termId": 393539,
-    "termName": "autologous expanded mesenchymal stem cells OTI-010"
-  },
-  {
-    "termId": 270733,
-    "termName": "autologous stem cell transplantation"
-  },
-  {
-    "termId": 45606,
-    "termName": "autologous tumor cell"
-  },
-  {
-    "termId": 45611,
-    "termName": "B cell"
-  }
+    {
+        "termId": 672833,
+        "termName": "acquired pure red cell aplasia"
+    },
+    {
+        "termId": 672499,
+        "termName": "adoptive cell therapy"
+    },
+    {
+        "termId": 797094,
+        "termName": "adoptive cell transfer"
+    },
+    {
+        "termId": 269410,
+        "termName": "adult T-cell leukemia/lymphoma"
+    },
+    {
+        "termId": 270732,
+        "termName": "allogeneic stem cell transplant"
+    },
+    {
+        "termId": 45552,
+        "termName": "anaplastic large cell lymphoma"
+    },
+    {
+        "termId": 346464,
+        "termName": "angioimmunoblastic T-cell lymphoma"
+    },
+    {
+        "termId": 653102,
+        "termName": "antibody-dependent cell-mediated cytotoxicity"
+    },
+    {
+        "termId": 653103,
+        "termName": "antibody-dependent cellular cytotoxicity"
+    },
+    {
+        "termId": 44914,
+        "termName": "antigen-presenting cell"
+    },
+    {
+        "termId": 44915,
+        "termName": "antigen-presenting cell vaccine"
+    },
+    {
+        "termId": 659607,
+        "termName": "atypical glandular cells"
+    },
+    {
+        "termId": 643114,
+        "termName": "atypical glandular cells of uncertain significance"
+    },
+    {
+        "termId": 643113,
+        "termName": "atypical glandular cells of undetermined significance"
+    },
+    {
+        "termId": 655175,
+        "termName": "atypical squamous cells of undetermined significance"
+    },
+    {
+        "termId": 752840,
+        "termName": "atypical squamous cells, cannot exclude a high-grade lesion"
+    },
+    {
+        "termId": 393539,
+        "termName": "autologous expanded mesenchymal stem cells OTI-010"
+    },
+    {
+        "termId": 270733,
+        "termName": "autologous stem cell transplant"
+    },
+    {
+        "termId": 45606,
+        "termName": "autologous tumor cell"
+    },
+    {
+        "termId": 45611,
+        "termName": "B cell"
+    }
 ]

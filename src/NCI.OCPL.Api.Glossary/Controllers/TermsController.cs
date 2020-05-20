@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Mvc;
@@ -202,7 +203,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <param name="from">The offset into the overall set to use for the first record.</param>
         /// <param name="requestedFields">The fields to retrieve.  If not specified, defaults to all fields except media and related resources.</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
-        [HttpGet("search/{dictionary:required}/{audience:required}/{language:required}/{query:required}")]
+        [HttpGet("search/{dictionary:required}/{audience:required}/{language:required}/{*query:required}")]
         public async Task<GlossaryTermResults> Search(string dictionary, AudienceType audience, string language, string query,
             [FromQuery] MatchType matchType = MatchType.Begins, [FromQuery] int size = 100, [FromQuery] int from = 0, [FromQuery] string[] requestedFields = null)
         {
@@ -220,6 +221,9 @@ namespace NCI.OCPL.Api.Glossary.Controllers
 
             if (from < 0)
                 from = 0;
+
+            // query uses a catch-all route, make sure it's been decoded.
+            query = WebUtility.UrlDecode(query);
 
             // if requestedFields is empty populate it with default values
             if (requestedFields == null || requestedFields.Length == 0 || requestedFields.Where(f => f != null).Count() == 0)

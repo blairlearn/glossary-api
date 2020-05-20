@@ -1,0 +1,29 @@
+{
+    "meta": {
+        "totalResults": 1,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 799325,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ensayo clínico de fase 2/3",
+            "firstLetter": "e",
+            "prettyUrlName": "ensayo-clinico-de-fase-2-3",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media.cancer.gov/pdq/media/audio/801093.mp3"
+            },
+            "definition": {
+                "html": "Estudio en el que se pone a prueba la eficacia de un tratamiento nuevo para determinado tipo de cáncer u otra enfermedad, y que compara el tratamiento nuevo con un tratamiento\nestándar. También es posible que en los ensayos clínicos de fase 2/3 se obtenga más información sobre la seguridad y los efectos secundarios del tratamiento  nuevo. La combinación de los ensayos clínicos de fases 2 y 3 permite que se respondan preguntas de investigación de una manera más rápida o con menos pacientes. También se llama ensayo clínico de fase II/III.",
+                "text": "Estudio en el que se pone a prueba la eficacia de un tratamiento nuevo para determinado tipo de cáncer u otra enfermedad, y que compara el tratamiento nuevo con un tratamiento\nestándar. También es posible que en los ensayos clínicos de fase 2/3 se obtenga más información sobre la seguridad y los efectos secundarios del tratamiento  nuevo. La combinación de los ensayos clínicos de fases 2 y 3 permite que se respondan preguntas de investigación de una manera más rápida o con menos pacientes. También se llama ensayo clínico de fase II/III."
+            },
+            "otherLanguages": [],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}
