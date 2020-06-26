@@ -151,7 +151,7 @@
                         ],
                         "min_gram": "1",
                         "type": "ngram",
-                        "max_gram": "30"
+                        "max_gram": "150"
                     },
                     "autocomplete_filter": {
                         "token_chars": [

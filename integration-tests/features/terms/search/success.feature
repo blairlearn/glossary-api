@@ -17,3 +17,6 @@ Feature: Search with expected success.
             # Path separator in term name
             | Cancer.gov | Patient             | en       | 2/3         | contains  | success-contains-cgov-patient-en-two-thirds.json     |
             | Cancer.gov | Patient             | es       | 2/3         | contains  | success-contains-cgov-patient-es-two-thirds.json     |
+            # Exact matches
+            | Cancer.gov | Patient             | en       | MeV linear accelerator  | begins    | success-begins-exact-match-mev-linear.json     |
+            | Cancer.gov | Patient             | en       | MeV linear accelerator  | contains  | success-contains-exact-match-mev-linear.json   |

@@ -28,3 +28,7 @@ Feature: Autosuggest with expected success.
             | Cancer.gov | Patient             | en       | cel         | contains  | success-contains-cgov-patient-en-cel.json            |
             # Path separator in term name
             | Cancer.gov | Patient             | en       | 2/3         | contains  | success-contains-cgov-patient-en-two-thirds.json     |
+            # Exact matches
+            # Begins should match, Contains should not find exact matches
+            | Cancer.gov | Patient             | en       | mega-voltage linear accelerator | begins   | success-begins-exact-match.json   |
+            | Cancer.gov | Patient             | en       | mega-voltage linear accelerator | contains | success-contains-exact-match.json |

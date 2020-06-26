@@ -1,0 +1,29 @@
+{
+    "meta": {
+        "totalResults": 1,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 410730,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "MeV linear accelerator",
+            "firstLetter": "m",
+            "prettyUrlName": "mev-linear-accelerator",
+            "pronunciation": {
+                "key": "(... LIH-nee-er ak-SEH-leh-RAY-ter)",
+                "audio": "https://nci-media.cancer.gov/pdq/media/audio/713137.mp3"
+            },
+            "definition": {
+                "html": "A machine that uses electricity to form a stream of fast-moving subatomic particles. This creates high-energy radiation that may be used to treat cancer. Also called linac, linear accelerator, and mega-voltage linear accelerator.",
+                "text": "A machine that uses electricity to form a stream of fast-moving subatomic particles. This creates high-energy radiation that may be used to treat cancer. Also called linac, linear accelerator, and mega-voltage linear accelerator."
+            },
+            "otherLanguages": [],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}
