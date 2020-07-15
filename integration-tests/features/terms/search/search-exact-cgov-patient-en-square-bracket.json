@@ -1,0 +1,26 @@
+{
+    "meta": {
+        "totalResults": 1,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 613892,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "[18F]SPA-RQ",
+            "firstLetter": "#",
+            "prettyUrlName": "18fspa-rq",
+            "pronunciation": null,
+            "definition": {
+                "html": "A radiolabeled substance being studied in PET imaging of the brain. It is also being studied as a way to find where cancer cells have spread in patients with pancreatic cancer. It binds to cell receptors for substance P.",
+                "text": "A radiolabeled substance being studied in PET imaging of the brain. It is also being studied as a way to find where cancer cells have spread in patients with pancreatic cancer. It binds to cell receptors for substance P."
+            },
+            "otherLanguages": [],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}

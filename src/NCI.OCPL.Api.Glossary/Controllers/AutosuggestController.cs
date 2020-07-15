@@ -37,7 +37,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <param name="audience">The target audience.</param>
         /// <param name="language">Language (English - en; Spanish - es).</param>
         /// <param name="searchText">Text to match against</param>
-        /// <param name="matchType">Should the search match items beginning with the search text, or containing it?</param>
+        /// <param name="matchType">Should the search match items beginning with the search text (Begin), or containing it (Contains)?</param>
         /// <param name="size">The number of records to retrieve.</param>
         /// <returns></returns>
         [HttpGet("{dictionary:required}/{audience:required}/{language:required}/{*searchText:required}")]
@@ -48,7 +48,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience and language.");
 
             if(!Enum.IsDefined(typeof(MatchType), matchType))
-                throw new APIErrorException(400, "The `matchType` parameter must be either 'Begins' or 'Contains'.");
+                throw new APIErrorException(400, "The 'matchType' parameter must be either 'Begins' or 'Contains'.");
 
             if (language.ToLower() != "en" && language.ToLower() != "es")
                 throw new APIErrorException(400, "Unsupported Language. Valid values are 'en' and 'es'.");

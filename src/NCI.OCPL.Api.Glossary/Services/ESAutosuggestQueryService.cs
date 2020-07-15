@@ -70,7 +70,8 @@ namespace NCI.OCPL.Api.Glossary.Services
                 {
                     default:
                     case MatchType.Begins:
-                        request = BuildBeginRequest(index, types, dictionary, language, audience, searchText, size);
+                    case MatchType.Exact:
+                        request = BuildNonContainsRequest(index, types, dictionary, language, audience, searchText, matchType, size);
                         break;
                     case MatchType.Contains:
                         request = BuildContainsRequest(index, types, dictionary, language, audience, searchText, size);
@@ -107,8 +108,9 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <param name="audience">Patient or Healthcare provider</param>
         /// <param name="language">The language in which the details needs to be fetched</param>
         /// <param name="query">The text to search for.</param>
+        /// <param name="matchType">Do a Begins or Exact match search? (Use BuildContainsRequest for Contains searches).</param>
         /// <param name="size">The number of records to retrieve.</param>
-        private SearchRequest BuildBeginRequest(Indices index, Types types, string dictionary, string language, AudienceType audience, string query, int size)
+        private SearchRequest BuildNonContainsRequest(Indices index, Types types, string dictionary, string language, AudienceType audience, string query, MatchType matchType, int size)
         {
             /*
              * Create a query similar to the following.  The bool subquery is written with an overloaded version
@@ -136,7 +138,9 @@ namespace NCI.OCPL.Api.Glossary.Services
                 Query = new TermQuery {Field = "language", Value = language } &&
                         new TermQuery {Field = "audience", Value = audience.ToString() } &&
                         new TermQuery {Field = "dictionary", Value = dictionary } &&
-                        new PrefixQuery {Field = "term_name", Value = query },
+                        (matchType == MatchType.Begins ?
+                            (QueryBase)new PrefixQuery {Field = "term_name", Value = query } :
+                            (QueryBase)new TermQuery { Field = "term_name", Value = query }),
                 Sort = new List<ISort>
                 {
                     new SortField { Field = "term_name" }

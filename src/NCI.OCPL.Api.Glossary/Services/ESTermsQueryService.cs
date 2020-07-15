@@ -259,7 +259,7 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
         /// <returns>A list of GlossaryTerm</returns>
         /// </summary>
-        public async Task<GlossaryTermResults> Search(string dictionary, AudienceType audience, string language, string query,MatchType matchType, int size, int from, string[] requestedFields)
+        public async Task<GlossaryTermResults> Search(string dictionary, AudienceType audience, string language, string query, MatchType matchType, int size, int from, string[] requestedFields)
         {
             // Elasticsearch knows how to figure out what the ElasticSearch name is for
             // a given field when given a PropertyInfo.
@@ -270,15 +270,24 @@ namespace NCI.OCPL.Api.Glossary.Services
             // Set up the SearchRequest to send to elasticsearch.
             Indices index = Indices.Index(new string[] { this._apiOptions.AliasName});
             Types types = Types.Type(new string[] { "terms" });
+
+            // Figure out the specific term subquery based on the match type.
+            QueryBase termSubquery;
+            switch (matchType)
+            {
+                case MatchType.Begins: termSubquery = new PrefixQuery { Field = "term_name", Value = query }; break;
+                case MatchType.Contains: termSubquery = new MatchQuery { Field = "term_name._contain", Query = query }; break;
+                case MatchType.Exact: termSubquery = new TermQuery { Field = "term_name", Value = query }; break;
+                default:
+                    throw new ArgumentException($"Uknown matchType value '${matchType}'.");
+            }
+
             SearchRequest request = new SearchRequest(index, types)
             {
                 Query = new TermQuery {Field = "language", Value = language.ToString()} &&
                         new TermQuery {Field = "audience", Value = audience.ToString()} &&
                         new TermQuery {Field = "dictionary", Value = dictionary.ToString()} &&
-                        (matchType == MatchType.Begins ?
-                            (QueryBase) new PrefixQuery {Field = "term_name", Value = query } :
-                            (QueryBase) new MatchQuery {Field = "term_name._contain", Query = query }
-                        )
+                        termSubquery
                 ,
                 Sort = new List<ISort>
                 {

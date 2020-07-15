@@ -1,0 +1,85 @@
+{
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "failed": 0,
+        "failures": []
+    },
+    "aggregations": {},
+    "suggest": {},
+    "took": 2,
+    "timed_out": false,
+    "terminated_early": false,
+    "hits": {
+        "total": 2,
+        "max_score": 0.0,
+        "hits": [
+            {
+                "fields": {},
+                "_source": {
+                    "term_id": 46716,
+                    "language": "en",
+                    "dictionary": "Cancer.gov",
+                    "audience": "Patient",
+                    "term_name": "S-1",
+                    "first_letter": "s",
+                    "pretty_url_name": "s-1",
+                    "definition": {
+                    "html": "A drug that is being studied for its ability to enhance the effectiveness of fluorouracil and prevent gastrointestinal side effects caused by fluorouracil. It belongs to the family of drugs called antimetabolites.",
+                    "text": "A drug that is being studied for its ability to enhance the effectiveness of fluorouracil and prevent gastrointestinal side effects caused by fluorouracil. It belongs to the family of drugs called antimetabolites."
+                    },
+                    "related_resources": [],
+                    "media": []
+                },
+                "_index": "glossaryv1-20200205223000",
+                "inner_hits": {},
+                "_type": "terms",
+                "_id": "46716_cancer.gov_en_patient",
+                "sort": [
+                    "s-1"
+                ],
+                "highlights": {},
+                "matched_queries": []
+            },
+            {
+                "fields": {},
+                "_source": {
+                    "term_id": 44771,
+                    "language": "en",
+                    "dictionary": "Cancer.gov",
+                    "audience": "Patient",
+                    "term_name": "S-phase fraction",
+                    "first_letter": "s",
+                    "pretty_url_name": "s-phase-fraction",
+                    "pronunciation": {
+                    "key": "(... fayz FRAK-shun)",
+                    "audio": "https://nci-media-dev.cancer.gov/audio/pdq/705947.mp3"
+                    },
+                    "definition": {
+                    "html": "A measure of the percentage of cells in a tumor that are in the phase of the cell cycle during which DNA is synthesized. The S-phase fraction may be used with the proliferative index to give a more complete understanding of how fast a tumor is growing.",
+                    "text": "A measure of the percentage of cells in a tumor that are in the phase of the cell cycle during which DNA is synthesized. The S-phase fraction may be used with the proliferative index to give a more complete understanding of how fast a tumor is growing."
+                    },
+                    "related_resources": [],
+                    "media": []
+                },
+                "_index": "glossaryv1-20200205223000",
+                "inner_hits": {},
+                "_type": "terms",
+                "_id": "44771_cancer.gov_en_patient",
+                "sort": [
+                    "s-phase fraction"
+                ],
+                "highlights": {},
+                "matched_queries": []
+            }
+        ]
+    },
+    "num_reduce_phases": 0,
+    "fields": [
+        {},
+        {},
+        {},
+        {},
+        {}
+    ]
+}

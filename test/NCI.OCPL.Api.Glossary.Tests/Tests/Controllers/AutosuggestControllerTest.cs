@@ -219,7 +219,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText, matchType, invalidSize);
 
             // Verify that the service layer is called:
-            //  a) with the expected values.
+            //  a) with the exact values passed to the controller.
             //  b) exactly once.
             querySvc.Verify(
                 svc => svc.GetSuggestions(dictionary, audience, language, queryText, matchType, expecedSizeRequest),
@@ -229,5 +229,44 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Assert.Empty(result);
         }
 
+        /// <summary>
+        /// Verify search parameters passed to the controller are passed to the query wihtout modificiation.
+        /// </summary>
+        [Theory]
+        [InlineData("Cancer.gov", AudienceType.HealthProfessional, "en", "chicken",          MatchType.Begins)]
+        [InlineData("Cancer.gov", AudienceType.Patient,            "es", "pollo",            MatchType.Contains)]
+        [InlineData("Genetics",  AudienceType.HealthProfessional,  "en", "Are you kidding?", MatchType.Exact)]
+        public async void Verify_Argument_passing(string dictionary, AudienceType audience, string language, string queryText, MatchType matchType)
+        {
+            const int expecedSizeRequest = 20;
+
+            Mock<IAutosuggestQueryService> querySvc = new Mock<IAutosuggestQueryService>();
+            AutosuggestController controller = new AutosuggestController(querySvc.Object);
+
+            // Set up the mock query service to return an empty array.
+            querySvc.Setup(
+                autoSuggestQSvc => autoSuggestQSvc.GetSuggestions(
+                    It.IsAny<string>(),
+                    It.IsAny<AudienceType>(),
+                    It.IsAny<string>(),
+                    It.IsAny<string>(),
+                    It.IsAny<MatchType>(),
+                    It.IsAny<int>()
+                )
+            )
+            .Returns(Task.FromResult(new Suggestion[] { }));
+
+            Suggestion[] result = await controller.GetSuggestions(dictionary, audience, language, queryText, matchType);
+
+            // Verify that the service layer is called:
+            //  a) with the exact values passed to the controller.
+            //  b) exactly once.
+            querySvc.Verify(
+                svc => svc.GetSuggestions(dictionary, audience, language, queryText, matchType, expecedSizeRequest),
+                Times.Once
+            );
+
+            Assert.Empty(result);
+        }
     }
 }

@@ -76,5 +76,7 @@ namespace NCI.OCPL.Api.Glossary
         /// <param name="language">Language (English - en; Spanish - es).</param>
         /// <returns>The number of terms available.</returns>
         Task<long> GetCount(string dictionary, AudienceType audience, string language);
+
+
     }
 }

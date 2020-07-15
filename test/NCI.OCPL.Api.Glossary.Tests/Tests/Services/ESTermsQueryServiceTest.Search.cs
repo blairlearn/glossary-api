@@ -15,7 +15,6 @@ using NCI.OCPL.Api.Glossary.Services;
 using NCI.OCPL.Api.Glossary.Tests.ESTermsQueryTestData;
 using NCI.OCPL.Api.Common;
 
-
 namespace NCI.OCPL.Api.Glossary.Tests
 {
     public partial class ESTermsQueryServiceTest
@@ -82,79 +81,27 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Assert.Equal(500, ex.HttpStatusCode);
         }
 
+        public static IEnumerable<object[]> SearchRequestData => new[]
+        {
+            new object[]{ new Terms_Search_Request_Begins() },
+            new object[]{ new Terms_Search_Request_Contains() },
+            new object[]{ new Terms_Search_Request_Exact() }
+        };
+
         /// <summary>
-        /// Test that Begins With Search Request for Elasticsearch is set up correctly.
+        /// Test that Search Requests for Elasticsearch are structured correctly.
         /// </summary>
-        [Fact]
-        public async void Search_TestRequestSetupBegins()
+        [Theory, MemberData(nameof(SearchRequestData))]
+        public async void Search_TestRequestSetupBegins(Terms_Search_Request_Base data)
         {
             JObject actualRequest = null;
-            JObject expectedRequest = JObject.Parse(@"
-                {
-                    ""from"": 0,
-                    ""size"": 5,
-                    ""_source"": {
-                        ""includes"": [
-                            ""term_id"",
-                            ""language"",
-                            ""dictionary"",
-                            ""audience"",
-                            ""term_name"",
-                            ""first_letter"",
-                            ""pretty_url_name"",
-                            ""pronunciation"",
-                            ""definition"",
-                        ]
-                    },
-                    ""sort"": [
-                        {
-                            ""term_name"": {}
-                        }
-                    ],
-                    ""query"": {
-                        ""bool"": {
-                            ""must"": [
-                                {
-                                    ""term"": {
-                                        ""language"": {
-                                            ""value"": ""en""
-                                        }
-                                    }
-                                },
-                                {
-                                    ""term"": {
-                                        ""audience"": {
-                                            ""value"": ""Patient""
-                                        }
-                                    }
-                                },
-                                {
-                                    ""term"": {
-                                        ""dictionary"": {
-                                            ""value"": ""Cancer.gov""
-                                        }
-                                    }
-                                },
-                                {
-                                    ""prefix"": {
-                                        ""term_name"": {
-                                            ""value"": ""chicken""
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                }"
-            );
 
             ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
             conn.RegisterRequestHandlerForType<Nest.SearchResponse<GlossaryTerm>>((req, res) =>
             {
-                res.Stream = TestingTools.GetTestFileAsStream("ESTermsQueryData/Search/search_response_results.json");
-
+                // We don't really care about the ES response for this test.
+                res.Stream = MockEmptyResponse;
                 res.StatusCode = 200;
-
                 actualRequest = conn.GetRequestPost(req);
             });
 
@@ -172,108 +119,11 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             try
             {
-                var results = await termsClient.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 5, 0, new string[]{"termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation"});
+                var results = await termsClient.Search(data.Dictionary, data.Audience, data.LangCode, data.SearchTerm, data.MatchType, data.Size, data.From, data.FieldList);
             }
             catch (Exception) { }
 
-            Assert.Equal(expectedRequest, actualRequest, new JTokenEqualityComparer());
-        }
-
-        /// <summary>
-        /// Test that Contains Search Request for Elasticsearch is set up correctly.
-        /// </summary>
-        [Fact]
-        public async void Search_TestRequestSetupContains()
-        {
-            JObject actualRequest = null;
-            JObject expectedRequest = JObject.Parse(@"
-                {
-                    ""from"": 0,
-                    ""size"": 5,
-                    ""_source"": {
-                        ""includes"": [
-                            ""term_id"",
-                            ""language"",
-                            ""dictionary"",
-                            ""audience"",
-                            ""term_name"",
-                            ""first_letter"",
-                            ""pretty_url_name"",
-                            ""pronunciation"",
-                            ""definition"",
-                        ]
-                    },
-                    ""sort"": [
-                        {
-                            ""term_name"": {}
-                        }
-                    ],
-                    ""query"": {
-                        ""bool"": {
-                            ""must"": [
-                                {
-                                    ""term"": {
-                                        ""language"": {
-                                            ""value"": ""en""
-                                        }
-                                    }
-                                },
-                                {
-                                    ""term"": {
-                                        ""audience"": {
-                                            ""value"": ""Patient""
-                                        }
-                                    }
-                                },
-                                {
-                                    ""term"": {
-                                        ""dictionary"": {
-                                            ""value"": ""Cancer.gov""
-                                        }
-                                    }
-                                },
-                                {
-                                    ""match"": {
-                                        ""term_name._contain"": {
-                                            ""query"": ""chicken""
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                }"
-            );
-
-            ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
-            conn.RegisterRequestHandlerForType<Nest.SearchResponse<GlossaryTerm>>((req, res) =>
-            {
-                res.Stream = TestingTools.GetTestFileAsStream("ESTermsQueryData/Search/search_response_results.json");
-
-                res.StatusCode = 200;
-
-                actualRequest = conn.GetRequestPost(req);
-            });
-
-            // While this has a URI, it does not matter, an InMemoryConnection never requests
-            // from the server.
-            var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
-
-            var connectionSettings = new ConnectionSettings(pool, conn);
-            IElasticClient client = new ElasticClient(connectionSettings);
-
-            // Setup the mocked Options
-            IOptions<GlossaryAPIOptions> gTermsClientOptions = GetMockOptions();
-
-            ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
-
-            try
-            {
-                var results = await termsClient.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Contains, 5, 0, new string[]{"termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation"});
-            }
-            catch (Exception) { }
-
-            Assert.Equal(expectedRequest, actualRequest, new JTokenEqualityComparer());
+            Assert.Equal(data.ExpectedRequest, actualRequest, new JTokenEqualityComparer());
         }
 
         /// <summary>
@@ -363,6 +213,5 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             return client;
         }
-
     }
 }

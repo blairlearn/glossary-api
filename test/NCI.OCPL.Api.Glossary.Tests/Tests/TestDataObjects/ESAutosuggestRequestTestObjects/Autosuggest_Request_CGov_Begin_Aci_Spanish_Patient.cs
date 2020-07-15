@@ -14,7 +14,7 @@ namespace NCI.OCPL.Api.Glossary.Tests.ESAutosuggestQueryTestData
     {
         public override string SearchText => "aci";
 
-        public override MatchType Contains => MatchType.Begins;
+        public override MatchType MatchType => MatchType.Begins;
 
         public override string DictionaryName => "Cancer.gov";
 

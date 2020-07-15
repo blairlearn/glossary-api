@@ -1,0 +1,29 @@
+{
+    "meta": {
+        "totalResults": 1,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 463715,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "kava kava",
+            "firstLetter": "k",
+            "prettyUrlName": "kava-kava",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media.cancer.gov/pdq/media/audio/716538.mp3"
+            },
+            "definition": {
+                "html": "Hierba nativa de las islas del sur del Pacífico. Las sustancias tomadas de la raíz se han usado en algunas culturas para aliviar el estrés, la ansiedad, la tensión, el insomnio y los problemas de la menopausia. La kava kava puede aumentar el efecto del alcohol y de ciertos medicamentos usados para tratar la ansiedad y la depresión. La Administración de Alimentos y Medicamentos de los Estados Unidos de América (U.S. Food and Drug Administration) informa a los usuarios que la kava kava puede causar daño grave al hígado. El nombre científico es Piper methysticum. También se llama pimienta intoxicante, rauschpfeffer, tonga y yangona.",
+                "text": "Hierba nativa de las islas del sur del Pacífico. Las sustancias tomadas de la raíz se han usado en algunas culturas para aliviar el estrés, la ansiedad, la tensión, el insomnio y los problemas de la menopausia. La kava kava puede aumentar el efecto del alcohol y de ciertos medicamentos usados para tratar la ansiedad y la depresión. La Administración de Alimentos y Medicamentos de los Estados Unidos de América (U.S. Food and Drug Administration) informa a los usuarios que la kava kava puede causar daño grave al hígado. El nombre científico es Piper methysticum. También se llama pimienta intoxicante, rauschpfeffer, tonga y yangona."
+            },
+            "otherLanguages": [],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}

@@ -4,32 +4,31 @@ using Newtonsoft.Json.Linq;
 namespace NCI.OCPL.Api.Glossary.Tests.ESAutosuggestQueryTestData
 {
     /// <summary>
-    /// Dictionary - Cancer.gov
-    /// Contains - True
-    /// SearchText - cat
-    /// Language - Spanish
-    /// Audience - Patient
+    /// Dictionary - Genetics
+    /// Contains - False
+    /// SearchText - dar
+    /// Language - English
+    /// Audience - HealthProfessional
     /// </summary>
-    class Autosuggest_Request_CGov_Contains_Cat_English_Patient : BaseAutosuggestRequestTestData
+    public class Autosuggest_Request_Exact : BaseAutosuggestRequestTestData
     {
-        public   override   string SearchText => "cat" ;
+        public override string SearchText => "Are you kidding?";
 
-        public override  MatchType   MatchType => MatchType.Contains;
+        public override MatchType MatchType => MatchType.Exact;
 
         public override string DictionaryName => "Cancer.gov";
 
         public override string Language => "en";
 
-        public override AudienceType Audience => AudienceType.Patient;
+        public override AudienceType Audience => AudienceType.HealthProfessional;
 
-        public override int Size => 14;
+        public override int Size => 1;
 
         public override JObject ExpectedData => JObject.Parse(@"
             {
                 ""query"": {
                     ""bool"": {
-                        ""must"": [
-                            {
+                        ""must"": [{
                                 ""term"": {
                                     ""language"": {
                                         ""value"": ""en""
@@ -39,7 +38,7 @@ namespace NCI.OCPL.Api.Glossary.Tests.ESAutosuggestQueryTestData
                             {
                                 ""term"": {
                                     ""audience"": {
-                                        ""value"": ""Patient""
+                                        ""value"": ""HealthProfessional""
                                     }
                                 }
                             },
@@ -51,35 +50,25 @@ namespace NCI.OCPL.Api.Glossary.Tests.ESAutosuggestQueryTestData
                                 }
                             },
                             {
-                                ""match"": {
-                                    ""term_name._autocomplete"": {
-                                        ""query"": ""cat"",
-                                        ""type"": ""phrase""
-                                    }
-                                }
-                            }
-                        ],
-                        ""must_not"": [
-                            {
-                                ""prefix"": {
+                                ""term"": {
                                     ""term_name"": {
-                                        ""value"": ""cat""
+                                        ""value"": ""Are you kidding?""
                                     }
                                 }
                             }
                         ]
                     }
                 },
-                ""sort"": [
-                    { ""term_name"": {} }
-                ],
+                ""size"": 1,
                 ""_source"": {
                     ""includes"": [
                         ""term_id"",
                         ""term_name""
                     ]
                 },
-                ""size"": 14
+                ""sort"": [
+                    { ""term_name"": {} }
+                ]
             }
         ");
     }

@@ -198,7 +198,8 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <param name="audience">The target audience.</param>
         /// <param name="language">Language (English - en; Spanish - es).</param>
         /// <param name="query">The character to search the query</param>
-        /// <param name="matchType">Should the search match items beginning with the search text, or containing it?</param>
+        /// <param name="matchType">Should the search match items beginning with the search text (Begins),
+        /// containing it (Contains), or an exact match (Exact)?</param>
         /// <param name="size">The number of records to retrieve.</param>
         /// <param name="from">The offset into the overall set to use for the first record.</param>
         /// <param name="requestedFields">The fields to retrieve.  If not specified, defaults to all fields except media and related resources.</param>
@@ -214,7 +215,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 throw new APIErrorException(400, "Unsupported Language. Valid values are 'en' and 'es'.");
 
             if (!Enum.IsDefined(typeof(MatchType), matchType))
-                throw new APIErrorException(400, "The `matchType` parameter must be either 'Begins' or 'Contains'.");
+                throw new APIErrorException(400, "Invalid value for the 'matchType' parameter.");
 
             if (size <= 0)
                 size = 100;

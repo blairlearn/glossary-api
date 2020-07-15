@@ -1,0 +1,29 @@
+{
+    "meta": {
+        "totalResults": 1,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 655121,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "μL",
+            "firstLetter": "#",
+            "prettyUrlName": "ul",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media.cancer.gov/pdq/media/audio/734627.mp3"
+            },
+            "definition": {
+                "html": "A measure of volume for a liquid, using the metric system. One μL is equal to a millionth of a liter. Also called microliter.",
+                "text": "A measure of volume for a liquid, using the metric system. One μL is equal to a millionth of a liter. Also called microliter."
+            },
+            "otherLanguages": [],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}

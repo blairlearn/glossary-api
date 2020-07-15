@@ -17,6 +17,11 @@ namespace NCI.OCPL.Api.Glossary
         /// <summary>
         /// Search for items that contain the search text.
         /// </summary>
-        Contains
+        Contains,
+
+        /// <summary>
+        /// Find only the exact match.
+        /// </summary>
+        Exact
     }
 }

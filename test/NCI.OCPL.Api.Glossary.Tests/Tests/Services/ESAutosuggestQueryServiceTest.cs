@@ -32,17 +32,11 @@ namespace NCI.OCPL.Api.Glossary.Tests
         public static IEnumerable<object[]> RequestBeginData => new[]
         {
             new object[] { new Autosuggest_Request_Genetics_Begin_Dar_English_HealthProfessional() },
-            new object[] { new Autosuggest_Request_CGov_Begin_Aci_Spanish_Patient() }
-        };
-
-        /// <summary>
-        /// Test data objects for testing "Contains" suggestions (Contains = True.)
-        /// </summary>
-        public static IEnumerable<object[]> RequestContainsData => new[]
-        {
+            new object[] { new Autosuggest_Request_CGov_Begin_Aci_Spanish_Patient() },
             new object[] { new Autosuggest_Request_CGov_Contains_Cat_English_Patient() },
             new object[] { new Autosuggest_Request_Genetics_Contains_Gene_English_HealthProfessional() },
-            new object[] { new Autosuggest_Request_CGov_Contains_Ablacion_Spanish_Patient() }
+            new object[] { new Autosuggest_Request_CGov_Contains_Ablacion_Spanish_Patient() },
+            new object[] { new Autosuggest_Request_Exact() }
         };
 
         /// <summary>
@@ -84,7 +78,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             // We don't really care that this returns anything (for this test), only that the intercepting connection
             // sets up the request correctly.
-            Suggestion[] result = await query.GetSuggestions(data.DictionaryName, data.Audience, data.Language, data.SearchText, data.Contains, data.Size);
+            Suggestion[] result = await query.GetSuggestions(data.DictionaryName, data.Audience, data.Language, data.SearchText, data.MatchType, data.Size);
 
             Assert.Equal("/glossaryv1/terms/_search", esURI.AbsolutePath);
             Assert.Equal("application/json", esContentType);
@@ -92,53 +86,6 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Assert.Equal(data.ExpectedData, requestBody, new JTokenEqualityComparer());
         }
 
-
-        /// <summary>
-        /// Test that the request to Elasticsearch goes to the correct URI
-        /// and structures the request body as expected.
-        /// </summary>
-        [Theory, MemberData(nameof(RequestContainsData))]
-        public async void GetSuggestions_TestContainsRequestSetup(BaseAutosuggestRequestTestData data)
-        {
-            Uri esURI = null;
-            string esContentType = String.Empty;
-            HttpMethod esMethod = HttpMethod.DELETE; // Basically, something other than the expected value.
-
-            JObject requestBody = null;
-
-            ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
-            conn.RegisterRequestHandlerForType<Nest.SearchResponse<Suggestion>>((req, res) =>
-            {
-                // We don't really care about the response for this test.
-                res.Stream = GetMockEmptyResponse();
-                res.StatusCode = 200;
-
-                esURI = req.Uri;
-                esContentType = req.ContentType;
-                esMethod = req.Method;
-                requestBody = conn.GetRequestPost(req);
-            });
-
-            // The URI does not matter, an InMemoryConnection never requests from the server.
-            var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
-
-            var connectionSettings = new ConnectionSettings(pool, conn);
-            IElasticClient client = new ElasticClient(connectionSettings);
-
-            // Setup the mocked Options
-            IOptions<GlossaryAPIOptions> clientOptions = GetMockOptions();
-
-            ESAutosuggestQueryService query = new ESAutosuggestQueryService(client, clientOptions, new NullLogger<ESAutosuggestQueryService>());
-
-            // We don't really care that this returns anything (for this test), only that the intercepting connection
-            // sets up the request correctly.
-            Suggestion[] result = await query.GetSuggestions(data.DictionaryName, data.Audience, data.Language, data.SearchText, data.Contains, data.Size);
-
-            Assert.Equal("/glossaryv1/terms/_search", esURI.AbsolutePath);
-            Assert.Equal("application/json", esContentType);
-            Assert.Equal(HttpMethod.POST, esMethod);
-            Assert.Equal(data.ExpectedData, requestBody, new JTokenEqualityComparer());
-        }
 
         /// <summary>
         /// Test that the ESTermsQueryService responds correctly when ES returns an empty result set.

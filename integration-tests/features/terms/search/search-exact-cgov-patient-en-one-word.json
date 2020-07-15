@@ -1,0 +1,29 @@
+{
+    "meta": {
+        "totalResults": 1,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 270740,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "lung",
+            "firstLetter": "l",
+            "prettyUrlName": "lung",
+            "pronunciation": {
+                "key": "(lung)",
+                "audio": "https://nci-media.cancer.gov/pdq/media/audio/730986.mp3"
+            },
+            "definition": {
+                "html": "One of a pair of organs in the chest that supplies the body with oxygen, and removes carbon dioxide from the body.",
+                "text": "One of a pair of organs in the chest that supplies the body with oxygen, and removes carbon dioxide from the body."
+            },
+            "otherLanguages": [],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}

@@ -1,0 +1,54 @@
+{
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "failed": 0,
+        "failures": []
+    },
+    "aggregations": {},
+    "suggest": {},
+    "took": 2,
+    "timed_out": false,
+    "terminated_early": false,
+    "hits": {
+        "total": 1,
+        "max_score": 0.0,
+        "hits": [
+            {
+                "fields": {},
+                "_source": {
+                    "term_id": 46716,
+                    "language": "en",
+                    "dictionary": "Cancer.gov",
+                    "audience": "Patient",
+                    "term_name": "S-1",
+                    "first_letter": "s",
+                    "pretty_url_name": "s-1",
+                    "definition": {
+                    "html": "A drug that is being studied for its ability to enhance the effectiveness of fluorouracil and prevent gastrointestinal side effects caused by fluorouracil. It belongs to the family of drugs called antimetabolites.",
+                    "text": "A drug that is being studied for its ability to enhance the effectiveness of fluorouracil and prevent gastrointestinal side effects caused by fluorouracil. It belongs to the family of drugs called antimetabolites."
+                    },
+                    "related_resources": [],
+                    "media": []
+                },
+                "_index": "glossaryv1-20200205223000",
+                "inner_hits": {},
+                "_type": "terms",
+                "_id": "46716_cancer.gov_en_patient",
+                "sort": [
+                    "s-1"
+                ],
+                "highlights": {},
+                "matched_queries": []
+            }
+        ]
+    },
+    "num_reduce_phases": 0,
+    "fields": [
+        {},
+        {},
+        {},
+        {},
+        {}
+    ]
+}

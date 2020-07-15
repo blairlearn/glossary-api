@@ -99,7 +99,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             var exception = await Assert.ThrowsAsync<APIErrorException>(
                 () => controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", (MatchType)5, -1, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
             );
-            Assert.Equal("The `matchType` parameter must be either 'Begins' or 'Contains'.", exception.Message);
+            Assert.Equal("Invalid value for the 'matchType' parameter.", exception.Message);
         }
 
         /// <Summary>

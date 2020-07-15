@@ -1,0 +1,29 @@
+{
+    "meta": {
+        "totalResults": 1,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 389467,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "úvula",
+            "firstLetter": "#",
+            "prettyUrlName": "uvula",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media.cancer.gov/pdq/media/audio/713426.mp3"
+            },
+            "definition": {
+                "html": "Colgajo blanda de tejido que cuelga en la parte posterior de la boca (en el borde del paladar blando). También se llama úvula palatina.",
+                "text": "Colgajo blanda de tejido que cuelga en la parte posterior de la boca (en el borde del paladar blando). También se llama úvula palatina."
+            },
+            "otherLanguages": [],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}

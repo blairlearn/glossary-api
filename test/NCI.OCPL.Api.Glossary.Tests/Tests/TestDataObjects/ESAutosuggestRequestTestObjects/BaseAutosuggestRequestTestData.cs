@@ -24,7 +24,7 @@ namespace NCI.OCPL.Api.Glossary.Tests.ESAutosuggestQueryTestData
         /// Set TRUE for contains.
         /// Set FALSE for begins with.
         /// </summary>
-        public abstract MatchType Contains { get; }
+        public abstract MatchType MatchType { get; }
 
         /// <summary>
         /// The name of the dictionary for the suggestion request
