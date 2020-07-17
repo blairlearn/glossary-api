@@ -8,10 +8,6 @@
         "termName": "enfermedad crónica"
     },
     {
-        "termId": 748159,
-        "termName": "enfermedad pulmonar crónica"
-    },
-    {
         "termId": 524193,
         "termName": "enfermedad pulmonar obstructiva crónica"
     },
@@ -78,5 +74,9 @@
     {
         "termId": 45160,
         "termName": "leucemia mielógena crónica en fase crónica"
+    },
+    {
+        "termId": 46755,
+        "termName": "leucemia mieloide crónica"
     }
 ]
