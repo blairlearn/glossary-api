@@ -20,7 +20,13 @@
                 "html": "Abnormal cells are found on the surface of the cervix. Cervical intraepithelial neoplasia grade 2/3 is usually caused by certain types of human papillomavirus (HPV) and is found when a cervical biopsy is done. Cervical intraepithelial neoplasia grade 2/3 has features of CIN 2 and CIN 3. It is not cancer, but may become cancer and spread to nearby normal tissue if not treated. Treatment for cervical intraepithelial neoplasia grade 2/3 may include cryotherapy, laser therapy, loop electrosurgical procedure (LEEP), or cone biopsy to remove or destroy the abnormal tissue. Also called CIN 2/3.",
                 "text": "Abnormal cells are found on the surface of the cervix. Cervical intraepithelial neoplasia grade 2/3 is usually caused by certain types of human papillomavirus (HPV) and is found when a cervical biopsy is done. Cervical intraepithelial neoplasia grade 2/3 has features of CIN 2 and CIN 3. It is not cancer, but may become cancer and spread to nearby normal tissue if not treated. Treatment for cervical intraepithelial neoplasia grade 2/3 may include cryotherapy, laser therapy, loop electrosurgical procedure (LEEP), or cone biopsy to remove or destroy the abnormal tissue. Also called CIN 2/3."
             },
-            "otherLanguages": [],
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "neoplasia intraepitelial cervical de grados 2 y 3",
+                    "prettyUrlName": "neoplasia-intraepitelial-cervical-de-grados-2-y-3"
+                }
+            ],
             "relatedResources": [],
             "media": []
         },
@@ -40,7 +46,13 @@
                 "html": "Abnormal cells are found on the surface of the cervix. CIN 2/3 is usually caused by certain types of human papillomavirus (HPV) and is found when a cervical biopsy is done. CIN 2/3 has features of CIN 2 and CIN 3. It is not cancer, but may become cancer and spread to nearby normal tissue if not treated. Treatment for CIN 2/3 may include cryotherapy, laser therapy, loop electrosurgical procedure (LEEP), or cone biopsy to remove or destroy the abnormal tissue. Also called cervical intraepithelial neoplasia grade 2/3.",
                 "text": "Abnormal cells are found on the surface of the cervix. CIN 2/3 is usually caused by certain types of human papillomavirus (HPV) and is found when a cervical biopsy is done. CIN 2/3 has features of CIN 2 and CIN 3. It is not cancer, but may become cancer and spread to nearby normal tissue if not treated. Treatment for CIN 2/3 may include cryotherapy, laser therapy, loop electrosurgical procedure (LEEP), or cone biopsy to remove or destroy the abnormal tissue. Also called cervical intraepithelial neoplasia grade 2/3."
             },
-            "otherLanguages": [],
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "NIC 2 y 3",
+                    "prettyUrlName": "nic-2-y-3"
+                }
+            ],
             "relatedResources": [],
             "media": []
         }

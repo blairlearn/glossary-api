@@ -69,7 +69,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<string>(),
                     It.IsAny<int>(),
                     It.IsAny<int>(),
-                    It.IsAny<string[]>()
+                    It.IsAny<bool>()
                 )
             )
             .Returns(Task.FromResult(new GlossaryTermResults()));
@@ -82,7 +82,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             //  a) with the expected values.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.GetAll("glossary", AudienceType.HealthProfessional, "en", 100, 0, new string[] { "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
+                svc => svc.GetAll("glossary", AudienceType.HealthProfessional, "en", 100, 0, false),
                 Times.Once,
                 "ITermsQueryService::getAll() should be called once, with default values for size, from, and requestedFields"
             );
@@ -104,20 +104,20 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<string>(),
                     It.IsAny<int>(),
                     It.IsAny<int>(),
-                    It.IsAny<string[]>()
+                    It.IsAny<bool>()
                 )
             )
             .Returns(Task.FromResult(new GlossaryTermResults()));
 
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
-            await controller.GetAll("glossary", AudienceType.HealthProfessional, "es", 200, 2, new string[] {"Field1", "Field2", "Field3"});
+            await controller.GetAll("glossary", AudienceType.HealthProfessional, "es", 200, 2, true);
 
             // Verify that the query layer is called:
             //  a) with the expected values.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.GetAll("glossary", AudienceType.HealthProfessional, "es", 200, 2, new string[] { "Field1", "Field2", "Field3" }),
+                svc => svc.GetAll("glossary", AudienceType.HealthProfessional, "es", 200, 2, true),
                 Times.Once,
                 "ITermsQueryService::getAll() should be called once, with the specified values for size, from, and requestedFields"
             );

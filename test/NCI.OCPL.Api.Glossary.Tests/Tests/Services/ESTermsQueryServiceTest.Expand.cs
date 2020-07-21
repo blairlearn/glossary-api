@@ -50,7 +50,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.Expand("Cancer.gov", AudienceType.Patient, "en", "a", 10, 0, new string[] { }));
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.Expand("Cancer.gov", AudienceType.Patient, "en", "a", 10, 0, false));
             Assert.Equal(500, ex.HttpStatusCode);
         }
 
@@ -78,81 +78,27 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.Expand("Cancer.gov", AudienceType.Patient, "en", "a", 10, 0, new string[] { }));
+            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.Expand("Cancer.gov", AudienceType.Patient, "en", "a", 10, 0, true));
             Assert.Equal(500, ex.HttpStatusCode);
         }
+
+        public static IEnumerable<object[]> ExpandRequestData => new[] {
+            new object[] { new ExpandRequestDefaultFields() },
+            new object[] { new ExpandRequestAdditionalInfo() }
+        };
 
         /// <summary>
         /// Test that Expand Request for Elasticsearch is set up correctly.
         /// </summary>
-        [Fact]
-        public async void Expand_TestRequestSetup()
+        [Theory, MemberData(nameof(ExpandRequestData))]
+        public async void Expand_TestRequestSetup(ExpandRequestBase data)
         {
             JObject actualRequest = null;
-            JObject expectedRequest = JObject.Parse(@"
-                {
-                    ""from"": 0,
-                    ""size"": 5,
-                    ""_source"": {
-                        ""includes"": [
-                            ""term_id"",
-                            ""language"",
-                            ""dictionary"",
-                            ""audience"",
-                            ""term_name"",
-                            ""first_letter"",
-                            ""pretty_url_name"",                            
-                            ""pronunciation"",
-                            ""definition"",
-                        ]
-                    },
-                    ""sort"": [
-                        {
-                            ""term_name"": {}
-                        }
-                    ],
-                    ""query"": {
-                        ""bool"": {
-                            ""must"": [
-                                {
-                                    ""term"": {
-                                        ""language"": {
-                                            ""value"": ""en""
-                                        }
-                                    }
-                                },
-                                {
-                                    ""term"": {
-                                        ""audience"": {
-                                            ""value"": ""Patient""
-                                        }
-                                    }
-                                },
-                                {
-                                    ""term"": {
-                                        ""dictionary"": {
-                                            ""value"": ""Cancer.gov""
-                                        }
-                                    }
-                                },
-                                {
-                                    ""term"": {
-                                        ""first_letter"": {
-                                            ""value"": ""s""
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                }"
-            );
 
             ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
             conn.RegisterRequestHandlerForType<Nest.SearchResponse<GlossaryTerm>>((req, res) =>
             {
                 res.Stream = TestingTools.GetTestFileAsStream("ESTermsQueryData/Expand/expand_response_results.json");
-
                 res.StatusCode = 200;
 
                 actualRequest = conn.GetRequestPost(req);
@@ -172,15 +118,15 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             try
             {
-                var results = await termsClient.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 5, 0, new string[]{"termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation"});
+                var results = await termsClient.Expand(data.Dictionary, data.Audience, data.LanguageCode, data.ExpandCharacter, data.Size, data.From, data.IncludeAdditionalInfo);
             }
             catch (Exception) { }
 
-            Assert.Equal(expectedRequest, actualRequest, new JTokenEqualityComparer());
+            Assert.Equal(data.ExpectedRequest, actualRequest, new JTokenEqualityComparer());
         }
 
         /// <summary>
-        /// Tests the correct loading of various data files.
+        /// Tests the correct deserializing of various data files.
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
@@ -194,54 +140,13 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
 
-            GlossaryTermResults glossaryTermResults = await termsClient.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 5, 0, new string[]{"termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation"});
+            GlossaryTermResults glossaryTermResults = await termsClient.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 5, 0, false);
 
             Assert.Equal(data.ExpectedData.Results, glossaryTermResults.Results, new GlossaryTermComparer());
             Assert.Equal(data.ExpectedData.Meta.TotalResults, glossaryTermResults.Meta.TotalResults);
             Assert.Equal(data.ExpectedData.Meta.From, glossaryTermResults.Meta.From);
         }
 
-        /// <summary>
-        /// Tests the correct loading of various data files.
-        /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        [Fact]
-        public async void Expand_ValidRequestedFields()
-        {
-            ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
-            conn.RegisterRequestHandlerForType<Nest.SearchResponse<GlossaryTerm>>((req, res) =>
-            {
-
-            });
-
-            // While this has a URI, it does not matter, an InMemoryConnection never requests
-            // from the server.
-            var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
-
-            var connectionSettings = new ConnectionSettings(pool, conn);
-            IElasticClient client = new ElasticClient(connectionSettings);
-
-            // Setup the mocked Options
-            IOptions<GlossaryAPIOptions> gTermsClientOptions = GetMockOptions();
-
-            ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
-
-            // Test null argument
-            await Assert.ThrowsAsync<ArgumentNullException>(async () => {
-                GlossaryTermResults glossaryTermResults = await termsClient.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 5, 0, null);
-            });
-
-            // Test null in an array
-            await Assert.ThrowsAsync<ArgumentException>(async () => {
-                GlossaryTermResults glossaryTermResults = await termsClient.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 5, 0, new string[] { null });
-            });
-
-            // Test bad property name
-            await Assert.ThrowsAsync<ArgumentOutOfRangeException>(async () => {
-                GlossaryTermResults glossaryTermResults = await termsClient.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 5, 0, new string[] { "chicken" });
-            });
-        }
 
         ///<summary>
         ///A private method to enrich data from file for GetById

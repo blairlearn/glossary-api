@@ -20,7 +20,13 @@
                 "html": "A machine that uses electricity to form a stream of fast-moving subatomic particles. This creates high-energy radiation that may be used to treat cancer. Also called linac, linear accelerator, and mega-voltage linear accelerator.",
                 "text": "A machine that uses electricity to form a stream of fast-moving subatomic particles. This creates high-energy radiation that may be used to treat cancer. Also called linac, linear accelerator, and mega-voltage linear accelerator."
             },
-            "otherLanguages": [],
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "acelerador lineal de MeV",
+                    "prettyUrlName": "acelerador-lineal-de-mev"
+                }
+            ],
             "relatedResources": [],
             "media": []
         }

@@ -20,7 +20,13 @@
                 "html": "One of a pair of organs in the chest that supplies the body with oxygen, and removes carbon dioxide from the body.",
                 "text": "One of a pair of organs in the chest that supplies the body with oxygen, and removes carbon dioxide from the body."
             },
-            "otherLanguages": [],
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "pulmón",
+                    "prettyUrlName": "pulmon"
+                }
+            ],
             "relatedResources": [],
             "media": []
         }

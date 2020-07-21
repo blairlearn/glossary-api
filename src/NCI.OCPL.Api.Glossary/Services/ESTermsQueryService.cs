@@ -19,6 +19,25 @@ namespace NCI.OCPL.Api.Glossary.Services
     public class ESTermsQueryService : ITermsQueryService
     {
         /// <summary>
+        /// A list of all of public, instance properties in the GlossaryTerm type except for
+        /// the ones which Search, Expand and GetAll don't return by default.
+        /// </summary>
+        static readonly IEnumerable<PropertyInfo> DEFAULT_FIELDS =
+            typeof(GlossaryTerm).GetProperties(BindingFlags.Public | BindingFlags.Instance)
+            .Where(pi =>
+                    pi.Name.CompareTo(nameof(GlossaryTerm.RelatedResources)) != 0
+                    && pi.Name.CompareTo(nameof(GlossaryTerm.Media)) != 0
+                )
+            .Select(pi => pi);
+
+        /// <summary>
+        /// A list of all of public, instance properties in the GlossaryTerm type.
+        /// </summary>
+        static readonly IEnumerable<PropertyInfo> ALL_FIELDS =
+            typeof(GlossaryTerm).GetProperties(BindingFlags.Public | BindingFlags.Instance)
+            .Select(pi => pi);
+
+        /// <summary>
         /// The elasticsearch client
         /// </summary>
         private IElasticClient _elasticClient;
@@ -163,13 +182,13 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <param name="language">Language (English - en; Spanish - es).</param>
         /// <param name="size">The number of records to retrieve.</param>
         /// <param name="from">The offset into the overall set to use for the first record.</param>
-        /// <param name="requestedFields">The fields to retrieve.  If not specified, defaults to TermName, Pronunciation, and Definition.</param>
+        /// <param name="includeAdditionalInfo">If true, the RelatedResources and Media fields will be populated. Else, they will be empty.</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
-        public async Task<GlossaryTermResults> GetAll(string dictionary, AudienceType audience, string language, int size, int from, string[] requestedFields)
+        public async Task<GlossaryTermResults> GetAll(string dictionary, AudienceType audience, string language, int size, int from, bool includeAdditionalInfo)
         {
             // Elasticsearch knows how to figure out what the ElasticSearch name is for
             // a given field when given a PropertyInfo.
-            Field[] requestedESFields = convertRequestedFieldsToProperties(requestedFields)
+            Field[] requestedESFields = (includeAdditionalInfo ? ALL_FIELDS : DEFAULT_FIELDS)
                                             .Select(pi => new Field(pi))
                                             .ToArray();
 
@@ -256,14 +275,14 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <param name="matchType">Defines if the search should begin with or contain the key word</param>
         /// <param name="size">Defines the size of the search</param>
         /// <param name="from">Defines the Offset for search</param>
-        /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
+        /// <param name="includeAdditionalInfo">If true, the RelatedResources and Media fields will be populated. Else, they will be empty.</param>
         /// <returns>A list of GlossaryTerm</returns>
         /// </summary>
-        public async Task<GlossaryTermResults> Search(string dictionary, AudienceType audience, string language, string query, MatchType matchType, int size, int from, string[] requestedFields)
+        public async Task<GlossaryTermResults> Search(string dictionary, AudienceType audience, string language, string query, MatchType matchType, int size, int from, bool includeAdditionalInfo)
         {
             // Elasticsearch knows how to figure out what the ElasticSearch name is for
             // a given field when given a PropertyInfo.
-            Field[] requestedESFields = convertRequestedFieldsToProperties(requestedFields)
+            Field[] requestedESFields = (includeAdditionalInfo ? ALL_FIELDS : DEFAULT_FIELDS)
                                             .Select(pi => new Field(pi))
                                             .ToArray();
 
@@ -357,21 +376,21 @@ namespace NCI.OCPL.Api.Glossary.Services
 
 
         /// <summary>
-        /// Search for Terms based on the character passed.
+        /// Get all Terms starting with the character passed.
         /// <param name="dictionary">The value for dictionary.</param>
         /// <param name="audience">Patient or Healthcare provider</param>
         /// <param name="language">The language in which the details needs to be fetched</param>
         /// <param name="expandCharacter">The character to search the query</param>
         /// <param name="size">Defines the size of the search</param>
         /// <param name="from">Defines the Offset for search</param>
-        /// <param name="requestedFields"> The list of fields that needs to be sent in the response</param>
+        /// <param name="includeAdditionalInfo">If true, the RelatedResources and Media fields will be populated. Else, they will be empty.</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
         /// </summary>
-        public async Task<GlossaryTermResults> Expand(string dictionary, AudienceType audience, string language, string expandCharacter, int size, int from, string[] requestedFields)
+        public async Task<GlossaryTermResults> Expand(string dictionary, AudienceType audience, string language, string expandCharacter, int size, int from, bool includeAdditionalInfo)
         {
             // Elasticsearch knows how to figure out what the ElasticSearch name is for
             // a given field when given a PropertyInfo.
-            Field[] requestedESFields = convertRequestedFieldsToProperties(requestedFields)
+            Field[] requestedESFields = (includeAdditionalInfo ? ALL_FIELDS : DEFAULT_FIELDS)
                                             .Select(pi => new Field(pi))
                                             .ToArray();
 
@@ -448,61 +467,6 @@ namespace NCI.OCPL.Api.Glossary.Services
             }
 
             return glossaryTermResults;
-        }
-
-        /// <summary>
-        /// Yields a collection of PropertyInfo objects representing the named requestedFields passed into the API.
-        /// </summary>
-        /// <param name="requestedFields">The requested fields. An array of nulls will be treated as an empty array.</param>
-        /// <returns>An array of PropertyInfo objects representing the fields. NOTE: If a field is a value type then it
-        /// must be returned as part of the object so that we do not get incorrect default values. Dotnet cannot actually change
-        /// the shape of our object, or at least not without major trouble. So we will force the return here.</returns>
-        /// <exception cref="System.ArgumentNullException">Thrown when requestedFields is null.</exception>
-        /// <exception cref="System.ArgumentException">Thrown when requestedFields contains one or more null values.</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when an unknown field is requested.</exception>
-        private IEnumerable<PropertyInfo> convertRequestedFieldsToProperties(string[] requestedFields)
-        {
-            if (requestedFields == null)
-            {
-                throw new ArgumentNullException("requestedFields");
-            }
-
-            if (requestedFields.Contains(null))
-            {
-                throw new ArgumentException("Null requested field encountered.", "requestedFields");
-            }
-
-            // Lowercase our field names.
-            string[] fieldsList = requestedFields
-                                    .Select(f => f.ToLower())
-                                    .ToArray();
-
-            // Now we will use reflection to get a list of the properties of the GlossaryTerm class.
-            // Then we will loop through returning only those that match our list of names
-            Type glossaryTermType = typeof(GlossaryTerm);
-            PropertyInfo[] properties = glossaryTermType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-
-            var propertyNames = properties.Select(p => p.Name.ToLower());
-            var badFields = fieldsList.Except(propertyNames);
-
-            if (badFields.Count() > 0)
-            {
-                throw new ArgumentOutOfRangeException("requestedFields", $"Unknown fields: {String.Join(", ", badFields)} ");
-            }
-
-            foreach (PropertyInfo property in properties)
-            {
-                if (property.PropertyType.IsValueType)
-                {
-                    // This should be Ints, Enums, etc.
-                    // It will not be strings.
-                    yield return property;
-                }
-                else if (fieldsList.Contains(property.Name.ToLower()))
-                {
-                    yield return property;
-                }
-            }
         }
 
         /// <summary>

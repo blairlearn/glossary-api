@@ -20,7 +20,13 @@
                 "html": "Colgajo blanda de tejido que cuelga en la parte posterior de la boca (en el borde del paladar blando). También se llama úvula palatina.",
                 "text": "Colgajo blanda de tejido que cuelga en la parte posterior de la boca (en el borde del paladar blando). También se llama úvula palatina."
             },
-            "otherLanguages": [],
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "uvula",
+                    "prettyUrlName": "uvula"
+                }
+            ],
             "relatedResources": [],
             "media": []
         }

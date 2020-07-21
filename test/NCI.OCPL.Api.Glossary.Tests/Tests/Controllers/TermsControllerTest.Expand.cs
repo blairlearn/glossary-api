@@ -26,7 +26,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termQueryService.Object);
             var exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.Expand("", AudienceType.Patient, "en", "s", 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
+                () => controller.Expand("", AudienceType.Patient, "en", "s", 10, 0)
             );
             Assert.Equal("You must supply a valid dictionary, audience and language", exception.Message);
         }
@@ -36,7 +36,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termQueryService.Object);
             var exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.Expand("Cancer.gov", AudienceType.Patient, "", "s", 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
+                () => controller.Expand("Cancer.gov", AudienceType.Patient, "", "s", 10, 0)
             );
             Assert.Equal("You must supply a valid dictionary, audience and language", exception.Message);
         }
@@ -47,7 +47,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termQueryService.Object);
             var exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.Expand("Cancer.gov", AudienceType.Patient, "chicken", "s", 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
+                () => controller.Expand("Cancer.gov", AudienceType.Patient, "chicken", "s", 10, 0, true)
             );
             Assert.Equal("Unsupported Language. Please try either 'en' or 'es'", exception.Message);
         }
@@ -57,7 +57,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> termsQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termsQueryService.Object);
             APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.Expand("Cancer.gov", (AudienceType)(-18), "en", "s", 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
+                () => controller.Expand("Cancer.gov", (AudienceType)(-18), "en", "s", 10, 0, false)
             );
             Assert.Equal("You must supply a valid dictionary, audience and language", exception.Message);
         }
@@ -78,7 +78,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<string>(),
                     It.IsAny<int>(),
                     It.IsAny<int>(),
-                    It.IsAny<string[]>()
+                    It.IsAny<bool>()
                 )
             )
             .Returns(Task.FromResult(new GlossaryTermResults()));
@@ -91,7 +91,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             //  a) with the expected updated values for size, from, and requestedFields.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 100, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
+                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 100, 0, false),
                 Times.Once,
                 "ITermsQueryService::Expand() should be called once, with the updated value for size"
             );
@@ -113,20 +113,20 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<string>(),
                     It.IsAny<int>(),
                     It.IsAny<int>(),
-                    It.IsAny<string[]>()
+                    It.IsAny<bool>()
                 )
             )
             .Returns(Task.FromResult(new GlossaryTermResults()));
 
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
-            await controller.Expand("Cancer.gov", AudienceType.Patient, "en", "s", -1, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" });
+            await controller.Expand("Cancer.gov", AudienceType.Patient, "en", "s", -1, 0, true);
 
             // Verify that the query layer is called:
             //  a) with the expected updated values for size.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 100, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
+                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 100, 0, true),
                 Times.Once,
                 "ITermsQueryService::Expand() should be called once, with the updated value for size"
             );
@@ -148,20 +148,20 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<string>(),
                     It.IsAny<int>(),
                     It.IsAny<int>(),
-                    It.IsAny<string[]>()
+                    It.IsAny<bool>()
                 )
             )
             .Returns(Task.FromResult(new GlossaryTermResults()));
 
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
-            await controller.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, -1, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" });
+            await controller.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, -1);
 
             // Verify that the query layer is called:
             //  a) with the expected updated values for from and size.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
+                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, 0, false),
                 Times.Once,
                 "ITermsQueryService::Expandl() should be called once, with the updated value for from"
             );
@@ -171,7 +171,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         /// Verify that Expand behaves in the expected manner when requestedFields is null.
         /// </summary>
         [Fact]
-        public async void Expand_NullRequestedFields()
+        public async void Expand_DefaultRequestedFields()
         {
             // Create a mock query that always returns the same result.
             Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
@@ -183,91 +183,20 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<string>(),
                     It.IsAny<int>(),
                     It.IsAny<int>(),
-                    It.IsAny<string[]>()
+                    It.IsAny<bool>()
                 )
             )
             .Returns(Task.FromResult(new GlossaryTermResults()));
 
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
-            await controller.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, -1, null);
+            await controller.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, -1);
 
             // Verify that the query layer is called:
             //  a) with the expected updated values for requestedFields.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
-                Times.Once,
-                "ITermsQueryService::Expandl() should be called once, with the updated value for requestedFields"
-            );
-        }
-
-        /// <summary>
-        /// Verify that Expand behaves in the expected manner when requestedFields is invalid
-        /// by having any array items that are null.
-        /// </summary>
-        [Fact]
-        public async void Expand_InvalidRequestedFields()
-        {
-            // Create a mock query that always returns the same result.
-            Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
-            querySvc.Setup(
-                svc => svc.Expand(
-                    It.IsAny<string>(),
-                    It.IsAny<AudienceType>(),
-                    It.IsAny<string>(),
-                    It.IsAny<string>(),
-                    It.IsAny<int>(),
-                    It.IsAny<int>(),
-                    It.IsAny<string[]>()
-                )
-            )
-            .Returns(Task.FromResult(new GlossaryTermResults()));
-
-            // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
-            await controller.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, 0, new string[]{null, null, null});
-
-            // Verify that the query layer is called:
-            //  a) with the expected updated values for requestedFields.
-            //  b) exactly once.
-            querySvc.Verify(
-                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
-                Times.Once,
-                "ITermsQueryService::Expandl() should be called once, with the updated value for requestedFields"
-            );
-        }
-
-        /// <summary>
-        /// Verify that Expand behaves in the expected manner when requestedFields is an empty array.
-        /// </summary>
-        [Fact]
-        public async void Expand_EmptyRequestedFields()
-        {
-            // Create a mock query that always returns the same result.
-            Mock<ITermsQueryService> querySvc = new Mock<ITermsQueryService>();
-            querySvc.Setup(
-                svc => svc.Expand(
-                    It.IsAny<string>(),
-                    It.IsAny<AudienceType>(),
-                    It.IsAny<string>(),
-                    It.IsAny<string>(),
-                    It.IsAny<int>(),
-                    It.IsAny<int>(),
-                    It.IsAny<string[]>()
-                )
-            )
-            .Returns(Task.FromResult(new GlossaryTermResults()));
-
-            // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
-            await controller.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, 0, new string[]{});
-
-            // Verify that the query layer is called:
-            //  a) with the expected updated values for requestedFields.
-            //  b) exactly once.
-            querySvc.Verify(
-                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
+                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 10, 0, false),
                 Times.Once,
                 "ITermsQueryService::Expandl() should be called once, with the updated value for requestedFields"
             );
@@ -282,7 +211,6 @@ namespace NCI.OCPL.Api.Glossary.Tests
         {
             Mock<ITermsQueryService> termsQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termsQueryService.Object);
-            string[] requestedFields = new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" };
 
             GlossaryTermResults glossaryTermResults = new GlossaryTermResults() {
                 Results = new GlossaryTerm[] {
@@ -404,12 +332,12 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<string>(),
                     It.IsAny<int>(),
                     It.IsAny<int>(),
-                    It.IsAny<string[]>()
+                    It.IsAny<bool>()
                 )
             )
             .Returns(Task.FromResult(glossaryTermResults));
 
-            GlossaryTermResults termResults = await controller.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 5, 0, requestedFields );
+            GlossaryTermResults termResults = await controller.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 5, 0, true );
             JObject actual = JObject.Parse(JsonConvert.SerializeObject(termResults));
             JObject expected = JObject.Parse(File.ReadAllText(TestingTools.GetPathToTestFile("TermsControllerData/TestData_Expand.json")));
 
@@ -417,7 +345,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             //  a) with the expected values.
             //  b) exactly once.
             termsQueryService.Verify(
-                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 5, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
+                svc => svc.Expand("Cancer.gov", AudienceType.Patient, "en", "s", 5, 0, true),
                 Times.Once
             );
 

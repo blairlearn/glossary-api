@@ -26,7 +26,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termQueryService.Object);
             var exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.Search("", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
+                () => controller.Search("", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0 )
             );
             Assert.Equal("You must supply a valid dictionary, audience and language.", exception.Message);
         }
@@ -36,7 +36,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termQueryService.Object);
             var exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.Search("Cancer.gov", AudienceType.Patient, "", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
+                () => controller.Search("Cancer.gov", AudienceType.Patient, "", "chicken", MatchType.Begins, 10, 0)
             );
             Assert.Equal("You must supply a valid dictionary, audience and language.", exception.Message);
         }
@@ -47,7 +47,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> termQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termQueryService.Object);
             var exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.Search("Cancer.gov", AudienceType.Patient, "chicken", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
+                () => controller.Search("Cancer.gov", AudienceType.Patient, "chicken", "chicken", MatchType.Begins, 10, 0)
             );
             Assert.Equal("Unsupported Language. Valid values are 'en' and 'es'.", exception.Message);
         }
@@ -57,7 +57,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             Mock<ITermsQueryService> termsQueryService = new Mock<ITermsQueryService>();
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termsQueryService.Object);
             APIErrorException exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.Search("Cancer.gov", (AudienceType)(-18), "en", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
+                () => controller.Search("Cancer.gov", (AudienceType)(-18), "en", "chicken", MatchType.Begins, 10, 0)
             );
             Assert.Equal("You must supply a valid dictionary, audience and language.", exception.Message);
         }
@@ -79,7 +79,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             //  a) with the expected updated values for size, from, and requestedFields.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 100, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
+                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 100, 0, false),
                 Times.Once,
                 "ITermsQueryService::Search() should be called once, with the updated value for size"
             );
@@ -97,7 +97,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
             var exception = await Assert.ThrowsAsync<APIErrorException>(
-                () => controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", (MatchType)5, -1, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" })
+                () => controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", (MatchType)5, -1, 0)
             );
             Assert.Equal("Invalid value for the 'matchType' parameter.", exception.Message);
         }
@@ -113,13 +113,13 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
-            await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, -1, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" });
+            await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, -1, 0, true);
 
             // Verify that the query layer is called:
             //  a) with the expected updated values for size.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 100, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
+                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 100, 0, true),
                 Times.Once,
                 "ITermsQueryService::Search() should be called once, with the updated value for size"
             );
@@ -136,85 +136,38 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
-            await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, -1, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" });
+            await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, -1);
 
             // Verify that the query layer is called:
             //  a) with the expected updated values for from and size.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
+                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, false),
                 Times.Once,
                 "ITermsQueryService::Search() should be called once, with the updated value for from"
             );
         }
 
         /// <summary>
-        /// Verify that Search behaves in the expected manner when requestedFields is null.
+        /// Verify that Search behaves in the expected manner when requestedFields is not specified.
         /// </summary>
         [Fact]
-        public async void Search_NullRequestedFields()
+        public async void Search_DefaultRequestedFields()
         {
             // Create a mock query that always returns the same result.
             Mock<ITermsQueryService> querySvc = getDumbSearchSvcMock();
 
             // Call the controller, we don't care about the actual return value.
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
-            await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, -1, null);
+            await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, -1);
 
             // Verify that the query layer is called:
             //  a) with the expected updated values for requestedFields.
             //  b) exactly once.
             querySvc.Verify(
-                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
+                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, false),
                 Times.Once,
-                "ITermsQueryService::Search() should be called once, with the updated value for requestedFields"
-            );
-        }
-
-        /// <summary>
-        /// Verify that Search behaves in the expected manner when requestedFields is invalid
-        /// by having any array items that are null.
-        /// </summary>
-        [Fact]
-        public async void Search_InvalidRequestedFields()
-        {
-            // Create a mock query that always returns the same result.
-            Mock<ITermsQueryService> querySvc = getDumbSearchSvcMock();
-
-            // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
-            await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, new string[]{null, null, null});
-
-            // Verify that the query layer is called:
-            //  a) with the expected updated values for requestedFields.
-            //  b) exactly once.
-            querySvc.Verify(
-                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
-                Times.Once,
-                "ITermsQueryService::Search() should be called once, with the updated value for requestedFields"
-            );
-        }
-
-        /// <summary>
-        /// Verify that Search behaves in the expected manner when requestedFields is an empty array.
-        /// </summary>
-        [Fact]
-        public async void Search_EmptyRequestedFields()
-        {
-            // Create a mock query that always returns the same result.
-            Mock<ITermsQueryService> querySvc = getDumbSearchSvcMock();
-
-            // Call the controller, we don't care about the actual return value.
-            TermsController controller = new TermsController(NullLogger<TermsController>.Instance, querySvc.Object);
-            await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, new string[]{});
-
-            // Verify that the query layer is called:
-            //  a) with the expected updated values for requestedFields.
-            //  b) exactly once.
-            querySvc.Verify(
-                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 10, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
-                Times.Once,
-                "ITermsQueryService::Search() should be called once, with the updated value for requestedFields"
+                "ITermsQueryService::Search() should be called once, with the updated value for 'includeAdditionalInfo'."
             );
         }
 
@@ -339,10 +292,9 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             Mock<ITermsQueryService> termsQueryService = getDumbSearchSvcMock(glossaryTermResults);
             TermsController controller = new TermsController(NullLogger<TermsController>.Instance, termsQueryService.Object);
-            string[] requestedFields = new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" };
 
 
-            GlossaryTermResults termResults = await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 5, 0, requestedFields );
+            GlossaryTermResults termResults = await controller.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 5, 0, true );
             JObject actual = JObject.Parse(JsonConvert.SerializeObject(termResults));
             JObject expected = JObject.Parse(File.ReadAllText(TestingTools.GetPathToTestFile("TermsControllerData/TestData_Expand.json")));
 
@@ -350,7 +302,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             //  a) with the expected values.
             //  b) exactly once.
             termsQueryService.Verify(
-                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 5, 0, new string[]{ "termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation" }),
+                svc => svc.Search("Cancer.gov", AudienceType.Patient, "en", "chicken", MatchType.Begins, 5, 0, true),
                 Times.Once
             );
 
@@ -377,7 +329,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     It.IsAny<MatchType>(),
                     It.IsAny<int>(),
                     It.IsAny<int>(),
-                    It.IsAny<string[]>()
+                    It.IsAny<bool>()
                 )
             )
             .Returns(Task.FromResult(results == null ? new GlossaryTermResults() : results));

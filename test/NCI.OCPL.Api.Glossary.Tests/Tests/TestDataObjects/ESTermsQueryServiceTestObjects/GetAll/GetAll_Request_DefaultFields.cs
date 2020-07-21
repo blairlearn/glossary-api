@@ -1,25 +1,20 @@
-
 using Newtonsoft.Json.Linq;
 
 namespace NCI.OCPL.Api.Glossary.Tests
 {
-    class Terms_Search_Request_Contains : Terms_Search_Request_Base
+    public class GetAll_Request_DefaultFields : GetAll_Request_Base
     {
         public override string Dictionary => "Cancer.gov";
 
         public override AudienceType Audience => AudienceType.Patient;
 
-        public override string LangCode => "es";
-
-        public override string SearchTerm => "pollo";
-
-        public override MatchType MatchType => MatchType.Contains;
+        public override string LangCode => "en";
 
         public override int Size => 5;
 
         public override int From => 0;
 
-        public override bool IncludeAdditionalInfo => true;
+        public override bool IncludeAdditionalInfo => false;
 
         public override JObject ExpectedRequest => JObject.Parse(@"
                 {
@@ -36,9 +31,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                             ""pretty_url_name"",
                             ""pronunciation"",
                             ""definition"",
-                            ""other_languages"",
-                            ""related_resources"",
-                            ""media""
+                            ""other_languages""
                         ]
                     },
                     ""sort"": [
@@ -52,7 +45,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                                 {
                                     ""term"": {
                                         ""language"": {
-                                            ""value"": ""es""
+                                            ""value"": ""en""
                                         }
                                     }
                                 },
@@ -67,13 +60,6 @@ namespace NCI.OCPL.Api.Glossary.Tests
                                     ""term"": {
                                         ""dictionary"": {
                                             ""value"": ""Cancer.gov""
-                                        }
-                                    }
-                                },
-                                {
-                                    ""match"": {
-                                        ""term_name._contain"": {
-                                            ""query"": ""pollo""
                                         }
                                     }
                                 }

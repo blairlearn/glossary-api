@@ -165,10 +165,10 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <param name="language">Language (English - en; Spanish - es).</param>
         /// <param name="size">The number of records to retrieve.</param>
         /// <param name="from">The offset into the overall set to use for the first record.</param>
-        /// <param name="requestedFields">The fields to retrieve.  If not specified, defaults to all fields except media and related resources.</param>
+        /// <param name="includeAdditionalInfo">If true, the RelatedResources and Media fields will be populated. Else, they will be empty.</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
         [HttpGet("{dictionary:required}/{audience:required}/{language:required}")]
-        public async Task<GlossaryTermResults> GetAll(string dictionary, AudienceType audience, string language, int size = 100, int from = 0, string[] requestedFields = null)
+        public async Task<GlossaryTermResults> GetAll(string dictionary, AudienceType audience, string language, int size = 100, int from = 0, bool includeAdditionalInfo = false)
         {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience))
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience and language.");
@@ -182,11 +182,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             if (from < 0)
                 from = 0;
 
-            // if requestedFields is empty populate it with default values
-            if (requestedFields == null || requestedFields.Length == 0 || requestedFields.Where(f => f != null).Count() == 0)
-                requestedFields = new string[]{"termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation"};
-
-            GlossaryTermResults res = await _termsQueryService.GetAll(dictionary, audience, language, size, from, requestedFields);
+            GlossaryTermResults res = await _termsQueryService.GetAll(dictionary, audience, language, size, from, includeAdditionalInfo);
 
             return res;
         }
@@ -197,16 +193,16 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <param name="dictionary">The specific dictionary to retrieve from.</param>
         /// <param name="audience">The target audience.</param>
         /// <param name="language">Language (English - en; Spanish - es).</param>
-        /// <param name="query">The character to search the query</param>
+        /// <param name="query">The string to search for.</param>
         /// <param name="matchType">Should the search match items beginning with the search text (Begins),
         /// containing it (Contains), or an exact match (Exact)?</param>
         /// <param name="size">The number of records to retrieve.</param>
         /// <param name="from">The offset into the overall set to use for the first record.</param>
-        /// <param name="requestedFields">The fields to retrieve.  If not specified, defaults to all fields except media and related resources.</param>
+        /// <param name="includeAdditionalInfo">If true, the RelatedResources and Media fields will be populated. Else, they will be empty.</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
         [HttpGet("search/{dictionary:required}/{audience:required}/{language:required}/{*query:required}")]
         public async Task<GlossaryTermResults> Search(string dictionary, AudienceType audience, string language, string query,
-            [FromQuery] MatchType matchType = MatchType.Begins, [FromQuery] int size = 100, [FromQuery] int from = 0, [FromQuery] string[] requestedFields = null)
+            [FromQuery] MatchType matchType = MatchType.Begins, [FromQuery] int size = 100, [FromQuery] int from = 0, [FromQuery] bool includeAdditionalInfo = false)
         {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience))
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience and language.");
@@ -226,16 +222,12 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             // query uses a catch-all route, make sure it's been decoded.
             query = WebUtility.UrlDecode(query);
 
-            // if requestedFields is empty populate it with default values
-            if (requestedFields == null || requestedFields.Length == 0 || requestedFields.Where(f => f != null).Count() == 0)
-                requestedFields = new string[]{"termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation"};
-
-            GlossaryTermResults res = await _termsQueryService.Search(dictionary, audience, language, query, matchType, size, from, requestedFields);
+            GlossaryTermResults res = await _termsQueryService.Search(dictionary, audience, language, query, matchType, size, from, includeAdditionalInfo);
             return res;
         }
 
         /// <summary>
-        /// Search for Terms based on the character passed
+        /// Get all Terms starting with the character passed.
         /// </summary>
         /// <param name="dictionary">The specific dictionary to retrieve from.</param>
         /// <param name="audience">The target audience.</param>
@@ -243,11 +235,11 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <param name="language">Language (English - en; Spanish - es).</param>
         /// <param name="size">The number of records to retrieve.</param>
         /// <param name="from">The offset into the overall set to use for the first record.</param>
-        /// <param name="requestedFields">The fields to retrieve.  If not specified, defaults to all fields except media and related resources.</param>
+        /// <param name="includeAdditionalInfo">If true, the RelatedResources and Media fields will be populated. Else, they will be empty.</param>
         /// <returns>A GlossaryTermResults object containing the desired records.</returns>
         [HttpGet("expand/{dictionary}/{audience}/{language}/{character}")]
         public async Task<GlossaryTermResults> Expand(string dictionary, AudienceType audience, string language, string character,
-            [FromQuery] int size = 100, [FromQuery] int from = 0, [FromQuery] string[] requestedFields = null)
+            [FromQuery] int size = 100, [FromQuery] int from = 0, [FromQuery] bool includeAdditionalInfo = false)
         {
             if (String.IsNullOrWhiteSpace(dictionary) || String.IsNullOrWhiteSpace(language) || !Enum.IsDefined(typeof(AudienceType), audience))
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience and language");
@@ -261,10 +253,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             if (from < 0)
                 from = 0;
 
-            if (requestedFields == null || requestedFields.Length == 0 || requestedFields.Where(f => f != null).Count() == 0)
-                requestedFields = new string[]{"termId", "language", "dictionary", "audience", "termName", "firstLetter", "prettyUrlName", "definition", "pronunciation"};
-
-            GlossaryTermResults res = await _termsQueryService.Expand(dictionary, audience, language, character, size, from, requestedFields);
+            GlossaryTermResults res = await _termsQueryService.Expand(dictionary, audience, language, character, size, from, includeAdditionalInfo);
             return res;
         }
 

@@ -20,7 +20,13 @@
                 "html": "A measure of volume for a liquid, using the metric system. One μL is equal to a millionth of a liter. Also called microliter.",
                 "text": "A measure of volume for a liquid, using the metric system. One μL is equal to a millionth of a liter. Also called microliter."
             },
-            "otherLanguages": [],
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "μL",
+                    "prettyUrlName": "ul"
+                }
+            ],
             "relatedResources": [],
             "media": []
         }

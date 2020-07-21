@@ -19,7 +19,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
         public override int From => 0;
 
-        public override string[] FieldList => new string[] { "termName", "definition" };
+        public override bool IncludeAdditionalInfo => false;
 
         public override JObject ExpectedRequest => JObject.Parse(@"
                 {
@@ -28,9 +28,15 @@ namespace NCI.OCPL.Api.Glossary.Tests
                     ""_source"": {
                         ""includes"": [
                             ""term_id"",
+                            ""language"",
+                            ""dictionary"",
                             ""audience"",
                             ""term_name"",
+                            ""first_letter"",
+                            ""pretty_url_name"",
+                            ""pronunciation"",
                             ""definition"",
+                            ""other_languages""
                         ]
                     },
                     ""sort"": [

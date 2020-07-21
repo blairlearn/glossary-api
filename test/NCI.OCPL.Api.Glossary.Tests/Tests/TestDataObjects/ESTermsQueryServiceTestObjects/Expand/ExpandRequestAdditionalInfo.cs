@@ -1,19 +1,16 @@
-
 using Newtonsoft.Json.Linq;
 
 namespace NCI.OCPL.Api.Glossary.Tests
 {
-    class Terms_Search_Request_Contains : Terms_Search_Request_Base
+    public class ExpandRequestAdditionalInfo : ExpandRequestBase
     {
         public override string Dictionary => "Cancer.gov";
 
         public override AudienceType Audience => AudienceType.Patient;
 
-        public override string LangCode => "es";
+        public override string LanguageCode => "es";
 
-        public override string SearchTerm => "pollo";
-
-        public override MatchType MatchType => MatchType.Contains;
+        public override string ExpandCharacter => "b";
 
         public override int Size => 5;
 
@@ -71,9 +68,9 @@ namespace NCI.OCPL.Api.Glossary.Tests
                                     }
                                 },
                                 {
-                                    ""match"": {
-                                        ""term_name._contain"": {
-                                            ""query"": ""pollo""
+                                    ""term"": {
+                                        ""first_letter"": {
+                                            ""value"": ""b""
                                         }
                                     }
                                 }

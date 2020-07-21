@@ -17,7 +17,13 @@
                 "html": "A radiolabeled substance being studied in PET imaging of the brain. It is also being studied as a way to find where cancer cells have spread in patients with pancreatic cancer. It binds to cell receptors for substance P.",
                 "text": "A radiolabeled substance being studied in PET imaging of the brain. It is also being studied as a way to find where cancer cells have spread in patients with pancreatic cancer. It binds to cell receptors for substance P."
             },
-            "otherLanguages": [],
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "CR-ASP[18F]",
+                    "prettyUrlName": "cr-asp18f"
+                }
+            ],
             "relatedResources": [],
             "media": []
         }

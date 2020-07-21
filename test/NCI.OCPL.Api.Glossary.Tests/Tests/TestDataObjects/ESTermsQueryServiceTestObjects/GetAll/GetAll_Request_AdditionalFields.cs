@@ -1,29 +1,24 @@
-
 using Newtonsoft.Json.Linq;
 
 namespace NCI.OCPL.Api.Glossary.Tests
 {
-    class Terms_Search_Request_Contains : Terms_Search_Request_Base
+    public class GetAll_Request_AdditionalFields : GetAll_Request_Base
     {
-        public override string Dictionary => "Cancer.gov";
+        public override string Dictionary => "Genetics";
 
-        public override AudienceType Audience => AudienceType.Patient;
+        public override AudienceType Audience => AudienceType.HealthProfessional;
 
-        public override string LangCode => "es";
-
-        public override string SearchTerm => "pollo";
-
-        public override MatchType MatchType => MatchType.Contains;
+        public override string LangCode => "en";
 
         public override int Size => 5;
 
-        public override int From => 0;
+        public override int From => 200;
 
         public override bool IncludeAdditionalInfo => true;
 
         public override JObject ExpectedRequest => JObject.Parse(@"
                 {
-                    ""from"": 0,
+                    ""from"": 200,
                     ""size"": 5,
                     ""_source"": {
                         ""includes"": [
@@ -52,28 +47,21 @@ namespace NCI.OCPL.Api.Glossary.Tests
                                 {
                                     ""term"": {
                                         ""language"": {
-                                            ""value"": ""es""
+                                            ""value"": ""en""
                                         }
                                     }
                                 },
                                 {
                                     ""term"": {
                                         ""audience"": {
-                                            ""value"": ""Patient""
+                                            ""value"": ""HealthProfessional""
                                         }
                                     }
                                 },
                                 {
                                     ""term"": {
                                         ""dictionary"": {
-                                            ""value"": ""Cancer.gov""
-                                        }
-                                    }
-                                },
-                                {
-                                    ""match"": {
-                                        ""term_name._contain"": {
-                                            ""query"": ""pollo""
+                                            ""value"": ""Genetics""
                                         }
                                     }
                                 }
