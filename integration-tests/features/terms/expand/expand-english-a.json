@@ -1,0 +1,517 @@
+{
+    "meta": {
+        "totalResults": 748,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 46722,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "A33",
+            "firstLetter": "a",
+            "prettyUrlName": "a33",
+            "pronunciation": null,
+            "definition": {
+                "html": "A type of monoclonal antibody used in cancer detection or therapy. Monoclonal antibodies are laboratory-produced substances that can locate and bind to cancer cells.",
+                "text": "A type of monoclonal antibody used in cancer detection or therapy. Monoclonal antibodies are laboratory-produced substances that can locate and bind to cancer cells."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "A33",
+                    "prettyUrlName": "a33"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 658765,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "A6",
+            "firstLetter": "a",
+            "prettyUrlName": "a6",
+            "pronunciation": null,
+            "definition": {
+                "html": "A substance being studied in the treatment of cancer. A6 is a small piece of a protein called urokinase (an enzyme that dissolves blood clots or prevents them from forming). It is a type of antiangiogenesis agent and a type of antimetastatic agent. Also called urokinase plasminogen activator (uPA)-derived peptide A6.",
+                "text": "A substance being studied in the treatment of cancer. A6 is a small piece of a protein called urokinase (an enzyme that dissolves blood clots or prevents them from forming). It is a type of antiangiogenesis agent and a type of antimetastatic agent. Also called urokinase plasminogen activator (uPA)-derived peptide A6."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "A6",
+                    "prettyUrlName": "a6"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 367452,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "AAP",
+            "firstLetter": "a",
+            "prettyUrlName": "aap",
+            "pronunciation": null,
+            "definition": {
+                "html": "An enzyme that is normally found in healthy kidneys. It may be found at high levels in the urine when there are kidney problems.  It is used as a biomarker to detect damage to the kidneys caused by drugs and other agents. It may also be used to diagnose certain kidney and liver disorders. Also called alanine aminopeptidase.",
+                "text": "An enzyme that is normally found in healthy kidneys. It may be found at high levels in the urine when there are kidney problems.  It is used as a biomarker to detect damage to the kidneys caused by drugs and other agents. It may also be used to diagnose certain kidney and liver disorders. Also called alanine aminopeptidase."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "AAP",
+                    "prettyUrlName": "aap"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 797047,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "AAT deficiency",
+            "firstLetter": "a",
+            "prettyUrlName": "aat-deficiency",
+            "pronunciation": {
+                "key": "(… deh-FIH-shun-see)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/798897.mp3"
+            },
+            "definition": {
+                "html": "An inherited condition in which the body either does not make enough of a protein called alpha-1 antitrypsin (AAT) or makes an abnormal form of AAT. AAT is made in the liver and helps protect the body’s organs, especially the liver and lungs, from damage. AAT deficiency can lead to serious lung conditions (including emphysema and bronchiectasis) and liver conditions (including cirrhosis, hepatitis, and liver cancer). It may also cause inflammation of the blood vessels and a rare skin condition that causes painful lumps on or under the skin. Lung problems caused by AAT deficiency almost always occur in adults, but liver and skin problems may occur in both adults and children. AAT deficiency is caused by a mutation (change) in a gene called SERPINA1. Also called alpha-1 antitrypsin deficiency.",
+                "text": "An inherited condition in which the body either does not make enough of a protein called alpha-1 antitrypsin (AAT) or makes an abnormal form of AAT. AAT is made in the liver and helps protect the body’s organs, especially the liver and lungs, from damage. AAT deficiency can lead to serious lung conditions (including emphysema and bronchiectasis) and liver conditions (including cirrhosis, hepatitis, and liver cancer). It may also cause inflammation of the blood vessels and a rare skin condition that causes painful lumps on or under the skin. Lung problems caused by AAT deficiency almost always occur in adults, but liver and skin problems may occur in both adults and children. AAT deficiency is caused by a mutation (change) in a gene called SERPINA1. Also called alpha-1 antitrypsin deficiency."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "deficiencia de AAT",
+                    "prettyUrlName": "deficiencia-de-aat"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 367424,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abarelix",
+            "firstLetter": "a",
+            "prettyUrlName": "abarelix",
+            "pronunciation": {
+                "key": "(uh-BAYR-eh-lix)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/711583.mp3"
+            },
+            "definition": {
+                "html": "A drug used to reduce the amount of testosterone made in patients with advanced symptomatic prostate cancer for which no other treatment options are available. It belongs to the family of drugs called gonadotropin-releasing hormone (GnRH) antagonists. Also called Plenaxis.",
+                "text": "A drug used to reduce the amount of testosterone made in patients with advanced symptomatic prostate cancer for which no other treatment options are available. It belongs to the family of drugs called gonadotropin-releasing hormone (GnRH) antagonists. Also called Plenaxis."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "abarelix",
+                    "prettyUrlName": "abarelix"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 729767,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABCA1 pathway",
+            "firstLetter": "a",
+            "prettyUrlName": "abca1-pathway",
+            "pronunciation": {
+                "key": "(… PATH-way)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/738161.mp3"
+            },
+            "definition": {
+                "html": "Describes a group of proteins in a cell that work together to help remove extra cholesterol and certain fats from tissue in the body. Changes in the ABCA1 pathway may lead to diseases of the heart and blood vessels. Drugs or substances that affect this pathway are being studied in the prevention and treatment of some diseases.",
+                "text": "Describes a group of proteins in a cell that work together to help remove extra cholesterol and certain fats from tissue in the body. Changes in the ABCA1 pathway may lead to diseases of the heart and blood vessels. Drugs or substances that affect this pathway are being studied in the prevention and treatment of some diseases."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "vía ABCA1",
+                    "prettyUrlName": "via-abca1"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 257205,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABCD rating",
+            "firstLetter": "a",
+            "prettyUrlName": "abcd-rating",
+            "pronunciation": {
+                "key": "(... RAY-ting)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/731498.mp3"
+            },
+            "definition": {
+                "html": "A staging system for prostate cancer that uses ABCD. “A” and “B” refer to cancer that is confined to the prostate. “C” refers to cancer that has grown out of the prostate but has not spread to lymph nodes or other places in the body. “D” refers to cancer that has spread to lymph nodes or to other places in the body. Also called Jewett staging system and Whitmore-Jewett staging system.",
+                "text": "A staging system for prostate cancer that uses ABCD. “A” and “B” refer to cancer that is confined to the prostate. “C” refers to cancer that has grown out of the prostate but has not spread to lymph nodes or other places in the body. “D” refers to cancer that has spread to lymph nodes or to other places in the body. Also called Jewett staging system and Whitmore-Jewett staging system."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "clasificación ABCD",
+                    "prettyUrlName": "clasificacion-abcd"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45070,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abdomen",
+            "firstLetter": "a",
+            "prettyUrlName": "abdomen",
+            "pronunciation": {
+                "key": "(AB-doh-men)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704957.mp3"
+            },
+            "definition": {
+                "html": "The area of the body that contains the pancreas, stomach, intestines, liver, gallbladder, and other organs.",
+                "text": "The area of the body that contains the pancreas, stomach, intestines, liver, gallbladder, and other organs."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "abdomen",
+                    "prettyUrlName": "abdomen"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46684,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abdominal",
+            "firstLetter": "a",
+            "prettyUrlName": "abdominal",
+            "pronunciation": {
+                "key": "(ab-DAH-mih-nul)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/731719.mp3"
+            },
+            "definition": {
+                "html": "Having to do with the abdomen, which is the part of the body between the chest and the hips that contains the pancreas, stomach, intestines, liver, gallbladder, and other organs.",
+                "text": "Having to do with the abdomen, which is the part of the body between the chest and the hips that contains the pancreas, stomach, intestines, liver, gallbladder, and other organs."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "abdominal",
+                    "prettyUrlName": "abdominal"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 649619,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abdominal ultrasound",
+            "firstLetter": "a",
+            "prettyUrlName": "abdominal-ultrasound",
+            "pronunciation": {
+                "key": "(ab-DAH-mih-nul UL-truh-sownd)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/725697.mp3"
+            },
+            "definition": {
+                "html": "A procedure used to examine the organs in the abdomen. An ultrasound transducer (probe) is pressed firmly against the skin of the abdomen. High-energy sound waves from the transducer bounce off tissues and create echoes. The echoes are sent to a computer, which makes a picture called a sonogram. Also called transabdominal ultrasound.",
+                "text": "A procedure used to examine the organs in the abdomen. An ultrasound transducer (probe) is pressed firmly against the skin of the abdomen. High-energy sound waves from the transducer bounce off tissues and create echoes. The echoes are sent to a computer, which makes a picture called a sonogram. Also called transabdominal ultrasound."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "ecografía abdominal",
+                    "prettyUrlName": "ecografia-abdominal"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 455670,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abdominal x-ray",
+            "firstLetter": "a",
+            "prettyUrlName": "abdominal-x-ray",
+            "pronunciation": {
+                "key": "(ab-DAH-mih-nul EX-ray)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/715234.mp3"
+            },
+            "definition": {
+                "html": "An x-ray of the organs inside the abdomen. An x-ray is a type of radiation that can pass through the body and onto film, making pictures of areas inside the body. X-rays may be used to help diagnose disease.",
+                "text": "An x-ray of the organs inside the abdomen. An x-ray is a type of radiation that can pass through the body and onto film, making pictures of areas inside the body. X-rays may be used to help diagnose disease."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "radiografía del abdomen",
+                    "prettyUrlName": "radiografia-del-abdomen"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 377733,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abdominoperineal resection",
+            "firstLetter": "a",
+            "prettyUrlName": "abdominoperineal-resection",
+            "pronunciation": {
+                "key": "(ab-DAH-mih-noh-PAYR-ih-NEE-ul ree-SEK-shun)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/713471.mp3"
+            },
+            "definition": {
+                "html": "Surgery to remove the anus, the rectum, and part of the sigmoid colon through an incision made in the abdomen. The end of the intestine is attached to an opening in the surface of the abdomen and body waste is collected in a disposable bag outside of the body. This opening is called a colostomy. Lymph nodes that contain cancer may also be removed during this operation.",
+                "text": "Surgery to remove the anus, the rectum, and part of the sigmoid colon through an incision made in the abdomen. The end of the intestine is attached to an opening in the surface of the abdomen and body waste is collected in a disposable bag outside of the body. This opening is called a colostomy. Lymph nodes that contain cancer may also be removed during this operation."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "resección abdominoperineal",
+                    "prettyUrlName": "reseccion-abdominoperineal"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 641719,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "Abegrin",
+            "firstLetter": "a",
+            "prettyUrlName": "abegrin",
+            "pronunciation": {
+                "key": "(A-beh-grin)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/722776.mp3"
+            },
+            "definition": {
+                "html": "A substance being studied in the treatment of some types of cancer and other conditions. Abegrin binds to a protein on the surface of blood vessels and may prevent the growth of new blood vessels that tumors need to grow. It may also prevent the spread of cancer. It is a type of antiangiogenesis agent, a type of metastasis inhibitor, and a type of monoclonal antibody. Also called etaracizumab, humanized monoclonal antibody MEDI-522, and MEDI-522.",
+                "text": "A substance being studied in the treatment of some types of cancer and other conditions. Abegrin binds to a protein on the surface of blood vessels and may prevent the growth of new blood vessels that tumors need to grow. It may also prevent the spread of cancer. It is a type of antiangiogenesis agent, a type of metastasis inhibitor, and a type of monoclonal antibody. Also called etaracizumab, humanized monoclonal antibody MEDI-522, and MEDI-522."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "Abegrin",
+                    "prettyUrlName": "abegrin"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 791149,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abemaciclib",
+            "firstLetter": "a",
+            "prettyUrlName": "abemaciclib",
+            "pronunciation": {
+                "key": "(uh-BEH-muh-SY-klib)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/792245.mp3"
+            },
+            "definition": {
+                "html": "A drug used to treat hormone-receptor positive (HR+), HER2-negative (HER2-) breast cancer that is advanced or has spread to other parts of the body. It is used with an aromatase inhibitor in postmenopausal women who have not been treated with hormone therapy. It is used with fulvestrant in women whose disease got worse after treatment with hormone therapy. Abemaciclib is also used alone in men and women whose disease got worse after treatment with hormone therapy and previous chemotherapy. It is also being studied in the treatment of other types of cancer. Abemaciclib blocks certain proteins, which may help keep cancer cells from growing. It is a type of cyclin-dependent kinase inhibitor. Also called Verzenio.",
+                "text": "A drug used to treat hormone-receptor positive (HR+), HER2-negative (HER2-) breast cancer that is advanced or has spread to other parts of the body. It is used with an aromatase inhibitor in postmenopausal women who have not been treated with hormone therapy. It is used with fulvestrant in women whose disease got worse after treatment with hormone therapy. Abemaciclib is also used alone in men and women whose disease got worse after treatment with hormone therapy and previous chemotherapy. It is also being studied in the treatment of other types of cancer. Abemaciclib blocks certain proteins, which may help keep cancer cells from growing. It is a type of cyclin-dependent kinase inhibitor. Also called Verzenio."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "abemaciclib",
+                    "prettyUrlName": "abemaciclib"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 524194,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "aberrant crypt foci",
+            "firstLetter": "a",
+            "prettyUrlName": "aberrant-crypt-foci",
+            "pronunciation": {
+                "key": "(uh-BAYR-unt kript FOH-sy)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/718782.mp3"
+            },
+            "definition": {
+                "html": "Clusters of abnormal tube-like glands in the lining of the colon and rectum. Aberrant crypt foci form before colorectal polyps and are one of the earliest changes that can be seen in the colon that may lead to cancer. Also called ACF.",
+                "text": "Clusters of abnormal tube-like glands in the lining of the colon and rectum. Aberrant crypt foci form before colorectal polyps and are one of the earliest changes that can be seen in the colon that may lead to cancer. Also called ACF."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "focos de cripta aberrantes",
+                    "prettyUrlName": "focos-de-cripta-aberrantes"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 367434,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABI-007",
+            "firstLetter": "a",
+            "prettyUrlName": "abi-007",
+            "pronunciation": null,
+            "definition": {
+                "html": "A drug used to treat breast cancer that has come back or spread to other parts of the body. It is also used with carboplatin to treat advanced non-small cell lung cancer in patients who are not able to have surgery or radiation therapy. It is also used with gemcitabine hydrochloride to treat pancreatic cancer that has spread to other parts of the body. It is being studied in the treatment of other types of cancer. ABI-007 is a form of the anticancer drug paclitaxel and may cause fewer side effects than paclitaxel. It stops cancer cells from growing and dividing, and may kill them. It is a type of mitotic inhibitor and a type of antimicrotubule agent. Also called Abraxane, nanoparticle paclitaxel, paclitaxel albumin-stabilized nanoparticle formulation, and protein-bound paclitaxel.",
+                "text": "A drug used to treat breast cancer that has come back or spread to other parts of the body. It is also used with carboplatin to treat advanced non-small cell lung cancer in patients who are not able to have surgery or radiation therapy. It is also used with gemcitabine hydrochloride to treat pancreatic cancer that has spread to other parts of the body. It is being studied in the treatment of other types of cancer. ABI-007 is a form of the anticancer drug paclitaxel and may cause fewer side effects than paclitaxel. It stops cancer cells from growing and dividing, and may kill them. It is a type of mitotic inhibitor and a type of antimicrotubule agent. Also called Abraxane, nanoparticle paclitaxel, paclitaxel albumin-stabilized nanoparticle formulation, and protein-bound paclitaxel."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "ABI-007",
+                    "prettyUrlName": "abi-007"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 641969,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abiraterone acetate",
+            "firstLetter": "a",
+            "prettyUrlName": "abiraterone-acetate",
+            "pronunciation": {
+                "key": "(A-bih-RA-teh-rone A-seh-tayt)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/722909.mp3"
+            },
+            "definition": {
+                "html": "A drug used with prednisone to treat prostate cancer that has spread to other parts of the body. It is used in patients whose cancer is castration resistant (has not responded to treatments that lower testosterone levels) or whose cancer is high risk and castration sensitive (has responded to treatments that lower testosterone levels).  It is also being studied in the treatment of other types of cancer. Abiraterone acetate lowers the amount of androgens (male hormones), such as testosterone, made by the body. This may stop the growth of cancer cells that need androgens to grow. Abiraterone acetate is a type of antiandrogen. Also called Zytiga.",
+                "text": "A drug used with prednisone to treat prostate cancer that has spread to other parts of the body. It is used in patients whose cancer is castration resistant (has not responded to treatments that lower testosterone levels) or whose cancer is high risk and castration sensitive (has responded to treatments that lower testosterone levels).  It is also being studied in the treatment of other types of cancer. Abiraterone acetate lowers the amount of androgens (male hormones), such as testosterone, made by the body. This may stop the growth of cancer cells that need androgens to grow. Abiraterone acetate is a type of antiandrogen. Also called Zytiga."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "acetato de abiraterona",
+                    "prettyUrlName": "acetato-de-abiraterona"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 335061,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablation",
+            "firstLetter": "a",
+            "prettyUrlName": "ablation",
+            "pronunciation": {
+                "key": "(a-BLAY-shun)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/711346.mp3"
+            },
+            "definition": {
+                "html": "In medicine, the removal or destruction of a body part or tissue or its function. Ablation may be performed by surgery, hormones, drugs, radiofrequency, heat, or other methods.",
+                "text": "In medicine, the removal or destruction of a body part or tissue or its function. Ablation may be performed by surgery, hormones, drugs, radiofrequency, heat, or other methods."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "ablación",
+                    "prettyUrlName": "ablacion"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44636,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abnormal",
+            "firstLetter": "a",
+            "prettyUrlName": "abnormal",
+            "pronunciation": {
+                "key": "(ab-NOR-mul)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704875.mp3"
+            },
+            "definition": {
+                "html": "Not normal. Describes a state, condition, or behavior that is unusual or different from what is considered normal. An abnormal lesion or growth in or on the body may be benign (not cancer), precancerous or premalignant (likely to become cancer), or malignant (cancer).",
+                "text": "Not normal. Describes a state, condition, or behavior that is unusual or different from what is considered normal. An abnormal lesion or growth in or on the body may be benign (not cancer), precancerous or premalignant (likely to become cancer), or malignant (cancer)."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "anormal",
+                    "prettyUrlName": "anormal"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 650886,
+            "language": "en",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABO blood group system",
+            "firstLetter": "a",
+            "prettyUrlName": "abo-blood-group-system",
+            "pronunciation": {
+                "key": "(… blud groop SIS-tem)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726419.mp3"
+            },
+            "definition": {
+                "html": "A system used to group human blood into different types, based on the presence or absence of certain markers on the surface of red blood cells. The four main blood types are A, B, O, and AB.  For a blood transfusion, the ABO blood group system is used to match the blood type of the donor and the person receiving the transfusion. People with blood type O can donate blood to anyone and are called universal donors. People with blood type AB can accept blood from all donors and are called universal recipients. People with type A or B can receive matching blood or type O blood.",
+                "text": "A system used to group human blood into different types, based on the presence or absence of certain markers on the surface of red blood cells. The four main blood types are A, B, O, and AB.  For a blood transfusion, the ABO blood group system is used to match the blood type of the donor and the person receiving the transfusion. People with blood type O can donate blood to anyone and are called universal donors. People with blood type AB can accept blood from all donors and are called universal recipients. People with type A or B can receive matching blood or type O blood."
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "sistema de grupos sanguíneos ABO",
+                    "prettyUrlName": "sistema-de-grupos-sanguineos-abo"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}

@@ -1,0 +1,35 @@
+{
+    "meta": {
+        "totalResults": 1,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 689607,
+            "language": "en",
+            "dictionary": "Genetics",
+            "audience": "HealthProfessional",
+            "termName": "Z-score",
+            "firstLetter": "z",
+            "prettyUrlName": "z-score",
+            "pronunciation": {
+                "key": "(… skor)",
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/736999.mp3"
+            },
+            "definition": {
+                "html": "A score that indicates how many standard deviations a value is above or below the mean. ",
+                "text": "A score that indicates how many standard deviations a value is above or below the mean. "
+            },
+            "otherLanguages": [
+                {
+                    "language": "es",
+                    "termName": "puntuación Z",
+                    "prettyUrlName": "puntuacion-z"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}

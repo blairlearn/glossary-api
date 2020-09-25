@@ -14,7 +14,7 @@
             "prettyUrlName": "mev-linear-accelerator",
             "pronunciation": {
                 "key": "(... LIH-nee-er ak-SEH-leh-RAY-ter)",
-                "audio": "https://nci-media.cancer.gov/pdq/media/audio/713137.mp3"
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/713137.mp3"
             },
             "definition": {
                 "html": "A machine that uses electricity to form a stream of fast-moving subatomic particles. This creates high-energy radiation that may be used to treat cancer. Also called linac, linear accelerator, and mega-voltage linear accelerator.",

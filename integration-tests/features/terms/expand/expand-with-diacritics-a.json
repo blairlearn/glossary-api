@@ -1,0 +1,2555 @@
+{
+    "meta": {
+        "totalResults": 778,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 46722,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "A33",
+            "firstLetter": "a",
+            "prettyUrlName": "a33",
+            "pronunciation": null,
+            "definition": {
+                "html": "Tipo de anticuerpo monoclonal que se usa para la detección o el tratamiento de cáncer. Los anticuerpos monoclonales son sustancias producidas en el laboratorio que pueden localizar las células cancerosas y unirse a ellas.",
+                "text": "Tipo de anticuerpo monoclonal que se usa para la detección o el tratamiento de cáncer. Los anticuerpos monoclonales son sustancias producidas en el laboratorio que pueden localizar las células cancerosas y unirse a ellas."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "A33",
+                    "prettyUrlName": "a33"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 658765,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "A6",
+            "firstLetter": "a",
+            "prettyUrlName": "a6",
+            "pronunciation": null,
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento de cáncer. A6 es un trozo pequeño de una proteína que se llama urocinasa (enzima que disuelve los coágulos de sangre o impide que se formen). Es un tipo de antiangiogénico y un tipo de antimetastásico. También se llama péptido A6 derivado del activador del plasminógeno urocinasa (uPa).",
+                "text": "Sustancia en estudio para el tratamiento de cáncer. A6 es un trozo pequeño de una proteína que se llama urocinasa (enzima que disuelve los coágulos de sangre o impide que se formen). Es un tipo de antiangiogénico y un tipo de antimetastásico. También se llama péptido A6 derivado del activador del plasminógeno urocinasa (uPa)."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "A6",
+                    "prettyUrlName": "a6"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 592940,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "AAF-EE",
+            "firstLetter": "a",
+            "prettyUrlName": "aaf-ee",
+            "pronunciation": null,
+            "definition": {
+                "html": "Procedimiento mediante el que se toma una muestra de tejido para examinarla bajo un microscopio. Se inserta por la boca hasta el esófago un endoscopio con una sonda de ecografía y una aguja de biopsia. Un endoscopio es un instrumento delgado con forma de tubo que tiene una luz y una lente para observar. La sonda de ecografía se usa para hacer rebotar ondas de sonido de alta energía contra los órganos y tejidos internos para obtener una imagen en un monitor. La imagen ayuda al médico a ver el lugar donde está la aguja de biopsia. También se llama aspiración con aguja fina guiada por ecografía endoscópica.",
+                "text": "Procedimiento mediante el que se toma una muestra de tejido para examinarla bajo un microscopio. Se inserta por la boca hasta el esófago un endoscopio con una sonda de ecografía y una aguja de biopsia. Un endoscopio es un instrumento delgado con forma de tubo que tiene una luz y una lente para observar. La sonda de ecografía se usa para hacer rebotar ondas de sonido de alta energía contra los órganos y tejidos internos para obtener una imagen en un monitor. La imagen ayuda al médico a ver el lugar donde está la aguja de biopsia. También se llama aspiración con aguja fina guiada por ecografía endoscópica."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "EUS-FNA",
+                    "prettyUrlName": "eus-fna"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 367452,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "AAP",
+            "firstLetter": "a",
+            "prettyUrlName": "aap",
+            "pronunciation": null,
+            "definition": {
+                "html": "Enzima que  normalmente se encuentra en los riñones sanos. Se puede encontrar en concentraciones muy altas en la orina cuando hay problemas renales. Se usa como marcador biológico para detectar el daño que causan los medicamentos y otras sustancias a los riñones. También se puede usar para diagnosticar ciertos trastornos del riñón y el hígado. También se llama alanina aminopeptidasa.",
+                "text": "Enzima que  normalmente se encuentra en los riñones sanos. Se puede encontrar en concentraciones muy altas en la orina cuando hay problemas renales. Se usa como marcador biológico para detectar el daño que causan los medicamentos y otras sustancias a los riñones. También se puede usar para diagnosticar ciertos trastornos del riñón y el hígado. También se llama alanina aminopeptidasa."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "AAP",
+                    "prettyUrlName": "aap"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 367424,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abarelix",
+            "firstLetter": "a",
+            "prettyUrlName": "abarelix",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/711582.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para reducir la cantidad de testosterona que se produce en los pacientes con cáncer de próstata sintomático avanzado para el que  no se dispone de otras opciones de tratamiento. Pertenece a la familia de medicamentos llamados antagonistas de la hormona liberadora de gonadotropina (HLGn). También se llama Plenaxis.",
+                "text": "Medicamento que se usa para reducir la cantidad de testosterona que se produce en los pacientes con cáncer de próstata sintomático avanzado para el que  no se dispone de otras opciones de tratamiento. Pertenece a la familia de medicamentos llamados antagonistas de la hormona liberadora de gonadotropina (HLGn). También se llama Plenaxis."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "abarelix",
+                    "prettyUrlName": "abarelix"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45070,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abdomen",
+            "firstLetter": "a",
+            "prettyUrlName": "abdomen",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704956.mp3"
+            },
+            "definition": {
+                "html": "Área del cuerpo que contiene el páncreas, el estómago, los intestinos, el hígado, la vesícula biliar y otros órganos.",
+                "text": "Área del cuerpo que contiene el páncreas, el estómago, los intestinos, el hígado, la vesícula biliar y otros órganos."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "abdomen",
+                    "prettyUrlName": "abdomen"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46684,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abdominal",
+            "firstLetter": "a",
+            "prettyUrlName": "abdominal",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/731718.mp3"
+            },
+            "definition": {
+                "html": "Relacionado con el abdomen, que es la parte del cuerpo ubicada entre el tórax y las caderas; contiene el páncreas, el estómago, los intestinos, el hígado, la vesícula biliar y otros órganos.",
+                "text": "Relacionado con el abdomen, que es la parte del cuerpo ubicada entre el tórax y las caderas; contiene el páncreas, el estómago, los intestinos, el hígado, la vesícula biliar y otros órganos."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "abdominal",
+                    "prettyUrlName": "abdominal"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 641719,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "Abegrin",
+            "firstLetter": "a",
+            "prettyUrlName": "abegrin",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/722775.mp3"
+            },
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento de algunos tipos de cáncer y otras afecciones. Abegrin se une a una proteína de la superficie de los vasos sanguíneos y podría impedir la formación de los vasos sanguíneos nuevos que los tumores necesitan para crecer. También podría impedir que el cáncer se disemine. Es un tipo de antiangiogénico, un tipo de inhibidor de metástasis y un tipo de anticuerpo monoclonal. También se llama anticuerpo monoclonal humano MEDI-522, etaracizumab y MEDI-522.",
+                "text": "Sustancia en estudio para el tratamiento de algunos tipos de cáncer y otras afecciones. Abegrin se une a una proteína de la superficie de los vasos sanguíneos y podría impedir la formación de los vasos sanguíneos nuevos que los tumores necesitan para crecer. También podría impedir que el cáncer se disemine. Es un tipo de antiangiogénico, un tipo de inhibidor de metástasis y un tipo de anticuerpo monoclonal. También se llama anticuerpo monoclonal humano MEDI-522, etaracizumab y MEDI-522."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "Abegrin",
+                    "prettyUrlName": "abegrin"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 791149,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abemaciclib",
+            "firstLetter": "a",
+            "prettyUrlName": "abemaciclib",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/792244.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para tratar el cáncer de mama positivo para receptores hormonales (HR+), negativo para HER2 (HER2-) en estadio avanzado o que se  diseminó a otras partes del cuerpo. Se usa con un inhibidor de la aromatasa en mujeres posmenopáusicas que no han recibido tratamiento con terapia hormonal. Se emplea  con el fulvestrant para mujeres que tienen una enfermedad que empeoró  después del tratamiento con terapia hormonal. El abemaciclib también  se utiliza solo en hombres y mujeres con una enfermedad que empeoró después del tratamiento con terapia hormonal y quimioterapia. Asimismo, está en estudio para el tratamiento de otros tipos de cáncer.  El abemaciclib bloquea ciertas proteínas, lo que quizá ayude a evitar la formación de células cancerosas. Es un tipo de inhibidor de las cinasas dependiente de ciclinas. También se llama Verzenio.",
+                "text": "Medicamento que se usa para tratar el cáncer de mama positivo para receptores hormonales (HR+), negativo para HER2 (HER2-) en estadio avanzado o que se  diseminó a otras partes del cuerpo. Se usa con un inhibidor de la aromatasa en mujeres posmenopáusicas que no han recibido tratamiento con terapia hormonal. Se emplea  con el fulvestrant para mujeres que tienen una enfermedad que empeoró  después del tratamiento con terapia hormonal. El abemaciclib también  se utiliza solo en hombres y mujeres con una enfermedad que empeoró después del tratamiento con terapia hormonal y quimioterapia. Asimismo, está en estudio para el tratamiento de otros tipos de cáncer.  El abemaciclib bloquea ciertas proteínas, lo que quizá ayude a evitar la formación de células cancerosas. Es un tipo de inhibidor de las cinasas dependiente de ciclinas. También se llama Verzenio."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "abemaciclib",
+                    "prettyUrlName": "abemaciclib"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 367434,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABI-007",
+            "firstLetter": "a",
+            "prettyUrlName": "abi-007",
+            "pronunciation": null,
+            "definition": {
+                "html": "Medicamento que se usa para tratar el cáncer de mama que volvió o que se diseminó a otras partes del cuerpo. También se usa con carboplatino para tratar el cáncer de pulmón de células no pequeñas en estadio avanzado en pacientes que no se pueden someter a cirugía o radioterapia. Asimismo,  se usa con clorhidrato de gemcitabina para tratar el cáncer de páncreas que se diseminó a otras partes del cuerpo. Está en estudio para el tratamiento de otros tipos de cáncer. ABI-007 es una forma del medicamento contra el cáncer paclitaxel y puede producir menos efectos secundarios que este. Este medicamento impide el crecimiento y la multiplicación de las células cancerosas, y puede destruirlas. Es un tipo de inhibidor mitótico y un tipo de sustancia antimicrotubular. También se llama Abraxane, formulación de nanopartículas de paclitaxel estabilizadas con albúmina, nanopartícula de paclitaxel y paclitaxel fijado a una proteína.",
+                "text": "Medicamento que se usa para tratar el cáncer de mama que volvió o que se diseminó a otras partes del cuerpo. También se usa con carboplatino para tratar el cáncer de pulmón de células no pequeñas en estadio avanzado en pacientes que no se pueden someter a cirugía o radioterapia. Asimismo,  se usa con clorhidrato de gemcitabina para tratar el cáncer de páncreas que se diseminó a otras partes del cuerpo. Está en estudio para el tratamiento de otros tipos de cáncer. ABI-007 es una forma del medicamento contra el cáncer paclitaxel y puede producir menos efectos secundarios que este. Este medicamento impide el crecimiento y la multiplicación de las células cancerosas, y puede destruirlas. Es un tipo de inhibidor mitótico y un tipo de sustancia antimicrotubular. También se llama Abraxane, formulación de nanopartículas de paclitaxel estabilizadas con albúmina, nanopartícula de paclitaxel y paclitaxel fijado a una proteína."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ABI-007",
+                    "prettyUrlName": "abi-007"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 335061,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablación",
+            "firstLetter": "a",
+            "prettyUrlName": "ablacion",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/711347.mp3"
+            },
+            "definition": {
+                "html": "En el campo de la medicina, extracción o destrucción de una parte del cuerpo o tejido o de su función. La ablación se puede realizar mediante cirugía, hormonas, medicamentos, radiofrecuencia, calor u otros métodos.",
+                "text": "En el campo de la medicina, extracción o destrucción de una parte del cuerpo o tejido o de su función. La ablación se puede realizar mediante cirugía, hormonas, medicamentos, radiofrecuencia, calor u otros métodos."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ablation",
+                    "prettyUrlName": "ablation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 600436,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablación con coagulador de haz de argón",
+            "firstLetter": "a",
+            "prettyUrlName": "ablacion-con-coagulador-de-haz-de-argon",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/720611.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento que destruye el tejido con una corriente eléctrica que pasa a través de un chorro del gas argón hasta el tejido. Se usa para tratar la endometriosis y otras afecciones, y para detener la pérdida de sangre durante la cirugía.",
+                "text": "Procedimiento que destruye el tejido con una corriente eléctrica que pasa a través de un chorro del gas argón hasta el tejido. Se usa para tratar la endometriosis y otras afecciones, y para detener la pérdida de sangre durante la cirugía."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "argon beam coagulator ablation",
+                    "prettyUrlName": "argon-beam-coagulator-ablation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44369,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablación de andrógeno",
+            "firstLetter": "a",
+            "prettyUrlName": "ablacion-de-androgeno",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704547.mp3"
+            },
+            "definition": {
+                "html": "Tratamiento para suprimir o bloquear la producción o la acción de las hormonas masculinas. Se realiza mediante la extirpación de los testículos, tomando hormonas sexuales femeninas o medicamentos llamados antiandrógenos. También se llama privación de andrógenos y supresión de andrógeno.",
+                "text": "Tratamiento para suprimir o bloquear la producción o la acción de las hormonas masculinas. Se realiza mediante la extirpación de los testículos, tomando hormonas sexuales femeninas o medicamentos llamados antiandrógenos. También se llama privación de andrógenos y supresión de andrógeno."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "androgen ablation",
+                    "prettyUrlName": "androgen-ablation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45397,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablación de la médula ósea",
+            "firstLetter": "a",
+            "prettyUrlName": "ablacion-de-la-medula-osea",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/705413.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento para destruir la médula ósea mediante radiación o dosis altas de medicamentos contra el cáncer. Se lleva a cabo antes de un trasplante de médula ósea o células madre de la sangre a fin de eliminar las células cancerosas y las células de la médula ósea. Esto crea el espacio para las células madre sanas.",
+                "text": "Procedimiento para destruir la médula ósea mediante radiación o dosis altas de medicamentos contra el cáncer. Se lleva a cabo antes de un trasplante de médula ósea o células madre de la sangre a fin de eliminar las células cancerosas y las células de la médula ósea. Esto crea el espacio para las células madre sanas."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "bone marrow ablation",
+                    "prettyUrlName": "bone-marrow-ablation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45811,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablación ovárica",
+            "firstLetter": "a",
+            "prettyUrlName": "ablacion-ovarica",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/707284.mp3"
+            },
+            "definition": {
+                "html": "Tratamiento para detener o disminuir la cantidad de estrógeno producido en los ovarios. Los tipos de ablación ovárica incluyen la cirugía para extraer ambos ovarios, la radioterapia y el uso de ciertos medicamentos. La ablación ovárica se puede utilizar para prevenir y tratar el cáncer de mama. También se llama supresión ovárica.",
+                "text": "Tratamiento para detener o disminuir la cantidad de estrógeno producido en los ovarios. Los tipos de ablación ovárica incluyen la cirugía para extraer ambos ovarios, la radioterapia y el uso de ciertos medicamentos. La ablación ovárica se puede utilizar para prevenir y tratar el cáncer de mama. También se llama supresión ovárica."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ovarian ablation",
+                    "prettyUrlName": "ovarian-ablation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 644767,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablación por alcohol",
+            "firstLetter": "a",
+            "prettyUrlName": "ablacion-por-alcohol",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726287.mp3"
+            },
+            "definition": {
+                "html": "Inyección de etanol (alcohol) que se administra a través de la piel, directamente en el tumor para destruir células cancerosas. Se utiliza una ecografía o una exploración por TC para guiar la aguja hacia el tumor. También se llama ablación por etanol, inyección percutánea de etanol e IPE.",
+                "text": "Inyección de etanol (alcohol) que se administra a través de la piel, directamente en el tumor para destruir células cancerosas. Se utiliza una ecografía o una exploración por TC para guiar la aguja hacia el tumor. También se llama ablación por etanol, inyección percutánea de etanol e IPE."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "alcohol ablation",
+                    "prettyUrlName": "alcohol-ablation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 644768,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablación por etanol",
+            "firstLetter": "a",
+            "prettyUrlName": "ablacion-por-etanol",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726288.mp3"
+            },
+            "definition": {
+                "html": "Inyección de etanol (alcohol) que se administra a través de la piel, directamente en el tumor para destruir células cancerosas. Se utiliza una ecografía o una exploración por TC para guiar la aguja hacia el tumor. También se llama ablación por alcohol, inyección percutánea de etanol e IPE.",
+                "text": "Inyección de etanol (alcohol) que se administra a través de la piel, directamente en el tumor para destruir células cancerosas. Se utiliza una ecografía o una exploración por TC para guiar la aguja hacia el tumor. También se llama ablación por alcohol, inyección percutánea de etanol e IPE."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ethanol ablation",
+                    "prettyUrlName": "ethanol-ablation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44865,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablación por radiofrecuencia",
+            "firstLetter": "a",
+            "prettyUrlName": "ablacion-por-radiofrecuencia",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704887.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento en el que se usa ondas de radio para calentar y destruir células anormales. Las ondas de radio se desplazan a través de electrodos (dispositivos pequeños que trasportan electricidad). La ablación por radiofrecuencia se puede usar para tratar el cáncer y otras afecciones.",
+                "text": "Procedimiento en el que se usa ondas de radio para calentar y destruir células anormales. Las ondas de radio se desplazan a través de electrodos (dispositivos pequeños que trasportan electricidad). La ablación por radiofrecuencia se puede usar para tratar el cáncer y otras afecciones."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "radiofrequency ablation",
+                    "prettyUrlName": "radiofrequency-ablation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44326,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablación térmica",
+            "firstLetter": "a",
+            "prettyUrlName": "ablacion-termica",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/727911.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento en el que se usa calor para extirpar tejido o una parte del cuerpo, o destruir su función. Por ejemplo, para extirpar el recubrimiento del útero, se inserta un catéter por el cuello uterino hacia el útero, se infla un globo en el extremo del catéter y se calienta el líquido en el interior del globo para destruir el recubrimiento del útero.",
+                "text": "Procedimiento en el que se usa calor para extirpar tejido o una parte del cuerpo, o destruir su función. Por ejemplo, para extirpar el recubrimiento del útero, se inserta un catéter por el cuello uterino hacia el útero, se infla un globo en el extremo del catéter y se calienta el líquido en el interior del globo para destruir el recubrimiento del útero."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "thermal ablation",
+                    "prettyUrlName": "thermal-ablation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 321389,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablación transuretral con aguja",
+            "firstLetter": "a",
+            "prettyUrlName": "ablacion-transuretral-con-aguja",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/711549.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento que se usa para tratar la hipertrofia prostática benigna (HPB). Se introduce un instrumento con una sonda pequeña que emite energía de radiofrecuencia baja a través de la uretra hacia la próstata. La energía de la sonda calienta y destruye el tejido de la próstata cercano a la sonda. Esto alivia la presión y mejora el flujo de la orina. También se llama ablación transuretral con radiofrecuencia y RTUA.",
+                "text": "Procedimiento que se usa para tratar la hipertrofia prostática benigna (HPB). Se introduce un instrumento con una sonda pequeña que emite energía de radiofrecuencia baja a través de la uretra hacia la próstata. La energía de la sonda calienta y destruye el tejido de la próstata cercano a la sonda. Esto alivia la presión y mejora el flujo de la orina. También se llama ablación transuretral con radiofrecuencia y RTUA."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "transurethral needle ablation",
+                    "prettyUrlName": "transurethral-needle-ablation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 403147,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ablación transuretral con radiofrecuencia",
+            "firstLetter": "a",
+            "prettyUrlName": "ablacion-transuretral-con-radiofrecuencia",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/713262.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento que se usa para tratar la hipertrofia prostática benigna (HPB). Se introduce un instrumento con una sonda pequeña que emite energía de radiofrecuencia baja a través de la uretra hacia la próstata. La energía de la sonda calienta y destruye el tejido de la próstata cercano a la sonda. Esto alivia la presión y mejora el flujo de la orina. También se llama ablación transuretral con aguja y RTUA.",
+                "text": "Procedimiento que se usa para tratar la hipertrofia prostática benigna (HPB). Se introduce un instrumento con una sonda pequeña que emite energía de radiofrecuencia baja a través de la uretra hacia la próstata. La energía de la sonda calienta y destruye el tejido de la próstata cercano a la sonda. Esto alivia la presión y mejora el flujo de la orina. También se llama ablación transuretral con aguja y RTUA."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "transurethral radiofrequency ablation",
+                    "prettyUrlName": "transurethral-radiofrequency-ablation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 488416,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "Abraxane",
+            "firstLetter": "a",
+            "prettyUrlName": "abraxane",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/718414.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para tratar el cáncer de mama que volvió o que se diseminó a otras partes del cuerpo. También se usa con carboplatino para tratar el cáncer de pulmón de células no pequeñas en estadio avanzado en pacientes que no se pueden someter a cirugía o radioterapia. Asimismo,  se usa con clorhidrato de gemcitabina para tratar el cáncer de páncreas que se diseminó a otras partes del cuerpo. Está en estudio para el tratamiento de otros tipos de cáncer. Abraxane es una forma del medicamento contra el cáncer paclitaxel y puede producir menos efectos secundarios que este. Este medicamento impide el crecimiento y la multiplicación de las células cancerosas, y puede destruirlas. Es un tipo de inhibidor mitótico y un tipo de sustancia antimicrotubular. También se llama ABI-007, formulación de nanopartículas de paclitaxel estabilizadas con albúmina, nanopartícula de paclitaxel y paclitaxel fijado a una proteína.",
+                "text": "Medicamento que se usa para tratar el cáncer de mama que volvió o que se diseminó a otras partes del cuerpo. También se usa con carboplatino para tratar el cáncer de pulmón de células no pequeñas en estadio avanzado en pacientes que no se pueden someter a cirugía o radioterapia. Asimismo,  se usa con clorhidrato de gemcitabina para tratar el cáncer de páncreas que se diseminó a otras partes del cuerpo. Está en estudio para el tratamiento de otros tipos de cáncer. Abraxane es una forma del medicamento contra el cáncer paclitaxel y puede producir menos efectos secundarios que este. Este medicamento impide el crecimiento y la multiplicación de las células cancerosas, y puede destruirlas. Es un tipo de inhibidor mitótico y un tipo de sustancia antimicrotubular. También se llama ABI-007, formulación de nanopartículas de paclitaxel estabilizadas con albúmina, nanopartícula de paclitaxel y paclitaxel fijado a una proteína."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "Abraxane",
+                    "prettyUrlName": "abraxane"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44786,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "absceso",
+            "firstLetter": "a",
+            "prettyUrlName": "absceso",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/705968.mp3"
+            },
+            "definition": {
+                "html": "Acumulación de pus en los tejidos, órganos o espacios limitados del cuerpo. Un absceso es un signo de infección y, por lo general, está hinchado e inflamado.",
+                "text": "Acumulación de pus en los tejidos, órganos o espacios limitados del cuerpo. Un absceso es un signo de infección y, por lo general, está hinchado e inflamado."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "abscess",
+                    "prettyUrlName": "abscess"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 562765,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "absorciometría dual de rayos X",
+            "firstLetter": "a",
+            "prettyUrlName": "absorciometria-dual-de-rayos-x",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/721102.mp3"
+            },
+            "definition": {
+                "html": "Prueba con imágenes que se usa para medir la densidad ósea (la cantidad de mineral óseo contenido en un cierto volumen de hueso) al pasar rayos X con dos grados diferentes de energía a través del hueso. Se usa para diagnosticar la osteoporosis (disminución de la masa y la densidad de los huesos). También se llama absorciométrica con rayos X de energía dual, densitometría ósea, DEXA, DO, DXA y exploración por DEXA.",
+                "text": "Prueba con imágenes que se usa para medir la densidad ósea (la cantidad de mineral óseo contenido en un cierto volumen de hueso) al pasar rayos X con dos grados diferentes de energía a través del hueso. Se usa para diagnosticar la osteoporosis (disminución de la masa y la densidad de los huesos). También se llama absorciométrica con rayos X de energía dual, densitometría ósea, DEXA, DO, DXA y exploración por DEXA."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "dual x-ray absorptiometry",
+                    "prettyUrlName": "dual-x-ray-absorptiometry"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 562764,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "absorciométrica con rayos X de energía dual",
+            "firstLetter": "a",
+            "prettyUrlName": "absorciometrica-con-rayos-x-de-energia-dual",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/721099.mp3"
+            },
+            "definition": {
+                "html": "Prueba con imágenes que se usa para medir la densidad ósea (la cantidad de mineral óseo contenido en un cierto volumen de hueso) al pasar rayos X con dos grados diferentes de energía a través del hueso. Se usa para diagnosticar la osteoporosis (disminución de la masa y la densidad de los huesos). También se llama absorciometría dual de rayos X, densitometría ósea, DEXA, DO, DXA y exploración por DEXA.",
+                "text": "Prueba con imágenes que se usa para medir la densidad ósea (la cantidad de mineral óseo contenido en un cierto volumen de hueso) al pasar rayos X con dos grados diferentes de energía a través del hueso. Se usa para diagnosticar la osteoporosis (disminución de la masa y la densidad de los huesos). También se llama absorciometría dual de rayos X, densitometría ósea, DEXA, DO, DXA y exploración por DEXA."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "dual energy x-ray absorptiometric scan",
+                    "prettyUrlName": "dual-energy-x-ray-absorptiometric-scan"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 463702,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "absorción",
+            "firstLetter": "a",
+            "prettyUrlName": "absorcion",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/716908.mp3"
+            },
+            "definition": {
+                "html": "Proceso por el que se incorporan los nutrientes desde el aparato digestivo hacia la sangre para que el cuerpo los pueda usar.",
+                "text": "Proceso por el que se incorporan los nutrientes desde el aparato digestivo hacia la sangre para que el cuerpo los pueda usar."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "absorption",
+                    "prettyUrlName": "absorption"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 748333,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abstinencia",
+            "firstLetter": "a",
+            "prettyUrlName": "abstinencia",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/752622.mp3"
+            },
+            "definition": {
+                "html": "En el campo de la medicina, síntomas que se producen cuando una persona deja de fumar o deja de usar una sustancia adictiva, como las drogas o el alcohol. Los síntomas comunes de abstinencia al dejar de fumar incluyen ansias por la nicotina, enojo, irritabilidad, ansiedad, depresión y aumento de peso. Estos síntomas generalmente mejoran con el tiempo.",
+                "text": "En el campo de la medicina, síntomas que se producen cuando una persona deja de fumar o deja de usar una sustancia adictiva, como las drogas o el alcohol. Los síntomas comunes de abstinencia al dejar de fumar incluyen ansias por la nicotina, enojo, irritabilidad, ansiedad, depresión y aumento de peso. Estos síntomas generalmente mejoran con el tiempo."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "withdrawal",
+                    "prettyUrlName": "withdrawal"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 533413,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABT-263",
+            "firstLetter": "a",
+            "prettyUrlName": "abt-263",
+            "pronunciation": null,
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento de los linfomas y otros tipos de cáncer. Bloquea algunas de las enzimas que impiden que las células cancerosas mueran. Es un tipo de inhibidor de la familia Bcl-2. También se llama navitoclax.",
+                "text": "Sustancia en estudio para el tratamiento de los linfomas y otros tipos de cáncer. Bloquea algunas de las enzimas que impiden que las células cancerosas mueran. Es un tipo de inhibidor de la familia Bcl-2. También se llama navitoclax."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ABT-263",
+                    "prettyUrlName": "abt-263"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 367468,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABT-510",
+            "firstLetter": "a",
+            "prettyUrlName": "abt-510",
+            "pronunciation": null,
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento del cáncer. Es un tipo de inhibidor de la angiogénesis.",
+                "text": "Sustancia en estudio para el tratamiento del cáncer. Es un tipo de inhibidor de la angiogénesis."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ABT-510",
+                    "prettyUrlName": "abt-510"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 256536,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABT-751",
+            "firstLetter": "a",
+            "prettyUrlName": "abt-751",
+            "pronunciation": null,
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento de cáncer. Pertenece a la familia de fármacos que se llaman sulfonamidas.",
+                "text": "Sustancia en estudio para el tratamiento de cáncer. Pertenece a la familia de fármacos que se llaman sulfonamidas."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ABT-751",
+                    "prettyUrlName": "abt-751"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 641976,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABT-869",
+            "firstLetter": "a",
+            "prettyUrlName": "abt-869",
+            "pronunciation": null,
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento de varios tipos de cáncer. ABT-869 impide la acción de varios factores de crecimiento. También podría impedir la formación de  nuevos vasos sanguíneos que los tumores necesitan para crecer y podría destruir células cancerosas. Es un tipo de inhibidor del receptor de la tirosina cinasa y un tipo de inhibidor de la angiogénesis. También se llama inhibidor del receptor de la tirosina cinasa multidirigido ABT-869.",
+                "text": "Sustancia en estudio para el tratamiento de varios tipos de cáncer. ABT-869 impide la acción de varios factores de crecimiento. También podría impedir la formación de  nuevos vasos sanguíneos que los tumores necesitan para crecer y podría destruir células cancerosas. Es un tipo de inhibidor del receptor de la tirosina cinasa y un tipo de inhibidor de la angiogénesis. También se llama inhibidor del receptor de la tirosina cinasa multidirigido ABT-869."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ABT-869",
+                    "prettyUrlName": "abt-869"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 524260,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABT-888",
+            "firstLetter": "a",
+            "prettyUrlName": "abt-888",
+            "pronunciation": null,
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento de los cánceres de mama causados por mutaciones (cambios) en los genes BRCA1 y BRCA2. También está en estudio para el tratamiento de otros tipos de cáncer. Bloquea la acción de una enzima que participa en muchas funciones celulares, incluso la reparación del daño en el ADN. El daño en el ADN se puede deber al funcionamiento normal de las células, la luz UV, ciertos medicamentos contra el cáncer y la radiación que se usa para tratar el cáncer. ABT-888 quizás destruya células cancerosas. Es un tipo de inhibidor de la polimerasa poli (ADP-ribosa). También se llama inhibidor de PARP-1 ABT-888 y veliparib.",
+                "text": "Sustancia en estudio para el tratamiento de los cánceres de mama causados por mutaciones (cambios) en los genes BRCA1 y BRCA2. También está en estudio para el tratamiento de otros tipos de cáncer. Bloquea la acción de una enzima que participa en muchas funciones celulares, incluso la reparación del daño en el ADN. El daño en el ADN se puede deber al funcionamiento normal de las células, la luz UV, ciertos medicamentos contra el cáncer y la radiación que se usa para tratar el cáncer. ABT-888 quizás destruya células cancerosas. Es un tipo de inhibidor de la polimerasa poli (ADP-ribosa). También se llama inhibidor de PARP-1 ABT-888 y veliparib."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ABT-888",
+                    "prettyUrlName": "abt-888"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 454752,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "abuso de drogas",
+            "firstLetter": "a",
+            "prettyUrlName": "abuso-de-drogas",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/715008.mp3"
+            },
+            "definition": {
+                "html": "Uso de drogas ilícitas o uso de medicamentos de venta con receta médica o de venta libre, con fines diferentes a los que están destinados, o para su consumo en cantidades excesivas. El abuso de drogas a veces conduce a problemas sociales, físicos, emocionales y laborales. También se llama adicción a las drogas y drogadicción.",
+                "text": "Uso de drogas ilícitas o uso de medicamentos de venta con receta médica o de venta libre, con fines diferentes a los que están destinados, o para su consumo en cantidades excesivas. El abuso de drogas a veces conduce a problemas sociales, físicos, emocionales y laborales. También se llama adicción a las drogas y drogadicción."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "drug abuse",
+                    "prettyUrlName": "drug-abuse"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 635678,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABVD",
+            "firstLetter": "a",
+            "prettyUrlName": "abvd",
+            "pronunciation": null,
+            "definition": {
+                "html": "Abreviatura del nombre de una quimioterapia combinada que se usa para tratar el linfoma de Hodgkin. Incluye los siguientes medicamentos: clorhidrato de doxorrubicina (Adriamycin), sulfato de bleomicina, sulfato de  vinblastina y dacarbazina. También se llama régimen ABVD.",
+                "text": "Abreviatura del nombre de una quimioterapia combinada que se usa para tratar el linfoma de Hodgkin. Incluye los siguientes medicamentos: clorhidrato de doxorrubicina (Adriamycin), sulfato de bleomicina, sulfato de  vinblastina y dacarbazina. También se llama régimen ABVD."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ABVD",
+                    "prettyUrlName": "abvd"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 662469,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABVE",
+            "firstLetter": "a",
+            "prettyUrlName": "abve",
+            "pronunciation": null,
+            "definition": {
+                "html": "Abreviatura del nombre de una quimioterapia combinada que se usa con radioterapia para tratar el linfoma de Hodgkin infantil. Incluye los medicamentos clorhidrato de doxorrubicina (Adriamycin), sulfato de bleomicina, sulfato de vincristina y etopósido. También se llama DBVE, régimen ABVE y régimen DBVE.",
+                "text": "Abreviatura del nombre de una quimioterapia combinada que se usa con radioterapia para tratar el linfoma de Hodgkin infantil. Incluye los medicamentos clorhidrato de doxorrubicina (Adriamycin), sulfato de bleomicina, sulfato de vincristina y etopósido. También se llama DBVE, régimen ABVE y régimen DBVE."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ABVE",
+                    "prettyUrlName": "abve"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 683640,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABVE-PC",
+            "firstLetter": "a",
+            "prettyUrlName": "abve-pc",
+            "pronunciation": null,
+            "definition": {
+                "html": "Abreviatura del nombre de una quimioterapia combinada que se usa junto con radioterapia para tratar el linfoma de Hodgkin infantil. Contiene los medicamentos clorhidrato de doxorrubicina (Adriamycin), sulfato de bleomicina, sulfato de vincristina, etopósido, prednisona y ciclofosfamida.   También se llama DBVE-PC, régimen ABVE-PC y régimen DBVE-PC.",
+                "text": "Abreviatura del nombre de una quimioterapia combinada que se usa junto con radioterapia para tratar el linfoma de Hodgkin infantil. Contiene los medicamentos clorhidrato de doxorrubicina (Adriamycin), sulfato de bleomicina, sulfato de vincristina, etopósido, prednisona y ciclofosfamida.   También se llama DBVE-PC, régimen ABVE-PC y régimen DBVE-PC."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ABVE-PC",
+                    "prettyUrlName": "abve-pc"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 302450,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ABX-EGF",
+            "firstLetter": "a",
+            "prettyUrlName": "abx-egf",
+            "pronunciation": null,
+            "definition": {
+                "html": "Medicamento que se usa solo o con otros medicamentos para tratar ciertos tipos de cáncer colorrectal que se diseminó a otras partes del cuerpo. Se usa en pacientes cuyo cáncer todavía no se trató o empeoró después del tratamiento con otros medicamentos contra el cáncer. También está en estudio para el tratamiento de otros tipos de cáncer. ABX-EGF se une a una proteína llamada receptor del factor de crecimiento epidérmico (EGFR), que se encuentra en algunas células normales y en algunos tipos de células cancerosas. Es posible que el bloqueo de esta proteína impida que las células cancerosas se multipliquen. ABX-EGF  es un tipo de anticuerpo monoclonal. También se llama panitumumab y Vectibix.",
+                "text": "Medicamento que se usa solo o con otros medicamentos para tratar ciertos tipos de cáncer colorrectal que se diseminó a otras partes del cuerpo. Se usa en pacientes cuyo cáncer todavía no se trató o empeoró después del tratamiento con otros medicamentos contra el cáncer. También está en estudio para el tratamiento de otros tipos de cáncer. ABX-EGF se une a una proteína llamada receptor del factor de crecimiento epidérmico (EGFR), que se encuentra en algunas células normales y en algunos tipos de células cancerosas. Es posible que el bloqueo de esta proteína impida que las células cancerosas se multipliquen. ABX-EGF  es un tipo de anticuerpo monoclonal. También se llama panitumumab y Vectibix."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ABX-EGF",
+                    "prettyUrlName": "abx-egf"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 662444,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "AC",
+            "firstLetter": "a",
+            "prettyUrlName": "ac",
+            "pronunciation": null,
+            "definition": {
+                "html": "Abreviatura del nombre de un régimen de quimioterapia combinada que se usa con otros tipos de terapia para tratar el cáncer de mama, incluso el cáncer de mama que se diseminó  o volvió. Incluye los medicamentos clorhidrato de doxorrubicina (Adriamycin) y ciclofosfamida.   También se llama régimen AC.",
+                "text": "Abreviatura del nombre de un régimen de quimioterapia combinada que se usa con otros tipos de terapia para tratar el cáncer de mama, incluso el cáncer de mama que se diseminó  o volvió. Incluye los medicamentos clorhidrato de doxorrubicina (Adriamycin) y ciclofosfamida.   También se llama régimen AC."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "AC",
+                    "prettyUrlName": "ac"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 635682,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "AC-T",
+            "firstLetter": "a",
+            "prettyUrlName": "ac-t",
+            "pronunciation": null,
+            "definition": {
+                "html": "Abreviatura de una quimioterapia combinada que se usa para tratar el cáncer de mama.   Incluye los medicamentos clorhidrato de doxorrubicina (Adriamycin) y ciclofosfamida, seguidos de tratamiento con paclitaxel (Taxol).   También se llama régimen AC-T y régimen AC-Taxol.",
+                "text": "Abreviatura de una quimioterapia combinada que se usa para tratar el cáncer de mama.   Incluye los medicamentos clorhidrato de doxorrubicina (Adriamycin) y ciclofosfamida, seguidos de tratamiento con paclitaxel (Taxol).   También se llama régimen AC-T y régimen AC-Taxol."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "AC-T",
+                    "prettyUrlName": "ac-t"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 635689,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "AC-T-T",
+            "firstLetter": "a",
+            "prettyUrlName": "ac-t-t",
+            "pronunciation": null,
+            "definition": {
+                "html": "Abreviatura de una quimioterapia combinada que se usa para tratar el cáncer de mama.   Incluye los medicamentos clorhidrato de doxorrubicina (Adriamycin) y ciclofosfamida, seguidas de tratamiento con paclitaxel (Taxol) y trastuzumab (Herceptin).   También se llama régimen AC-T-T, régimen AC-TH y régimen AC/Taxol-Trastuzumab en secuencia.",
+                "text": "Abreviatura de una quimioterapia combinada que se usa para tratar el cáncer de mama.   Incluye los medicamentos clorhidrato de doxorrubicina (Adriamycin) y ciclofosfamida, seguidas de tratamiento con paclitaxel (Taxol) y trastuzumab (Herceptin).   También se llama régimen AC-T-T, régimen AC-TH y régimen AC/Taxol-Trastuzumab en secuencia."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "AC-T-T",
+                    "prettyUrlName": "ac-t-t"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 791334,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acalabrutinib",
+            "firstLetter": "a",
+            "prettyUrlName": "acalabrutinib",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/792188.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para tratar la leucemia linfocítica crónica o el linfoma linfocítico de células pequeñas en adultos. También se usa para tratar el linfoma de  células del manto en adultos que ya recibieron por lo menos otro tratamiento. Asimismo se estudia para el tratamiento de otros tipos de cáncer. El acalabrutinib bloquea una proteína llamada tirosina cinasa de Bruton (BTK) y esto quizás evite que las células cancerosas se multipliquen. Es un tipo de inhibidor de tirosina cinasa. También se llama Calquence.",
+                "text": "Medicamento que se usa para tratar la leucemia linfocítica crónica o el linfoma linfocítico de células pequeñas en adultos. También se usa para tratar el linfoma de  células del manto en adultos que ya recibieron por lo menos otro tratamiento. Asimismo se estudia para el tratamiento de otros tipos de cáncer. El acalabrutinib bloquea una proteína llamada tirosina cinasa de Bruton (BTK) y esto quizás evite que las células cancerosas se multipliquen. Es un tipo de inhibidor de tirosina cinasa. También se llama Calquence."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acalabrutinib",
+                    "prettyUrlName": "acalabrutinib"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 597088,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ACAPHA",
+            "firstLetter": "a",
+            "prettyUrlName": "acapha",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/720888.mp3"
+            },
+            "definition": {
+                "html": "Mezcla de seis hierbas que se han usado en China para prevenir y tratar enfermedades como los cánceres de esófago y estómago. Está en estudio en los Estados Unidos y el Canadá para prevenir el cáncer de pulmón en personas que solían fumar.",
+                "text": "Mezcla de seis hierbas que se han usado en China para prevenir y tratar enfermedades como los cánceres de esófago y estómago. Está en estudio en los Estados Unidos y el Canadá para prevenir el cáncer de pulmón en personas que solían fumar."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ACAPHA",
+                    "prettyUrlName": "acapha"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 346520,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acceso ampliado",
+            "firstLetter": "a",
+            "prettyUrlName": "acceso-ampliado",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/731122.mp3"
+            },
+            "definition": {
+                "html": "Manera de ofrecer un tratamiento  en fase de investigación a un paciente que no puede recibir el tratamiento en un ensayo clínico, pero que tiene una afección grave y potencialmente mortal para la que no hay tratamiento. El acceso ampliado permite que estos pacientes reciban terapias contra el cáncer que son prometedoras, que aún no se terminaron de estudiar o no se aprobaron cuando no hay otras opciones de tratamiento. También se llama acceso expandido y uso compasivo.",
+                "text": "Manera de ofrecer un tratamiento  en fase de investigación a un paciente que no puede recibir el tratamiento en un ensayo clínico, pero que tiene una afección grave y potencialmente mortal para la que no hay tratamiento. El acceso ampliado permite que estos pacientes reciban terapias contra el cáncer que son prometedoras, que aún no se terminaron de estudiar o no se aprobaron cuando no hay otras opciones de tratamiento. También se llama acceso expandido y uso compasivo."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "expanded access",
+                    "prettyUrlName": "expanded-access"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 745805,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "accidente cerebrovascular",
+            "firstLetter": "a",
+            "prettyUrlName": "accidente-cerebrovascular",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/746299.mp3"
+            },
+            "definition": {
+                "html": "En el campo de la medicina, pérdida del flujo de sangre a una parte del encéfalo, que  daña el tejido encefálico. Las causas de son los coágulos de sangre y la ruptura de vasos sanguíneos. Los síntomas incluyen mareo, adormecimiento, debilidad en un lado del cuerpo y problemas para hablar, escribir o entender el lenguaje. El riesgo de un accidente cerebrovascular aumenta por la presión arterial alta, la edad avanzada, el tabaquismo, la diabetes, el colesterol alto, la enfermedad cardíaca, la aterosclerosis (acumulación de materia grasa y placas en el interior de las arterias coronarias) y antecedentes familiares de accidente cerebrovascular. También se llama ACV e ictus.",
+                "text": "En el campo de la medicina, pérdida del flujo de sangre a una parte del encéfalo, que  daña el tejido encefálico. Las causas de son los coágulos de sangre y la ruptura de vasos sanguíneos. Los síntomas incluyen mareo, adormecimiento, debilidad en un lado del cuerpo y problemas para hablar, escribir o entender el lenguaje. El riesgo de un accidente cerebrovascular aumenta por la presión arterial alta, la edad avanzada, el tabaquismo, la diabetes, el colesterol alto, la enfermedad cardíaca, la aterosclerosis (acumulación de materia grasa y placas en el interior de las arterias coronarias) y antecedentes familiares de accidente cerebrovascular. También se llama ACV e ictus."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "cerebrovascular accident",
+                    "prettyUrlName": "cerebrovascular-accident"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 796906,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "accidente cerebrovascular hemorrágico",
+            "firstLetter": "a",
+            "prettyUrlName": "accidente-cerebrovascular-hemorragico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/798088.mp3"
+            },
+            "definition": {
+                "html": "Tipo de accidente cerebrovascular que se presenta cuando se rompe un vaso sanguíneo dentro del encéfalo o en su superficie, y hay hemorragia dentro del encéfalo o alrededor de este. La hinchazón y el aumento de la presión a causa de la hemorragia dañan las células y el tejido del encéfalo. El accidente cerebrovascular hemorrágico a menudo se produce a causa de  presión arterial alta, aneurisma, anomalía arteriovenosa, traumatismo en la cabeza o trastorno hemorrágico. También se llama ictus hemorrágico.",
+                "text": "Tipo de accidente cerebrovascular que se presenta cuando se rompe un vaso sanguíneo dentro del encéfalo o en su superficie, y hay hemorragia dentro del encéfalo o alrededor de este. La hinchazón y el aumento de la presión a causa de la hemorragia dañan las células y el tejido del encéfalo. El accidente cerebrovascular hemorrágico a menudo se produce a causa de  presión arterial alta, aneurisma, anomalía arteriovenosa, traumatismo en la cabeza o trastorno hemorrágico. También se llama ictus hemorrágico."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "hemorrhagic cerebrovascular accident",
+                    "prettyUrlName": "hemorrhagic-cerebrovascular-accident"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 631064,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "Accolate",
+            "firstLetter": "a",
+            "prettyUrlName": "accolate",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/722645.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para prevenir y tratar los síntomas del asma. Bloquea las sustancias que hacen inflamar los pulmones. Es un tipo de antiasmático y un antagonista del receptor del leucotrieno.  También se llama zafirlukast.",
+                "text": "Medicamento que se usa para prevenir y tratar los síntomas del asma. Bloquea las sustancias que hacen inflamar los pulmones. Es un tipo de antiasmático y un antagonista del receptor del leucotrieno.  También se llama zafirlukast."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "Accolate",
+                    "prettyUrlName": "accolate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46474,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ACE",
+            "firstLetter": "a",
+            "prettyUrlName": "ace",
+            "pronunciation": null,
+            "definition": {
+                "html": "Sustancia que a veces se encuentra en la sangre de las personas que tienen cáncer de colon, otros tipos de cáncer o enfermedades, o que fuman tabaco. Las concentraciones de ACE pueden servir para verificar si el tratamiento del cáncer está funcionando o si el cáncer volvió. Es un tipo de marcador tumoral. También se llama antígeno carcinoembrionario.",
+                "text": "Sustancia que a veces se encuentra en la sangre de las personas que tienen cáncer de colon, otros tipos de cáncer o enfermedades, o que fuman tabaco. Las concentraciones de ACE pueden servir para verificar si el tratamiento del cáncer está funcionando o si el cáncer volvió. Es un tipo de marcador tumoral. También se llama antígeno carcinoembrionario."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "CEA",
+                    "prettyUrlName": "cea"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 330179,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acedera de las ovejas",
+            "firstLetter": "a",
+            "prettyUrlName": "acedera-de-las-ovejas",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/731028.mp3"
+            },
+            "definition": {
+                "html": "Planta que se ha usado en algunas culturas para tratar ciertos problemas médicos. Podría tener efectos contra el cáncer. El nombre científico es Rumex acetosella. También se llama acederilla y sorrel.",
+                "text": "Planta que se ha usado en algunas culturas para tratar ciertos problemas médicos. Podría tener efectos contra el cáncer. El nombre científico es Rumex acetosella. También se llama acederilla y sorrel."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "sheep sorrel",
+                    "prettyUrlName": "sheep-sorrel"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 330199,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acederilla",
+            "firstLetter": "a",
+            "prettyUrlName": "acederilla",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/731055.mp3"
+            },
+            "definition": {
+                "html": "Planta que se ha usado en algunas culturas para tratar ciertos problemas médicos. Podría tener efectos contra el cáncer. El nombre científico es Rumex acetosella. También se llama acedera de las ovejas y sorrel.",
+                "text": "Planta que se ha usado en algunas culturas para tratar ciertos problemas médicos. Podría tener efectos contra el cáncer. El nombre científico es Rumex acetosella. También se llama acedera de las ovejas y sorrel."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "dock",
+                    "prettyUrlName": "dock"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 486450,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "aceite de vaselina",
+            "firstLetter": "a",
+            "prettyUrlName": "aceite-de-vaselina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/718483.mp3"
+            },
+            "definition": {
+                "html": "Tipo de aceite derivado del petróleo (mezcla de líquidos grasos que se encuentran en la tierra). El aceite de vaselina se usa en laxantes, lubricantes, cremas y lociones.",
+                "text": "Tipo de aceite derivado del petróleo (mezcla de líquidos grasos que se encuentran en la tierra). El aceite de vaselina se usa en laxantes, lubricantes, cremas y lociones."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "mineral oil",
+                    "prettyUrlName": "mineral-oil"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 462677,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "aceite esencial",
+            "firstLetter": "a",
+            "prettyUrlName": "aceite-esencial",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/716905.mp3"
+            },
+            "definition": {
+                "html": "Líquido con fragancia que se extrae de ciertas plantas mediante vapor o prensado. Los aceites esenciales contienen sustancias químicas naturales que le dan su \"esencia\" (olor y sabor específicos) a las plantas. Los aceites esenciales se emplean en los perfumes, los saborizantes de alimentos, los medicamentos y la aromaterapia.",
+                "text": "Líquido con fragancia que se extrae de ciertas plantas mediante vapor o prensado. Los aceites esenciales contienen sustancias químicas naturales que le dan su \"esencia\" (olor y sabor específicos) a las plantas. Los aceites esenciales se emplean en los perfumes, los saborizantes de alimentos, los medicamentos y la aromaterapia."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "essential oil",
+                    "prettyUrlName": "essential-oil"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 666709,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "aceite etiodizado",
+            "firstLetter": "a",
+            "prettyUrlName": "aceite-etiodizado",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726037.mp3"
+            },
+            "definition": {
+                "html": "Forma del aceite de amapola que contiene yodo. El aceite etiodizado se administra por inyección y se acumula en la sangre y los vasos sanquíneos de los tumores. Se usa en imaginología (toma de fotografías) de las glándulas salivales y el sistema linfático.   También está en estudio para tomar pruebas por  imágenes de otros órganos como el hígado, el pulmón, el estómago y la tiroides.   Es un tipo de recurso para lel diagnóstico por imágenes. También se llama aceite yodado, Etiodol y Lipiodol.",
+                "text": "Forma del aceite de amapola que contiene yodo. El aceite etiodizado se administra por inyección y se acumula en la sangre y los vasos sanquíneos de los tumores. Se usa en imaginología (toma de fotografías) de las glándulas salivales y el sistema linfático.   También está en estudio para tomar pruebas por  imágenes de otros órganos como el hígado, el pulmón, el estómago y la tiroides.   Es un tipo de recurso para lel diagnóstico por imágenes. También se llama aceite yodado, Etiodol y Lipiodol."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ethiodized oil",
+                    "prettyUrlName": "ethiodized-oil"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 462669,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "aceite portador",
+            "firstLetter": "a",
+            "prettyUrlName": "aceite-portador",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/716889.mp3"
+            },
+            "definition": {
+                "html": "Aceite vegetal o de nuez con poco o ningún perfume que se usa para diluir o \"transportar\" los aceites esenciales (líquido perfumado tomado de las plantas).",
+                "text": "Aceite vegetal o de nuez con poco o ningún perfume que se usa para diluir o \"transportar\" los aceites esenciales (líquido perfumado tomado de las plantas)."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "carrier oil",
+                    "prettyUrlName": "carrier-oil"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 666710,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "aceite yodado",
+            "firstLetter": "a",
+            "prettyUrlName": "aceite-yodado",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726039.mp3"
+            },
+            "definition": {
+                "html": "Forma del aceite de amapola que contiene yodo. El aceite yodizado se administra por inyección y se acumula en la sangre y los vasos sanquíneos de los tumores. Se usa en imaginología (toma de fotografías) de las glándulas salivales y el sistema linfático.   También está en estudio para tomar pruebas por  imágenes de otros órganos como el hígado, el pulmón, el estómago y la tiroides.   Es un tipo de recurso para lel diagnóstico por imágenes. También se llama aceite etiodizado, Etiodol y Lipiodol.",
+                "text": "Forma del aceite de amapola que contiene yodo. El aceite yodizado se administra por inyección y se acumula en la sangre y los vasos sanquíneos de los tumores. Se usa en imaginología (toma de fotografías) de las glándulas salivales y el sistema linfático.   También está en estudio para tomar pruebas por  imágenes de otros órganos como el hígado, el pulmón, el estómago y la tiroides.   Es un tipo de recurso para lel diagnóstico por imágenes. También se llama aceite etiodizado, Etiodol y Lipiodol."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "iodized oil",
+                    "prettyUrlName": "iodized-oil"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44687,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acelerador lineal",
+            "firstLetter": "a",
+            "prettyUrlName": "acelerador-lineal",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/728078.mp3"
+            },
+            "definition": {
+                "html": "Máquina que usa electricidad para formar una corriente rápida de partículas subatómicas. Esto crea una radiación de energía alta que puede usarse para tratar el cáncer. También se llama acelerador lineal de megavoltaje, acelerador lineal de MeV y linac.",
+                "text": "Máquina que usa electricidad para formar una corriente rápida de partículas subatómicas. Esto crea una radiación de energía alta que puede usarse para tratar el cáncer. También se llama acelerador lineal de megavoltaje, acelerador lineal de MeV y linac."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "linear accelerator",
+                    "prettyUrlName": "linear-accelerator"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44688,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acelerador lineal de megavoltaje",
+            "firstLetter": "a",
+            "prettyUrlName": "acelerador-lineal-de-megavoltaje",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/728079.mp3"
+            },
+            "definition": {
+                "html": "Máquina que usa electricidad para formar una corriente rápida de partículas subatómicas. Esto crea una radiación de energía alta que puede usarse para tratar el cáncer. También se llama acelerador lineal, acelerador lineal de MeV y linac.",
+                "text": "Máquina que usa electricidad para formar una corriente rápida de partículas subatómicas. Esto crea una radiación de energía alta que puede usarse para tratar el cáncer. También se llama acelerador lineal, acelerador lineal de MeV y linac."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "mega-voltage linear accelerator",
+                    "prettyUrlName": "mega-voltage-linear-accelerator"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 410730,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acelerador lineal de MeV",
+            "firstLetter": "a",
+            "prettyUrlName": "acelerador-lineal-de-mev",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/713138.mp3"
+            },
+            "definition": {
+                "html": "Máquina que usa electricidad para formar una corriente rápida de partículas subatómicas. Esto crea una radiación de energía alta que puede usarse para tratar el cáncer. También se llama acelerador lineal, acelerador lineal de megavoltaje y linac.",
+                "text": "Máquina que usa electricidad para formar una corriente rápida de partículas subatómicas. Esto crea una radiación de energía alta que puede usarse para tratar el cáncer. También se llama acelerador lineal, acelerador lineal de megavoltaje y linac."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "MeV linear accelerator",
+                    "prettyUrlName": "mev-linear-accelerator"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45165,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetaminofén",
+            "firstLetter": "a",
+            "prettyUrlName": "acetaminofen",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/705106.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que reduce el dolor y la fiebre (pero no la inflamación). Pertenece a la familia de medicamentos que se llaman analgésicos. También se llama acetaminofeno y paracetamol.",
+                "text": "Medicamento que reduce el dolor y la fiebre (pero no la inflamación). Pertenece a la familia de medicamentos que se llaman analgésicos. También se llama acetaminofeno y paracetamol."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acetaminophen",
+                    "prettyUrlName": "acetaminophen"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 655020,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetato",
+            "firstLetter": "a",
+            "prettyUrlName": "acetato",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/725604.mp3"
+            },
+            "definition": {
+                "html": "Forma del ácido acético (un ácido que se encuentra en el vinagre).",
+                "text": "Forma del ácido acético (un ácido que se encuentra en el vinagre)."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acetate",
+                    "prettyUrlName": "acetate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 641969,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetato de abiraterona",
+            "firstLetter": "a",
+            "prettyUrlName": "acetato-de-abiraterona",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/722910.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa con prednisona para tratar el cáncer de próstata que se diseminó a otras partes del cuerpo. Se emplea en pacientes con un cáncer resistente a la castración (que no respondió a los tratamientos para disminuir las concentraciones de testosterona) o que tienen un cáncer sensible a la castración (que respondió a los tratamientos para disminuir las concentraciones de testosterona), pero de riesgo alto.  También está en estudio para el tratamiento de otros tipos de cáncer. El acetato de abiraterona disminuye la cantidad de andrógenos (hormonas masculinas), como la testosterona, que produce el cuerpo.  Es posible que interrumpa la multiplicación de las células cancerosas que necesitan  andrógenos para formarse.  El acetato de abiraterona es un tipo de antiandrógeno. También se llama Zytiga.",
+                "text": "Medicamento que se usa con prednisona para tratar el cáncer de próstata que se diseminó a otras partes del cuerpo. Se emplea en pacientes con un cáncer resistente a la castración (que no respondió a los tratamientos para disminuir las concentraciones de testosterona) o que tienen un cáncer sensible a la castración (que respondió a los tratamientos para disminuir las concentraciones de testosterona), pero de riesgo alto.  También está en estudio para el tratamiento de otros tipos de cáncer. El acetato de abiraterona disminuye la cantidad de andrógenos (hormonas masculinas), como la testosterona, que produce el cuerpo.  Es posible que interrumpa la multiplicación de las células cancerosas que necesitan  andrógenos para formarse.  El acetato de abiraterona es un tipo de antiandrógeno. También se llama Zytiga."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "abiraterone acetate",
+                    "prettyUrlName": "abiraterone-acetate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45000,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetato de caspofungina",
+            "firstLetter": "a",
+            "prettyUrlName": "acetato-de-caspofungina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/706257.mp3"
+            },
+            "definition": {
+                "html": "Medicamento empleado para prevenir o tratar las infecciones causadas por un hongo (un tipo de microorganismo). Es un tipo de antifúngico.",
+                "text": "Medicamento empleado para prevenir o tratar las infecciones causadas por un hongo (un tipo de microorganismo). Es un tipo de antifúngico."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "caspofungin acetate",
+                    "prettyUrlName": "caspofungin-acetate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 631495,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetato de degarelix",
+            "firstLetter": "a",
+            "prettyUrlName": "acetato-de-degarelix",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/722789.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para tratar el cáncer de próstata en estadio avanzado. El acetato de degarelix se une a los receptores de la hormona liberadora de gonadotropina (HLGn) en la hipófisis. Esto hace que los testículos dejen de producir testosterona. Es posible que el acetato de degarelix impida la formación de células cancerosas que necesitan testosterona para crecer. Es un tipo de antagonista de la HLGn. También se llama Firmagon.",
+                "text": "Medicamento que se usa para tratar el cáncer de próstata en estadio avanzado. El acetato de degarelix se une a los receptores de la hormona liberadora de gonadotropina (HLGn) en la hipófisis. Esto hace que los testículos dejen de producir testosterona. Es posible que el acetato de degarelix impida la formación de células cancerosas que necesitan testosterona para crecer. Es un tipo de antagonista de la HLGn. También se llama Firmagon."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "degarelix acetate",
+                    "prettyUrlName": "degarelix-acetate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45289,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetato de goserelina",
+            "firstLetter": "a",
+            "prettyUrlName": "acetato-de-goserelina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/756039.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para tratar el cáncer de próstata y para aliviar los síntomas del cáncer de mama en estadio avanzado. También se usa para tratar problemas del endometrio (revestimiento del útero). El acetato de goserelina impide que el cuerpo elabore las hormonas liberadoras de hormona luteinizante (HL-HL) y la hormona luteinizante (HL). Esto hace que los testículos dejen de producir testosterona (una hormona masculina) en los hombres, y que los ovarios dejen de producir estradiol (una de las formas de la hormona estrógeno) en las mujeres. El acetato de goserelina puede detener la formación de las células cancerosas que necesitan testosterona o estrógeno para crecer. Es un tipo de agonista de la HL-HL.  También se llama ZDX y Zoladex.",
+                "text": "Medicamento que se usa para tratar el cáncer de próstata y para aliviar los síntomas del cáncer de mama en estadio avanzado. También se usa para tratar problemas del endometrio (revestimiento del útero). El acetato de goserelina impide que el cuerpo elabore las hormonas liberadoras de hormona luteinizante (HL-HL) y la hormona luteinizante (HL). Esto hace que los testículos dejen de producir testosterona (una hormona masculina) en los hombres, y que los ovarios dejen de producir estradiol (una de las formas de la hormona estrógeno) en las mujeres. El acetato de goserelina puede detener la formación de las células cancerosas que necesitan testosterona o estrógeno para crecer. Es un tipo de agonista de la HL-HL.  También se llama ZDX y Zoladex."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "goserelin acetate",
+                    "prettyUrlName": "goserelin-acetate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 797794,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetato de histrelina",
+            "firstLetter": "a",
+            "prettyUrlName": "acetato-de-histrelina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/799603.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa con  el nombre comercial  Vantas como terapia paliativa para el cáncer de próstata avanzado. El acetato de histrelina impide que los testículos elaboren la hormona masculina testosterona al bloquear otras hormonas que se necesitan para producirla. Es posible que esto desacelere o detenga la multiplicación de las células que necesitan testosterona para multiplicarse. El acetato de histrelina se usa también con el nombre comercial Supprelin LA para tratar la pubertad precoz en hombres y mujeres. Es un tipo de agonista de LHRH (o GnRH) y un tipo de terapia reversible de privación de andrógeno.",
+                "text": "Medicamento que se usa con  el nombre comercial  Vantas como terapia paliativa para el cáncer de próstata avanzado. El acetato de histrelina impide que los testículos elaboren la hormona masculina testosterona al bloquear otras hormonas que se necesitan para producirla. Es posible que esto desacelere o detenga la multiplicación de las células que necesitan testosterona para multiplicarse. El acetato de histrelina se usa también con el nombre comercial Supprelin LA para tratar la pubertad precoz en hombres y mujeres. Es un tipo de agonista de LHRH (o GnRH) y un tipo de terapia reversible de privación de andrógeno."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "histrelin acetate",
+                    "prettyUrlName": "histrelin-acetate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 767370,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetato de lanreotida",
+            "firstLetter": "a",
+            "prettyUrlName": "acetato-de-lanreotida",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/769336.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para  tratar los tumores neuroendocrinos gastroenteropancreáticos en estadio avanzado o que se diseminaron a otras partes del cuerpo. Estos tumores se forman en el estómago, los intestinos delgado y grueso, el recto y el páncreas. El acetato de lanreotida se usa para los tumores que  no se pueden extirpar mediante cirugía. También se usa para tratar el síndrome carcinoide y a algunos pacientes con acromegalia (afección por la que la hipófisis elabora demasiada hormona del crecimiento). El acetato de lanreotida es como la somatostatina (hormona elaborada por el cuerpo) y quizás ayude a impedir que el cuerpo elabore cantidades excesivas de ciertas hormonas, como la hormona del crecimiento, la insulina, el glucagón y las hormonas que afectan la digestión. Es posible que además impida la formación de ciertos tipos de células tumorales. El acetato de lanreotida es un tipo de análogo de la somatostatina. También se llama Somatulina Depot.",
+                "text": "Medicamento que se usa para  tratar los tumores neuroendocrinos gastroenteropancreáticos en estadio avanzado o que se diseminaron a otras partes del cuerpo. Estos tumores se forman en el estómago, los intestinos delgado y grueso, el recto y el páncreas. El acetato de lanreotida se usa para los tumores que  no se pueden extirpar mediante cirugía. También se usa para tratar el síndrome carcinoide y a algunos pacientes con acromegalia (afección por la que la hipófisis elabora demasiada hormona del crecimiento). El acetato de lanreotida es como la somatostatina (hormona elaborada por el cuerpo) y quizás ayude a impedir que el cuerpo elabore cantidades excesivas de ciertas hormonas, como la hormona del crecimiento, la insulina, el glucagón y las hormonas que afectan la digestión. Es posible que además impida la formación de ciertos tipos de células tumorales. El acetato de lanreotida es un tipo de análogo de la somatostatina. También se llama Somatulina Depot."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "lanreotide acetate",
+                    "prettyUrlName": "lanreotide-acetate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 595341,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetato de leuprolida",
+            "firstLetter": "a",
+            "prettyUrlName": "acetato-de-leuprolida",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/721044.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para tratar el cáncer de próstata en estadio avanzado. También está en estudio para el tratamiento de otros tipos de cáncer. El acetato de leuprolida impide que los testículos produzcan testosterona mediante el bloqueo de otras hormonas que se necesitan para elaborarla. Es posible que detenga la formación de células cancerosas que necesitan testosterona para crecer. El acetato de leuprolida es un tipo de agonista de la hormona liberadora de gonadotropina (HLGn). También se llama Eligard, leuprorelina, Lupron y Lupron Depot.",
+                "text": "Medicamento que se usa para tratar el cáncer de próstata en estadio avanzado. También está en estudio para el tratamiento de otros tipos de cáncer. El acetato de leuprolida impide que los testículos produzcan testosterona mediante el bloqueo de otras hormonas que se necesitan para elaborarla. Es posible que detenga la formación de células cancerosas que necesitan testosterona para crecer. El acetato de leuprolida es un tipo de agonista de la hormona liberadora de gonadotropina (HLGn). También se llama Eligard, leuprorelina, Lupron y Lupron Depot."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "leuprolide acetate",
+                    "prettyUrlName": "leuprolide-acetate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 434597,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetato de medroxiprogesterona",
+            "firstLetter": "a",
+            "prettyUrlName": "acetato-de-medroxiprogesterona",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/713631.mp3"
+            },
+            "definition": {
+                "html": "Medicamento utilizado para prevenir el cáncer de endometrio. También se usa para tratar trastornos de la menstrución y como forma de control de la natalidad. Es una forma de la hormona femenina progesterona y un tipo de progestina.",
+                "text": "Medicamento utilizado para prevenir el cáncer de endometrio. También se usa para tratar trastornos de la menstrución y como forma de control de la natalidad. Es una forma de la hormona femenina progesterona y un tipo de progestina."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "medroxyprogesterone acetate",
+                    "prettyUrlName": "medroxyprogesterone-acetate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46617,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetato de megestrol",
+            "firstLetter": "a",
+            "prettyUrlName": "acetato-de-megestrol",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/731684.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa en forma de comprimido para tratar el cáncer de mama y de endometrio en estadio avanzado. También está en estudio para el tratamiento de la anorexia y la caquexia en pacientes de cáncer. El acetato de megestrol bloquea la acción de la hormona estrógeno en el cuerpo,  lo que evita la formación de algunas células cancerosas. Asimismo, es posible que ayude a mejorar el apetito. El acetato de megestrol es un tipo de progestina.",
+                "text": "Medicamento que se usa en forma de comprimido para tratar el cáncer de mama y de endometrio en estadio avanzado. También está en estudio para el tratamiento de la anorexia y la caquexia en pacientes de cáncer. El acetato de megestrol bloquea la acción de la hormona estrógeno en el cuerpo,  lo que evita la formación de algunas células cancerosas. Asimismo, es posible que ayude a mejorar el apetito. El acetato de megestrol es un tipo de progestina."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "megestrol acetate",
+                    "prettyUrlName": "megestrol-acetate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 663334,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetato de tetradecanoilforbol",
+            "firstLetter": "a",
+            "prettyUrlName": "acetato-de-tetradecanoilforbol",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726420.mp3"
+            },
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento de leucemias y linfomas. También está en estudio para el tratamiento de otros tipos de cáncer. El acetato de tetradecanoilforbol afecta las acciones de muchas células y puede destruir células tumorales. Es un tipo de éster de forbol. También se llama 12-O-tetradecanoilforbol-13-acetato.",
+                "text": "Sustancia en estudio para el tratamiento de leucemias y linfomas. También está en estudio para el tratamiento de otros tipos de cáncer. El acetato de tetradecanoilforbol afecta las acciones de muchas células y puede destruir células tumorales. Es un tipo de éster de forbol. También se llama 12-O-tetradecanoilforbol-13-acetato."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "tetradecanoylphorbol acetate",
+                    "prettyUrlName": "tetradecanoylphorbol-acetate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 641985,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetil L-carnitina",
+            "firstLetter": "a",
+            "prettyUrlName": "acetil-l-carnitina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/722914.mp3"
+            },
+            "definition": {
+                "html": "Forma de la sustancia natural carnitina que está en estudio como una manera de prevenir el daño que la quimioterapia causa a los tejidos.   Los tejidos de los músculos y el hígado elaboran la carnitina, que se encuentra en algunos alimentos como la carne vacuna, la de aves de corral, el pescado y algunos productos lácteos. Muchas células del cuerpo usan esta sustancia para producir energía de la grasa. También se llama ALCAR y clorhidrato de acetil-L-carnitina.",
+                "text": "Forma de la sustancia natural carnitina que está en estudio como una manera de prevenir el daño que la quimioterapia causa a los tejidos.   Los tejidos de los músculos y el hígado elaboran la carnitina, que se encuentra en algunos alimentos como la carne vacuna, la de aves de corral, el pescado y algunos productos lácteos. Muchas células del cuerpo usan esta sustancia para producir energía de la grasa. También se llama ALCAR y clorhidrato de acetil-L-carnitina."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acetyl-L-carnitine",
+                    "prettyUrlName": "acetyl-l-carnitine"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 655008,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetilación",
+            "firstLetter": "a",
+            "prettyUrlName": "acetilacion",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726508.mp3"
+            },
+            "definition": {
+                "html": "Reacción química en la que una molécula pequeña que se llama grupo acetil se añade a otras moléculas. La acetilación de proteínas puede afectar el modo en que estas actúan en el cuerpo.",
+                "text": "Reacción química en la que una molécula pequeña que se llama grupo acetil se añade a otras moléculas. La acetilación de proteínas puede afectar el modo en que estas actúan en el cuerpo."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acetylation",
+                    "prettyUrlName": "acetylation"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45166,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetilcisteína",
+            "firstLetter": "a",
+            "prettyUrlName": "acetilcisteina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/705108.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que habitualmente se usa para reducir el espesor del moco y facilitar su extracción. Asimismo, se usa para invertir el grado de toxicidad producido por dosis altas de acetaminofeno. También se llama N-acetilcisteína y N-acetilo-L-cisteína.",
+                "text": "Medicamento que habitualmente se usa para reducir el espesor del moco y facilitar su extracción. Asimismo, se usa para invertir el grado de toxicidad producido por dosis altas de acetaminofeno. También se llama N-acetilcisteína y N-acetilo-L-cisteína."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acetylcysteine",
+                    "prettyUrlName": "acetylcysteine"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 653099,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetilcolina",
+            "firstLetter": "a",
+            "prettyUrlName": "acetilcolina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726423.mp3"
+            },
+            "definition": {
+                "html": "Sustancia química elaborada por algunos tipos de neuronas.   Sirve para enviar mensajes a otras células, incluso otras células nerviosas, células musculares y células glandulares. Se libera por la terminación del nervio y lleva señales a las células que se encuentran al  otro lado de una sinapsis (espacio entre las células nerviosas  y otras células).   La acetilcolina ayuda a controlar la memoria y la acción de ciertos músculos.   Es un tipo de neurotransmisor.  ",
+                "text": "Sustancia química elaborada por algunos tipos de neuronas.   Sirve para enviar mensajes a otras células, incluso otras células nerviosas, células musculares y células glandulares. Se libera por la terminación del nervio y lleva señales a las células que se encuentran al  otro lado de una sinapsis (espacio entre las células nerviosas  y otras células).   La acetilcolina ayuda a controlar la memoria y la acción de ciertos músculos.   Es un tipo de neurotransmisor.  "
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acetylcholine",
+                    "prettyUrlName": "acetylcholine"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 748129,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acetona",
+            "firstLetter": "a",
+            "prettyUrlName": "acetona",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/752529.mp3"
+            },
+            "definition": {
+                "html": "Sustancia química que se encuentra naturalmente en pequeñas cantidades en las plantas, los árboles, los volcanes y los incendios de bosques. El cuerpo también produce acetona cuando  se descomponen las grasas. Asimismo, se encuentra en el humo del tabaco, el escape de los automóviles y los vertederos de basura. En la industria, la acetona se utiliza en algunos plásticos, fibras, medicamentos, limpiadores domésticos, pegamentos y quitaesmaltes de uñas. La exposición a concentraciones altas de acetona puede irritar la piel, los ojos, la nariz, la garganta y los pulmones. Puede causar dolores de cabeza, náuseas, vómitos, mareos, confusión, pérdida del conocimiento y otros problemas de salud.",
+                "text": "Sustancia química que se encuentra naturalmente en pequeñas cantidades en las plantas, los árboles, los volcanes y los incendios de bosques. El cuerpo también produce acetona cuando  se descomponen las grasas. Asimismo, se encuentra en el humo del tabaco, el escape de los automóviles y los vertederos de basura. En la industria, la acetona se utiliza en algunos plásticos, fibras, medicamentos, limpiadores domésticos, pegamentos y quitaesmaltes de uñas. La exposición a concentraciones altas de acetona puede irritar la piel, los ojos, la nariz, la garganta y los pulmones. Puede causar dolores de cabeza, náuseas, vómitos, mareos, confusión, pérdida del conocimiento y otros problemas de salud."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acetone",
+                    "prettyUrlName": "acetone"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45167,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "aciclovir",
+            "firstLetter": "a",
+            "prettyUrlName": "aciclovir",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/705110.mp3"
+            },
+            "definition": {
+                "html": "Sustancia que se usa para prevenir o tratar el citomegalovirus y la infección por herpes simple, que se puede presentar cuando el cuerpo está inmunodeprimido. Es un tipo de antivírico.",
+                "text": "Sustancia que se usa para prevenir o tratar el citomegalovirus y la infección por herpes simple, que se puede presentar cuando el cuerpo está inmunodeprimido. Es un tipo de antivírico."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acyclovir",
+                    "prettyUrlName": "acyclovir"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 642991,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acidez",
+            "firstLetter": "a",
+            "prettyUrlName": "acidez",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/723215.mp3"
+            },
+            "definition": {
+                "html": "Término que indica la cantidad de ácido en una sustancia. Un ácido es una sustancia química que emite iones de hidrógeno en el agua y forma sales cuando se combina con ciertos metales. La acidez se mide con una escala que se llama escala del pH.   En esta escala, un valor de 7 es neutro y valores del pH de menos de 7 hasta 0 muestran un aumento de la acidez.",
+                "text": "Término que indica la cantidad de ácido en una sustancia. Un ácido es una sustancia química que emite iones de hidrógeno en el agua y forma sales cuando se combina con ciertos metales. La acidez se mide con una escala que se llama escala del pH.   En esta escala, un valor de 7 es neutro y valores del pH de menos de 7 hasta 0 muestran un aumento de la acidez."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acidity",
+                    "prettyUrlName": "acidity"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 642989,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "acidificación",
+            "firstLetter": "a",
+            "prettyUrlName": "acidificacion",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/723213.mp3"
+            },
+            "definition": {
+                "html": "Proceso de producir un ácido o transformarse en un ácido. Un ácido es una sustancia que emite iones de hidrógeno en el agua y forma sales cuando se combina con ciertos metales.",
+                "text": "Proceso de producir un ácido o transformarse en un ácido. Un ácido es una sustancia que emite iones de hidrógeno en el agua y forma sales cuando se combina con ciertos metales."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acidification",
+                    "prettyUrlName": "acidification"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 642987,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido",
+            "firstLetter": "a",
+            "prettyUrlName": "acido",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/723212.mp3"
+            },
+            "definition": {
+                "html": "Sustancia química que emite iones de hidrógeno en el agua y forma sales cuando se combina con ciertos metales.   Los ácidos tienen un sabor agrio y hacen que ciertos colorantes se tornen rojos. Algunos ácidos  elaborados por el cuerpo, como el ácido gástrico, pueden ayudar a los órganos a funcionar correctamente. Un ejemplo de ácido es el ácido clorhídrico. La acidez se mide con una escala que se llama escala del pH.   En esta escala, un valor de 7 es neutro y valores del pH de menos de 7 hasta 0 muestran un aumento de la acidez.",
+                "text": "Sustancia química que emite iones de hidrógeno en el agua y forma sales cuando se combina con ciertos metales.   Los ácidos tienen un sabor agrio y hacen que ciertos colorantes se tornen rojos. Algunos ácidos  elaborados por el cuerpo, como el ácido gástrico, pueden ayudar a los órganos a funcionar correctamente. Un ejemplo de ácido es el ácido clorhídrico. La acidez se mide con una escala que se llama escala del pH.   En esta escala, un valor de 7 es neutro y valores del pH de menos de 7 hasta 0 muestran un aumento de la acidez."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acid",
+                    "prettyUrlName": "acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44314,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido 5-hidroxiindolacético",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-5-hidroxiindolacetico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704468.mp3"
+            },
+            "definition": {
+                "html": "Sustancia que se produce en el hígado a partir de la descomposición de la hormona serotonina. Los nervios usan la serotonina para enviar mensajes entre sí. Después de que el hígado produce el ácido 5-hidroxiindolacético, los riñones extraen esta sustancia de la sangre y la pasan a la orina. A veces, se encuentran concentraciones altas de serotonina y  ácido 5-hidroxiindolacético en los pacientes que tienen determinados tumores, como los tumores carcinoides. Es posible que medir la cantidad del  ácido 5-hidroxiindolacético en la orina ayude a diagnosticar y controlar los tumores carcinoides y otras afecciones.  El ácido 5-hidroxiindolacético es un tipo de marcador tumoral. También se llama 5-HIAA.",
+                "text": "Sustancia que se produce en el hígado a partir de la descomposición de la hormona serotonina. Los nervios usan la serotonina para enviar mensajes entre sí. Después de que el hígado produce el ácido 5-hidroxiindolacético, los riñones extraen esta sustancia de la sangre y la pasan a la orina. A veces, se encuentran concentraciones altas de serotonina y  ácido 5-hidroxiindolacético en los pacientes que tienen determinados tumores, como los tumores carcinoides. Es posible que medir la cantidad del  ácido 5-hidroxiindolacético en la orina ayude a diagnosticar y controlar los tumores carcinoides y otras afecciones.  El ácido 5-hidroxiindolacético es un tipo de marcador tumoral. También se llama 5-HIAA."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "5-hydroxyindoleacetic acid",
+                    "prettyUrlName": "5-hydroxyindoleacetic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 655022,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido acético",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-acetico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726309.mp3"
+            },
+            "definition": {
+                "html": "Ácido que se encuentra en el vinagre. El ácido acético también se usa para disolver sustancias necesarias para elaborar algunas medicinas y otros productos, como los plásticos.",
+                "text": "Ácido que se encuentra en el vinagre. El ácido acético también se usa para disolver sustancias necesarias para elaborar algunas medicinas y otros productos, como los plásticos."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "acetic acid",
+                    "prettyUrlName": "acetic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46184,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido acético con dextrometorfano",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-acetico-con-dextrometorfano",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/707800.mp3"
+            },
+            "definition": {
+                "html": "Medicamento contra el cáncer que es un tipo de inhibidor de la angiogénesis.",
+                "text": "Medicamento contra el cáncer que es un tipo de inhibidor de la angiogénesis."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "dextromethorphan acetic acid",
+                    "prettyUrlName": "dextromethorphan-acetic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46166,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido acético de dimetilxantenona",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-acetico-de-dimetilxantenona",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/707771.mp3"
+            },
+            "definition": {
+                "html": "Medicamento contra el cáncer que es un tipo de inhibidor de la angiogénesis.",
+                "text": "Medicamento contra el cáncer que es un tipo de inhibidor de la angiogénesis."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "dimethylxanthenone acetic acid",
+                    "prettyUrlName": "dimethylxanthenone-acetic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 644311,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido acético gosipol",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-acetico-gosipol",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726061.mp3"
+            },
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento de varios tipos de cáncer. Es una forma de sustancia química que proviene de la semilla de la planta de algodón (Gossypium). Impide el crecimiento de las células cancerosas y podría eliminarlas. El ácido acético gosipol también puede funcionar como anticonceptivo masculino (un tipo de control de la natalidad).",
+                "text": "Sustancia en estudio para el tratamiento de varios tipos de cáncer. Es una forma de sustancia química que proviene de la semilla de la planta de algodón (Gossypium). Impide el crecimiento de las células cancerosas y podría eliminarlas. El ácido acético gosipol también puede funcionar como anticonceptivo masculino (un tipo de control de la natalidad)."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "gossypol acetic acid",
+                    "prettyUrlName": "gossypol-acetic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 443026,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido alfalipoico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-alfalipoico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/714772.mp3"
+            },
+            "definition": {
+                "html": "Sustancia en estudio por su capacidad de proteger las células normales de los efectos secundarios de la quimioterapia y prevenir la neuropatía periférica (adormecimiento, cosquilleo, ardor y debilidad en las manos o los pies). El ácido alfalipoico es producido por el cuerpo y se puede encontrar en alimentos como las vísceras animales, la espinaca, el brócoli, los guisantes, los repollitos de Bruselas y el salvado de arroz. También puede producirse en el laboratorio. El ácido alfalipoico es un tipo de antioxidante y quimioprotector.",
+                "text": "Sustancia en estudio por su capacidad de proteger las células normales de los efectos secundarios de la quimioterapia y prevenir la neuropatía periférica (adormecimiento, cosquilleo, ardor y debilidad en las manos o los pies). El ácido alfalipoico es producido por el cuerpo y se puede encontrar en alimentos como las vísceras animales, la espinaca, el brócoli, los guisantes, los repollitos de Bruselas y el salvado de arroz. También puede producirse en el laboratorio. El ácido alfalipoico es un tipo de antioxidante y quimioprotector."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "alpha-lipoic acid",
+                    "prettyUrlName": "alpha-lipoic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 556409,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido aminobenzoico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-aminobenzoico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/718601.mp3"
+            },
+            "definition": {
+                "html": "Nutriente del complejo de la vitamina B que el cuerpo necesita en pequeñas cantidades para funcionar y mantenerse sano. Las bacterias que viven en los intestinos necesitan del ácido aminobenzoico  para sobrevivir. El ácido aminobenzoico se encuentra en los granos y en los alimentos de origen animal. Está en estudio como radiosensibilizador (sustancia que hace que las células tumorales sean más sensibles a la radioterapia) y para el tratamiento de ciertos trastornos de la piel. También se llama ácido paraaminobenzoico y APAB.",
+                "text": "Nutriente del complejo de la vitamina B que el cuerpo necesita en pequeñas cantidades para funcionar y mantenerse sano. Las bacterias que viven en los intestinos necesitan del ácido aminobenzoico  para sobrevivir. El ácido aminobenzoico se encuentra en los granos y en los alimentos de origen animal. Está en estudio como radiosensibilizador (sustancia que hace que las células tumorales sean más sensibles a la radioterapia) y para el tratamiento de ciertos trastornos de la piel. También se llama ácido paraaminobenzoico y APAB."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "aminobenzoic acid",
+                    "prettyUrlName": "aminobenzoic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 439436,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido ascórbico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-ascorbico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/713699.mp3"
+            },
+            "definition": {
+                "html": "Nutriente que el cuerpo necesita en pequeñas cantidades para funcionar y mantenerse sano. El ácido ascórbico ayuda a combatir las infecciones, cicatrizar las heridas y mantener los tejidos sanos. Es un antioxidante que previene el daño a los tejidos causado por los radicales libres (sustancias químicas muy reactivas).  El ácido ascórbico se encuentra en todas las frutas y verduras, en especial en los cítricos, las fresas o, el melón, los pimientos verdes, los tomates, el brócoli, las verduras de hoja verde y las papas.  Este nutriente es soluble en agua (se disuelve en agua) y se debe tomar todos los días.  El ácido ascórbico está en estudio para la prevención y el tratamiento de algunos tipos de cáncer. También se llama vitamina C.",
+                "text": "Nutriente que el cuerpo necesita en pequeñas cantidades para funcionar y mantenerse sano. El ácido ascórbico ayuda a combatir las infecciones, cicatrizar las heridas y mantener los tejidos sanos. Es un antioxidante que previene el daño a los tejidos causado por los radicales libres (sustancias químicas muy reactivas).  El ácido ascórbico se encuentra en todas las frutas y verduras, en especial en los cítricos, las fresas o, el melón, los pimientos verdes, los tomates, el brócoli, las verduras de hoja verde y las papas.  Este nutriente es soluble en agua (se disuelve en agua) y se debe tomar todos los días.  El ácido ascórbico está en estudio para la prevención y el tratamiento de algunos tipos de cáncer. También se llama vitamina C."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ascorbic acid",
+                    "prettyUrlName": "ascorbic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 508073,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido carbólico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-carbolico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/718091.mp3"
+            },
+            "definition": {
+                "html": "Sustancia química muy venenosa hecha del alquitrán y que también se encuentra en algunas plantas y aceites esenciales (líquidos perfumados tomados de las plantas). El ácido carbólico se usa para fabricar plásticos, nilón, epoxi y medicamentos, y para eliminar gérmenes. También se llama fenol.",
+                "text": "Sustancia química muy venenosa hecha del alquitrán y que también se encuentra en algunas plantas y aceites esenciales (líquidos perfumados tomados de las plantas). El ácido carbólico se usa para fabricar plásticos, nilón, epoxi y medicamentos, y para eliminar gérmenes. También se llama fenol."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "carbolic acid",
+                    "prettyUrlName": "carbolic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44328,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido cítrico/citrato de potasio-sodio",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-citrico-citrato-de-potasio-sodio",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704484.mp3"
+            },
+            "definition": {
+                "html": "Medicamento usado para el tratamiento de la acidosis metabólica (un trastorno en el que la sangre es excesivamente ácida).",
+                "text": "Medicamento usado para el tratamiento de la acidosis metabólica (un trastorno en el que la sangre es excesivamente ácida)."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "citric acid/potassium-sodium citrate",
+                    "prettyUrlName": "citric-acid-potassium-sodium-citrate"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 467820,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido de vitamina A",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-de-vitamina-a",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/716945.mp3"
+            },
+            "definition": {
+                "html": "Nutriente que el cuerpo necesita en pequeñas cantidades para funcionar y mantenerse sano. El ácido de vitamina A se elabora en el cuerpo a partir de la vitamina A y ayuda a las células a crecer y desarrollarse, especialmente en el embrión. Una forma de ácido de vitamina A que se produce en el laboratorio se aplica sobre la piel para tratar afecciones tales como el acné y se toma por boca para tratar la leucemia promielocítica aguda (cáncer de crecimiento rápido por el que se forman demasiadas células hematopoyéticas en la sangre y la médula ósea). El ácido de vitamina A está en estudio para la prevención y el tratamiento de otros tipos de cáncer. También se llama ácido retinoico, ácido transretinoico total, ATRA y tretinoína.",
+                "text": "Nutriente que el cuerpo necesita en pequeñas cantidades para funcionar y mantenerse sano. El ácido de vitamina A se elabora en el cuerpo a partir de la vitamina A y ayuda a las células a crecer y desarrollarse, especialmente en el embrión. Una forma de ácido de vitamina A que se produce en el laboratorio se aplica sobre la piel para tratar afecciones tales como el acné y se toma por boca para tratar la leucemia promielocítica aguda (cáncer de crecimiento rápido por el que se forman demasiadas células hematopoyéticas en la sangre y la médula ósea). El ácido de vitamina A está en estudio para la prevención y el tratamiento de otros tipos de cáncer. También se llama ácido retinoico, ácido transretinoico total, ATRA y tretinoína."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "vitamin A acid",
+                    "prettyUrlName": "vitamin-a-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44393,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido desoxirribonucleico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-desoxirribonucleico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704568.mp3"
+            },
+            "definition": {
+                "html": "Moléculas del interior de las células que contienen información genética y la transmiten de una generación a otra. También se llama ADN.",
+                "text": "Moléculas del interior de las células que contienen información genética y la transmiten de una generación a otra. También se llama ADN."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "deoxyribonucleic acid",
+                    "prettyUrlName": "deoxyribonucleic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 674697,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido edético",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-edetico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/727629.mp3"
+            },
+            "definition": {
+                "html": "Sustancia química que se adhiere a los iones de ciertos metales como el calcio, magnesio, plomo e hierro. Se usa en medicina para prevenir los coágulos de sangre y para extraer el calcio y el plomo del cuerpo. También se usa para evitar que las bacterias formen biopelículas (capa delgada que se adhiere a la superficie). Es un tipo de quelante. También se llama ácido etilenodiaminatetraacético y EDTA.",
+                "text": "Sustancia química que se adhiere a los iones de ciertos metales como el calcio, magnesio, plomo e hierro. Se usa en medicina para prevenir los coágulos de sangre y para extraer el calcio y el plomo del cuerpo. También se usa para evitar que las bacterias formen biopelículas (capa delgada que se adhiere a la superficie). Es un tipo de quelante. También se llama ácido etilenodiaminatetraacético y EDTA."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "edetic acid",
+                    "prettyUrlName": "edetic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 674698,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido etilenodiaminatetraacético",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-etilenodiaminatetraacetico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/727632.mp3"
+            },
+            "definition": {
+                "html": "Sustancia química que se adhiere a los iones de ciertos metales como el calcio, magnesio, plomo e hierro. Se usa en medicina para prevenir los coágulos de sangre y para extraer el calcio y el plomo del cuerpo. También se usa para evitar que las bacterias formen biopelículas (capa delgada que se adhiere a la superficie). Es un tipo de quelante. También se llama ácido edético y EDTA.",
+                "text": "Sustancia química que se adhiere a los iones de ciertos metales como el calcio, magnesio, plomo e hierro. Se usa en medicina para prevenir los coágulos de sangre y para extraer el calcio y el plomo del cuerpo. También se usa para evitar que las bacterias formen biopelículas (capa delgada que se adhiere a la superficie). Es un tipo de quelante. También se llama ácido edético y EDTA."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "etheylenediaminetetraacetic acid",
+                    "prettyUrlName": "etheylenediaminetetraacetic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44415,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido fítico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-fitico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704578.mp3"
+            },
+            "definition": {
+                "html": "Sustancia que se encuentra en muchos alimentos que provienen de las plantas, como maíz, trigo, arroz y semillas de soja y, en grandes cantidades en los cereales y las legumbres. Está en estudio para prevenir el cáncer. También se llama hexafosfato de inositol e IP6.",
+                "text": "Sustancia que se encuentra en muchos alimentos que provienen de las plantas, como maíz, trigo, arroz y semillas de soja y, en grandes cantidades en los cereales y las legumbres. Está en estudio para prevenir el cáncer. También se llama hexafosfato de inositol e IP6."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "phytic acid",
+                    "prettyUrlName": "phytic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45236,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido fólico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-folico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/705190.mp3"
+            },
+            "definition": {
+                "html": "Nutriente del complejo de la vitamina B que el cuerpo necesita en pequeñas cantidades para funcionar y mantenerse sano. El ácido fólico ayuda a elaborar glóbulos rojos. Se encuentra en los panes integrales y los cereales, el hígado, las verduras, el jugo de naranja, las lentejas, los frijoles y la levadura. El ácido fólico es soluble en agua (puede disolverse en agua) y debe tomarse en todos los días. La insuficiencia de ácido fólico puede causar anemia (una afección en la que el número de glóbulos rojos está por debajo de lo normal), enfermedades del corazón y los vasos sanguíneos, y defectos en el cerebro y la médula espinal en el feto. El ácido fólico está en estudio con la vitamina B12 para la prevención y el tratamiento del cáncer. También se llama folato.",
+                "text": "Nutriente del complejo de la vitamina B que el cuerpo necesita en pequeñas cantidades para funcionar y mantenerse sano. El ácido fólico ayuda a elaborar glóbulos rojos. Se encuentra en los panes integrales y los cereales, el hígado, las verduras, el jugo de naranja, las lentejas, los frijoles y la levadura. El ácido fólico es soluble en agua (puede disolverse en agua) y debe tomarse en todos los días. La insuficiencia de ácido fólico puede causar anemia (una afección en la que el número de glóbulos rojos está por debajo de lo normal), enfermedades del corazón y los vasos sanguíneos, y defectos en el cerebro y la médula espinal en el feto. El ácido fólico está en estudio con la vitamina B12 para la prevención y el tratamiento del cáncer. También se llama folato."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "folic acid",
+                    "prettyUrlName": "folic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 613202,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido folínico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-folinico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/703939.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para reducir los efectos tóxicos del medicamento contra el cáncer metotrexato  y de otras sustancias que bloquean la acción del ácido fólico. También se usa para tratar ciertos tipos de anemia y se combina con fluorouracilo para tratar el cáncer colorrectal en estadio avanzado. Asimismo, está en estudio para tratar otras afecciones y tipos de cáncer. El ácido folínico es una forma de ácido fólico. Es un tipo de quimioprotector y un tipo de quimiosensibilizador.  También se llama factor citrovórum y leucovorina cálcica.",
+                "text": "Medicamento que se usa para reducir los efectos tóxicos del medicamento contra el cáncer metotrexato  y de otras sustancias que bloquean la acción del ácido fólico. También se usa para tratar ciertos tipos de anemia y se combina con fluorouracilo para tratar el cáncer colorrectal en estadio avanzado. Asimismo, está en estudio para tratar otras afecciones y tipos de cáncer. El ácido folínico es una forma de ácido fólico. Es un tipo de quimioprotector y un tipo de quimiosensibilizador.  También se llama factor citrovórum y leucovorina cálcica."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "folinic acid",
+                    "prettyUrlName": "folinic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 655139,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido fosfórico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-fosforico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726414.mp3"
+            },
+            "definition": {
+                "html": "Ácido que contiene fósforo y se usa en medicina y odontología. También se usa para quitar el óxido. Para darle sabor a algunos refrescos se usa una forma diluída de ácido fosfórico.",
+                "text": "Ácido que contiene fósforo y se usa en medicina y odontología. También se usa para quitar el óxido. Para darle sabor a algunos refrescos se usa una forma diluída de ácido fosfórico."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "phosphoric acid",
+                    "prettyUrlName": "phosphoric-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 613195,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido frutal",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-frutal",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/720766.mp3"
+            },
+            "definition": {
+                "html": "Pertenece a un grupo de sustancias que se encuentran en varios tipos de fruta y en la leche. Estas sustancias se usan en los productos para el cuidado de la piel para reducir las arrugas y suavizar la piel. El ácido glicólico, el ácido láctico y el ácido cítrico son ejemplos de ácido frutal. También se llama AHA y alfahidroxiácido.",
+                "text": "Pertenece a un grupo de sustancias que se encuentran en varios tipos de fruta y en la leche. Estas sustancias se usan en los productos para el cuidado de la piel para reducir las arrugas y suavizar la piel. El ácido glicólico, el ácido láctico y el ácido cítrico son ejemplos de ácido frutal. También se llama AHA y alfahidroxiácido."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "fruit acid",
+                    "prettyUrlName": "fruit-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 657842,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido gástrico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-gastrico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/725717.mp3"
+            },
+            "definition": {
+                "html": "Ácido que liberan las glándulas de la pared del estómago. Ayuda a digerir los alimentos.   El ácido gástrico se compone de ácido clorhídrico.",
+                "text": "Ácido que liberan las glándulas de la pared del estómago. Ayuda a digerir los alimentos.   El ácido gástrico se compone de ácido clorhídrico."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "gastric acid",
+                    "prettyUrlName": "gastric-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 613510,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido glicólico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-glicolico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/720924.mp3"
+            },
+            "definition": {
+                "html": "Sustancia que se encuentra en algunas frutas, azúcar de remolacha y azucar de caña. Se usa en productos para el cuidado de la piel para disminuir las arrugas y suavizar la piel. Es un tipo de alfahidroxiácido.",
+                "text": "Sustancia que se encuentra en algunas frutas, azúcar de remolacha y azucar de caña. Se usa en productos para el cuidado de la piel para disminuir las arrugas y suavizar la piel. Es un tipo de alfahidroxiácido."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "glycolic acid",
+                    "prettyUrlName": "glycolic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 648598,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ácido glucurónico",
+            "firstLetter": "a",
+            "prettyUrlName": "acido-glucuronico",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/726165.mp3"
+            },
+            "definition": {
+                "html": "Forma de un tipo de azúcar que se llama glucosa; ayuda a extraer las sustancias dañinas del cuerpo.   El ácido glucurónico y la sustancia dañina se combinan en el hígado y luego salen al exterior en la orina.   El ácido glucurónico también se encuentra en otras sustancias del cuerpo, como el cartílago y el líquido sinovial (líquido que se encuentra en las articulaciones).",
+                "text": "Forma de un tipo de azúcar que se llama glucosa; ayuda a extraer las sustancias dañinas del cuerpo.   El ácido glucurónico y la sustancia dañina se combinan en el hígado y luego salen al exterior en la orina.   El ácido glucurónico también se encuentra en otras sustancias del cuerpo, como el cartílago y el líquido sinovial (líquido que se encuentra en las articulaciones)."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "glucuronic acid",
+                    "prettyUrlName": "glucuronic-acid"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}

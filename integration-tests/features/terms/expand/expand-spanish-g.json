@@ -1,0 +1,526 @@
+{
+    "meta": {
+        "totalResults": 278,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 46075,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "G-CSF",
+            "firstLetter": "g",
+            "prettyUrlName": "g-csf",
+            "pronunciation": null,
+            "definition": {
+                "html": "Medicamento que se usa con las marcas comerciales Neupogen, Zarxio y Granix para tratar la neutropenia (una afección por la que hay menos glóbulos blancos que lo normal) producida por algunos tipos de quimioterapia. También se usa con las marcas comerciales Neupogen y Zarxio para ayudar a prevenir infecciones en pacientes de ciertos tipos de cáncer, para tratar la neutropenia crónica grave y  en la preparación de la sangre para la recolección de ciertos tipos de células sanguíneas. G-CSF ayuda a que la médula ósea elabore más glóbulos blancos. Es un tipo de factor estimulante de colonias. También se llama factor estimulante de colonias de granulocitos y filgrastim.",
+                "text": "Medicamento que se usa con las marcas comerciales Neupogen, Zarxio y Granix para tratar la neutropenia (una afección por la que hay menos glóbulos blancos que lo normal) producida por algunos tipos de quimioterapia. También se usa con las marcas comerciales Neupogen y Zarxio para ayudar a prevenir infecciones en pacientes de ciertos tipos de cáncer, para tratar la neutropenia crónica grave y  en la preparación de la sangre para la recolección de ciertos tipos de células sanguíneas. G-CSF ayuda a que la médula ósea elabore más glóbulos blancos. Es un tipo de factor estimulante de colonias. También se llama factor estimulante de colonias de granulocitos y filgrastim."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "G-CSF",
+                    "prettyUrlName": "g-csf"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45039,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gabapentina",
+            "firstLetter": "g",
+            "prettyUrlName": "gabapentina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/728258.mp3"
+            },
+            "definition": {
+                "html": "Sustancia en estudio como tratamiento para aliviar las crisis vasomotoras en las mujeres con cáncer de mama. Es un tipo de anticonvulsivo.",
+                "text": "Sustancia en estudio como tratamiento para aliviar las crisis vasomotoras en las mujeres con cáncer de mama. Es un tipo de anticonvulsivo."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "gabapentin",
+                    "prettyUrlName": "gabapentin"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 642138,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gadobenato de dimeglumina",
+            "firstLetter": "g",
+            "prettyUrlName": "gadobenato-de-dimeglumina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/723013.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa en las IRM para ayudar a obtener imágenes claras de los vasos sanguíneos del cerebro, la columna vertebral y los tejidos cercanos. También está en estudio como manera de encontrar áreas anormales en el hígado y otros órganos para ayudar a diagnosticar el cáncer. El gadobenato de dimeglumina es un tipo de material de contraste.    También se llama MultiHance.",
+                "text": "Medicamento que se usa en las IRM para ayudar a obtener imágenes claras de los vasos sanguíneos del cerebro, la columna vertebral y los tejidos cercanos. También está en estudio como manera de encontrar áreas anormales en el hígado y otros órganos para ayudar a diagnosticar el cáncer. El gadobenato de dimeglumina es un tipo de material de contraste.    También se llama MultiHance."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "gadobenate dimeglumine",
+                    "prettyUrlName": "gadobenate-dimeglumine"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 597153,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gadolinio",
+            "firstLetter": "g",
+            "prettyUrlName": "gadolinio",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/720947.mp3"
+            },
+            "definition": {
+                "html": "Elemento metálico que se usa para la imaginología por resonancia magnética (IRM) u otros métodos de imaginología. Es un agente de contraste que ayuda a mostrar el tejido anormal del cuerpo cuando se toman imágenes con una máquina especial.",
+                "text": "Elemento metálico que se usa para la imaginología por resonancia magnética (IRM) u otros métodos de imaginología. Es un agente de contraste que ayuda a mostrar el tejido anormal del cuerpo cuando se toman imágenes con una máquina especial."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "gadolinium",
+                    "prettyUrlName": "gadolinium"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45468,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gadolinio motexafina",
+            "firstLetter": "g",
+            "prettyUrlName": "gadolinio-motexafina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/705502.mp3"
+            },
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento del cáncer. Puede aumentar la sensibilidad de las células tumorales a la radioterapia, mejorar las imágenes del tumor con el uso de la imaginología por resonancia magnética (IRM) y destruir las células cancerosas. Es un tipo de complejo de metaloporfirina. También se llama gadolinio texapirina.",
+                "text": "Sustancia en estudio para el tratamiento del cáncer. Puede aumentar la sensibilidad de las células tumorales a la radioterapia, mejorar las imágenes del tumor con el uso de la imaginología por resonancia magnética (IRM) y destruir las células cancerosas. Es un tipo de complejo de metaloporfirina. También se llama gadolinio texapirina."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "motexafin gadolinium",
+                    "prettyUrlName": "motexafin-gadolinium"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 413947,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gadolinio texapirina",
+            "firstLetter": "g",
+            "prettyUrlName": "gadolinio-texapirina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/713526.mp3"
+            },
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento del cáncer. Puede aumentar la sensibilidad de las células tumorales a la radioterapia, mejorar las imágenes del tumor con el uso de la imaginología por resonancia magnética (IRM) y destruir las células cancerosas. Es un tipo de complejo de metaloporfirina. También se llama gadolinio motexafina.",
+                "text": "Sustancia en estudio para el tratamiento del cáncer. Puede aumentar la sensibilidad de las células tumorales a la radioterapia, mejorar las imágenes del tumor con el uso de la imaginología por resonancia magnética (IRM) y destruir las células cancerosas. Es un tipo de complejo de metaloporfirina. También se llama gadolinio motexafina."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "gadolinium texaphyrin",
+                    "prettyUrlName": "gadolinium-texaphyrin"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 524255,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gadopentetato de dimeglumina",
+            "firstLetter": "g",
+            "prettyUrlName": "gadopentetato-de-dimeglumina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/718817.mp3"
+            },
+            "definition": {
+                "html": "Sustancia que se usa en la prueba de imaginología por resonancia magnética (IRM) para ayudar a obtener imágenes claras del cerebro, la columna vertebral, el corazón, el tejido blando de las articulaciones y el interior de los huesos. Gadopentetato de dimeglumina está en estudio para el diagnóstico de cáncer. Es un tipo de sustancia de contraste. También se llama Gd-DTPA y Magnevist.",
+                "text": "Sustancia que se usa en la prueba de imaginología por resonancia magnética (IRM) para ayudar a obtener imágenes claras del cerebro, la columna vertebral, el corazón, el tejido blando de las articulaciones y el interior de los huesos. Gadopentetato de dimeglumina está en estudio para el diagnóstico de cáncer. Es un tipo de sustancia de contraste. También se llama Gd-DTPA y Magnevist."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "gadopentetate dimeglumine",
+                    "prettyUrlName": "gadopentetate-dimeglumine"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 785627,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "galactografía",
+            "firstLetter": "g",
+            "prettyUrlName": "galactografia",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/789285.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento para el que se utilizan rayos X con el fin de crear imágenes de los conductos galactóforos de la mama. Se introduce un catéter (tubo) muy delgado por el pezón y se inyecta en el conducto una cantidad pequeña de colorante. Esto permite que el conducto se vea mejor en la radiografía. Una galactografía se usa en los pacientes que tienen una secreción sanguinolenta o transparente que sale del pezón. Es posible que se recoja una pequeña cantidad de líquido para determinar si hay infección o células cancerosas. La galactografía se puede usar para ayudar a diagnosticar ciertas afecciones de la mama, como papilomas (tumores similares a verrugas) en un conducto galactóforo, cambios fibroquísticos en la mama y cáncer de mama. También se llama ductografía.",
+                "text": "Procedimiento para el que se utilizan rayos X con el fin de crear imágenes de los conductos galactóforos de la mama. Se introduce un catéter (tubo) muy delgado por el pezón y se inyecta en el conducto una cantidad pequeña de colorante. Esto permite que el conducto se vea mejor en la radiografía. Una galactografía se usa en los pacientes que tienen una secreción sanguinolenta o transparente que sale del pezón. Es posible que se recoja una pequeña cantidad de líquido para determinar si hay infección o células cancerosas. La galactografía se puede usar para ayudar a diagnosticar ciertas afecciones de la mama, como papilomas (tumores similares a verrugas) en un conducto galactóforo, cambios fibroquísticos en la mama y cáncer de mama. También se llama ductografía."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "galactography",
+                    "prettyUrlName": "galactography"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 446802,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "galiximab",
+            "firstLetter": "g",
+            "prettyUrlName": "galiximab",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/714758.mp3"
+            },
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento de linfoma folicular no Hodgkin. Esta se une a la proteína CD80, que se encuentra en ciertos glóbulos blancos normales y en glóbulos blancos que son cancerosos. Es un tipo de anticuerpo monoclonal.",
+                "text": "Sustancia en estudio para el tratamiento de linfoma folicular no Hodgkin. Esta se une a la proteína CD80, que se encuentra en ciertos glóbulos blancos normales y en glóbulos blancos que son cancerosos. Es un tipo de anticuerpo monoclonal."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "galiximab",
+                    "prettyUrlName": "galiximab"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 795807,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "Gamifant",
+            "firstLetter": "g",
+            "prettyUrlName": "gamifant",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/797278.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para tratar un trastorno raro del sistema inmunitario llamado linfohistiocitosis hemofagocítica (LHH) primaria. También se usa para pacientes cuya enfermedad volvió, empeoró, no mejoró o no se puede tratar con otro tratamiento. Además está en estudio para el tratamiento de otras afecciones. Gamifant se une a una proteína del sistema inmunitario llamada interferón gamma, que se encuentra en concentraciones más altas que las normales en los pacientes de LHH. Es posible que esto disminuya la respuesta inmunitaria del cuerpo y reduzca la inflamación. Gamifant es un tipo de anticuerpo monoclonal. También se llama emapalumab.",
+                "text": "Medicamento que se usa para tratar un trastorno raro del sistema inmunitario llamado linfohistiocitosis hemofagocítica (LHH) primaria. También se usa para pacientes cuya enfermedad volvió, empeoró, no mejoró o no se puede tratar con otro tratamiento. Además está en estudio para el tratamiento de otras afecciones. Gamifant se une a una proteína del sistema inmunitario llamada interferón gamma, que se encuentra en concentraciones más altas que las normales en los pacientes de LHH. Es posible que esto disminuya la respuesta inmunitaria del cuerpo y reduzca la inflamación. Gamifant es un tipo de anticuerpo monoclonal. También se llama emapalumab."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "Gamifant",
+                    "prettyUrlName": "gamifant"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 304686,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gammagrafía con galio",
+            "firstLetter": "g",
+            "prettyUrlName": "gammagrafia-con-galio",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/731690.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento para detectar áreas del cuerpo en las que las células se multiplican rápido. Se utiliza para localizar células cancerosas o áreas de inflamación. Se inyecta una cantidad muy pequeña de galio radiactivo en una vena y el galio  recorre el torrente sanguíneo. Las células que se multiplican rápido en los huesos, los tejidos y los órganos absorben el galio que se detecta con un escáner.",
+                "text": "Procedimiento para detectar áreas del cuerpo en las que las células se multiplican rápido. Se utiliza para localizar células cancerosas o áreas de inflamación. Se inyecta una cantidad muy pequeña de galio radiactivo en una vena y el galio  recorre el torrente sanguíneo. Las células que se multiplican rápido en los huesos, los tejidos y los órganos absorben el galio que se detecta con un escáner."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "gallium scan",
+                    "prettyUrlName": "gallium-scan"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 736799,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gammagrafía con iobenguano",
+            "firstLetter": "g",
+            "prettyUrlName": "gammagrafia-con-iobenguano",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/742995.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento que se usa para encontrar tumores neuroendocrinos, como los neuroblastomas y los feocromocitomas. Se inyecta en una vena una pequeña cantidad de una sustancia radiactiva que se llama iobenguano y esta circula por el torrente sanguíneo. Los tumores neuroendocrinos absorben el iobenguano y se detectan con un escáner. También se llama gammagrafía con metayodobencilguanidina y gammagrafía con MIBG.",
+                "text": "Procedimiento que se usa para encontrar tumores neuroendocrinos, como los neuroblastomas y los feocromocitomas. Se inyecta en una vena una pequeña cantidad de una sustancia radiactiva que se llama iobenguano y esta circula por el torrente sanguíneo. Los tumores neuroendocrinos absorben el iobenguano y se detectan con un escáner. También se llama gammagrafía con metayodobencilguanidina y gammagrafía con MIBG."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "iobenguane scan",
+                    "prettyUrlName": "iobenguane-scan"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 736800,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gammagrafía con metayodobencilguanidina",
+            "firstLetter": "g",
+            "prettyUrlName": "gammagrafia-con-metayodobencilguanidina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/742996.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento que se usa para encontrar tumores neuroendocrinos, como los neuroblastomas y los feocromocitomas. Se inyecta en una vena una pequeña cantidad de una sustancia radiactiva que se llama metayodobencilguanidina y esta circula por el torrente sanguíneo. Los tumores neuroendocrinos absorben la metayodobencilguanidina y se detectan con un escáner. También se llama gammagrafía con iobenguano y gammagrafía con MIBG.",
+                "text": "Procedimiento que se usa para encontrar tumores neuroendocrinos, como los neuroblastomas y los feocromocitomas. Se inyecta en una vena una pequeña cantidad de una sustancia radiactiva que se llama metayodobencilguanidina y esta circula por el torrente sanguíneo. Los tumores neuroendocrinos absorben la metayodobencilguanidina y se detectan con un escáner. También se llama gammagrafía con iobenguano y gammagrafía con MIBG."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "metaiodobenzylguanidine scan",
+                    "prettyUrlName": "metaiodobenzylguanidine-scan"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 736798,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gammagrafía con MIBG",
+            "firstLetter": "g",
+            "prettyUrlName": "gammagrafia-con-mibg",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/742993.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento que se usa para encontrar tumores neuroendocrinos, como los neuroblastomas y los feocromocitomas. Se inyecta en una vena una pequeña cantidad de una sustancia radiactiva que se llama MIBG y esta circula por el torrente sanguíneo. Los tumores neuroendocrinos absorben la MIBG y se detectan con un escáner. También se llama gammagrafía con iobenguano y gammagrafía con metayodobencilguanidina.",
+                "text": "Procedimiento que se usa para encontrar tumores neuroendocrinos, como los neuroblastomas y los feocromocitomas. Se inyecta en una vena una pequeña cantidad de una sustancia radiactiva que se llama MIBG y esta circula por el torrente sanguíneo. Los tumores neuroendocrinos absorben la MIBG y se detectan con un escáner. También se llama gammagrafía con iobenguano y gammagrafía con metayodobencilguanidina."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "MIBG scan",
+                    "prettyUrlName": "mibg-scan"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 390304,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gammagrafía con octreotida",
+            "firstLetter": "g",
+            "prettyUrlName": "gammagrafia-con-octreotida",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/731477.mp3"
+            },
+            "definition": {
+                "html": "Tipo de exploración con radionúclido que se usa para encontrar tumores carcinoides y de otros tipos. La octreotida radiactiva, un medicamento similar a la somatostatina, se inyecta en una vena y esta se desplaza por el torrente sanguíneo.  La octreotida radiactiva se adhiere a las células tumorales que tienen receptores para la somatostatina. Un dispositivo que mide la radiación detecta la octreotida radiactiva y crea imágenes que muestran el lugar del cuerpo donde están las células tumorales. También se llama centellografía de receptores de somatostatina y CRS.",
+                "text": "Tipo de exploración con radionúclido que se usa para encontrar tumores carcinoides y de otros tipos. La octreotida radiactiva, un medicamento similar a la somatostatina, se inyecta en una vena y esta se desplaza por el torrente sanguíneo.  La octreotida radiactiva se adhiere a las células tumorales que tienen receptores para la somatostatina. Un dispositivo que mide la radiación detecta la octreotida radiactiva y crea imágenes que muestran el lugar del cuerpo donde están las células tumorales. También se llama centellografía de receptores de somatostatina y CRS."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "octreotide scan",
+                    "prettyUrlName": "octreotide-scan"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46552,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gammagrafía con radionúclido",
+            "firstLetter": "g",
+            "prettyUrlName": "gammagrafia-con-radionuclido",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/708937.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento para obtener imágenes de las estructuras internas del cuerpo, incluso de las áreas donde hay células cancerosas. La gammagrafía con radionúclido se usa para diagnosticar, estadificar y vigilar una enfermedad. Se inyecta en una vena o se traga una cantidad pequeña de una sustancia química radiactiva (radionúclido). Los distintos radionúclidos se desplazan por el torrente sanguíneo hasta diferentes órganos. Una máquina con una cámara especial gira alrededor de la persona acostada sobre una camilla y detecta el tipo de radiación que emiten los radionúclidos. Una computadora crea una imagen de las áreas donde se acumulan los radionúclidos; esto indica que puede haber células cancerosas. También se llama centellografía.",
+                "text": "Procedimiento para obtener imágenes de las estructuras internas del cuerpo, incluso de las áreas donde hay células cancerosas. La gammagrafía con radionúclido se usa para diagnosticar, estadificar y vigilar una enfermedad. Se inyecta en una vena o se traga una cantidad pequeña de una sustancia química radiactiva (radionúclido). Los distintos radionúclidos se desplazan por el torrente sanguíneo hasta diferentes órganos. Una máquina con una cámara especial gira alrededor de la persona acostada sobre una camilla y detecta el tipo de radiación que emiten los radionúclidos. Una computadora crea una imagen de las áreas donde se acumulan los radionúclidos; esto indica que puede haber células cancerosas. También se llama centellografía."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "radionuclide scanning",
+                    "prettyUrlName": "radionuclide-scanning"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 514683,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gammagrafía con sestamibi",
+            "firstLetter": "g",
+            "prettyUrlName": "gammagrafia-con-sestamibi",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/718225.mp3"
+            },
+            "definition": {
+                "html": "Prueba de imaginología que se usa para encontrar glándulas paratiroideas hiperactivas (cuatro órganos del tamaño de un guisante que se encuentran en la tiroides) y células de cáncer de mama, así como para diagnosticar enfermedades cardíacas. El paciente recibe una inyección de una pequeña cantidad de sustancia radiactiva llamada tecnecio, que se une a otra sustancia llamada sestamibi. Esta sustancia se acumula en las glándulas hiperactivas, las células cancerosas, el músculo cardíaco y otros tejidos; luego, se toma una imagen con una cámara gamma (una cámara especial que detecta la radiactividad).",
+                "text": "Prueba de imaginología que se usa para encontrar glándulas paratiroideas hiperactivas (cuatro órganos del tamaño de un guisante que se encuentran en la tiroides) y células de cáncer de mama, así como para diagnosticar enfermedades cardíacas. El paciente recibe una inyección de una pequeña cantidad de sustancia radiactiva llamada tecnecio, que se une a otra sustancia llamada sestamibi. Esta sustancia se acumula en las glándulas hiperactivas, las células cancerosas, el músculo cardíaco y otros tejidos; luego, se toma una imagen con una cámara gamma (una cámara especial que detecta la radiactividad)."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "sestamibi scan",
+                    "prettyUrlName": "sestamibi-scan"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46313,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gammagrafía de hígado y bazo",
+            "firstLetter": "g",
+            "prettyUrlName": "gammagrafia-de-higado-y-bazo",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/708026.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento que se usa para revisar áreas anormales del hígado o el bazo. Se inyecta una cantidad muy pequeña de una sustancia radiactiva en la vena y la sustancia recorre el torrente sanguíneo hasta el hígado y el bazo.  Esta se detecta con un escáner conectado a una computadora que forma una imagen de las áreas del interior del cuerpo donde se acumula la sustancia radiactiva. Se puede hacer una gammagrafía  de hígado y bazo para ayudar a encontrar cáncer en estos órganos,  cirrosis, hepatitis y otros problemas en el hígado o el bazo.",
+                "text": "Procedimiento que se usa para revisar áreas anormales del hígado o el bazo. Se inyecta una cantidad muy pequeña de una sustancia radiactiva en la vena y la sustancia recorre el torrente sanguíneo hasta el hígado y el bazo.  Esta se detecta con un escáner conectado a una computadora que forma una imagen de las áreas del interior del cuerpo donde se acumula la sustancia radiactiva. Se puede hacer una gammagrafía  de hígado y bazo para ayudar a encontrar cáncer en estos órganos,  cirrosis, hepatitis y otros problemas en el hígado o el bazo."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "liver-spleen scan",
+                    "prettyUrlName": "liver-spleen-scan"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 386227,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gammagrafía de mama con sestamibi",
+            "firstLetter": "g",
+            "prettyUrlName": "gammagrafia-de-mama-con-sestamibi",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/713221.mp3"
+            },
+            "definition": {
+                "html": "Tipo de prueba de imaginología de la mama que se usa para detectar células cancerosas en las mamas de algunas mujeres que han tenido mamografías anormales del tejido de la mama o cuyo tejido de la mama es denso. No se usa para la detección ni en lugar de un mamograma. En esta prueba, una mujer recibe una inyección con una pequeña cantidad de una sustancia radiactiva llamada tecnecio 99, que es absorbida por las células cancerosas; a continuación, se usa una cámara de rayos gamma para tomar imágenes de las mamas. También se llama centellografía de la mama y prueba de Miraluma.",
+                "text": "Tipo de prueba de imaginología de la mama que se usa para detectar células cancerosas en las mamas de algunas mujeres que han tenido mamografías anormales del tejido de la mama o cuyo tejido de la mama es denso. No se usa para la detección ni en lugar de un mamograma. En esta prueba, una mujer recibe una inyección con una pequeña cantidad de una sustancia radiactiva llamada tecnecio 99, que es absorbida por las células cancerosas; a continuación, se usa una cámara de rayos gamma para tomar imágenes de las mamas. También se llama centellografía de la mama y prueba de Miraluma."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "sestamibi breast imaging",
+                    "prettyUrlName": "sestamibi-breast-imaging"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46499,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "gammagrafía ósea",
+            "firstLetter": "g",
+            "prettyUrlName": "gammagrafia-osea",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/708840.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento para identificar áreas anormales o lesiones en los huesos. Se inyecta en una vena una cantidad muy pequeña de material radiactivo que fluye por la sangre. El material radiactivo se acumula en los huesos y se detecta con un escáner (una cámara especial que toma imágenes del interior del cuerpo).  Una gammagrafía ósea se usa para diagnosticar tumores óseos o cáncer que se diseminó al hueso. También se usa para diagnosticar fracturas, infecciones  óseas u otros problemas en los huesos.  También se llama centellografía ósea.",
+                "text": "Procedimiento para identificar áreas anormales o lesiones en los huesos. Se inyecta en una vena una cantidad muy pequeña de material radiactivo que fluye por la sangre. El material radiactivo se acumula en los huesos y se detecta con un escáner (una cámara especial que toma imágenes del interior del cuerpo).  Una gammagrafía ósea se usa para diagnosticar tumores óseos o cáncer que se diseminó al hueso. También se usa para diagnosticar fracturas, infecciones  óseas u otros problemas en los huesos.  También se llama centellografía ósea."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "bone scan",
+                    "prettyUrlName": "bone-scan"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}

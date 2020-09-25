@@ -14,7 +14,7 @@
             "prettyUrlName": "lung",
             "pronunciation": {
                 "key": "(lung)",
-                "audio": "https://nci-media.cancer.gov/pdq/media/audio/730986.mp3"
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/730986.mp3"
             },
             "definition": {
                 "html": "One of a pair of organs in the chest that supplies the body with oxygen, and removes carbon dioxide from the body.",

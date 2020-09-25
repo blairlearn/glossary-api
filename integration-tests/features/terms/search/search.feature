@@ -27,7 +27,7 @@ Feature: Search with expected success.
             | Cancer.gov | Patient             | es       | úvula                   | exact     | search-exact-cgov-patient-es-with-spanish-char.json  |
             | Cancer.gov | Patient             | en       | μL                      | exact     | search-exact-cgov-patient-en-greek-char.json         |
             | Cancer.gov | Patient             | en       | [18F]SPA-RQ             | exact     | search-exact-cgov-patient-en-square-bracket.json     |
-            | Genetics   | HealthProfessional  | en       | z-score                 | exact     | search-exact-gen-patient-en-with-dash.json           |
+            | Genetics   | HealthProfessional  | en       | z-score                 | exact     | search-exact-gen-healthprof-en-with-dash.json        |
             # Search for exact match when none should exist.
             | Cancer.gov | Patient             | en       | chicken                 | exact     | search-exact-mismatch-emptry-result.json        |
             | Cancer.gov | Patient             | es       | biopsia de pul          | exact     | search-exact-mismatch-emptry-result.json        |

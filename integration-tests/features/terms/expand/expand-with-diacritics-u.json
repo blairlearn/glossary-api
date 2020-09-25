@@ -1,0 +1,1317 @@
+{
+    "meta": {
+        "totalResults": 51,
+        "from": 0
+    },
+    "results": [
+        {
+            "termId": 347386,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ubiquinona",
+            "firstLetter": "u",
+            "prettyUrlName": "ubiquinona",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/711697.mp3"
+            },
+            "definition": {
+                "html": "Nutriente que el cuerpo necesita en pequeñas cantidades para funcionar y mantenerse sano. La ubiquinona ayuda a las mitocondrias (estructuras pequeñas de la célula) a producir energía. Es un antioxidante que ayuda a prevenir el daño que los radicales libres (sustancias químicas altamente reactivas) causan a las células. La ubiquinona es soluble en grasas (se puede disolver en grasas y aceites) y se encuentra en los peces grasos, la carne vacuna, la soya, los maníes y la espinaca.   Está en estudio para la prevención y el tratamiento de algunos tipos de cáncer y enfermedades del corazón,  y para aliviar los efectos secundarios que causan algunos tratamientos de cáncer. También se llama coenzima Q10, CoQ10, Q10 y vitamina Q10.",
+                "text": "Nutriente que el cuerpo necesita en pequeñas cantidades para funcionar y mantenerse sano. La ubiquinona ayuda a las mitocondrias (estructuras pequeñas de la célula) a producir energía. Es un antioxidante que ayuda a prevenir el daño que los radicales libres (sustancias químicas altamente reactivas) causan a las células. La ubiquinona es soluble en grasas (se puede disolver en grasas y aceites) y se encuentra en los peces grasos, la carne vacuna, la soya, los maníes y la espinaca.   Está en estudio para la prevención y el tratamiento de algunos tipos de cáncer y enfermedades del corazón,  y para aliviar los efectos secundarios que causan algunos tratamientos de cáncer. También se llama coenzima Q10, CoQ10, Q10 y vitamina Q10."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ubiquinone",
+                    "prettyUrlName": "ubiquinone"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45447,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "UCN-01",
+            "firstLetter": "u",
+            "prettyUrlName": "ucn-01",
+            "pronunciation": null,
+            "definition": {
+                "html": "Medicamento contra el cáncer que es un tipo de análogo de la estaurosporina.",
+                "text": "Medicamento contra el cáncer que es un tipo de análogo de la estaurosporina."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "UCN-01",
+                    "prettyUrlName": "ucn-01"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 549431,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "UFT",
+            "firstLetter": "u",
+            "prettyUrlName": "uft",
+            "pronunciation": null,
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento de algunos tipos de cáncer. Es una combinación de tegafur y uracilo. Las células cancerosas absorben el tegafur y este se descompone en FU-5, una sustancia que destruye las células tumorales. El uracilo hace que mayores cantidades de FU-5 permanezcan en el interior de las células y las destruya. UFT es un tipo de antimetabolito. También se llama Ftorafur y tegafur-uracilo.",
+                "text": "Sustancia en estudio para el tratamiento de algunos tipos de cáncer. Es una combinación de tegafur y uracilo. Las células cancerosas absorben el tegafur y este se descompone en FU-5, una sustancia que destruye las células tumorales. El uracilo hace que mayores cantidades de FU-5 permanezcan en el interior de las células y las destruya. UFT es un tipo de antimetabolito. También se llama Ftorafur y tegafur-uracilo."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "UFT",
+                    "prettyUrlName": "uft"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 269429,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "UGT1A1",
+            "firstLetter": "u",
+            "prettyUrlName": "ugt1a1",
+            "pronunciation": null,
+            "definition": {
+                "html": "Sustancia en estudio para el tratamiento del cáncer. Es una enzima producida por el hígado y el intestino.",
+                "text": "Sustancia en estudio para el tratamiento del cáncer. Es una enzima producida por el hígado y el intestino."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "UGT1A1",
+                    "prettyUrlName": "ugt1a1"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44764,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "UI",
+            "firstLetter": "u",
+            "prettyUrlName": "ui",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/734607.mp3"
+            },
+            "definition": {
+                "html": "Unidad usada para medir la actividad de muchas vitaminas, hormonas, enzimas y medicamentos. Una UI es la cantidad de una sustancia que tiene cierto efecto biológico. Para cada sustancia, hay un acuerdo internacional sobre el efecto biológico que se espera de 1 UI. También se llama Unidad Internacional.",
+                "text": "Unidad usada para medir la actividad de muchas vitaminas, hormonas, enzimas y medicamentos. Una UI es la cantidad de una sustancia que tiene cierto efecto biológico. Para cada sustancia, hay un acuerdo internacional sobre el efecto biológico que se espera de 1 UI. También se llama Unidad Internacional."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "IU",
+                    "prettyUrlName": "iu"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 390317,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "úlcera",
+            "firstLetter": "u",
+            "prettyUrlName": "ulcera",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/713209.mp3"
+            },
+            "definition": {
+                "html": "Rotura de la piel, el recubrimiento de un órgano o la superficie de un tejido. Una úlcera se forma cuando las células superficiales se inflaman, mueren y se desechan. Las úlceras pueden vincularse con el cáncer y otras enfermedades.",
+                "text": "Rotura de la piel, el recubrimiento de un órgano o la superficie de un tejido. Una úlcera se forma cuando las células superficiales se inflaman, mueren y se desechan. Las úlceras pueden vincularse con el cáncer y otras enfermedades."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ulcer",
+                    "prettyUrlName": "ulcer"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 797663,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "úlcera de decúbito",
+            "firstLetter": "u",
+            "prettyUrlName": "ulcera-de-decubito",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/799598.mp3"
+            },
+            "definition": {
+                "html": "Lesión de un área de la piel causada por  presión constante durante mucho tiempo. Esta presión disminuye el flujo de sangre al área afectada, lo que produce daño y destrucción del tejido. Las  úlceras de decúbito a menudo se forman en la piel que cubre áreas  donde los huesos están cerca de la piel, como la espalda, la región del cóccix, las caderas, las nalgas, los codos, los talones y los tobillos. Los pacientes que no se pueden levantar de la cama, que no pueden cambiar de posición o que permanecen en una silla de ruedas tienen un riesgo alto de  úlceras de decúbito. Los signos y síntomas incluyen cambios en el color de la piel, hinchazón, calor, sensibilidad y dolor en el área afectada. Cuando no se tratan, la piel se agrieta, se ampolla o  se rompe y se forma una llaga o úlcera  que a veces produce un líquido parecido a pus. Las úlceras de decúbito a menudo sanan muy lento y si no se tratan es posible que dañen los tejidos profundos debajo de la piel, como la grasa, el músculo y  el hueso. También se llama escara de decúbito, escara por presión y úlcera por presión.",
+                "text": "Lesión de un área de la piel causada por  presión constante durante mucho tiempo. Esta presión disminuye el flujo de sangre al área afectada, lo que produce daño y destrucción del tejido. Las  úlceras de decúbito a menudo se forman en la piel que cubre áreas  donde los huesos están cerca de la piel, como la espalda, la región del cóccix, las caderas, las nalgas, los codos, los talones y los tobillos. Los pacientes que no se pueden levantar de la cama, que no pueden cambiar de posición o que permanecen en una silla de ruedas tienen un riesgo alto de  úlceras de decúbito. Los signos y síntomas incluyen cambios en el color de la piel, hinchazón, calor, sensibilidad y dolor en el área afectada. Cuando no se tratan, la piel se agrieta, se ampolla o  se rompe y se forma una llaga o úlcera  que a veces produce un líquido parecido a pus. Las úlceras de decúbito a menudo sanan muy lento y si no se tratan es posible que dañen los tejidos profundos debajo de la piel, como la grasa, el músculo y  el hueso. También se llama escara de decúbito, escara por presión y úlcera por presión."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "decubitus ulcer",
+                    "prettyUrlName": "decubitus-ulcer"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 650040,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "úlcera péptica",
+            "firstLetter": "u",
+            "prettyUrlName": "ulcera-peptica",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/725894.mp3"
+            },
+            "definition": {
+                "html": "Rotura del revestimiento de la parte inferior del esófago, el estómago o la parte superior del intestino delgado.   Las úlceras pépticas se forman cuando las células de la superficie del revestimiento se inflaman y mueren.   Por lo general, la causa de estas son las bacterias Helicobacter pylori y ciertos medicamentos, como la aspirina y otros medicamentos antiinflamatorios no esteroideos (MAINE).   Las úlceras pépticas pueden estar relacionadas con el cáncer y otras enfermedades. ",
+                "text": "Rotura del revestimiento de la parte inferior del esófago, el estómago o la parte superior del intestino delgado.   Las úlceras pépticas se forman cuando las células de la superficie del revestimiento se inflaman y mueren.   Por lo general, la causa de estas son las bacterias Helicobacter pylori y ciertos medicamentos, como la aspirina y otros medicamentos antiinflamatorios no esteroideos (MAINE).   Las úlceras pépticas pueden estar relacionadas con el cáncer y otras enfermedades. "
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "peptic ulcer",
+                    "prettyUrlName": "peptic-ulcer"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 797661,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "úlcera por presión",
+            "firstLetter": "u",
+            "prettyUrlName": "ulcera-por-presion",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/799595.mp3"
+            },
+            "definition": {
+                "html": "Lesión de un área de la piel causada por  presión constante durante mucho tiempo. Esta presión disminuye el flujo de sangre al área afectada, lo que produce daño y destrucción del tejido. Las  úlceras por presión a menudo se forman en la piel que cubre áreas  donde los huesos están cerca de la piel, como la espalda, la región del cóccix, las caderas, las nalgas, los codos, los talones y los tobillos. Los pacientes que no se pueden levantar de la cama, que no pueden cambiar de posición o que permanecen en una silla de ruedas tienen un riesgo alto de  úlceras por presión. Los signos y síntomas incluyen cambios en el color de la piel, hinchazón, calor, sensibilidad y dolor en el área afectada. Cuando no se tratan, la piel se agrieta, se ampolla o  se rompe y se forma una llaga o úlcera  que a veces produce un líquido parecido a pus. Las úlceras por presión a menudo sanan muy lento y si no se tratan es posible que dañen los tejidos profundos debajo de la piel, como la grasa, el músculo y  el hueso. También se llama escara de decúbito, escara por presión, úlcera de decúbito y úlcera de presión.",
+                "text": "Lesión de un área de la piel causada por  presión constante durante mucho tiempo. Esta presión disminuye el flujo de sangre al área afectada, lo que produce daño y destrucción del tejido. Las  úlceras por presión a menudo se forman en la piel que cubre áreas  donde los huesos están cerca de la piel, como la espalda, la región del cóccix, las caderas, las nalgas, los codos, los talones y los tobillos. Los pacientes que no se pueden levantar de la cama, que no pueden cambiar de posición o que permanecen en una silla de ruedas tienen un riesgo alto de  úlceras por presión. Los signos y síntomas incluyen cambios en el color de la piel, hinchazón, calor, sensibilidad y dolor en el área afectada. Cuando no se tratan, la piel se agrieta, se ampolla o  se rompe y se forma una llaga o úlcera  que a veces produce un líquido parecido a pus. Las úlceras por presión a menudo sanan muy lento y si no se tratan es posible que dañen los tejidos profundos debajo de la piel, como la grasa, el músculo y  el hueso. También se llama escara de decúbito, escara por presión, úlcera de decúbito y úlcera de presión."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "pressure ulcer",
+                    "prettyUrlName": "pressure-ulcer"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 269469,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ulceración",
+            "firstLetter": "u",
+            "prettyUrlName": "ulceracion",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/710194.mp3"
+            },
+            "definition": {
+                "html": "Formación de una lesión en la piel o en la superficie de un órgano. Una úlcera se forma cuando las células superficiales mueren y se desintegran. Las úlceras pueden estar relacionadas con el cáncer y otras enfermedades.",
+                "text": "Formación de una lesión en la piel o en la superficie de un órgano. Una úlcera se forma cuando las células superficiales mueren y se desintegran. Las úlceras pueden estar relacionadas con el cáncer y otras enfermedades."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ulceration",
+                    "prettyUrlName": "ulceration"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 425594,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "Ulmus fulva",
+            "firstLetter": "u",
+            "prettyUrlName": "ulmus-fulva",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/732971.mp3"
+            },
+            "definition": {
+                "html": "La corteza interna de esta planta se ha usado en algunas culturas para tratar ciertos problemas médicos. Podría tener efectos antioxidantes. También se llama olmo de la India, olmo dulce, olmo gris, olmo resbaladizo, olmo rojo y Ulmus rubra.",
+                "text": "La corteza interna de esta planta se ha usado en algunas culturas para tratar ciertos problemas médicos. Podría tener efectos antioxidantes. También se llama olmo de la India, olmo dulce, olmo gris, olmo resbaladizo, olmo rojo y Ulmus rubra."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "Ulmus fulva",
+                    "prettyUrlName": "ulmus-fulva"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 425595,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "Ulmus rubra",
+            "firstLetter": "u",
+            "prettyUrlName": "ulmus-rubra",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/732973.mp3"
+            },
+            "definition": {
+                "html": "La corteza interna de esta planta se ha usado en algunas culturas para tratar ciertos problemas médicos. Podría tener efectos antioxidantes. También se llama olmo de la India, olmo dulce, olmo gris, olmo resbaladizo, olmo rojo y Ulmus fulva.",
+                "text": "La corteza interna de esta planta se ha usado en algunas culturas para tratar ciertos problemas médicos. Podría tener efectos antioxidantes. También se llama olmo de la India, olmo dulce, olmo gris, olmo resbaladizo, olmo rojo y Ulmus fulva."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "Ulmus rubra",
+                    "prettyUrlName": "ulmus-rubra"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 796473,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "Ultomiris",
+            "firstLetter": "u",
+            "prettyUrlName": "ultomiris",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/797302.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para el tratamiento de los adultos con hemoglobinuria paroxística nocturna (trastorno raro de los glóbulos rojos) y para tratar a adultos y niños de 1 año   o más con síndrome hemolítico urémico atípico (trastorno muy raro por el que se forman coágulos de sangre diminutos en los vasos sanguíneos pequeños). También está en estudio para el tratamiento de otras afecciones. Ultomiris se une a una proteína del sistema inmunitario llamada C5, lo que impide la destrucción de los glóbulos rojos y evita que se formen coágulos. Ultomiris es un tipo de anticuerpo monoclonal. También se llama ravulizumab.",
+                "text": "Medicamento que se usa para el tratamiento de los adultos con hemoglobinuria paroxística nocturna (trastorno raro de los glóbulos rojos) y para tratar a adultos y niños de 1 año   o más con síndrome hemolítico urémico atípico (trastorno muy raro por el que se forman coágulos de sangre diminutos en los vasos sanguíneos pequeños). También está en estudio para el tratamiento de otras afecciones. Ultomiris se une a una proteína del sistema inmunitario llamada C5, lo que impide la destrucción de los glóbulos rojos y evita que se formen coágulos. Ultomiris es un tipo de anticuerpo monoclonal. También se llama ravulizumab."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "Ultomiris",
+                    "prettyUrlName": "ultomiris"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44458,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ultraecografía",
+            "firstLetter": "u",
+            "prettyUrlName": "ultraecografia",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/801301.mp3"
+            },
+            "definition": {
+                "html": "Imagen en una computadora de áreas internas del cuerpo creadas por ondas sonoras de alta energía. Las ondas sonoras rebotan en los tejidos u órganos internos y producen ecos. Los ecos forman una imagen de los tejidos del cuerpo en la pantalla de una computadora. Una ultraecografía se puede usar para ayudar a diagnosticar una enfermedad, como el cáncer. También se puede usar durante un embarazo para revisar el feto (bebé que no ha nacido) y durante procedimientos médicos, como biopsias. También se llama ecograma.",
+                "text": "Imagen en una computadora de áreas internas del cuerpo creadas por ondas sonoras de alta energía. Las ondas sonoras rebotan en los tejidos u órganos internos y producen ecos. Los ecos forman una imagen de los tejidos del cuerpo en la pantalla de una computadora. Una ultraecografía se puede usar para ayudar a diagnosticar una enfermedad, como el cáncer. También se puede usar durante un embarazo para revisar el feto (bebé que no ha nacido) y durante procedimientos médicos, como biopsias. También se llama ecograma."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ultrasonogram",
+                    "prettyUrlName": "ultrasonogram"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 641916,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "Ultram",
+            "firstLetter": "u",
+            "prettyUrlName": "ultram",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/722859.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para tratar el dolor que va de moderado a grave en los adultos. Se une con los receptores de opioides del sistema nervioso central. Ultram es un tipo de analgésico y un tipo de opioide. También se llama clorhidrato de tramadol.",
+                "text": "Medicamento que se usa para tratar el dolor que va de moderado a grave en los adultos. Se une con los receptores de opioides del sistema nervioso central. Ultram es un tipo de analgésico y un tipo de opioide. También se llama clorhidrato de tramadol."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "Ultram",
+                    "prettyUrlName": "ultram"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45557,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ultrasonografía",
+            "firstLetter": "u",
+            "prettyUrlName": "ultrasonografia",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/801274.mp3"
+            },
+            "definition": {
+                "html": "Procedimiento en el que se usan ondas de sonido de alta energía para observar los tejidos y órganos del cuerpo. Las ondas de sonido crean ecos que forman imágenes de los tejidos y órganos en una pantalla de computadora (ecograma). La ultrasonografía se puede usar para ayudar a diagnosticar enfermedades, como el cáncer. También se puede usar durante el embarazo para revisar el feto (bebé que no ha nacido) y durante procedimientos médicos, como biopsias. También se llama ecografía.",
+                "text": "Procedimiento en el que se usan ondas de sonido de alta energía para observar los tejidos y órganos del cuerpo. Las ondas de sonido crean ecos que forman imágenes de los tejidos y órganos en una pantalla de computadora (ecograma). La ultrasonografía se puede usar para ayudar a diagnosticar enfermedades, como el cáncer. También se puede usar durante el embarazo para revisar el feto (bebé que no ha nacido) y durante procedimientos médicos, como biopsias. También se llama ecografía."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ultrasonography",
+                    "prettyUrlName": "ultrasonography"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44701,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "umbral de dolor",
+            "firstLetter": "u",
+            "prettyUrlName": "umbral-de-dolor",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/728093.mp3"
+            },
+            "definition": {
+                "html": "Punto en el que una persona se vuelve consciente del dolor.",
+                "text": "Punto en el que una persona se vuelve consciente del dolor."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "pain threshold",
+                    "prettyUrlName": "pain-threshold"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 463072,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ungüento",
+            "firstLetter": "u",
+            "prettyUrlName": "unguento",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/716714.mp3"
+            },
+            "definition": {
+                "html": "Sustancia que se usa sobre la piel para calmar o curar las heridas, quemaduras, erupciones cutáneas o sarpullidos, raspados u otros problemas de la piel. También se llama pomada.",
+                "text": "Sustancia que se usa sobre la piel para calmar o curar las heridas, quemaduras, erupciones cutáneas o sarpullidos, raspados u otros problemas de la piel. También se llama pomada."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "unguent",
+                    "prettyUrlName": "unguent"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 454523,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "Unidad Internacional",
+            "firstLetter": "u",
+            "prettyUrlName": "unidad-internacional",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/733227.mp3"
+            },
+            "definition": {
+                "html": "Unidad que se usa para medir la actividad de muchas vitaminas, hormonas, enzimas y medicamentos. Una Unidad Internacional es la cantidad de una sustancia que tiene cierto efecto biológico. Para cada sustancia, hay un acuerdo internacional sobre el efecto biológico que se espera de 1 Unidad Internacional. También se llama UI.",
+                "text": "Unidad que se usa para medir la actividad de muchas vitaminas, hormonas, enzimas y medicamentos. Una Unidad Internacional es la cantidad de una sustancia que tiene cierto efecto biológico. Para cada sustancia, hay un acuerdo internacional sobre el efecto biológico que se espera de 1 Unidad Internacional. También se llama UI."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "International Unit",
+                    "prettyUrlName": "international-unit"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44989,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "unilateral",
+            "firstLetter": "u",
+            "prettyUrlName": "unilateral",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/706240.mp3"
+            },
+            "definition": {
+                "html": "Relacionado con un lado del cuerpo.",
+                "text": "Relacionado con un lado del cuerpo."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "unilateral",
+                    "prettyUrlName": "unilateral"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 630776,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "unión entre la dermis papilar y reticular",
+            "firstLetter": "u",
+            "prettyUrlName": "union-entre-la-dermis-papilar-y-reticular",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/723259.mp3"
+            },
+            "definition": {
+                "html": "Capa de la piel que está entre la dermis papilar (capa superior delgada de la dermis) y la dermis reticular (capa inferior gruesa en la base de la dermis). La dermis es una capa de la piel debajo de la epidermis (capa  externa de la piel).",
+                "text": "Capa de la piel que está entre la dermis papilar (capa superior delgada de la dermis) y la dermis reticular (capa inferior gruesa en la base de la dermis). La dermis es una capa de la piel debajo de la epidermis (capa  externa de la piel)."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "papillary-reticular dermal interface",
+                    "prettyUrlName": "papillary-reticular-dermal-interface"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 302458,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "unión gastroesofágica",
+            "firstLetter": "u",
+            "prettyUrlName": "union-gastroesofagica",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/731632.mp3"
+            },
+            "definition": {
+                "html": "Lugar donde el esófago se conecta con el estómago.",
+                "text": "Lugar donde el esófago se conecta con el estómago."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "gastroesophageal junction",
+                    "prettyUrlName": "gastroesophageal-junction"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 753859,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "United States Preventive Services Task Force",
+            "firstLetter": "u",
+            "prettyUrlName": "united-states-preventive-services-task-force",
+            "pronunciation": null,
+            "definition": {
+                "html": "Grupo de voluntarios expertos en salud que revisan las investigaciones publicadas y dan recomendaciones sobre los métodos de prevención para el cuidado de la salud, como exámenes de detección, orientación, inmunizaciones y medicamentos. Antes de hacer una recomendación, United States Preventive Services Task Force analiza la fortaleza (calidad científica y precisión) de las pruebas encontradas en la investigación y los beneficios y perjuicios de cada método en revisión. Se hacen recomendaciones para ayudar a los proveedores de atención de la salud y los pacientes a decidir si un método específico es adecuado para las necesidades del paciente. Las recomendaciones pueden cambiar a medida en que se publican nuevos estudios de investigación. También se llama USPSTF.",
+                "text": "Grupo de voluntarios expertos en salud que revisan las investigaciones publicadas y dan recomendaciones sobre los métodos de prevención para el cuidado de la salud, como exámenes de detección, orientación, inmunizaciones y medicamentos. Antes de hacer una recomendación, United States Preventive Services Task Force analiza la fortaleza (calidad científica y precisión) de las pruebas encontradas en la investigación y los beneficios y perjuicios de cada método en revisión. Se hacen recomendaciones para ayudar a los proveedores de atención de la salud y los pacientes a decidir si un método específico es adecuado para las necesidades del paciente. Las recomendaciones pueden cambiar a medida en que se publican nuevos estudios de investigación. También se llama USPSTF."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "United States Preventive Services Task Force",
+                    "prettyUrlName": "united-states-preventive-services-task-force"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 770168,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "Unituxin",
+            "firstLetter": "u",
+            "prettyUrlName": "unituxin",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/771245.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa con el factor estimulante de la colonia de macrófagos de granulocitos (FEC MG), la aldesleucina (IL-2) y el ácido retinoico cis-13 para tratar a niños con neuroblastoma de riesgo alto. Se utiliza para pacientes cuya enfermedad mejoró con otros tratamientos contra el cáncer. El unituxin se  une a una sustancia llamada GD2, que se encuentra en algunos tipos de células cancerosas.  El unituxin bloquea la GD2 y ayuda al sistema inmunitario a destruir células cancerosas. Es un tipo de anticuerpo monoclonal. También se llama anticuerpo monoclonal Ch14.18, Ch14.18, dinutuximab y MOAB Ch14.18.",
+                "text": "Medicamento que se usa con el factor estimulante de la colonia de macrófagos de granulocitos (FEC MG), la aldesleucina (IL-2) y el ácido retinoico cis-13 para tratar a niños con neuroblastoma de riesgo alto. Se utiliza para pacientes cuya enfermedad mejoró con otros tratamientos contra el cáncer. El unituxin se  une a una sustancia llamada GD2, que se encuentra en algunos tipos de células cancerosas.  El unituxin bloquea la GD2 y ayuda al sistema inmunitario a destruir células cancerosas. Es un tipo de anticuerpo monoclonal. También se llama anticuerpo monoclonal Ch14.18, Ch14.18, dinutuximab y MOAB Ch14.18."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "Unituxin",
+                    "prettyUrlName": "unituxin"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 658873,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "uPA",
+            "firstLetter": "u",
+            "prettyUrlName": "upa",
+            "pronunciation": null,
+            "definition": {
+                "html": "Enzima elaborada por el riñón  y que se encuentra en la orina. Una forma de esta enzima se produce en el laboratorio y se usa para disolver coágulos de sangre o impedir que estos se formen. También se llama activador plasminógeno urocinasa, activador plasminógeno-u y uroquinasa.",
+                "text": "Enzima elaborada por el riñón  y que se encuentra en la orina. Una forma de esta enzima se produce en el laboratorio y se usa para disolver coágulos de sangre o impedir que estos se formen. También se llama activador plasminógeno urocinasa, activador plasminógeno-u y uroquinasa."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "uPA",
+                    "prettyUrlName": "upa"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45433,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "uracilo",
+            "firstLetter": "u",
+            "prettyUrlName": "uracilo",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/705459.mp3"
+            },
+            "definition": {
+                "html": "Compuesto químico que se usa para elaborar uno de los cuatro elementos fundamentales del ARN. Es un tipo de pirimidina.",
+                "text": "Compuesto químico que se usa para elaborar uno de los cuatro elementos fundamentales del ARN. Es un tipo de pirimidina."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "uracil",
+                    "prettyUrlName": "uracil"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44354,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "uraco",
+            "firstLetter": "u",
+            "prettyUrlName": "uraco",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704531.mp3"
+            },
+            "definition": {
+                "html": "Cordón fibroso que conecta la vejiga urinaria con el ombligo. El uraco se forma como tallo alantoico durante el desarrollo fetal y dura toda la vida. También se llama ligamento umbilical medio.",
+                "text": "Cordón fibroso que conecta la vejiga urinaria con el ombligo. El uraco se forma como tallo alantoico durante el desarrollo fetal y dura toda la vida. También se llama ligamento umbilical medio."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "urachus",
+                    "prettyUrlName": "urachus"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 658362,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "urato oxidasa recombinante",
+            "firstLetter": "u",
+            "prettyUrlName": "urato-oxidasa-recombinante",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/725917.mp3"
+            },
+            "definition": {
+                "html": "Medicamento que se usa para tratar concentraciones altas de ácido úrico en pacientes con leucemia, linfoma y otros tipos de cáncer que se encuentran bajo ciertos tratamientos. También está en estudio para el tratamiento de otras afecciones médicas.  El urato de oxidasa recombinante es un tipo de  enzima recombinante y un tipo de medicamento que disminuye el urato. También se llama Elitex y rasburicase.",
+                "text": "Medicamento que se usa para tratar concentraciones altas de ácido úrico en pacientes con leucemia, linfoma y otros tipos de cáncer que se encuentran bajo ciertos tratamientos. También está en estudio para el tratamiento de otras afecciones médicas.  El urato de oxidasa recombinante es un tipo de  enzima recombinante y un tipo de medicamento que disminuye el urato. También se llama Elitex y rasburicase."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "recombinant urate oxidase",
+                    "prettyUrlName": "recombinant-urate-oxidase"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 471785,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "urea",
+            "firstLetter": "u",
+            "prettyUrlName": "urea",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/716732.mp3"
+            },
+            "definition": {
+                "html": "Sustancia que se forma por la descomposición de proteína en el hígado. Los riñones filtran la urea de la sangre hacia la orina. Asimismo, la urea se puede producir en el laboratorio. Está en estudio una forma tópica de urea para el tratamiento del síndrome de mano-pie (dolor, hinchazón, adormecimiento, cosquilleo o enrojecimiento de las manos o los pies que se puede presentar como efecto secundario de ciertos medicamentos anticancerosos). También se llama carbamida.",
+                "text": "Sustancia que se forma por la descomposición de proteína en el hígado. Los riñones filtran la urea de la sangre hacia la orina. Asimismo, la urea se puede producir en el laboratorio. Está en estudio una forma tópica de urea para el tratamiento del síndrome de mano-pie (dolor, hinchazón, adormecimiento, cosquilleo o enrojecimiento de las manos o los pies que se puede presentar como efecto secundario de ciertos medicamentos anticancerosos). También se llama carbamida."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "urea",
+                    "prettyUrlName": "urea"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46638,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "uréter",
+            "firstLetter": "u",
+            "prettyUrlName": "ureter",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/709845.mp3"
+            },
+            "definition": {
+                "html": "Tubo que transporta la orina desde el riñón hasta la vejiga.",
+                "text": "Tubo que transporta la orina desde el riñón hasta la vejiga."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ureter",
+                    "prettyUrlName": "ureter"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 354468,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ureteronefrectomía",
+            "firstLetter": "u",
+            "prettyUrlName": "ureteronefrectomia",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/711283.mp3"
+            },
+            "definition": {
+                "html": "Cirugía para extirpar un riñón y su uréter. También se llama nefroureterectomía.",
+                "text": "Cirugía para extirpar un riñón y su uréter. También se llama nefroureterectomía."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ureteronephrectomy",
+                    "prettyUrlName": "ureteronephrectomy"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 354470,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ureteroscopia",
+            "firstLetter": "u",
+            "prettyUrlName": "ureteroscopia",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/711287.mp3"
+            },
+            "definition": {
+                "html": "Examen del interior del riñón y el uréter por medio de un ureteroscopio. Un ureteroscopio es un instrumento delgado en forma de tubo con una luz y una lente para observar. También puede tener una herramienta para extraer tejido y analizarlo al microscopio en busca de signos de enfermedad. Se pasa el ureteroscopio a través de la uretra hasta la vejiga, el uréter y la pelvis renal (la parte del riñón que recoge, retiene y drena la orina).",
+                "text": "Examen del interior del riñón y el uréter por medio de un ureteroscopio. Un ureteroscopio es un instrumento delgado en forma de tubo con una luz y una lente para observar. También puede tener una herramienta para extraer tejido y analizarlo al microscopio en busca de signos de enfermedad. Se pasa el ureteroscopio a través de la uretra hasta la vejiga, el uréter y la pelvis renal (la parte del riñón que recoge, retiene y drena la orina)."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ureteroscopy",
+                    "prettyUrlName": "ureteroscopy"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46640,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "uretra",
+            "firstLetter": "u",
+            "prettyUrlName": "uretra",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/709847.mp3"
+            },
+            "definition": {
+                "html": "Tubo por el cual se elimina la orina acumulada en la vejiga.",
+                "text": "Tubo por el cual se elimina la orina acumulada en la vejiga."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "urethra",
+                    "prettyUrlName": "urethra"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 749437,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "uretra distal",
+            "firstLetter": "u",
+            "prettyUrlName": "uretra-distal",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/752595.mp3"
+            },
+            "definition": {
+                "html": "Parte de la uretra que está más cerca del exterior del cuerpo. La uretra es el tubo a través del cual la orina pasa fuera del cuerpo. En las mujeres, la uretra distal corresponde aproximadamente a la mitad de la  última pulgada de la uretra; en los hombres es la parte de la uretra que está en el interior del pene.",
+                "text": "Parte de la uretra que está más cerca del exterior del cuerpo. La uretra es el tubo a través del cual la orina pasa fuera del cuerpo. En las mujeres, la uretra distal corresponde aproximadamente a la mitad de la  última pulgada de la uretra; en los hombres es la parte de la uretra que está en el interior del pene."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "distal urethra",
+                    "prettyUrlName": "distal-urethra"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 749439,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "uretra proximal",
+            "firstLetter": "u",
+            "prettyUrlName": "uretra-proximal",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/752661.mp3"
+            },
+            "definition": {
+                "html": "Parte de la uretra que está más cerca del interior del cuerpo. La uretra es el tubo a través del cual la orina pasa al exterior del cuerpo. En las mujeres, la uretra proximal es la parte que está cerca de la vejiga y en los hombres es la parte que pasa a través de la próstata.",
+                "text": "Parte de la uretra que está más cerca del interior del cuerpo. La uretra es el tubo a través del cual la orina pasa al exterior del cuerpo. En las mujeres, la uretra proximal es la parte que está cerca de la vejiga y en los hombres es la parte que pasa a través de la próstata."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "proximal urethra",
+                    "prettyUrlName": "proximal-urethra"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44093,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "urinario",
+            "firstLetter": "u",
+            "prettyUrlName": "urinario",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704155.mp3"
+            },
+            "definition": {
+                "html": "Relacionado con la orina o con los órganos del cuerpo que producen y eliminan la orina.",
+                "text": "Relacionado con la orina o con los órganos del cuerpo que producen y eliminan la orina."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "urinary",
+                    "prettyUrlName": "urinary"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46643,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "urólogo",
+            "firstLetter": "u",
+            "prettyUrlName": "urologo",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/709854.mp3"
+            },
+            "definition": {
+                "html": "Médico que tiene una formación especial para diagnosticar y tratar las enfermedades de los órganos urinarios de las mujeres, y de los órganos urinarios y genitales de los hombres.",
+                "text": "Médico que tiene una formación especial para diagnosticar y tratar las enfermedades de los órganos urinarios de las mujeres, y de los órganos urinarios y genitales de los hombres."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "urologist",
+                    "prettyUrlName": "urologist"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44307,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "urólogo oncólogo",
+            "firstLetter": "u",
+            "prettyUrlName": "urologo-oncologo",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/704454.mp3"
+            },
+            "definition": {
+                "html": "Médico que tiene una formación especial para diagnosticar y tratar los cánceres de las vías  urinarias masculinas y femeninas, y de los órganos genitales masculinos.",
+                "text": "Médico que tiene una formación especial para diagnosticar y tratar los cánceres de las vías  urinarias masculinas y femeninas, y de los órganos genitales masculinos."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "urologic oncologist",
+                    "prettyUrlName": "urologic-oncologist"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 45245,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "uroquinasa",
+            "firstLetter": "u",
+            "prettyUrlName": "uroquinasa",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/705197.mp3"
+            },
+            "definition": {
+                "html": "Enzima elaborada por el riñón  y que se encuentra en la orina. Una forma de esta enzima se produce en el laboratorio y se usa para disolver coágulos de sangre o impedir que estos se formen. También se llama activador plasminógeno urocinasa, activador plasminógeno-u y uPA.",
+                "text": "Enzima elaborada por el riñón  y que se encuentra en la orina. Una forma de esta enzima se produce en el laboratorio y se usa para disolver coágulos de sangre o impedir que estos se formen. También se llama activador plasminógeno urocinasa, activador plasminógeno-u y uPA."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "urokinase",
+                    "prettyUrlName": "urokinase"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46644,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "urostomía",
+            "firstLetter": "u",
+            "prettyUrlName": "urostomia",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/709855.mp3"
+            },
+            "definition": {
+                "html": "Operación para hacer una abertura desde el interior al exterior del cuerpo, creando un nuevo conducto para eliminar la orina.",
+                "text": "Operación para hacer una abertura desde el interior al exterior del cuerpo, creando un nuevo conducto para eliminar la orina."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "urostomy",
+                    "prettyUrlName": "urostomy"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 44975,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "urotelio",
+            "firstLetter": "u",
+            "prettyUrlName": "urotelio",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/706224.mp3"
+            },
+            "definition": {
+                "html": "Recubrimiento de las vías urinarias, que comprenden la pelvis renal, los uréteres, la vejiga y la uretra.",
+                "text": "Recubrimiento de las vías urinarias, que comprenden la pelvis renal, los uréteres, la vejiga y la uretra."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "urothelium",
+                    "prettyUrlName": "urothelium"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 322234,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "ursodiol",
+            "firstLetter": "u",
+            "prettyUrlName": "ursodiol",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/711314.mp3"
+            },
+            "definition": {
+                "html": "Medicamento usado para disolver los cálculos de la vesícula biliar de las personas que no pueden someterse a cirugía para sacarlos. También está en estudio para la prevención del cáncer colorrectal. Es un tipo de anticolelítico.",
+                "text": "Medicamento usado para disolver los cálculos de la vesícula biliar de las personas que no pueden someterse a cirugía para sacarlos. También está en estudio para la prevención del cáncer colorrectal. Es un tipo de anticolelítico."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "ursodiol",
+                    "prettyUrlName": "ursodiol"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 641139,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "urticaria",
+            "firstLetter": "u",
+            "prettyUrlName": "urticaria",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/722773.mp3"
+            },
+            "definition": {
+                "html": "Áreas rojas y levantadas en la la piel que pican. La urticaria aparece como una reacción a ciertos alimentos, medicamentos, infecciones o tensión. También se llama ronchas.",
+                "text": "Áreas rojas y levantadas en la la piel que pican. La urticaria aparece como una reacción a ciertos alimentos, medicamentos, infecciones o tensión. También se llama ronchas."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "urticaria",
+                    "prettyUrlName": "urticaria"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46526,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "uso compasivo",
+            "firstLetter": "u",
+            "prettyUrlName": "uso-compasivo",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/731648.mp3"
+            },
+            "definition": {
+                "html": "Manera de ofrecer un tratamiento  en fase de investigación a un paciente que no puede recibir el tratamiento en un ensayo clínico, pero que tiene una afección grave y potencialmente mortal para la que no hay tratamiento. El uso compasivo permite que estos pacientes reciban terapias contra el cáncer que son prometedoras, que aún no se terminaron de estudiar o no se aprobaron cuando no hay otras opciones de tratamiento. También se llama acceso ampliado.",
+                "text": "Manera de ofrecer un tratamiento  en fase de investigación a un paciente que no puede recibir el tratamiento en un ensayo clínico, pero que tiene una afección grave y potencialmente mortal para la que no hay tratamiento. El uso compasivo permite que estos pacientes reciban terapias contra el cáncer que son prometedoras, que aún no se terminaron de estudiar o no se aprobaron cuando no hay otras opciones de tratamiento. También se llama acceso ampliado."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "compassionate use",
+                    "prettyUrlName": "compassionate-use"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 346523,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "uso para una indicación no aprobada",
+            "firstLetter": "u",
+            "prettyUrlName": "uso-para-una-indicacion-no-aprobada",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/730996.mp3"
+            },
+            "definition": {
+                "html": "Describe el uso legal de un medicamento de venta con receta para tratar una enfermedad o afección para la que el medicamento no ha sido aprobado por la Administración de Drogas y Alimentos de los Estados Unidos de América.",
+                "text": "Describe el uso legal de un medicamento de venta con receta para tratar una enfermedad o afección para la que el medicamento no ha sido aprobado por la Administración de Drogas y Alimentos de los Estados Unidos de América."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "off-label",
+                    "prettyUrlName": "off-label"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 753860,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "USPSTF",
+            "firstLetter": "u",
+            "prettyUrlName": "uspstf",
+            "pronunciation": null,
+            "definition": {
+                "html": "Grupo de voluntarios expertos en salud que revisan las investigaciones publicadas y dan recomendaciones sobre los métodos de prevención para el cuidado de la salud, como exámenes de detección, orientación, inmunizaciones y medicamentos. Antes de hacer una recomendación, USPSTF analiza la fortaleza (calidad científica y precisión) de las pruebas encontradas en la investigación y los beneficios y perjuicios de cada método en revisión. Se hacen recomendaciones para ayudar a los proveedores de atención de la salud y los pacientes a decidir si un método específico es adecuado para las necesidades del paciente. Las recomendaciones pueden cambiar a medida en que se publican nuevos estudios de investigación. También se llama United States Preventive Services Task Force.",
+                "text": "Grupo de voluntarios expertos en salud que revisan las investigaciones publicadas y dan recomendaciones sobre los métodos de prevención para el cuidado de la salud, como exámenes de detección, orientación, inmunizaciones y medicamentos. Antes de hacer una recomendación, USPSTF analiza la fortaleza (calidad científica y precisión) de las pruebas encontradas en la investigación y los beneficios y perjuicios de cada método en revisión. Se hacen recomendaciones para ayudar a los proveedores de atención de la salud y los pacientes a decidir si un método específico es adecuado para las necesidades del paciente. Las recomendaciones pueden cambiar a medida en que se publican nuevos estudios de investigación. También se llama United States Preventive Services Task Force."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "USPSTF",
+                    "prettyUrlName": "uspstf"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 46645,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "útero",
+            "firstLetter": "u",
+            "prettyUrlName": "utero",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/709858.mp3"
+            },
+            "definition": {
+                "html": "Órgano hueco en forma de pera en la pelvis de la mujer. El útero es donde crece y se desarrolla el feto (bebé que no ha nacido). También se llama matriz.",
+                "text": "Órgano hueco en forma de pera en la pelvis de la mujer. El útero es donde crece y se desarrolla el feto (bebé que no ha nacido). También se llama matriz."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "uterus",
+                    "prettyUrlName": "uterus"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 534220,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "úvea",
+            "firstLetter": "u",
+            "prettyUrlName": "uvea",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/718682.mp3"
+            },
+            "definition": {
+                "html": "Capa media de la pared del ojo. La úvea tiene tres partes principales: 1) la coroides (la capa de tejido llena de vasos sanguíneos); 2) el cuerpo ciliar (anillo de tejido muscular que cambia el tamaño de la pupila y la forma del cristalino) y 3) el iris (la parte de color del ojo). También se llama tracto uveal.",
+                "text": "Capa media de la pared del ojo. La úvea tiene tres partes principales: 1) la coroides (la capa de tejido llena de vasos sanguíneos); 2) el cuerpo ciliar (anillo de tejido muscular que cambia el tamaño de la pupila y la forma del cristalino) y 3) el iris (la parte de color del ojo). También se llama tracto uveal."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "uvea",
+                    "prettyUrlName": "uvea"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 797633,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "uveítis",
+            "firstLetter": "u",
+            "prettyUrlName": "uveitis",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/799510.mp3"
+            },
+            "definition": {
+                "html": "Afección poco frecuente por la que se inflama una parte de la úvea o toda la úvea (capa intermedia de la pared del ojo) de uno o ambos ojos. La coroides, el cuerpo ciliar y el iris forman la úvea. La uveítis también puede afectar el cristalino, la retina, el nervio óptico y el  humor vítreo (líquido parecido a un gel dentro del ojo). Las causas de esta afección son una lesión, una infección, un tumor en el ojo o una afección autoinmunitaria o inflamatoria. Los signos y síntomas a veces son repentinos y empeoran rápido. Estos incluyen enrojecimiento, dolor en el ojo, hipersensibilidad a la luz, visión borrosa, visión de puntos negros y disminución de la visión. Si no se trata, la uveítis puede producir cicatrización en los tejidos y ceguera.",
+                "text": "Afección poco frecuente por la que se inflama una parte de la úvea o toda la úvea (capa intermedia de la pared del ojo) de uno o ambos ojos. La coroides, el cuerpo ciliar y el iris forman la úvea. La uveítis también puede afectar el cristalino, la retina, el nervio óptico y el  humor vítreo (líquido parecido a un gel dentro del ojo). Las causas de esta afección son una lesión, una infección, un tumor en el ojo o una afección autoinmunitaria o inflamatoria. Los signos y síntomas a veces son repentinos y empeoran rápido. Estos incluyen enrojecimiento, dolor en el ojo, hipersensibilidad a la luz, visión borrosa, visión de puntos negros y disminución de la visión. Si no se trata, la uveítis puede producir cicatrización en los tejidos y ceguera."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "uveitis",
+                    "prettyUrlName": "uveitis"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 389467,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "úvula",
+            "firstLetter": "u",
+            "prettyUrlName": "uvula",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/713426.mp3"
+            },
+            "definition": {
+                "html": "Colgajo blanda de tejido que cuelga en la parte posterior de la boca (en el borde del paladar blando). También se llama úvula palatina.",
+                "text": "Colgajo blanda de tejido que cuelga en la parte posterior de la boca (en el borde del paladar blando). También se llama úvula palatina."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "uvula",
+                    "prettyUrlName": "uvula"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        },
+        {
+            "termId": 389468,
+            "language": "es",
+            "dictionary": "Cancer.gov",
+            "audience": "Patient",
+            "termName": "úvula palatina",
+            "firstLetter": "u",
+            "prettyUrlName": "uvula-palatina",
+            "pronunciation": {
+                "key": null,
+                "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/730766.mp3"
+            },
+            "definition": {
+                "html": "Colgajo blanda de tejido que cuelga en la parte posterior de la boca (en el borde del paladar blando). También se llama úvula.",
+                "text": "Colgajo blanda de tejido que cuelga en la parte posterior de la boca (en el borde del paladar blando). También se llama úvula."
+            },
+            "otherLanguages": [
+                {
+                    "language": "en",
+                    "termName": "palatine uvula",
+                    "prettyUrlName": "palatine-uvula"
+                }
+            ],
+            "relatedResources": [],
+            "media": []
+        }
+    ],
+    "links": null
+}
