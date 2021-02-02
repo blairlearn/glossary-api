@@ -1,0 +1,26 @@
+{
+    "termId": 43969,
+    "language": "es",
+    "dictionary": "Cancer.gov",
+    "audience": "Patient",
+    "termName": "arteriograma",
+    "firstLetter": "a",
+    "prettyUrlName":"arteriograma",
+    "pronunciation": {
+        "key": null,
+        "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/703965.mp3"
+    },
+    "definition": {
+        "text": "Radiograf\u00eda de las arterias. La persona recibe una inyecci\u00f3n con un tinte que hace resaltar los vasos en la radiograf\u00eda.",
+        "html": "Radiograf\u00eda de las arterias. La persona recibe una inyecci\u00f3n con un tinte que hace resaltar los vasos en la radiograf\u00eda."
+    },
+    "otherLanguages": [
+        {
+            "language": "en",
+            "termName": "arteriogram",
+            "prettyUrlName": "arteriogram"
+        }
+    ],
+    "media": [],
+    "relatedResources": []
+}

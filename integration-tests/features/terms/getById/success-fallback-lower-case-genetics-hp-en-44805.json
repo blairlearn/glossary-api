@@ -1,0 +1,32 @@
+{
+    "termId": 44805,
+    "language": "en",
+    "dictionary": "Genetics",
+    "audience": "HealthProfessional",
+    "termName": "polymorphism",
+    "firstLetter": "p",
+    "prettyUrlName": "polymorphism",
+    "pronunciation": {
+        "key": "(PAH-lee-MOR-fih-zum)",
+        "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/705993.mp3"
+    },
+    "definition": {
+        "text": "A common variant in a specific sequence of DNA. \u201cCommon\u201d is typically defined as an allele frequency of at least 1% in the general population.",
+        "html": "A common variant in a specific sequence of DNA. \u201cCommon\u201d is typically defined as an allele frequency of at least 1% in the general population."
+    },
+    "relatedResources": [
+        {
+            "Type": "External",
+            "Text": "Polymorphism",
+            "Url": "https://www.genome.gov/genetics-glossary/Polymorphism"
+        }
+    ],
+    "otherLanguages": [
+        {
+            "language": "es",
+            "termName": "polimorfismo",
+            "prettyUrlName": "polimorfismo"
+        }
+    ],
+    "media": []
+}

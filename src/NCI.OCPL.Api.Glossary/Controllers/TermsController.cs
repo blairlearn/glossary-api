@@ -20,30 +20,37 @@ namespace NCI.OCPL.Api.Glossary.Controllers
     [ApiController]
     public class TermsController : Controller
     {
+        // Set dictionary name constants
+        const string CANCER_GOV_DICTIONARY = "cancer.gov";
+        const string GENETICS_DICTIONARY = "genetics";
+        const string NOT_SET_DICTIONARY = "notset";
+
         private readonly ILogger _logger;
         private readonly ITermsQueryService _termsQueryService;
 
+        // Set Patient fallback option combinations
         private readonly LinkedList<Tuple<string, AudienceType>> _fallbackOptionsPatient = new LinkedList<Tuple<string, AudienceType>>(
             new Tuple<string, AudienceType>[]
             {
-                new Tuple<string, AudienceType>("Cancer.gov", AudienceType.Patient),
-                new Tuple<string, AudienceType>("Cancer.gov", AudienceType.HealthProfessional),
-                new Tuple<string, AudienceType>("NotSet", AudienceType.Patient),
-                new Tuple<string, AudienceType>("NotSet", AudienceType.HealthProfessional),
-                new Tuple<string, AudienceType>("Genetics", AudienceType.Patient),
-                new Tuple<string, AudienceType>("Genetics", AudienceType.HealthProfessional)
+                new Tuple<string, AudienceType>(CANCER_GOV_DICTIONARY, AudienceType.Patient),
+                new Tuple<string, AudienceType>(CANCER_GOV_DICTIONARY, AudienceType.HealthProfessional),
+                new Tuple<string, AudienceType>(NOT_SET_DICTIONARY, AudienceType.Patient),
+                new Tuple<string, AudienceType>(NOT_SET_DICTIONARY, AudienceType.HealthProfessional),
+                new Tuple<string, AudienceType>(GENETICS_DICTIONARY, AudienceType.Patient),
+                new Tuple<string, AudienceType>(GENETICS_DICTIONARY, AudienceType.HealthProfessional)
             }
         );
 
+        // Set HealthProfessional fallback option combinations
         private readonly LinkedList<Tuple<string, AudienceType>> _fallbackOptionsHP = new LinkedList<Tuple<string, AudienceType>>(
             new Tuple<string, AudienceType>[]
             {
-                new Tuple<string, AudienceType>("Genetics", AudienceType.HealthProfessional),
-                new Tuple<string, AudienceType>("Genetics", AudienceType.Patient),
-                new Tuple<string, AudienceType>("Cancer.gov", AudienceType.HealthProfessional),
-                new Tuple<string, AudienceType>("Cancer.gov", AudienceType.Patient),
-                new Tuple<string, AudienceType>("NotSet", AudienceType.HealthProfessional),
-                new Tuple<string, AudienceType>("NotSet", AudienceType.Patient)
+                new Tuple<string, AudienceType>(GENETICS_DICTIONARY, AudienceType.HealthProfessional),
+                new Tuple<string, AudienceType>(GENETICS_DICTIONARY, AudienceType.Patient),
+                new Tuple<string, AudienceType>(CANCER_GOV_DICTIONARY, AudienceType.HealthProfessional),
+                new Tuple<string, AudienceType>(CANCER_GOV_DICTIONARY, AudienceType.Patient),
+                new Tuple<string, AudienceType>(NOT_SET_DICTIONARY, AudienceType.HealthProfessional),
+                new Tuple<string, AudienceType>(NOT_SET_DICTIONARY, AudienceType.Patient)
             }
         );
 
@@ -68,6 +75,9 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience, language and id");
             }
 
+            // Lowercase the dictionary argument for use in fallback option checks and ES query
+            dictionary = dictionary.ToLower();
+
             if (language.ToLower() != "en" && language.ToLower() != "es")
                 throw new APIErrorException(400, "Unsupported Language. Please try either 'en' or 'es'");
 
@@ -75,14 +85,23 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 return await _termsQueryService.GetById(dictionary, audience, language, id);
             }
             // Implement fallback logic.
-            // Depending on the given Dictionary and Audience inputs, loop through the fallback logic
-            // options until a term is found. If none of the options return a term, then throw an error.
+            // Depending on the given Dictionary and Audience inputs, loop through the fallback logic options until a term is found.
+            // If the given fallback combination does not exist, then throw an error.
+            // If none of the options return a term, then throw an error.
             else {
                 // Set order of fallback options based on current audience.
                 var fallbackOptions = audience == AudienceType.Patient ? _fallbackOptionsPatient : _fallbackOptionsHP;
 
-                Tuple<string, AudienceType> currentValue = new Tuple<string, AudienceType>(dictionary, audience);
-                LinkedListNode<Tuple<string, AudienceType>> start = fallbackOptions.Find(currentValue);
+                Tuple<string, AudienceType> requestedOptions = new Tuple<string, AudienceType>(dictionary, audience);
+                LinkedListNode<Tuple<string, AudienceType>> start = fallbackOptions.Find(requestedOptions);
+
+                if (start == null)
+                {
+                    string msg = $"Could not find initial fallback combination with dictionary '{dictionary}' and audience '{audience}'.";
+                    _logger.LogError(msg);
+                    throw new APIErrorException(404, msg);
+                }
+
                 LinkedListNode<Tuple<string, AudienceType>> current = start;
 
                 do
@@ -92,7 +111,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                     }
                     catch (Exception ex) {
                         // Swallow this Exception and move to the next combination.
-                        string msg = $"Could not find fallback term with ID '{id}', dictionary '{currentValue.Item1}', audience '{currentValue.Item2}', and language '{language}'.";
+                        string msg = $"Could not find fallback term with ID '{id}', dictionary '{current.Value.Item1}', audience '{current.Value.Item2}', and language '{language}'.";
                         _logger.LogDebug(ex, msg);
                     }
                     current = current.Next == null ? fallbackOptions.First : current.Next;
@@ -116,6 +135,9 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 throw new APIErrorException(400, "You must supply a valid dictionary, audience, and language.");
             }
 
+            // Lowercase the dictionary argument for use in fallback option checks and ES query
+            dictionary = dictionary.ToLower();
+
             if (language.ToLower() != "en" && language.ToLower() != "es")
                 throw new APIErrorException(400, "Unsupported Language. Please try either 'en' or 'es'");
 
@@ -127,14 +149,24 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 return await _termsQueryService.GetByName(dictionary, audience, language, prettyUrlName);
             }
             // Implement fallback logic.
-            // Depending on the given Dictionary and Audience inputs, loop through the fallback logic
-            // options until a term is found. If none of the options return a term, then throw an error.
-            else {
+            // Depending on the given Dictionary and Audience inputs, loop through the fallback logic options until a term is found.
+            // If the given fallback combination does not exist, then throw an error.
+            // If none of the options return a term, then throw an error.
+            else
+            {
                 // Set order of fallback options based on current audience.
                 var fallbackOptions = audience == AudienceType.Patient ? _fallbackOptionsPatient : _fallbackOptionsHP;
 
-                Tuple<string, AudienceType> currentValue = new Tuple<string, AudienceType>(dictionary, audience);
-                LinkedListNode<Tuple<string, AudienceType>> start = fallbackOptions.Find(currentValue);
+                Tuple<string, AudienceType> requestedOptions = new Tuple<string, AudienceType>(dictionary, audience);
+                LinkedListNode<Tuple<string, AudienceType>> start = fallbackOptions.Find(requestedOptions);
+
+                if (start == null)
+                {
+                    string msg = $"Could not find initial fallback combination with dictionary '{dictionary}' and audience '{audience}'.";
+                    _logger.LogError(msg);
+                    throw new APIErrorException(404, msg);
+                }
+
                 LinkedListNode<Tuple<string, AudienceType>> current = start;
 
                 do
@@ -144,7 +176,7 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                     }
                     catch (Exception ex) {
                         // Swallow this Exception and move to the next combination.
-                        string msg = $"Could not find fallback term with pretty URL name '{prettyUrlName}', dictionary '{currentValue.Item1}', audience '{currentValue.Item2}', and language '{language}'.";
+                        string msg = $"Could not find fallback term with pretty URL name '{prettyUrlName}', dictionary '{current.Value.Item1}', audience '{current.Value.Item2}', and language '{language}'.";
                         _logger.LogDebug(ex, msg);
                     }
 

@@ -1,0 +1,27 @@
+{
+    "termId": 556486,
+    "language": "en",
+    "dictionary": "Genetics",
+    "audience": "HealthProfessional",
+    "termName": "deleterious mutation",
+    "firstLetter": "d",
+    "prettyUrlName": "deleterious-mutation",
+    "pronunciation": {
+        "key": "(DEH-leh-TEER-ee-us myoo-TAY-shun)",
+        "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/736913.mp3"
+    },
+    "definition": {
+        "text": "A genetic alteration that increases an individual\u2019s susceptibility or predisposition to a certain disease or disorder. When such a variant (or mutation) is inherited, development of symptoms is more likely, but not certain.  Also called disease-causing mutation, pathogenic variant, predisposing mutation, and susceptibility gene mutation.",
+        "html": "A genetic alteration that increases an individual\u2019s susceptibility or predisposition to a certain disease or disorder. When such a variant (or mutation) is inherited, development of symptoms is more likely, but not certain.  Also called disease-causing mutation, pathogenic variant, predisposing mutation, and susceptibility gene mutation."
+    },
+    "otherLanguages": [
+        {
+            "language": "es",
+            "termName": "mutaci\u00f3n delet\u00e9rea",
+            "prettyUrlName": "mutacion-deleterea"
+        }
+    ]
+    ,
+    "media": [],
+    "relatedResources": []
+}

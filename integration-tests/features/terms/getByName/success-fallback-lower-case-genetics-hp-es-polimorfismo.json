@@ -1,0 +1,32 @@
+{
+    "termId": 44805,
+    "language": "es",
+    "dictionary": "Genetics",
+    "audience": "HealthProfessional",
+    "termName": "polimorfismo",
+    "firstLetter": "p",
+    "prettyUrlName": "polimorfismo",
+    "pronunciation": {
+        "key": null,
+        "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/705994.mp3"
+    },
+    "definition": {
+        "text": "Variante com\u00fan en una secuencia espec\u00edfica de ADN. Normalmente el t\u00e9rmino \u201ccom\u00fan\u201d se define por una frecuencia al\u00e9lica de al menos 1\u00a0% en la poblaci\u00f3n general.",
+        "html": "Variante com\u00fan en una secuencia espec\u00edfica de ADN. Normalmente el t\u00e9rmino \u201ccom\u00fan\u201d se define por una frecuencia al\u00e9lica de al menos 1\u00a0% en la poblaci\u00f3n general."
+    },
+    "relatedResources": [
+        {
+            "Type": "External",
+            "Text": "Polimorfismo",
+            "Url": "https://www.genome.gov/es/genetics-glossary/Polimorfismo"
+        }
+    ],
+    "otherLanguages": [
+        {
+            "language": "en",
+            "termName": "polymorphism",
+            "prettyUrlName": "polymorphism"
+        }
+    ],
+    "media": []
+}

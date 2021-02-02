@@ -1,0 +1,26 @@
+{
+    "termId": 43980,
+    "language": "es",
+    "dictionary": "Cancer.gov",
+    "audience": "Patient",
+    "termName": "posoperatorio",
+    "firstLetter": "p",
+    "prettyUrlName": "posoperatorio",
+    "pronunciation": {
+        "key": null,
+        "audio": "https://nci-media-dev.cancer.gov/pdq/media/audio/727654.mp3"
+    },
+    "definition": {
+        "text": "Despu\u00e9s de una cirug\u00eda.",
+        "html": "Despu\u00e9s de una cirug\u00eda."
+    },
+    "otherLanguages": [
+        {
+            "language": "en",
+            "termName": "postoperative",
+            "prettyUrlName": "postoperative"
+        }
+    ],
+    "media": [],
+    "relatedResources": []
+}

@@ -1,0 +1,23 @@
+{
+    "termId": 556486,
+    "language": "es",
+    "dictionary": "Genetics",
+    "audience": "HealthProfessional",
+    "termName": "mutaci\u00f3n delet\u00e9rea",
+    "firstLetter": "m",
+    "prettyUrlName": "mutacion-deleterea",
+    "pronunciation": null,
+    "definition": {
+        "text": "Alteraci\u00f3n gen\u00e9tica que aumenta la susceptibilidad o predisposici\u00f3n de la persona a padecer  ciertas enfermedades o trastornos. Cuando se hereda esta variante o mutaci\u00f3n, es m\u00e1s probable que se presenten s\u00edntomas, aunque esto no es seguro. Tambi\u00e9n se llama mutaci\u00f3n causal de enfermedad, mutaci\u00f3n en gen de susceptibilidad, mutaci\u00f3n predisponente y variante pat\u00f3gena.",
+        "html": "Alteraci\u00f3n gen\u00e9tica que aumenta la susceptibilidad o predisposici\u00f3n de la persona a padecer  ciertas enfermedades o trastornos. Cuando se hereda esta variante o mutaci\u00f3n, es m\u00e1s probable que se presenten s\u00edntomas, aunque esto no es seguro. Tambi\u00e9n se llama mutaci\u00f3n causal de enfermedad, mutaci\u00f3n en gen de susceptibilidad, mutaci\u00f3n predisponente y variante pat\u00f3gena."
+    },
+    "otherLanguages": [
+        {
+            "language": "en",
+            "termName": "deleterious mutation",
+            "prettyUrlName": "deleterious-mutation"
+        }
+    ],
+    "media": [],
+    "relatedResources": []
+}
