@@ -341,3 +341,7 @@ integration-tests/target
 
 # Include Karate for tests
 !integration-tests/bin
+
+# Files mapped by integration tests
+src/NCI.OCPL.Api.Glossary/appsettings.inttest.json
+src/NCI.OCPL.Api.Glossary/hosting.json

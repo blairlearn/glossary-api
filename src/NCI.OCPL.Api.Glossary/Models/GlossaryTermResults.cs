@@ -9,16 +9,16 @@ namespace NCI.OCPL.Api.Glossary
         /// <summary>
         /// Metadata about the results.
         /// </summary>
-        public ResultsMetadata Meta;
+        public ResultsMetadata Meta {get; set;}
 
         /// <summary>
         /// Array of GlossaryTerm objects matching the search. May be empty.
         /// </summary>
-        public GlossaryTerm[] Results;
+        public GlossaryTerm[] Results {get;set;}
 
         /// <summary>
         /// Link to ????
         /// </summary>
-        public Metalink Links;
+        public Metalink Links {get;set;}
     }
 }

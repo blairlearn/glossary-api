@@ -8,11 +8,11 @@ namespace NCI.OCPL.Api.Glossary
         /// <summary>
         /// The total number of results available.
         /// </summary>
-        public int TotalResults;
+        public int TotalResults{get;set;}
 
         /// <summary>
         /// Offset into the overall list where the current set begins.
         /// </summary>
-        public int From;
+        public int From {get;set;}
     }
 }

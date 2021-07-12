@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+
 using NCI.OCPL.Api.Common;
 using NCI.OCPL.Api.Glossary.Models;
 using NCI.OCPL.Api.Glossary.Services;
@@ -16,9 +17,9 @@ namespace NCI.OCPL.Api.Glossary
         /// <summary>
         /// Initializes a new instance of the <see cref="T:NCI.OCPL.Api.Glossary.Startup"/> class.
         /// </summary>
-        /// <param name="env">Env.</param>
-        public Startup(IHostingEnvironment env)
-            : base(env) { }
+        /// <param name="configuration">Configuration object.</param>
+        public Startup(IConfiguration configuration)
+            : base(configuration) { }
 
 
         /*****************************
@@ -31,8 +32,6 @@ namespace NCI.OCPL.Api.Glossary
         /// <param name="services">Services.</param>
         protected override void AddAdditionalConfigurationMappings(IServiceCollection services)
         {
-            // services.Configure<CGBBIndexOptions>(Configuration.GetSection("CGBestBetsIndex"));
-
         }
 
         /// <summary>
@@ -57,9 +56,8 @@ namespace NCI.OCPL.Api.Glossary
         /// <returns>The configure.</returns>
         /// <param name="app">App.</param>
         /// <param name="env">Env.</param>
-        /// <param name="loggerFactory">Logger.</param>
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        protected override void ConfigureAppSpecific(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        protected override void ConfigureAppSpecific(IApplicationBuilder app, IWebHostEnvironment env)
         {
             return;
         }

@@ -27,7 +27,7 @@ namespace NCI.OCPL.Api.Glossary
         /// <summary>
         /// URL of the resource item.
         /// </summary>
-        public Uri Url;
+        public Uri Url { get; set; }
 
         /// <summary>
         /// Short text description or name of the resource.
