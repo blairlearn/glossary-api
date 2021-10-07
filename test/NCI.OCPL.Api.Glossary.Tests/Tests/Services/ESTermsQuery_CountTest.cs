@@ -145,14 +145,18 @@ namespace NCI.OCPL.Api.Glossary.Tests
         /// <summary>
         /// Verify that ESTermsQueryService responds correctly when Elasticsearch returns an error.
         /// </summary>
-        [Fact]
-        public async void GetCount_ErrorResponse()
+        [Theory]
+        [InlineData(400)]
+        [InlineData(403)]
+        [InlineData(404)]
+        [InlineData(500)]
+        public async void GetCount_ErrorResponse(int returnStatusCode)
         {
             ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
             conn.RegisterRequestHandlerForType<Nest.CountResponse>((req, res) =>
             {
                 res.Stream = null;
-                res.StatusCode = 200;
+                res.StatusCode = returnStatusCode;
             });
 
             // The URI does not matter, an InMemoryConnection never requests from the server.
