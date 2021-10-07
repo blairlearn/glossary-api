@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 
 using Elasticsearch.Net;
 using Nest;
+using Nest.JsonNetSerializer;
 using Xunit;
 
 using NCI.OCPL.Api.Common.Testing;
@@ -45,7 +46,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             // Setup the mocked Options
@@ -73,7 +74,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             // Setup the mocked Options
@@ -108,7 +109,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             // Setup the mocked Options
@@ -125,7 +126,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 data.TermID
             );
 
-            Assert.Equal( $"/glossaryv1/terms/{data.ESTermID}", esURI.AbsolutePath);
+            Assert.Equal( $"/glossaryv1/_doc/{data.ESTermID}", esURI.AbsolutePath);
         }
 
         /// <summary>
@@ -166,7 +167,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             //from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             return client;

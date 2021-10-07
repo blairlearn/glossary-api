@@ -7,7 +7,6 @@ namespace NCI.OCPL.Api.Glossary
     /// <summary>
     /// The GlossaryTerm class
     /// </summary>
-    [ElasticsearchType(Name = "terms")]
     public class GlossaryTerm
     {
 

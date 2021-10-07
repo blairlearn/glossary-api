@@ -59,7 +59,6 @@ namespace NCI.OCPL.Api.Glossary.Services
         {
             // Set up the SearchRequest to send to elasticsearch.
             Indices index = Indices.Index(new string[] { this._apiOptions.AliasName });
-            Types types = Types.Type(new string[] { "terms" });
 
             ISearchResponse<Suggestion> response = null;
 
@@ -71,10 +70,10 @@ namespace NCI.OCPL.Api.Glossary.Services
                     default:
                     case MatchType.Begins:
                     case MatchType.Exact:
-                        request = BuildNonContainsRequest(index, types, dictionary, language, audience, searchText, matchType, size);
+                        request = BuildNonContainsRequest(index, dictionary, language, audience, searchText, matchType, size);
                         break;
                     case MatchType.Contains:
-                        request = BuildContainsRequest(index, types, dictionary, language, audience, searchText, size);
+                        request = BuildContainsRequest(index, dictionary, language, audience, searchText, size);
                         break;
                 }
 
@@ -103,14 +102,13 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// Builds the SearchRequest for terms beginning with the search text.
         /// </summary>
         /// <param name="index">The index which will be searched against.</param>
-        /// <param name="types">The list of document types to search.</param>
         /// <param name="dictionary">The value for dictionary.</param>
         /// <param name="audience">Patient or Healthcare provider</param>
         /// <param name="language">The language in which the details needs to be fetched</param>
         /// <param name="query">The text to search for.</param>
         /// <param name="matchType">Do a Begins or Exact match search? (Use BuildContainsRequest for Contains searches).</param>
         /// <param name="size">The number of records to retrieve.</param>
-        private SearchRequest BuildNonContainsRequest(Indices index, Types types, string dictionary, string language, AudienceType audience, string query, MatchType matchType, int size)
+        private SearchRequest BuildNonContainsRequest(Indices index, string dictionary, string language, AudienceType audience, string query, MatchType matchType, int size)
         {
             /*
              * Create a query similar to the following.  The bool subquery is written with an overloaded version
@@ -133,7 +131,7 @@ namespace NCI.OCPL.Api.Glossary.Services
              * , "size": 10
              * }'
              */
-            SearchRequest request = new SearchRequest(index, types)
+            SearchRequest request = new SearchRequest(index)
             {
                 Query = new TermQuery {Field = "language", Value = language } &&
                         new TermQuery {Field = "audience", Value = audience.ToString() } &&
@@ -143,7 +141,7 @@ namespace NCI.OCPL.Api.Glossary.Services
                             (QueryBase)new TermQuery { Field = "term_name", Value = query }),
                 Sort = new List<ISort>
                 {
-                    new SortField { Field = "term_name" }
+                    new FieldSort { Field = "term_name" }
                 },
                 Source = new SourceFilter
                 {
@@ -159,13 +157,12 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// Builds the SearchRequest for terms containing with the search text.
         /// </summary>
         /// <param name="index">The index which will be searched against.</param>
-        /// <param name="types">The list of document types to search.</param>
         /// <param name="dictionary">The value for dictionary.</param>
         /// <param name="audience">Patient or Healthcare provider</param>
         /// <param name="language">The language in which the details needs to be fetched</param>
         /// <param name="query">The text to search for.</param>
         /// <param name="size">The number of records to retrieve.</param>
-        private SearchRequest BuildContainsRequest(Indices index, Types types, string dictionary, string language, AudienceType audience, string query, int size)
+        private SearchRequest BuildContainsRequest(Indices index, string dictionary, string language, AudienceType audience, string query, int size)
         {
             /*
              * Create a query similar to the following.  The bool subquery is written with an overloaded version
@@ -190,7 +187,7 @@ namespace NCI.OCPL.Api.Glossary.Services
              * , "size": 10
              * }'
              */
-            SearchRequest request = new SearchRequest(index, types)
+            SearchRequest request = new SearchRequest(index)
             {
                 Query = new TermQuery {Field = "language", Value = language.ToString() } &&
                         new TermQuery {Field = "audience", Value = audience.ToString() } &&
@@ -199,7 +196,7 @@ namespace NCI.OCPL.Api.Glossary.Services
                         !new PrefixQuery {Field = "term_name", Value = query.ToString() },
                 Sort = new List<ISort>
                 {
-                    new SortField { Field = "term_name" }
+                    new FieldSort { Field = "term_name" }
                 },
                 Source = new SourceFilter
                 {

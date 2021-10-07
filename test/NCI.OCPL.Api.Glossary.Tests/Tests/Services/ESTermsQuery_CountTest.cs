@@ -9,6 +9,7 @@ using Microsoft.Extensions.Options;
 using Elasticsearch.Net;
 using Moq;
 using Nest;
+using Nest.JsonNetSerializer;
 using Newtonsoft.Json.Linq;
 using Xunit;
 
@@ -63,7 +64,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             string esContentType = String.Empty;
             HttpMethod esMethod = HttpMethod.DELETE; // Basically, something other than the expected value.
 
-            JObject requestBody = null;
+            JToken requestBody = null;
 
             ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
             conn.RegisterRequestHandlerForType<Nest.CountResponse>((req, res) =>
@@ -73,7 +74,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 res.StatusCode = 200;
 
                 esURI = req.Uri;
-                esContentType = req.ContentType;
+                esContentType = req.RequestMimeType;
                 esMethod = req.Method;
                 requestBody = conn.GetRequestPost(req);
             });
@@ -81,7 +82,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // The URI does not matter, an InMemoryConnection never requests from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             // Setup the mocked Options
@@ -93,7 +94,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // sets up the request correctly.
             long result = await query.GetCount(data.DictionaryName, data.Audience, data.Language);
 
-            Assert.Equal("/glossaryv1/terms/_count", esURI.AbsolutePath);
+            Assert.Equal("/glossaryv1/_count", esURI.AbsolutePath);
             Assert.Equal("application/json", esContentType);
             Assert.Equal(HttpMethod.POST, esMethod);
             Assert.Equal(data.ExpectedData, requestBody, new JTokenEqualityComparer());
@@ -110,7 +111,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             string esContentType = String.Empty;
             HttpMethod esMethod = HttpMethod.DELETE; // Basically, something other than the expected value.
 
-            JObject requestBody = null;
+            JToken requestBody = null;
 
             ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
             conn.RegisterRequestHandlerForType<Nest.CountResponse>((req, res) =>
@@ -119,7 +120,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 res.StatusCode = 200;
 
                 esURI = req.Uri;
-                esContentType = req.ContentType;
+                esContentType = req.RequestMimeType;
                 esMethod = req.Method;
                 requestBody = conn.GetRequestPost(req);
             });
@@ -127,7 +128,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // The URI does not matter, an InMemoryConnection never requests from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             // Setup the mocked Options
@@ -157,7 +158,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // The URI does not matter, an InMemoryConnection never requests from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             // Setup the mocked Options
@@ -193,7 +194,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // The URI does not matter, an InMemoryConnection never requests from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             // Setup the mocked Options

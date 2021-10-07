@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 
 using Elasticsearch.Net;
 using Nest;
+using Nest.JsonNetSerializer;
 using Newtonsoft.Json.Linq;
 using Xunit;
 
@@ -14,7 +15,6 @@ using NCI.OCPL.Api.Glossary.Models;
 using NCI.OCPL.Api.Glossary.Services;
 using NCI.OCPL.Api.Glossary.Tests.ESTermsQueryTestData;
 using NCI.OCPL.Api.Common;
-
 
 namespace NCI.OCPL.Api.Glossary.Tests
 {
@@ -42,7 +42,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             // Setup the mocked Options
@@ -70,7 +70,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             // Setup the mocked Options
@@ -94,7 +94,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
         [Theory, MemberData(nameof(GetAll_RequestData))]
         public async void GetAll_TestRequestSetup(GetAll_Request_Base data)
         {
-            JObject actualRequest = null;
+            JToken actualRequest = null;
 
             ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
             conn.RegisterRequestHandlerForType<Nest.SearchResponse<GlossaryTerm>>((req, res) =>
@@ -110,7 +110,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             // from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             // Setup the mocked Options
@@ -167,7 +167,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
             //from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
-            var connectionSettings = new ConnectionSettings(pool, conn);
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
             IElasticClient client = new ElasticClient(connectionSettings);
 
             return client;

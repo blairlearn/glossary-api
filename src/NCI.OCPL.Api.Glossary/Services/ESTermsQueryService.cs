@@ -79,7 +79,7 @@ namespace NCI.OCPL.Api.Glossary.Services
             {
                 string idValue = $"{id}_{dictionary?.ToLower()}_{language?.ToLower()}_{audience.ToString().ToLower()}";
                 response = await _elasticClient.GetAsync<GlossaryTerm>(new DocumentPath<GlossaryTerm>(idValue),
-                        g => g.Index( this._apiOptions.AliasName ).Type("terms"));
+                        g => g.Index( this._apiOptions.AliasName ));
 
             }
             catch (Exception ex)
@@ -118,8 +118,7 @@ namespace NCI.OCPL.Api.Glossary.Services
         {
             // Set up the SearchRequest to send to elasticsearch.
             Indices index = Indices.Index(new string[] { this._apiOptions.AliasName});
-            Types types = Types.Type(new string[] { "terms" });
-            SearchRequest request = new SearchRequest(index, types)
+            SearchRequest request = new SearchRequest(index)
             {
                 Query = new TermQuery {Field = "language", Value = language.ToString()} &&
                         new TermQuery {Field = "audience", Value = audience.ToString()} &&
@@ -128,7 +127,7 @@ namespace NCI.OCPL.Api.Glossary.Services
                 ,
                 Sort = new List<ISort>
                 {
-                    new SortField { Field = "term_name" }
+                    new FieldSort { Field = "term_name" }
                 }
             };
 
@@ -194,8 +193,7 @@ namespace NCI.OCPL.Api.Glossary.Services
 
             // Set up the SearchRequest to send to elasticsearch.
             Indices index = Indices.Index(new string[] { this._apiOptions.AliasName});
-            Types types = Types.Type(new string[] { "terms" });
-            SearchRequest request = new SearchRequest(index, types)
+            SearchRequest request = new SearchRequest(index)
             {
                 Query = new TermQuery {Field = "language", Value = language.ToString()} &&
                         new TermQuery {Field = "audience", Value = audience.ToString()} &&
@@ -203,7 +201,7 @@ namespace NCI.OCPL.Api.Glossary.Services
                 ,
                 Sort = new List<ISort>
                 {
-                    new SortField { Field = "term_name" }
+                    new FieldSort { Field = "term_name" }
                 },
                 Size = size,
                 From = from,
@@ -288,7 +286,6 @@ namespace NCI.OCPL.Api.Glossary.Services
 
             // Set up the SearchRequest to send to elasticsearch.
             Indices index = Indices.Index(new string[] { this._apiOptions.AliasName});
-            Types types = Types.Type(new string[] { "terms" });
 
             // Figure out the specific term subquery based on the match type.
             QueryBase termSubquery;
@@ -301,7 +298,7 @@ namespace NCI.OCPL.Api.Glossary.Services
                     throw new ArgumentException($"Uknown matchType value '${matchType}'.");
             }
 
-            SearchRequest request = new SearchRequest(index, types)
+            SearchRequest request = new SearchRequest(index)
             {
                 Query = new TermQuery {Field = "language", Value = language.ToString()} &&
                         new TermQuery {Field = "audience", Value = audience.ToString()} &&
@@ -310,7 +307,7 @@ namespace NCI.OCPL.Api.Glossary.Services
                 ,
                 Sort = new List<ISort>
                 {
-                    new SortField { Field = "term_name" }
+                    new FieldSort { Field = "term_name" }
                 },
                 Size = size,
                 From = from,
@@ -396,8 +393,7 @@ namespace NCI.OCPL.Api.Glossary.Services
 
             // Set up the SearchRequest to send to elasticsearch.
             Indices index = Indices.Index(new string[] { this._apiOptions.AliasName});
-            Types types = Types.Type(new string[] { "terms" });
-            SearchRequest request = new SearchRequest(index, types)
+            SearchRequest request = new SearchRequest(index)
             {
                 Query = new TermQuery {Field = "language", Value = language.ToString()} &&
                         new TermQuery {Field = "audience", Value = audience.ToString()} &&
@@ -406,7 +402,7 @@ namespace NCI.OCPL.Api.Glossary.Services
                 ,
                 Sort = new List<ISort>
                 {
-                    new SortField { Field = "term_name" }
+                    new FieldSort { Field = "term_name" }
                 },
                 Size = size,
                 From = from,
@@ -480,18 +476,27 @@ namespace NCI.OCPL.Api.Glossary.Services
         {
             // Set up the CountRequest to send to elasticsearch.
             Indices index = Indices.Index(new string[] { this._apiOptions.AliasName });
-            Types types = Types.Type(new string[] { "terms" });
-            CountRequest request = new CountRequest(index, types)
+            CountRequest request = new CountRequest()
             {
+
                 Query = new TermQuery { Field = "language", Value = language.ToString() } &&
                         new TermQuery { Field = "audience", Value = audience.ToString() } &&
-                        new TermQuery { Field = "dictionary", Value = dictionary.ToString() }
+                        new TermQuery { Field = "dictionary", Value = dictionary.ToString() },
+
             };
 
-            ICountResponse response = null;
+
+            CountResponse response = null;
             try
             {
-                response = await _elasticClient.CountAsync<GlossaryTerm>(request);
+                response = await _elasticClient.CountAsync<GlossaryTerm>( s => s
+                    .Index(index)
+                    .Query(q =>
+                        q.Term(t => t.Field("language").Value(language)) &&
+                        q.Term(t => t.Field("audience").Value(audience)) &&
+                        q.Term(t => t.Field("dictionary").Value(dictionary))
+                    )
+                );
             }
             catch (Exception ex)
             {
