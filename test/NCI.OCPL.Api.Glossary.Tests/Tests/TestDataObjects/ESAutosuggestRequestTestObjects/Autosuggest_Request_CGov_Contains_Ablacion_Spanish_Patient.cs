@@ -51,10 +51,9 @@ namespace NCI.OCPL.Api.Glossary.Tests.ESAutosuggestQueryTestData
                                 }
                             },
                             {
-                                ""match"": {
+                                ""match_phrase"": {
                                     ""term_name._autocomplete"": {
-                                        ""query"": ""ablación"",
-                                        ""type"": ""phrase""
+                                        ""query"": ""ablación""
                                     }
                                 }
                             }
