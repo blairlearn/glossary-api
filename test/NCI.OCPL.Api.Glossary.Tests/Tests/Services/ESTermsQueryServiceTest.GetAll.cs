@@ -84,7 +84,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
         public static IEnumerable<object[]> GetAll_RequestData => new[]
         {
-            //new object[] { new GetAll_Request_DefaultFields()},
+            new object[] { new GetAll_Request_DefaultFields()},
             new object[] { new GetAll_Request_AdditionalFields()}
         };
 

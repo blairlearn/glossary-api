@@ -474,18 +474,8 @@ namespace NCI.OCPL.Api.Glossary.Services
         /// <returns>The number of terms available.</returns>
         public async Task<long> GetCount(string dictionary, AudienceType audience, string language)
         {
-            // Set up the CountRequest to send to elasticsearch.
+            // Set up the count request to send to elasticsearch.
             Indices index = Indices.Index(new string[] { this._apiOptions.AliasName });
-            CountRequest request = new CountRequest()
-            {
-
-                Query = new TermQuery { Field = "language", Value = language.ToString() } &&
-                        new TermQuery { Field = "audience", Value = audience.ToString() } &&
-                        new TermQuery { Field = "dictionary", Value = dictionary.ToString() },
-
-            };
-
-
             CountResponse response = null;
             try
             {

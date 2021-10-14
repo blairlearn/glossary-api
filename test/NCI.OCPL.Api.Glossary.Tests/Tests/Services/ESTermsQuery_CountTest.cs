@@ -152,12 +152,12 @@ namespace NCI.OCPL.Api.Glossary.Tests
         [InlineData(500)]
         public async void GetCount_ErrorResponse(int returnStatusCode)
         {
-            ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
-            conn.RegisterRequestHandlerForType<Nest.CountResponse>((req, res) =>
-            {
-                res.Stream = null;
-                res.StatusCode = returnStatusCode;
-            });
+            InMemoryConnection conn = new InMemoryConnection(
+                responseBody: new byte[0],
+                statusCode: returnStatusCode,
+                exception: null,
+                contentType: "application/json"
+            );
 
             // The URI does not matter, an InMemoryConnection never requests from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
@@ -184,16 +184,15 @@ namespace NCI.OCPL.Api.Glossary.Tests
         [Fact]
         public async void GetCount_InvalidResponse()
         {
-            ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
-            conn.RegisterRequestHandlerForType<Nest.CountResponse>((req, res) =>
-            {
-                string partial =@"{
-                    ""count"": 8458,
-                    ""_shards"": {";
-                byte[] byteArray = Encoding.UTF8.GetBytes(partial);
-                res.Stream = new MemoryStream(byteArray);
-                res.StatusCode = 200;
-            });
+            string partial =@"{
+                ""count"": 8458,
+                ""_shards"": {";
+            InMemoryConnection conn = new InMemoryConnection(
+                responseBody: Encoding.UTF8.GetBytes(partial),
+                statusCode: 200,
+                exception: null,
+                contentType: "application/json"
+            );
 
             // The URI does not matter, an InMemoryConnection never requests from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
