@@ -326,7 +326,7 @@ namespace NCI.OCPL.Api.Glossary.Services
             {
                 String msg = $"Could not search dictionary '{dictionary}', audience '{audience}', language '{language}', query '{query}', size '{size}', from '{from}'.";
                 _logger.LogError($"Error searching index: '{this._apiOptions.AliasName}'.");
-                _logger.LogError(msg, ex);
+                _logger.LogError(ex, msg);
                 throw new APIErrorException(500, msg);
             }
 
@@ -421,7 +421,7 @@ namespace NCI.OCPL.Api.Glossary.Services
             {
                 String msg = $"Could not search dictionary '{dictionary}', audience '{audience}', language '{language}', character '{expandCharacter}', size '{size}', from '{from}'.";
                 _logger.LogError($"Error searching index: '{this._apiOptions.AliasName}'.");
-                _logger.LogError(msg, ex);
+                _logger.LogError(ex, msg);
                 throw new APIErrorException(500, msg);
             }
 
@@ -492,7 +492,7 @@ namespace NCI.OCPL.Api.Glossary.Services
             {
                 String msg = $"Could not get a count for dictionary '{dictionary}', audience '{audience}', language '{language}'";
                 _logger.LogError($"Error getting count on index: '{this._apiOptions.AliasName}'.");
-                _logger.LogError(msg, ex);
+                _logger.LogError(ex, msg);
                 throw new APIErrorException(500, msg);
             }
 
