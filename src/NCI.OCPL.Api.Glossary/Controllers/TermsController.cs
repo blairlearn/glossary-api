@@ -87,14 +87,29 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             if (language.ToLower() != "en" && language.ToLower() != "es")
                 throw new APIErrorException(400, "Unsupported Language. Please try either 'en' or 'es'");
 
-            if (useFallback == false) {
-                return await _termsQueryService.GetById(dictionary, audience, language, id);
+            if (useFallback == false)
+            {
+                GlossaryTerm result = null;
+                try
+                {
+                    result = await _termsQueryService.GetById(dictionary, audience, language, id);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, $"Error encountered for dictionary '{dictionary}', audience '{audience}', language '{language}' and id '{id}.");
+                    throw new APIErrorException(500, "Errors Occured");
+                }
+                if(result != null)
+                    return result;
+                else
+                    throw new APIErrorException(404, $"No match for dictionary '{dictionary}', audience '{audience}', language '{language}' and id '{id}'.");
             }
             // Implement fallback logic.
             // Depending on the given Dictionary and Audience inputs, loop through the fallback logic options until a term is found.
             // If the given fallback combination does not exist, then throw an error.
             // If none of the options return a term, then throw an error.
-            else {
+            else
+            {
                 // Set order of fallback options based on current audience.
                 var fallbackOptions = audience == AudienceType.Patient ? _fallbackOptionsPatient : _fallbackOptionsHP;
 
@@ -104,7 +119,6 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 if (start == null)
                 {
                     string msg = $"Could not find initial fallback combination with dictionary '{dictionary}' and audience '{audience}'.";
-                    _logger.LogError(msg);
                     throw new APIErrorException(404, msg);
                 }
 
@@ -112,19 +126,25 @@ namespace NCI.OCPL.Api.Glossary.Controllers
 
                 do
                 {
-                    try {
-                        return await _termsQueryService.GetById(current.Value.Item1, current.Value.Item2, language, id);
+                    try
+                    {
+                        GlossaryTerm result = await _termsQueryService.GetById(current.Value.Item1, current.Value.Item2, language, id);
+                        if(result == null)
+                        {
+                            current = current.Next == null ? fallbackOptions.First : current.Next;
+                            continue;
+                        }
+                        else
+                            return result;
                     }
-                    catch (Exception ex) {
-                        // Swallow this Exception and move to the next combination.
-                        string msg = $"Could not find fallback term with ID '{id}', dictionary '{current.Value.Item1}', audience '{current.Value.Item2}', and language '{language}'.";
-                        _logger.LogDebug(ex, msg);
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, $"Error encountered for dictionary '{current.Value.Item1}', audience '{current.Value.Item2}', language '{language}' and id '{id}.");
+                        throw new APIErrorException(500, "Errors Occured");
                     }
-                    current = current.Next == null ? fallbackOptions.First : current.Next;
                 } while ( current != start );
 
                 string message = $"Could not find fallback term with ID '{id}' for any combination of dictionary and audience.";
-                _logger.LogError(message);
                 throw new APIErrorException(404, message);
             }
         }

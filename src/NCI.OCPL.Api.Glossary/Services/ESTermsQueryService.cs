@@ -80,27 +80,20 @@ namespace NCI.OCPL.Api.Glossary.Services
                 string idValue = $"{id}_{dictionary?.ToLower()}_{language?.ToLower()}_{audience.ToString().ToLower()}";
                 response = await _elasticClient.GetAsync<GlossaryTerm>(new DocumentPath<GlossaryTerm>(idValue),
                         g => g.Index( this._apiOptions.AliasName ));
-
             }
             catch (Exception ex)
             {
                 String msg = $"Could not search dictionary '{dictionary}', audience '{audience}', language '{language}' and id '{id}.";
                 _logger.LogError($"Error searching index: '{this._apiOptions.AliasName}'.");
                 _logger.LogError(ex, msg);
-                throw new APIErrorException(500, msg);
+                throw;
             }
 
-            if (!response.IsValid)
+            if (!response.ApiCall.Success)
             {
-                String msg = $"Invalid response when searching for dictionary  '{dictionary}', audience '{audience}', language '{language}' and id '{id}.";
+                String msg = $"Invalid Elasticsearch response for dictionary '{dictionary}', audience '{audience}', language '{language}' and id '{id}.\n\n{response.DebugInformation}";
                 _logger.LogError(msg);
-                throw new APIErrorException(500, msg);
-            }
-
-            if(null==response.Source){
-                string msg = $"No match for dictionary '{dictionary}', audience '{audience}', language '{language}' and id '{id}.";
-                _logger.LogDebug(msg);
-                throw new APIErrorException(404, msg);
+                throw new APIInternalException(msg);
             }
 
             return response.Source;
