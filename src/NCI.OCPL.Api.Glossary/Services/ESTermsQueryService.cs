@@ -134,14 +134,13 @@ namespace NCI.OCPL.Api.Glossary.Services
                 String msg = $"Could not search dictionary '{dictionary}', audience '{audience}', language '{language}', pretty URL name '{prettyUrlName}'.";
                 _logger.LogError($"Error searching index: '{this._apiOptions.AliasName}'.");
                 _logger.LogError(ex, msg);
-                throw new APIErrorException(500, msg);
+                throw;
             }
 
             if (!response.IsValid)
             {
-                String msg = $"Invalid response when searching for dictionary '{dictionary}', audience '{audience}', language '{language}', pretty URL name '{prettyUrlName}'.";
-                _logger.LogError(msg);
-                throw new APIErrorException(500, "errors occured");
+                _logger.LogError($"Invalid Elasticsearch response for dictionary '{dictionary}', audience '{audience}', language '{language}', pretty URL name '{prettyUrlName}'.\n\n{response.DebugInformation}");
+                throw new APIInternalException("errors occured");
             }
 
             GlossaryTerm glossaryTerm = new GlossaryTerm();
@@ -153,14 +152,12 @@ namespace NCI.OCPL.Api.Glossary.Services
             }
             else if (response.Total == 0)
             {
-                string msg = $"No match for dictionary '{dictionary}', audience '{audience}', language '{language}', pretty URL name '{prettyUrlName}'.";
-                _logger.LogDebug(msg);
-                throw new APIErrorException(404, msg);
+                glossaryTerm = null;
             }
-            else {
-                string msg = $"Incorrect response when searching for dictionary '{dictionary}', audience '{audience}', language '{language}', pretty URL name '{prettyUrlName}'.";
-                _logger.LogError(msg);
-                throw new APIErrorException(500, "Errors have occured.");
+            else
+            {
+                _logger.LogError($"Multiple results for dictionary '{dictionary}', audience '{audience}', language '{language}', pretty URL name '{prettyUrlName}'.");
+                throw new APIInternalException("errors occured");
             }
 
             return glossaryTerm;

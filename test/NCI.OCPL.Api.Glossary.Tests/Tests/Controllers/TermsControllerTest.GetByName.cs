@@ -168,7 +168,9 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 Media = new IMedia[] {}
             };
 
-            int callOrder = 0;
+            // Tracker for how far along we are in the call order.  Deliberately starting at 1 for
+            // for the first call.
+            int callOrder = 1;
 
             // Cancer.gov and HealthProfessional would be the first call to the terms query service, returning nothing.
             termQueryService.Setup(
@@ -180,7 +182,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 )
             )
             .Callback(() => Assert.Equal(1, callOrder++))
-            .Throws(new APIErrorException(200, "Empty response when searching for dictionary 'cancer.gov', audience 'HealthProfessional', language 'en', pretty URL name 'deleterious-mutation'."));
+            .Returns(Task<GlossaryTerm>.FromResult((GlossaryTerm)(null)));
 
             // Cancer.gov and Patient would be the second call to the terms query service, returning nothing.
             termQueryService.Setup(
@@ -192,7 +194,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 )
             )
             .Callback(() => Assert.Equal(2, callOrder++))
-            .Throws(new APIErrorException(200, "Empty response when searching for dictionary 'cancer.gov', audience 'Patient', language 'en', pretty URL name 'deleterious-mutation'."));
+            .Returns(Task<GlossaryTerm>.FromResult((GlossaryTerm)(null)));
 
             // NotSet and HealthProfessional would be the third call to the terms query service, returning nothing.
             termQueryService.Setup(
@@ -204,7 +206,8 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 )
             )
             .Callback(() => Assert.Equal(3, callOrder++))
-            .Throws(new APIErrorException(200, "Empty response when searching for dictionary 'notset', audience 'HealthProfessional', language 'en', pretty URL name 'deleterious-mutation'."));
+            .Returns(Task<GlossaryTerm>.FromResult((GlossaryTerm)(null)));
+
 
             // NotSet and Patient would be the fourth call to the terms query service, returning nothing.
             termQueryService.Setup(
@@ -216,7 +219,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 )
             )
             .Callback(() => Assert.Equal(4, callOrder++))
-            .Throws(new APIErrorException(200, "Empty response when searching for dictionary 'notset', audience 'Patient', language 'en', pretty URL name 'deleterious-mutation'."));
+            .Returns(Task<GlossaryTerm>.FromResult((GlossaryTerm)(null)));
 
             // Genetics and HealthProfessional would be the last call to the terms query service, returning the term.
             termQueryService.Setup(
@@ -298,7 +301,9 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 RelatedResources = new IRelatedResource[] { }
             };
 
-            int callOrder = 0;
+            // Tracker for how far along we are in the call order.  Deliberately starting at 1 for
+            // for the first call.
+            int callOrder = 1;
 
             // NotSet and Patient would be the first call to the terms query service, returning nothing.
             termQueryService.Setup(
@@ -310,7 +315,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 )
             )
             .Callback(() => Assert.Equal(1, callOrder++))
-            .Throws(new APIErrorException(200, "Empty response when searching for dictionary 'notset', audience 'Patient', language 'en', pretty URL name 's-phase-fraction'."));
+            .Returns(Task<GlossaryTerm>.FromResult((GlossaryTerm)(null)));
 
             // NotSet and HealthProfessional would be the second call to the terms query service, returning nothing.
             termQueryService.Setup(
@@ -322,7 +327,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 )
             )
             .Callback(() => Assert.Equal(2, callOrder++))
-            .Throws(new APIErrorException(200, "Empty response when searching for dictionary 'notset', audience 'HealthProfessional', language 'en', pretty URL name 's-phase-fraction'."));
+            .Returns(Task<GlossaryTerm>.FromResult((GlossaryTerm)(null)));
 
             // Genetics and Patient would be the third call to the terms query service, returning nothing.
             termQueryService.Setup(
@@ -334,7 +339,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 )
             )
             .Callback(() => Assert.Equal(3, callOrder++))
-            .Throws(new APIErrorException(200, "Empty response when searching for dictionary 'genetics', audience 'Patient', language 'en', pretty URL name 's-phase-fraction'."));
+            .Returns(Task<GlossaryTerm>.FromResult((GlossaryTerm)(null)));
 
             // Genetics and HealthProfessional would be the fourth call to the terms query service, returning nothing.
             termQueryService.Setup(
@@ -346,7 +351,7 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 )
             )
             .Callback(() => Assert.Equal(4, callOrder++))
-            .Throws(new APIErrorException(200, "Empty response when searching for dictionary 'genetics', audience 'HealthProfessional', language 'en', pretty URL name 's-phase-fraction'."));
+            .Returns(Task<GlossaryTerm>.FromResult((GlossaryTerm)(null)));
 
             // Cancer.gov and Patient would be the last call to the terms query service, returning the term.
             termQueryService.Setup(

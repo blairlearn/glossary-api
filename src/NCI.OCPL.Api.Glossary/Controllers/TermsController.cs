@@ -177,8 +177,22 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 throw new APIErrorException(400, "You must specify the prettyUrlName parameter.");
 
             // Call GetByName with specified parameters.
-            if (useFallback == false) {
-                return await _termsQueryService.GetByName(dictionary, audience, language, prettyUrlName);
+            if (useFallback == false)
+            {
+                GlossaryTerm result = null;
+                try
+                {
+                    result = await _termsQueryService.GetByName(dictionary, audience, language, prettyUrlName);
+                }
+                catch(Exception ex)
+                {
+                    _logger.LogError(ex, $"Error encountered for dictionary '{dictionary}', audience '{audience}', language '{language}' and pretty url '{prettyUrlName}'.");
+                    throw new APIErrorException(500, "Errors occured");
+                }
+                if(result != null)
+                    return result;
+                else
+                    throw new APIErrorException(404, $"No match for dictionary '{dictionary}', audience '{audience}', language '{language}' and pretty url '{prettyUrlName}'.");
             }
             // Implement fallback logic.
             // Depending on the given Dictionary and Audience inputs, loop through the fallback logic options until a term is found.
@@ -195,7 +209,6 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 if (start == null)
                 {
                     string msg = $"Could not find initial fallback combination with dictionary '{dictionary}' and audience '{audience}'.";
-                    _logger.LogError(msg);
                     throw new APIErrorException(404, msg);
                 }
 
@@ -203,20 +216,26 @@ namespace NCI.OCPL.Api.Glossary.Controllers
 
                 do
                 {
-                    try {
-                        return await _termsQueryService.GetByName(current.Value.Item1, current.Value.Item2, language, prettyUrlName);
+                    try
+                    {
+                        GlossaryTerm result = await _termsQueryService.GetByName(current.Value.Item1, current.Value.Item2, language, prettyUrlName);
+                        if(result == null)
+                        {
+                            current = current.Next == null ? fallbackOptions.First : current.Next;
+                            continue;
+                        }
+                        else
+                            return result;
                     }
-                    catch (Exception ex) {
-                        // Swallow this Exception and move to the next combination.
-                        string msg = $"Could not find fallback term with pretty URL name '{prettyUrlName}', dictionary '{current.Value.Item1}', audience '{current.Value.Item2}', and language '{language}'.";
-                        _logger.LogDebug(ex, msg);
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, $"Error encountered for dictionary '{current.Value.Item1}', audience '{current.Value.Item2}', language '{language}' and pretty URL name '{prettyUrlName}'.");
+                        throw new APIErrorException(500, "Errors Occured");
                     }
 
-                    current = current.Next == null ? fallbackOptions.First : current.Next;
                 } while ( current != start );
 
                 string message = $"Could not find fallback term with pretty URL name '{prettyUrlName}' for any combination of dictionary and audience.";
-                _logger.LogError(message);
                 throw new APIErrorException(404, message);
             }
         }

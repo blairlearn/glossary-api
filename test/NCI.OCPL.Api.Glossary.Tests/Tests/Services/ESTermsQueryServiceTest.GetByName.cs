@@ -15,6 +15,7 @@ using NCI.OCPL.Api.Glossary.Models;
 using NCI.OCPL.Api.Glossary.Services;
 using NCI.OCPL.Api.Glossary.Tests.ESTermsQueryTestData;
 using NCI.OCPL.Api.Common;
+using System.Text;
 
 namespace NCI.OCPL.Api.Glossary.Tests
 {
@@ -27,16 +28,22 @@ namespace NCI.OCPL.Api.Glossary.Tests
         };
 
         /// <summary>
-        /// Test failure to connect to and retrieve response from API in GetByName
+        /// Test failure to connect to Elasticsearch for GetByName.
         /// </summary>
-        [Fact]
-        public async void GetByName_TestAPIConnectionFailure()
+        [Theory]
+        [InlineData(401)]
+        [InlineData(403)]
+        [InlineData(500)]
+        [InlineData(502)]
+        [InlineData(503)]
+        public async void GetByName_TestAPIConnectionFailure(int returnStatus)
         {
-            ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
-            conn.RegisterRequestHandlerForType<Nest.SearchResponse<GlossaryTerm>>((req, res) =>
-            {
-                res.StatusCode = 500;
-            });
+            InMemoryConnection conn = new InMemoryConnection(
+                responseBody: Encoding.UTF8.GetBytes("An error message"),
+                statusCode: returnStatus,
+                exception: null,
+                contentType: "text/plain"
+            );
 
             // While this has a URI, it does not matter, an InMemoryConnection never requests
             // from the server.
@@ -50,21 +57,23 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.GetByName("Cancer.gov", AudienceType.Patient, "en", "s-1"));
-            Assert.Equal(500, ex.HttpStatusCode);
+            await Assert.ThrowsAsync<APIInternalException>(
+                () => termsClient.GetByName("cancer.gov", AudienceType.Patient, "en", "s-1")
+            );
         }
 
         /// <summary>
-        /// Test failure to connect to ES or receiving an invalid response from ES in GetByName.
+        /// Test receiving an invalid response from ES in GetByName.
         /// </summary>
         [Fact]
         public async void GetByName_TestInvalidResponse()
         {
-            ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
-            conn.RegisterRequestHandlerForType<Nest.SearchResponse<GlossaryTerm>>((req, res) =>
-            {
-
-            });
+            InMemoryConnection conn = new InMemoryConnection(
+                responseBody: Encoding.UTF8.GetBytes("Not the server you were looking for"),
+                statusCode: 200,
+                exception: null,
+                contentType: "text/plain"
+            );
 
             // While this has a URI, it does not matter, an InMemoryConnection never requests
             // from the server.
@@ -78,8 +87,9 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.GetByName("Cancer.gov", AudienceType.Patient, "en", "s-1"));
-            Assert.Equal(500, ex.HttpStatusCode);
+            APIInternalException ex = await Assert.ThrowsAsync<APIInternalException>(
+                () => termsClient.GetByName("Cancer.gov", AudienceType.Patient, "en", "s-1")
+            );
         }
 
         /// <summary>
@@ -133,18 +143,19 @@ namespace NCI.OCPL.Api.Glossary.Tests
                 }"
             );
 
+            Uri actualESURI = null;
+
             ElasticsearchInterceptingConnection conn = new ElasticsearchInterceptingConnection();
             conn.RegisterRequestHandlerForType<Nest.SearchResponse<GlossaryTerm>>((req, res) =>
             {
                 res.Stream = TestingTools.GetTestFileAsStream("ESTermsQueryData/GetByName/s-1.json");
-
                 res.StatusCode = 200;
 
                 actualRequest = conn.GetRequestPost(req);
+                actualESURI = req.Uri;
             });
 
-            // While this has a URI, it does not matter, an InMemoryConnection never requests
-            // from the server.
+            // Doesn't actually connect to the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
             var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
@@ -155,22 +166,19 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
 
-            try
-            {
-                var results = await termsClient.GetByName("Cancer.gov", AudienceType.Patient, "en", "s-1");
-            }
-            catch (Exception) { }
+            // Don't actually care that this returns anything, only that the connection set up the request correctly.
+            await termsClient.GetByName("Cancer.gov", AudienceType.Patient, "en", "s-1");
 
             Assert.Equal(expectedRequest, actualRequest, new JTokenEqualityComparer());
+            Assert.Equal("/glossaryv1/_search", actualESURI.AbsolutePath);
         }
 
         /// <summary>
-        /// Test that GetByName throws correct error for no results.
+        /// Test that GetByName throws exception for multiple results.
         /// </summary>
         [Theory]
-        [InlineData("getbyname_noresults", 404, "No match for dictionary 'Cancer.gov', audience 'Patient', language 'en', pretty URL name 's-1'.")]
-        [InlineData("getbyname_multiplehits", 500, "Errors have occured.")]
-        public async void GetByName_TestNoOrIncorrectResults(string file, int expectedStatusCode, string expectedMessage)
+        [InlineData("getbyname_multiplehits", "errors occured")]
+        public async void GetByName_MultipleResults(string file, string expectedMessage)
         {
             IElasticClient client = GetByName_GetElasticClientWithData(file);
 
@@ -179,9 +187,55 @@ namespace NCI.OCPL.Api.Glossary.Tests
 
             ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
 
-            APIErrorException ex = await Assert.ThrowsAsync<APIErrorException>(() => termsClient.GetByName("Cancer.gov", AudienceType.Patient, "en", "s-1"));
-            Assert.Equal(expectedStatusCode, ex.HttpStatusCode);
+            APIInternalException ex = await Assert.ThrowsAsync<APIInternalException>(() => termsClient.GetByName("Cancer.gov", AudienceType.Patient, "en", "s-1"));
             Assert.Equal(expectedMessage, ex.Message);
+        }
+
+        /// <summary>
+        /// Verify that GetByName returns in the expected manner when Elasticsearch reports that the
+        /// term doesn't exist.
+        /// </summary>
+        [Fact]
+        public async void GetByName_TermNotFound()
+        {
+            InMemoryConnection conn = new InMemoryConnection(
+                responseBody: Encoding.UTF8.GetBytes(
+                    @"{
+                        ""took"": 3,
+                        ""timed_out"": false,
+                        ""_shards"": {
+                            ""total"": 1,
+                            ""successful"": 1,
+                            ""skipped"": 0,
+                            ""failed"": 0
+                        },
+                        ""hits"": {
+                            ""total"": {
+                                ""value"": 0,
+                                ""relation"": ""eq""
+                            },
+                            ""max_score"": null,
+                            ""hits"": []
+                        }
+                    }"
+                ),
+                statusCode: 200,
+                exception: null,
+                contentType: "application/json"
+            );
+            // Doesn't actually connect to the server.
+            var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
+            var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
+            IElasticClient client = new ElasticClient(connectionSettings);
+
+            // Setup the mocked Options
+            IOptions<GlossaryAPIOptions> gTermsClientOptions = GetMockOptions();
+
+            ESTermsQueryService termsClient = new ESTermsQueryService(client, gTermsClientOptions, new NullLogger<ESTermsQueryService>());
+
+            GlossaryTerm result = await termsClient.GetByName("cancer.gov", AudienceType.Patient, "en", "s-1");
+
+            Assert.Null(result);
         }
 
         /// <summary>
@@ -214,12 +268,9 @@ namespace NCI.OCPL.Api.Glossary.Tests
             {
                 //Get the file name for this round
                 res.Stream = TestingTools.GetTestFileAsStream("ESTermsQueryData/GetByName/" + prettyUrlName + ".json");
-
                 res.StatusCode = 200;
             });
 
-            //While this has a URI, it does not matter, an InMemoryConnection never requests
-            //from the server.
             var pool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
 
             var connectionSettings = new ConnectionSettings(pool, conn, sourceSerializer: JsonNetSerializer.Default);
