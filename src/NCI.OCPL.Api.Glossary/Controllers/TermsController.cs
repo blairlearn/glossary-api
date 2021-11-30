@@ -64,8 +64,14 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         }
 
         /// <summary>
-        /// Get the Glossary Term based on Id.
+        /// Retrieve the details of a Glossary Term by ID value.
         /// </summary>
+        /// <param name="dictionary">The dictionary to use. Valid values are "cancer.gov" for the Dictionary of Cancer Terms
+        /// and "genetics" for the Dictionary of Genetics Terms.</param>
+        /// <param name="audience">The intended audience.</param>
+        /// <param name="language">The language in which to fetch the details. Valid values are "en" for English and "es" for Spanish.</param>
+        /// <param name="id">The term's ID</param>
+        /// <param name="useFallback">Set true to use falback logic if the term isn't available for the specified combination of audience and dictionary.</param>
         /// <returns>GlossaryTerm object</returns>
         [HttpGet("{dictionary:required}/{audience:required}/{language:required}/{id:long}")]
         public async Task<GlossaryTerm> GetById(string dictionary, AudienceType audience, string language, long id, bool useFallback = false)
@@ -81,14 +87,29 @@ namespace NCI.OCPL.Api.Glossary.Controllers
             if (language.ToLower() != "en" && language.ToLower() != "es")
                 throw new APIErrorException(400, "Unsupported Language. Please try either 'en' or 'es'");
 
-            if (useFallback == false) {
-                return await _termsQueryService.GetById(dictionary, audience, language, id);
+            if (useFallback == false)
+            {
+                GlossaryTerm result = null;
+                try
+                {
+                    result = await _termsQueryService.GetById(dictionary, audience, language, id);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, $"Error encountered for dictionary '{dictionary}', audience '{audience}', language '{language}' and id '{id}.");
+                    throw new APIErrorException(500, "Errors Occured");
+                }
+                if(result != null)
+                    return result;
+                else
+                    throw new APIErrorException(404, $"No match for dictionary '{dictionary}', audience '{audience}', language '{language}' and id '{id}'.");
             }
             // Implement fallback logic.
             // Depending on the given Dictionary and Audience inputs, loop through the fallback logic options until a term is found.
             // If the given fallback combination does not exist, then throw an error.
             // If none of the options return a term, then throw an error.
-            else {
+            else
+            {
                 // Set order of fallback options based on current audience.
                 var fallbackOptions = audience == AudienceType.Patient ? _fallbackOptionsPatient : _fallbackOptionsHP;
 
@@ -98,7 +119,6 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 if (start == null)
                 {
                     string msg = $"Could not find initial fallback combination with dictionary '{dictionary}' and audience '{audience}'.";
-                    _logger.LogError(msg);
                     throw new APIErrorException(404, msg);
                 }
 
@@ -106,19 +126,25 @@ namespace NCI.OCPL.Api.Glossary.Controllers
 
                 do
                 {
-                    try {
-                        return await _termsQueryService.GetById(current.Value.Item1, current.Value.Item2, language, id);
+                    try
+                    {
+                        GlossaryTerm result = await _termsQueryService.GetById(current.Value.Item1, current.Value.Item2, language, id);
+                        if(result == null)
+                        {
+                            current = current.Next == null ? fallbackOptions.First : current.Next;
+                            continue;
+                        }
+                        else
+                            return result;
                     }
-                    catch (Exception ex) {
-                        // Swallow this Exception and move to the next combination.
-                        string msg = $"Could not find fallback term with ID '{id}', dictionary '{current.Value.Item1}', audience '{current.Value.Item2}', and language '{language}'.";
-                        _logger.LogDebug(ex, msg);
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, $"Error encountered for dictionary '{current.Value.Item1}', audience '{current.Value.Item2}', language '{language}' and id '{id}.");
+                        throw new APIErrorException(500, "Errors Occured");
                     }
-                    current = current.Next == null ? fallbackOptions.First : current.Next;
                 } while ( current != start );
 
                 string message = $"Could not find fallback term with ID '{id}' for any combination of dictionary and audience.";
-                _logger.LogError(message);
                 throw new APIErrorException(404, message);
             }
         }
@@ -126,6 +152,12 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <summary>
         /// Get the Glossary Term based on Pretty URL Name.
         /// </summary>
+        /// <param name="dictionary">The dictionary to use. Valid values are "cancer.gov" for the Dictionary of Cancer Terms
+        /// and "genetics" for the Dictionary of Genetics Terms.</param>
+        /// <param name="audience">The intended audience.</param>
+        /// <param name="language">The language in which to fetch the details. Valid values are "en" for English and "es" for Spanish.</param>
+        /// <param name="prettyUrlName">The term's name as a path segment.</param>
+        /// <param name="useFallback">Set true to use falback logic if the term isn't available for the specified combination of audience and dictionary.</param>
         /// <returns>GlossaryTerm object</returns>
         [HttpGet("{dictionary:required}/{audience:required}/{language:required}/{prettyUrlName}")]
         public async Task<GlossaryTerm> GetByName(string dictionary, AudienceType audience, string language, string prettyUrlName, bool useFallback = false)
@@ -145,8 +177,22 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 throw new APIErrorException(400, "You must specify the prettyUrlName parameter.");
 
             // Call GetByName with specified parameters.
-            if (useFallback == false) {
-                return await _termsQueryService.GetByName(dictionary, audience, language, prettyUrlName);
+            if (useFallback == false)
+            {
+                GlossaryTerm result = null;
+                try
+                {
+                    result = await _termsQueryService.GetByName(dictionary, audience, language, prettyUrlName);
+                }
+                catch(Exception ex)
+                {
+                    _logger.LogError(ex, $"Error encountered for dictionary '{dictionary}', audience '{audience}', language '{language}' and pretty url '{prettyUrlName}'.");
+                    throw new APIErrorException(500, "Errors occured");
+                }
+                if(result != null)
+                    return result;
+                else
+                    throw new APIErrorException(404, $"No match for dictionary '{dictionary}', audience '{audience}', language '{language}' and pretty url '{prettyUrlName}'.");
             }
             // Implement fallback logic.
             // Depending on the given Dictionary and Audience inputs, loop through the fallback logic options until a term is found.
@@ -163,7 +209,6 @@ namespace NCI.OCPL.Api.Glossary.Controllers
                 if (start == null)
                 {
                     string msg = $"Could not find initial fallback combination with dictionary '{dictionary}' and audience '{audience}'.";
-                    _logger.LogError(msg);
                     throw new APIErrorException(404, msg);
                 }
 
@@ -171,20 +216,26 @@ namespace NCI.OCPL.Api.Glossary.Controllers
 
                 do
                 {
-                    try {
-                        return await _termsQueryService.GetByName(current.Value.Item1, current.Value.Item2, language, prettyUrlName);
+                    try
+                    {
+                        GlossaryTerm result = await _termsQueryService.GetByName(current.Value.Item1, current.Value.Item2, language, prettyUrlName);
+                        if(result == null)
+                        {
+                            current = current.Next == null ? fallbackOptions.First : current.Next;
+                            continue;
+                        }
+                        else
+                            return result;
                     }
-                    catch (Exception ex) {
-                        // Swallow this Exception and move to the next combination.
-                        string msg = $"Could not find fallback term with pretty URL name '{prettyUrlName}', dictionary '{current.Value.Item1}', audience '{current.Value.Item2}', and language '{language}'.";
-                        _logger.LogDebug(ex, msg);
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, $"Error encountered for dictionary '{current.Value.Item1}', audience '{current.Value.Item2}', language '{language}' and pretty URL name '{prettyUrlName}'.");
+                        throw new APIErrorException(500, "Errors Occured");
                     }
 
-                    current = current.Next == null ? fallbackOptions.First : current.Next;
                 } while ( current != start );
 
                 string message = $"Could not find fallback term with pretty URL name '{prettyUrlName}' for any combination of dictionary and audience.";
-                _logger.LogError(message);
                 throw new APIErrorException(404, message);
             }
         }
@@ -192,7 +243,8 @@ namespace NCI.OCPL.Api.Glossary.Controllers
         /// <summary>
         /// Retrieves a portion of the overall set of glossary terms for a given combination of dictionary, audience, and language.
         /// </summary>
-        /// <param name="dictionary">The specific dictionary to retrieve from.</param>
+        /// <param name="dictionary">The dictionary to use. Valid values are "cancer.gov" for the Dictionary of Cancer Terms
+        /// and "genetics" for the Dictionary of Genetics Terms.</param>
         /// <param name="audience">The target audience.</param>
         /// <param name="language">Language (English - en; Spanish - es).</param>
         /// <param name="size">The number of records to retrieve.</param>
