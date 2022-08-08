@@ -125,7 +125,7 @@ jobs:
         env:
             discovery.type: single-node
             ES_JAVA_OPTS: -Xms750m -Xmx750m
-        image: elasticsearch:7.9.2
+        image: elasticsearch:7.17.5
         ports:
           ## NOTE: This will be exposed as a random port referenced below by job.services.elasticsearch.ports[9200]
           - 9200/tcp

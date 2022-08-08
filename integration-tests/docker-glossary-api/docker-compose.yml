@@ -2,9 +2,12 @@ version: "3.7"
 
 services:
     elasticsearch:
-        image: elasticsearch:7.9.2
-        ## All of the ES settings can be set via the environment
-        ## vars.
+        build:
+            # Point to the root of the project.
+            context: ../../
+            # This path is relative to the context.
+            dockerfile: integration-tests/docker-glossary-api/elasticsearch/Dockerfile
+        ## All of the ES settings can be set via the environment vars.
         environment:
             - discovery.type=single-node
             - ES_JAVA_OPTS=-Xms750m -Xmx750m
