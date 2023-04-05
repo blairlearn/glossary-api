@@ -76,12 +76,12 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         ## using latest LTS releases - also it MUST be the SDK version.
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '3.1.*'
+          dotnet-version: '6.0.*'
           source-url: "https://nuget.pkg.github.com/${{ env.OWNER }}/index.json"
       - name: Build with dotnet
         run: dotnet build --configuration Release /WarnAsError
@@ -94,7 +94,7 @@ jobs:
               fi
         shell: bash
       - name: Save Code Coverage Output
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: coverage-${{ matrix.operating-system }}
           path: lcov.info
@@ -111,7 +111,7 @@ jobs:
           echo "$BUILD_INFO" > $GITHUB_WORKSPACE/out/wwwroot/build-info.json
         shell: bash
       - name: Upload Published Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: glossary-api-${{ matrix.operating-system }}
           path: out
@@ -132,17 +132,17 @@ jobs:
         options: --health-cmd="curl http://localhost:9200/_cluster/health" --health-interval=10s --health-timeout=5s --health-retries=10
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Download Published Artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: glossary-api-ubuntu-latest
           path: built-api
         ## using latest LTS releases - also it MUST be the SDK version.
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '3.1.*'
+          dotnet-version: '6.0.*'
           source-url: "https://nuget.pkg.github.com/${{ env.OWNER }}/index.json"
       - name: Load Data into elasticsearch & prepare for tests
         env:
@@ -200,7 +200,7 @@ jobs:
               echo "TEST_EXIT_CODE=$?" >> $GITHUB_ENV
               exit 0
       - name: Upload Integration test results
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: integration-test-results
           path: integration-tests/target
