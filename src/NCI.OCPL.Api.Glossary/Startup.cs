@@ -32,6 +32,7 @@ namespace NCI.OCPL.Api.Glossary
         /// <param name="services">Services.</param>
         protected override void AddAdditionalConfigurationMappings(IServiceCollection services)
         {
+            services.Configure<GlossaryAPIOptions>(Configuration.GetSection("GlossaryAPI"));
         }
 
         /// <summary>
@@ -43,7 +44,13 @@ namespace NCI.OCPL.Api.Glossary
             //Add our Term Query Service
             services.AddTransient<ITermsQueryService, ESTermsQueryService>();
             services.AddTransient<IAutosuggestQueryService, ESAutosuggestQueryService>();
-            services.Configure<GlossaryAPIOptions>(Configuration.GetSection("GlossaryAPI"));
+
+            // Get name for the Healthcheck alias.
+            services.AddTransient<IESAliasNameProvider>(p =>
+            {
+                string alias = Configuration["GlossaryAPI:AliasName"];
+                return new ESAliasNameProvider() { Name = alias };
+            });
         }
 
         /*****************************
